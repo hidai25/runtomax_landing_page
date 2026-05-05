@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import LegalLayout from "../_components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | RunToMax",
+  title: "Privacy Policy",
   description:
     "How RunToMax handles your data: HealthKit, location, Strava, Google Gemini, WeatherKit, subscriptions, and analytics.",
+  alternates: { canonical: "/privacy/" },
+  robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {

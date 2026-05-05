@@ -52,9 +52,9 @@ export default function RunToMaxLanding() {
   return (
     <main className="font-sans bg-black text-white min-h-screen">
       {/* Nav */}
-      <nav className="fixed top-0 inset-x-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="font-bebas text-2xl tracking-wide select-none">
+      <header className="fixed top-0 inset-x-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+        <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Primary">
+          <a href="/" className="font-bebas text-2xl tracking-wide select-none" aria-label="RunToMax home">
             runto<span className="text-[#1FE26C]">max</span>
           </a>
           <a
@@ -63,8 +63,8 @@ export default function RunToMaxLanding() {
           >
             Join the waitlist
           </a>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-8 min-h-screen">
@@ -116,7 +116,7 @@ export default function RunToMaxLanding() {
           >
             <img
               src={`${BASE}/02-watch-workout-select.jpg`}
-              alt="Apple Watch Workout Select"
+              alt="RunToMax workout selection screen on Apple Watch — outdoor, treadmill, intervals, track"
               className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
             />
           </motion.div>
@@ -134,7 +134,7 @@ export default function RunToMaxLanding() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-zinc-900 rounded-b-xl z-20" />
             <img
               src={`${BASE}/01-iphone-home.jpg`}
-              alt="iPhone App Home"
+              alt="RunToMax iPhone home screen showing training load, VO₂ max, and weekly plan"
               className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity mt-2"
             />
           </motion.div>
@@ -224,7 +224,7 @@ export default function RunToMaxLanding() {
             <div className="w-64 md:w-80 border-[8px] border-zinc-800 rounded-[2.5rem] bg-black overflow-hidden relative shadow-[0_0_40px_rgba(52,200,255,0.15)]">
               <img
                 src={`${BASE}/02-watch-workout-select.jpg`}
-                alt="Apple Watch Workout"
+                alt="RunToMax watch face on Apple Watch with HR-zone bar, structured intervals, and lap-perfect pace"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 pointer-events-none" />
@@ -333,7 +333,7 @@ export default function RunToMaxLanding() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-zinc-900 rounded-b-xl z-20" />
                 <img
                   src={`${BASE}/01-iphone-home.jpg`}
-                  alt="iPhone Home Data Screen"
+                  alt="RunToMax post-run coach notes on iPhone — HR drift, pace, and next workout adjustment"
                   className="w-full h-auto mt-2"
                 />
               </div>

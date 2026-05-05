@@ -1,0 +1,37 @@
+# RunToMax
+
+> RunToMax turns Apple Watch and iPhone into a real running training platform: race-watch-grade metrics, adaptive training plans (5K, 10K, half, marathon), structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run. Built by an experienced runner. Ships 2026.
+
+## What RunToMax does
+
+- Adaptive training plans for 5K, 10K, half marathon, and marathon, built around the runner's training load and rebalanced when life gets in the way.
+- Race-watch-grade metrics on Apple Watch: VO₂ max, training load (acute and chronic balance), recovery time informed by sleep and HRV, HR zones based on lactate-style personalization, and a race predictor.
+- Structured workouts on the wrist: intervals, tempos, and progressions built on the iPhone, executed lap-perfect on the watch with countdowns, pace targets, and audio cues.
+- HR-zone discipline visualization: a rainbow zone bar that bulges at the runner's current zone — Zone 2 drift is felt instantly.
+- Lane-exact track mode: distance accumulates by the chosen lane's geometry, not GPS noise. Lane 5 is 425 meters per lap.
+- Four hand-tuned mid-run watch faces: outdoor, treadmill, intervals, and track.
+- Coach Notes after every run: explains why the run went the way it did and adjusts the upcoming week.
+- Strava sync, FIT export, HealthKit read/write, WeatherKit context.
+- AI coaching layer powered by Gemini 2.5 Flash.
+
+## Who it's for
+
+- Serious runners who do tempo runs, intervals, long runs, and chase finish-line times.
+- Apple Watch and iPhone users who want race-watch-grade training without buying a dedicated running watch.
+- Not for casual joggers or step-counters.
+
+## Platform
+
+- iOS and watchOS.
+- Ships 2026. Waitlist members get early TestFlight builds, lifetime founder pricing on Pro coaching, and a hand-numbered first-1000 badge in the app.
+
+## Pages
+
+- [Home](https://runtomax.com/): Product overview, watch face showcase, coach notes example, waitlist signup.
+- [Privacy Policy](https://runtomax.com/privacy/): Data handling — HealthKit, location, Strava, Google Gemini, WeatherKit, subscriptions, analytics. No RunToMax account, no email login, no ads, no data sales.
+- [Terms of Service](https://runtomax.com/terms/): Subscription and usage terms.
+
+## Contact
+
+- Email: hello@runtomax.com
+- Founder: Hidai Bar-Mor (sole developer, based in Israel)
