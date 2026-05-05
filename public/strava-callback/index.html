@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Returning to RunToMax…</title>
+  <style>
+    body {
+      font: 17px -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      max-width: 22rem; margin: 4rem auto; padding: 0 1rem;
+      color: #2a2a2a; text-align: center;
+    }
+    a { color: #fc5200; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .muted { color: #777; font-size: 14px; margin-top: 1.25rem; }
+  </style>
+  <script>
+    // Strava → this page (real DNS-resolvable host) → custom URL scheme
+    // back into the app. ASWebAuthenticationSession watches for the
+    // `runtomax.app://` scheme and dismisses, handing the OAuth `code`
+    // param to the app.
+    (function () {
+      var q = window.location.search || "";
+      var target = "runtomax.app://strava/callback" + q;
+      // `replace` so the bouncer doesn't leave a back-button entry
+      // pointing at this static page.
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>Returning to <strong>RunToMax</strong>…</p>
+  <p class="muted">
+    If the app didn't open automatically,
+    <a id="manual" href="#">tap here</a>.
+  </p>
+  <script>
+    // Manual fallback link if the auto-redirect somehow no-ops (very old
+    // browser, JS disabled, etc.). Built in a script so we always pull
+    // the live query string rather than baking it in at build time.
+    document.getElementById("manual").href =
+      "runtomax.app://strava/callback" + (window.location.search || "");
+  </script>
+</body>
+</html>
