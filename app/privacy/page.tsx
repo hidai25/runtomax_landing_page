@@ -45,8 +45,8 @@ export default function PrivacyPage() {
           information.
         </li>
         <li>
-          Anonymous product analytics and crash reports help us improve the
-          app. You can opt out in Settings.
+          Anonymous product analytics (PostHog, EU cloud) and crash reports
+          help us improve the app. You can opt out in Settings.
         </li>
         <li>
           No advertising, no third-party trackers, no IDFA, no push
@@ -244,9 +244,14 @@ export default function PrivacyPage() {
 
       <h3>Product analytics and crash reporting</h3>
       <p>
-        RunToMax uses (or may use) a third-party product analytics service
-        such as PostHog or Mixpanel to understand how the app is used, so we
-        can improve it. The service typically receives:
+        RunToMax uses{" "}
+        <a href="https://posthog.com" target="_blank" rel="noreferrer">
+          PostHog
+        </a>{" "}
+        as its product analytics provider, hosted on PostHog&apos;s EU cloud
+        (<code>eu.i.posthog.com</code>) so your analytics data is processed
+        within the European Union. PostHog helps us understand how the app is
+        used so we can improve it. PostHog receives:
       </p>
       <ul>
         <li>
@@ -263,8 +268,8 @@ export default function PrivacyPage() {
           time zone.
         </li>
         <li>
-          Approximate location (city or country level) derived by the
-          analytics provider from your IP address.
+          Approximate location (city or country level) derived by PostHog from
+          your IP address.
         </li>
         <li>
           Session start/end and session duration.
@@ -273,9 +278,25 @@ export default function PrivacyPage() {
       <p>
         We do <strong>not</strong> send your name, email, raw GPS coordinates,
         run routes, individual heart-rate samples, or other HealthKit data to
-        analytics. Event properties are limited to feature-usage signals; we
+        PostHog. Event properties are limited to feature-usage signals; we
         deliberately do not include health or performance metrics in event
-        properties.
+        properties. Autocapture (which would record every tap automatically)
+        is disabled, and session replay is off by default.
+      </p>
+      <p>
+        PostHog&apos;s handling of this data is governed by their{" "}
+        <a
+          href="https://posthog.com/privacy"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a href="https://posthog.com/dpa" target="_blank" rel="noreferrer">
+          Data Processing Addendum
+        </a>
+        .
       </p>
       <p>
         We may also collect crash reports and stability diagnostics (a stack
@@ -355,22 +376,14 @@ export default function PrivacyPage() {
           ).
         </li>
         <li>
-          <strong>PostHog or Mixpanel</strong> — anonymous product analytics,
-          opt-out available (
+          <strong>PostHog (EU cloud)</strong> — anonymous product analytics,
+          opt-out available in Settings (
           <a
             href="https://posthog.com/privacy"
             target="_blank"
             rel="noreferrer"
           >
-            PostHog
-          </a>
-          {" / "}
-          <a
-            href="https://mixpanel.com/legal/privacy-policy/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Mixpanel
+            privacy
           </a>
           ).
         </li>
@@ -405,7 +418,7 @@ export default function PrivacyPage() {
         <li>
           To delete analytics data tied to your install ID, contact us at{" "}
           <a href="mailto:hello@runtomax.com">hello@runtomax.com</a> and we
-          will request deletion from the analytics provider.
+          will request deletion from PostHog.
         </li>
       </ul>
 
@@ -432,10 +445,10 @@ export default function PrivacyPage() {
 
       <h2>International transfers</h2>
       <p>
-        Apple, Google, Strava, RevenueCat, and our analytics provider may
-        process data outside your country. They each maintain their own
-        safeguards for international transfers under their respective privacy
-        policies linked above.
+        Apple, Google, Strava, RevenueCat, and PostHog may process data
+        outside your country. PostHog is hosted on its EU cloud for RunToMax.
+        Each provider maintains its own safeguards for international
+        transfers under their respective privacy policies linked above.
       </p>
 
       <h2>Security</h2>
