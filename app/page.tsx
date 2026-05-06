@@ -125,7 +125,7 @@ export default function RunToMaxLanding() {
           </div>
         </motion.div>
 
-        <div className="flex-1 w-full relative h-[600px] md:h-[700px] flex items-center justify-center lg:justify-end">
+        <div className="flex-1 w-full relative h-[440px] sm:h-[600px] md:h-[700px] flex items-center justify-center lg:justify-end">
           {/* Watch Mockup */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -134,7 +134,7 @@ export default function RunToMaxLanding() {
               y: { repeat: Infinity, duration: 8, ease: "easeInOut" },
               opacity: { duration: 1, delay: 0.2 },
             }}
-            className="absolute bottom-10 lg:-left-10 left-4 w-44 md:w-56 border-[8px] border-zinc-800 rounded-[2.5rem] shadow-[0_0_40px_rgba(31,226,108,0.15)] bg-black overflow-hidden z-20"
+            className="absolute bottom-4 sm:bottom-10 lg:-left-10 left-2 sm:left-4 w-32 sm:w-44 md:w-56 border-[6px] sm:border-[8px] border-zinc-800 rounded-[1.75rem] sm:rounded-[2.5rem] shadow-[0_0_40px_rgba(31,226,108,0.15)] bg-black overflow-hidden z-20"
           >
             <img
               src={`${BASE}/02-watch-workout-select.jpg`}
@@ -151,13 +151,13 @@ export default function RunToMaxLanding() {
               y: { repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 },
               opacity: { duration: 1, delay: 0.1 },
             }}
-            className="absolute top-0 right-4 lg:right-10 w-64 md:w-80 border-[12px] border-zinc-900 rounded-[3.5rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] bg-black overflow-hidden z-10"
+            className="absolute top-2 sm:top-0 right-2 sm:right-4 lg:right-10 w-48 sm:w-64 md:w-80 border-[8px] sm:border-[12px] border-zinc-900 rounded-[2.25rem] sm:rounded-[3.5rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] bg-black overflow-hidden z-10"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-zinc-900 rounded-b-xl z-20" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 sm:w-28 sm:h-7 bg-zinc-900 rounded-b-xl z-20" />
             <img
               src={`${BASE}/01-iphone-home.jpg`}
               alt="RunToMax iPhone home screen showing training load, VO₂ max, and weekly plan"
-              className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity mt-2"
+              className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity mt-1.5 sm:mt-2"
             />
           </motion.div>
         </div>
