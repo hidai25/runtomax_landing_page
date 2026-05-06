@@ -125,7 +125,7 @@ export default function RunToMaxLanding() {
           </div>
         </motion.div>
 
-        <div className="flex-1 w-full relative h-[440px] sm:h-[600px] md:h-[700px] flex items-center justify-center lg:justify-end">
+        <div className="hidden lg:flex flex-1 w-full relative h-[700px] items-center justify-center lg:justify-end">
           {/* Watch Mockup */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
