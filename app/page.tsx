@@ -97,16 +97,16 @@ export default function RunToMaxLanding() {
           className="flex-1 w-full text-center lg:text-left z-10"
         >
           <p className="text-[#1FE26C] font-mono text-xs uppercase tracking-widest mb-6 font-semibold">
-            Apple Watch · iPhone · Ships 2026
+            For runners who measure things · Apple Watch · 2026
           </p>
           <h1 className="font-bebas text-6xl md:text-8xl tracking-tight leading-[0.85] mb-8 uppercase">
             Turn your Apple Watch <br className="hidden md:block" />
             into a real running watch.
           </h1>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
-            RunToMax brings race-watch-grade metrics, structured workouts,
-            and a personal coach to the watch you already wear. Lap-perfect GPS.
-            HR-zone discipline. A training plan that adapts to every run.
+            Race-watch training science on the watch you already own.
+            Lactate-threshold HR zones. Fitness, Fatigue & Form. Readiness
+            scored every morning. A plan that adapts before you ask.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
             <a
@@ -191,7 +191,8 @@ export default function RunToMaxLanding() {
             <div className="h-1 w-12 bg-[#FF8C42] mb-6 rounded-full shadow-[0_0_15px_rgba(255,140,66,0.5)]" />
             <h3 className="text-xl font-bold mb-3">Race-watch metrics.</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              VO₂ max, training load, recovery time, HR zones, race predictor.{" "}
+              VO₂ max, CTL · ATL · Form, lactate-threshold HR zones, daily
+              readiness, pre-run pace forecast.{" "}
               <span className="text-zinc-300 italic">
                 The numbers serious runners actually plan around — now on
                 Apple Watch.
@@ -204,11 +205,11 @@ export default function RunToMaxLanding() {
               Watch faces built for the workout.
             </h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Four hand-tuned mid-run layouts: outdoor, treadmill, intervals,
-              track.{" "}
+              Two purpose-built run modes — outdoor and treadmill — with
+              track and structured-interval overlays.{" "}
               <span className="text-zinc-300 italic">
-                Race-watch-style data fields, lap-by-lap structured workouts,
-                OLED contrast that reads at a sprint.
+                Race-watch-style data fields, lap-by-lap counted reps, OLED
+                contrast that reads at a sprint.
               </span>
             </p>
           </motion.div>
@@ -270,7 +271,7 @@ export default function RunToMaxLanding() {
                 color:
                   "bg-[#34C8FF] shadow-[0_0_10px_rgba(52,200,255,0.8)]",
                 title: "Lane-exact track mode.",
-                desc: "Pick a lane on a 400m oval — distance accumulates by the lane's geometry, not GPS noise. Lane 5 is 425m. Most race watches know that. Now your Apple Watch does too.",
+                desc: "Pick a lane on a 400 m oval — distance accumulates by the lane's geometry, not GPS noise. Lane 1 is 400.0 m. Lane 5 is 430.5 m. Lane 8 is 453.7 m. IAAF-correct, every lap.",
               },
             ].map((item, i) => (
               <motion.div
@@ -329,9 +330,9 @@ export default function RunToMaxLanding() {
                   <strong className="text-white font-medium">
                     Bumping next week&apos;s tempo to 9K at the same pace.
                   </strong>{" "}
-                  Recovery looks good, so Thursday&apos;s intervals stay on.
-                  Your half-marathon predictor just moved from 1:38 to
-                  1:36.&rdquo;
+                  Readiness is 78 this morning, so Thursday&apos;s intervals
+                  stay on. Your fitness (CTL) is up 4% this block and Form has
+                  flipped from –12 to +6 — you&apos;re race-ready.&rdquo;
                 </p>
                 <div className="flex items-center justify-between border-t border-zinc-800 pt-6">
                   <span className="text-xs font-mono tracking-wide text-zinc-500">
@@ -370,10 +371,10 @@ export default function RunToMaxLanding() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24"
           >
             {[
-              { icon: "📈", title: "Training Load", sub: "Acute & chronic balance" },
-              { icon: "❤️", title: "HR Zones", sub: "Lactate-based, personal" },
-              { icon: "🫁", title: "VO₂ Max", sub: "Tracked every run" },
-              { icon: "🛌", title: "Recovery", sub: "Sleep + HRV informed" },
+              { icon: "📈", title: "Fitness & Form", sub: "CTL · ATL · Form (Banister)" },
+              { icon: "❤️", title: "HR Zones", sub: "Lactate-threshold based" },
+              { icon: "🫁", title: "VO₂ Max", sub: "Cardiac + Daniels, fused" },
+              { icon: "🛌", title: "Readiness", sub: "HRV · Sleep · RHR · Load" },
             ].map((item) => (
               <motion.div
                 key={item.title}
@@ -391,6 +392,95 @@ export default function RunToMaxLanding() {
             ))}
           </motion.div>
         </div>
+      </section>
+
+      {/* Data Layer */}
+      <section className="py-32 px-6 max-w-7xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          className="text-center md:text-left mb-16 max-w-3xl"
+        >
+          <p className="text-[#1FE26C] font-mono text-xs uppercase tracking-widest mb-4 font-semibold">
+            Under the hood
+          </p>
+          <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
+            The data layer most <br className="hidden md:block" />
+            running apps skip.
+          </h2>
+          <p className="text-zinc-400 text-lg md:text-xl">
+            Race-watch training science, with the math out in the open. No
+            black boxes. No proprietary &ldquo;effort&rdquo; scores.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {[
+            {
+              accent: "#1FE26C",
+              tag: "Daily",
+              title: "Readiness, scored.",
+              desc: "Each morning, a 0–100 readiness score from overnight HRV (40%), sleep (25%), resting HR (20%), and yesterday's load (15%). The weights are published. You can see why the number moved.",
+            },
+            {
+              accent: "#FF8C42",
+              tag: "Long-arc",
+              title: "Fitness, Fatigue & Form.",
+              desc: "42-day chronic load, 7-day acute load, Form = CTL – ATL. The same Banister/PMC curves coaches charge a subscription for — built in, no add-on, no extra account.",
+            },
+            {
+              accent: "#FF3D7F",
+              tag: "Personal",
+              title: "Lactate-threshold HR zones.",
+              desc: "Zones derived from your real LTHR — re-estimated weekly from how your heart actually responded to your last block. Not 220-minus-age. Not a generic %HRmax.",
+            },
+            {
+              accent: "#34C8FF",
+              tag: "Track-style",
+              title: "Personal segments.",
+              desc: "Draw a segment on the map. Every past and future run gets auto-matched and ranked. Your own leaderboard, no Strava account required.",
+            },
+            {
+              accent: "#1FE26C",
+              tag: "Records",
+              title: "Best efforts at every distance.",
+              desc: "Sliding window across all your runs to find your fastest 1 mi, 5K, 10K, half, and marathon — even if you weren't racing that day.",
+            },
+            {
+              accent: "#FF8C42",
+              tag: "Hills",
+              title: "Grade-Adjusted Pace.",
+              desc: "Minetti polynomial. See your true effort on rolling terrain — finally compare a hilly tempo to a flat one without lying to yourself.",
+            },
+          ].map((item) => (
+            <motion.div
+              key={item.title}
+              variants={fadeUp}
+              className="p-8 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-600 transition-colors duration-300 relative overflow-hidden"
+            >
+              <div
+                className="absolute top-0 left-0 h-1 w-16 rounded-r-full"
+                style={{ backgroundColor: item.accent, boxShadow: `0 0 14px ${item.accent}66` }}
+              />
+              <p
+                className="font-mono text-[10px] uppercase tracking-widest mb-4"
+                style={{ color: item.accent }}
+              >
+                {item.tag}
+              </p>
+              <h4 className="text-white font-bold text-lg mb-3">{item.title}</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       {/* Honest Part */}
@@ -422,13 +512,13 @@ export default function RunToMaxLanding() {
             HealthKit <span className="text-zinc-800 ml-2">RW</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
-            WeatherKit <span className="text-zinc-800 ml-2">HR</span>
+            WeatherKit <span className="text-zinc-800 ml-2">Hourly</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
-            Strava <span className="text-zinc-800 ml-2">SYNC</span>
+            Strava <span className="text-zinc-800 ml-2">GPX</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
-            FIT Export <span className="text-zinc-800 ml-2">UNV</span>
+            FIT &amp; GPX Export
           </span>
           <span className="text-[#1FE26C]/60 hover:text-[#1FE26C] transition-colors">
             Gemini 2.5 Flash
