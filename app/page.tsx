@@ -18,6 +18,7 @@ const fadeUp: Variants = {
 
 export default function RunToMaxLanding() {
   const [email, setEmail] = useState("");
+  const [botcheck, setBotcheck] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
@@ -33,14 +34,35 @@ export default function RunToMaxLanding() {
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+    if (botcheck) return;
 
     setStatus("loading");
-    await new Promise((resolve) => setTimeout(resolve, 800));
 
-    localStorage.setItem(
-      "runtomax_waitlist_pending",
-      JSON.stringify({ email, timestamp: Date.now() })
-    );
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "97579151-442d-42f8-bdae-ab84b93a8dfe",
+          subject: "New RunToMax waitlist signup",
+          from_name: "RunToMax Landing Page",
+          email,
+          botcheck,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) {
+        setStatus("idle");
+        return;
+      }
+    } catch {
+      setStatus("idle");
+      return;
+    }
+
     if (waitlistCount) {
       const newCount = waitlistCount + 1;
       localStorage.setItem("runtomax_waitlist_local_count", newCount.toString());
@@ -451,6 +473,16 @@ export default function RunToMaxLanding() {
                   <label htmlFor="email" className="sr-only">
                     Email address
                   </label>
+                  <input
+                    type="text"
+                    name="botcheck"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={botcheck}
+                    onChange={(e) => setBotcheck(e.target.value)}
+                    style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                    aria-hidden="true"
+                  />
                   <input
                     id="email"
                     type="email"
