@@ -494,7 +494,7 @@ export default function RunToMaxLanding() {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 to-transparent pointer-events-none" />
           <h2 className="font-bebas text-4xl md:text-6xl uppercase tracking-tight mb-6 relative z-10">
-            Built for runners who train.
+            Built for runners. <br />By runners.
           </h2>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed relative z-10">
             If you do tempo runs, intervals, long runs, and chase a finish-line
