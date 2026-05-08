@@ -497,7 +497,7 @@ export default function RunToMaxLanding() {
               Live, on the wrist
             </p>
             <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
-              Race-watch hardware. <br className="hidden md:block" />
+              Race-watch reflexes. <br className="hidden md:block" />
               AI that knows your week.
             </h2>
             <p className="text-zinc-400 text-lg md:text-xl">
@@ -516,9 +516,9 @@ export default function RunToMaxLanding() {
             {[
               {
                 accent: "#34C8FF",
-                tag: "Apple Watch Ultra 2 / 3",
-                title: "Dual-frequency GPS. Race-watch class.",
-                desc: "L1 + L5 on Ultra 2/3. Doppler-derived speed from the first fix, so live pace is honest before you've even covered 50 m. An anti-jitter accumulator throws out spikes the moment they happen — no more 3:20/km flashes on a 4:30 tempo.",
+                tag: "Live pace",
+                title: "GPS pipeline that earns the data.",
+                desc: "Doppler-derived speed from the very first fix — live pace is honest before you've covered 50 m. An anti-jitter accumulator throws out spike-fixes the moment they happen, so a 4:30 tempo never blinks 3:20. We can't make Apple's GPS chip better. We can stop the software from wasting it.",
               },
               {
                 accent: "#1FE26C",
