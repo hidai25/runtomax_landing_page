@@ -483,6 +483,97 @@ export default function RunToMaxLanding() {
         </motion.div>
       </section>
 
+      {/* Live on the wrist */}
+      <section className="py-32 px-6 max-w-7xl mx-auto bg-zinc-950 border-y border-zinc-900 -mx-6">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="text-center md:text-left mb-16 max-w-3xl"
+          >
+            <p className="text-[#34C8FF] font-mono text-xs uppercase tracking-widest mb-4 font-semibold">
+              Live, on the wrist
+            </p>
+            <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
+              Race-watch hardware. <br className="hidden md:block" />
+              AI that knows your week.
+            </h2>
+            <p className="text-zinc-400 text-lg md:text-xl">
+              The training data is only as good as the signal. Here&apos;s the
+              part the spec sheet usually skips.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            {[
+              {
+                accent: "#34C8FF",
+                tag: "Apple Watch Ultra 2 / 3",
+                title: "Dual-frequency GPS. Race-watch class.",
+                desc: "L1 + L5 on Ultra 2/3. Doppler-derived speed from the first fix, so live pace is honest before you've even covered 50 m. An anti-jitter accumulator throws out spikes the moment they happen — no more 3:20/km flashes on a 4:30 tempo.",
+              },
+              {
+                accent: "#1FE26C",
+                tag: "Always-on",
+                title: "Live Activity + Dynamic Island.",
+                desc: "Pace, HR, distance, cadence, and zone pinned to your lock screen and the Dynamic Island the entire run. No swipe. No raise-to-wake. The data is there the second you glance.",
+              },
+              {
+                accent: "#FF8C42",
+                tag: "On-device AI",
+                title: "An AI coach with four jobs.",
+                desc: "Pre-run brief grounded in today's readiness. Post-run audit that explains what the numbers mean. Daily readiness with calendar context. Ask-anything Q&A. Gemini 2.5 Flash, your data, your context — never a generic plan.",
+              },
+              {
+                accent: "#FF3D7F",
+                tag: "Indoor",
+                title: "Treadmill calibration that holds up.",
+                desc: "Your outdoor stride length is learned and carried indoors. Cadence × calibrated stride keeps pace and distance honest on the belt — no manual adjust knob, no &ldquo;estimated&rdquo; asterisks.",
+              },
+              {
+                accent: "#1FE26C",
+                tag: "Plan it",
+                title: "Routes generated around you.",
+                desc: "Ask for a 5 km loop from where you stand. The app draws three real walk-routed loops at 0° / 120° / 240° bearings — actual streets, not a circle on a map. Falls back gracefully when the network of paths gets thin.",
+              },
+              {
+                accent: "#34C8FF",
+                tag: "Watch face",
+                title: "Complications that earn their spot.",
+                desc: "QuickStart launches a run from any face in one tap. WeeklyStats keeps your mileage ring visible all week. LastRun shows your last pace and HR at a glance. Built like running-watch UI — not afterthought widgets.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                className="p-8 rounded-2xl bg-black border border-zinc-800 hover:border-zinc-600 transition-colors duration-300 relative overflow-hidden"
+              >
+                <div
+                  className="absolute top-0 left-0 h-1 w-16 rounded-r-full"
+                  style={{ backgroundColor: item.accent, boxShadow: `0 0 14px ${item.accent}66` }}
+                />
+                <p
+                  className="font-mono text-[10px] uppercase tracking-widest mb-4"
+                  style={{ color: item.accent }}
+                >
+                  {item.tag}
+                </p>
+                <h4 className="text-white font-bold text-lg mb-3">{item.title}</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Honest Part */}
       <section className="py-32 px-6 max-w-5xl mx-auto">
         <motion.div
