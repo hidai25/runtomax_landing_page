@@ -259,7 +259,7 @@ export default function RunToMaxLanding() {
               {
                 color: "bg-white",
                 title: "Structured workouts on the wrist.",
-                desc: "Build intervals, tempos, and progressions on the phone. The watch counts you down, holds your pace, and beeps the next rep — like a dedicated running watch, without buying a second one.",
+                desc: "Start from a preset library with a rep stepper, or build your own — pyramids, ladders, and multi-block sessions. The watch counts every rep down, holds your target pace, and buzzes the next block — like a dedicated running watch, without buying a second one.",
               },
               {
                 color:
@@ -292,6 +292,98 @@ export default function RunToMaxLanding() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Real screens gallery */}
+      <section className="py-32 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="text-center md:text-left mb-16 max-w-3xl"
+          >
+            <p className="text-[#1FE26C] font-mono text-xs uppercase tracking-widest mb-4 font-semibold">
+              Real screens · captured mid-run
+            </p>
+            <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
+              Five screens. <br className="hidden md:block" />
+              One run.
+            </h2>
+            <p className="text-zinc-400 text-lg md:text-xl">
+              Not renders. Actual frames from a live run on Apple Watch Ultra.
+              Turn the Digital Crown mid-effort to switch layouts — 13+ of them.
+              Here are five, with the numbers really moving.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+            className="flex gap-5 md:gap-6 overflow-x-auto lg:overflow-visible lg:flex-wrap lg:justify-center snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0"
+          >
+            {[
+              {
+                src: "watch-zonebar.png",
+                tag: "HR zones",
+                desc: "Live zone bar — watch the drift",
+                glow: "rgba(31,226,108,0.18)",
+              },
+              {
+                src: "watch-splits.png",
+                tag: "Splits",
+                desc: "Lap · HR · up/down · % done",
+                glow: "rgba(255,61,127,0.18)",
+              },
+              {
+                src: "watch-gauge.png",
+                tag: "Pace ring",
+                desc: "Lap pace against target",
+                glow: "rgba(31,226,108,0.18)",
+              },
+              {
+                src: "watch-grid.png",
+                tag: "Data grid",
+                desc: "Pace · time · distance · HR",
+                glow: "rgba(157,108,255,0.18)",
+              },
+              {
+                src: "watch-lap.png",
+                tag: "Big lap",
+                desc: "One number, thumb on LAP",
+                glow: "rgba(255,61,127,0.18)",
+              },
+            ].map((shot) => (
+              <motion.figure
+                key={shot.src}
+                variants={fadeUp}
+                className="snap-center shrink-0 w-40 sm:w-44 flex flex-col items-center"
+              >
+                <div
+                  className="w-full border-[7px] border-zinc-800 rounded-[2rem] bg-black overflow-hidden"
+                  style={{ boxShadow: `0 0 32px ${shot.glow}` }}
+                >
+                  <img
+                    src={`${BASE}/${shot.src}`}
+                    alt={`RunToMax Apple Watch run screen — ${shot.desc}`}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <figcaption className="mt-4 text-center">
+                  <span className="block text-white font-bold text-sm">
+                    {shot.tag}
+                  </span>
+                  <span className="block text-zinc-500 text-xs mt-1">
+                    {shot.desc}
+                  </span>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -460,6 +552,24 @@ export default function RunToMaxLanding() {
               title: "Grade-Adjusted Pace.",
               desc: "Minetti polynomial. See your true effort on rolling terrain — finally compare a hilly tempo to a flat one without lying to yourself.",
             },
+            {
+              accent: "#FF3D7F",
+              tag: "Recovery",
+              title: "Recovery Time, in hours.",
+              desc: "After every run, an estimate of how long until you're ready for the next hard session — scaled by duration, intensity, and how recovered you walked in. The race-watch number that tells you when to push and when to wait.",
+            },
+            {
+              accent: "#34C8FF",
+              tag: "Per-run",
+              title: "Training Effect, aerobic + anaerobic.",
+              desc: "Two scores, each 0–5, on every run. Did this build your aerobic base, sharpen your top end, or just bank junk miles? You see what the session actually trained — not just that you moved.",
+            },
+            {
+              accent: "#1FE26C",
+              tag: "Calories",
+              title: "Calories that track effort.",
+              desc: "Most apps multiply distance by a constant — an easy 10K and a brutal one read identical. We use an HR-based model (Keytel 2005), so the number rises with how hard your heart actually worked.",
+            },
           ].map((item) => (
             <motion.div
               key={item.title}
@@ -550,6 +660,18 @@ export default function RunToMaxLanding() {
                 title: "Complications that earn their spot.",
                 desc: "QuickStart launches a run from any face in one tap. WeeklyStats keeps your mileage ring visible all week. LastRun shows your last pace and HR at a glance. Built like running-watch UI — not afterthought widgets.",
               },
+              {
+                accent: "#FF8C42",
+                tag: "Strava",
+                title: "Strava, both directions.",
+                desc: "Connect once. Outdoor runs auto-upload as GPX, indoor runs as manual activities. And your back-catalog imports the other way — so the training science has real history to work with from day one, not an empty graph.",
+              },
+              {
+                accent: "#FF3D7F",
+                tag: "Sensors",
+                title: "External HR straps, paired.",
+                desc: "Don't trust wrist optical at threshold? Pair a Bluetooth chest strap or arm band straight to the watch. The zone bar and every HR metric read from the strap the moment it connects — the pre-run check confirms the source before you start.",
+              },
             ].map((item) => (
               <motion.div
                 key={item.title}
@@ -606,7 +728,7 @@ export default function RunToMaxLanding() {
             WeatherKit <span className="text-zinc-800 ml-2">Hourly</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
-            Strava <span className="text-zinc-800 ml-2">GPX</span>
+            Strava <span className="text-zinc-800 ml-2">Two-Way</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
             FIT &amp; GPX Export

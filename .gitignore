@@ -5,3 +5,6 @@ out
 *.log
 .env*.local
 next-env.d.ts
+
+# build artifact
+tsconfig.tsbuildinfo
