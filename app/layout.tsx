@@ -11,7 +11,7 @@ const bebas = Bebas_Neue({
 });
 
 const SITE_URL = "https://runtomax.com";
-const OG_IMAGE = `${SITE_URL}/01-iphone-home.jpg`;
+const OG_IMAGE = `${SITE_URL}/iphone-today.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -89,7 +89,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#org`,
       name: "RunToMax",
       url: SITE_URL,
-      logo: `${SITE_URL}/01-iphone-home.jpg`,
+      logo: `${SITE_URL}/iphone-today.png`,
       founder: { "@type": "Person", name: "Hidai Bar-Mor" },
       email: "hello@runtomax.com",
     },
