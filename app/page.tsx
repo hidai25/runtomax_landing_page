@@ -137,8 +137,8 @@ export default function RunToMaxLanding() {
             className="absolute bottom-4 sm:bottom-10 lg:-left-10 left-2 sm:left-4 w-32 sm:w-44 md:w-56 border-[6px] sm:border-[8px] border-zinc-800 rounded-[1.75rem] sm:rounded-[2.5rem] shadow-[0_0_40px_rgba(31,226,108,0.15)] bg-black overflow-hidden z-20"
           >
             <img
-              src={`${BASE}/02-watch-workout-select.jpg`}
-              alt="RunToMax workout selection screen on Apple Watch — outdoor, treadmill, intervals, track"
+              src={`${BASE}/watch-select.png`}
+              alt="RunToMax workout selection screen on Apple Watch — outdoor, treadmill, intervals"
               className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
             />
           </motion.div>
@@ -153,11 +153,10 @@ export default function RunToMaxLanding() {
             }}
             className="absolute top-2 sm:top-0 right-2 sm:right-4 lg:right-10 w-48 sm:w-64 md:w-80 border-[8px] sm:border-[12px] border-zinc-900 rounded-[2.25rem] sm:rounded-[3.5rem] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] bg-black overflow-hidden z-10"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 sm:w-28 sm:h-7 bg-zinc-900 rounded-b-xl z-20" />
             <img
-              src={`${BASE}/01-iphone-home.jpg`}
-              alt="RunToMax iPhone home screen showing training load, VO₂ max, and weekly plan"
-              className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity mt-1.5 sm:mt-2"
+              src={`${BASE}/iphone-today.png`}
+              alt="RunToMax iPhone Today dashboard — daily readiness read, AI coaching guidance, and recovery status"
+              className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
             />
           </motion.div>
         </div>
@@ -246,8 +245,8 @@ export default function RunToMaxLanding() {
           >
             <div className="w-64 md:w-80 border-[8px] border-zinc-800 rounded-[2.5rem] bg-black overflow-hidden relative shadow-[0_0_40px_rgba(52,200,255,0.15)]">
               <img
-                src={`${BASE}/02-watch-workout-select.jpg`}
-                alt="RunToMax watch face on Apple Watch with HR-zone bar, structured intervals, and lap-perfect pace"
+                src={`${BASE}/watch-zonebar.png`}
+                alt="RunToMax run screen on Apple Watch with live HR-zone bar, lap pace, and big data fields"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 pointer-events-none" />
@@ -309,13 +308,13 @@ export default function RunToMaxLanding() {
               Real screens · captured mid-run
             </p>
             <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
-              Five screens. <br className="hidden md:block" />
+              Six screens. <br className="hidden md:block" />
               One run.
             </h2>
             <p className="text-zinc-400 text-lg md:text-xl">
-              Not renders. Actual frames from a live run on Apple Watch Ultra.
-              Turn the Digital Crown mid-effort to switch layouts — 13+ of them.
-              Here are five, with the numbers really moving.
+              Not renders. Real frames on Apple Watch Ultra — the pre-run
+              sensor check, the start, and four live layouts you flick between
+              mid-effort with the Digital Crown. 13+ ship in the app.
             </p>
           </motion.div>
 
@@ -328,9 +327,15 @@ export default function RunToMaxLanding() {
           >
             {[
               {
-                src: "watch-zonebar.png",
-                tag: "HR zones",
-                desc: "Live zone bar — watch the drift",
+                src: "watch-ready.png",
+                tag: "Ready",
+                desc: "GPS · HR · battery, pre-run check",
+                glow: "rgba(31,226,108,0.18)",
+              },
+              {
+                src: "watch-start.png",
+                tag: "Go",
+                desc: "One tap to start an outdoor run",
                 glow: "rgba(31,226,108,0.18)",
               },
               {
@@ -445,11 +450,10 @@ export default function RunToMaxLanding() {
               className="w-full max-w-sm lg:w-1/2 flex justify-center"
             >
               <div className="w-64 md:w-80 border-[12px] border-zinc-900 rounded-[3.5rem] bg-black overflow-hidden relative shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-zinc-900 rounded-b-xl z-20" />
                 <img
-                  src={`${BASE}/01-iphone-home.jpg`}
-                  alt="RunToMax post-run coach notes on iPhone — HR drift, pace, and next workout adjustment"
-                  className="w-full h-auto mt-2"
+                  src={`${BASE}/iphone-today.png`}
+                  alt="RunToMax daily coaching read on iPhone — readiness verdict and session guidance"
+                  className="w-full h-auto"
                 />
               </div>
             </motion.div>
