@@ -104,9 +104,10 @@ export default function RunToMaxLanding() {
             into a real running watch.
           </h1>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
-            Race-watch training science on the watch you already own.
-            Lactate-threshold HR zones. Fitness, Fatigue & Form. Readiness
-            scored every morning. A plan that adapts before you ask.
+            Everything a dedicated running watch should do — pace and distance
+            you can trust, watch faces you customize, structured intervals,
+            lane-exact track mode — plus a coach that builds your plan and
+            explains every run. The recorder and the coach, finally in one app.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
             <a
@@ -175,7 +176,7 @@ export default function RunToMaxLanding() {
           className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16"
         >
           <motion.div variants={fadeUp}>
-            <div className="h-1 w-12 bg-[#FF3D7F] mb-6 rounded-full shadow-[0_0_15px_rgba(255,61,127,0.5)]" />
+            <div className="h-1 w-12 bg-[#1FE26C] mb-6 rounded-full shadow-[0_0_15px_rgba(31,226,108,0.5)]" />
             <h3 className="text-xl font-bold mb-3">A coach in your pocket.</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               Adaptive 5K, 10K, half, and marathon plans built around your
@@ -187,7 +188,7 @@ export default function RunToMaxLanding() {
             </p>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <div className="h-1 w-12 bg-[#FF8C42] mb-6 rounded-full shadow-[0_0_15px_rgba(255,140,66,0.5)]" />
+            <div className="h-1 w-12 bg-[#1FE26C] mb-6 rounded-full shadow-[0_0_15px_rgba(31,226,108,0.5)]" />
             <h3 className="text-xl font-bold mb-3">Race-watch metrics.</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               VO₂ max, CTL · ATL · Form, lactate-threshold HR zones, daily
@@ -199,7 +200,7 @@ export default function RunToMaxLanding() {
             </p>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <div className="h-1 w-12 bg-[#34C8FF] mb-6 rounded-full shadow-[0_0_15px_rgba(52,200,255,0.5)]" />
+            <div className="h-1 w-12 bg-[#1FE26C] mb-6 rounded-full shadow-[0_0_15px_rgba(31,226,108,0.5)]" />
             <h3 className="text-xl font-bold mb-3">
               Watch faces built for the workout.
             </h3>
@@ -229,8 +230,8 @@ export default function RunToMaxLanding() {
             serious runners deserve.
           </h2>
           <p className="text-zinc-400 text-lg md:text-xl">
-            Race-watch-grade data fields, clean typography, structured
-            interval support, and lane-exact track mode. Hand-tuned for the
+            Distance and pace you can trust, race-watch-grade data fields you
+            arrange yourself, and lane-exact track mode. Hand-tuned for the
             workout you&apos;re actually doing — not a generic one.
           </p>
         </motion.div>
@@ -243,7 +244,7 @@ export default function RunToMaxLanding() {
             transition={{ duration: 0.8 }}
             className="w-full max-w-sm lg:w-1/2 flex justify-center"
           >
-            <div className="w-64 md:w-80 border-[8px] border-zinc-800 rounded-[2.5rem] bg-black overflow-hidden relative shadow-[0_0_40px_rgba(52,200,255,0.15)]">
+            <div className="w-64 md:w-80 border-[8px] border-zinc-800 rounded-[2.5rem] bg-black overflow-hidden relative shadow-[0_0_40px_rgba(31,226,108,0.15)]">
               <img
                 src={`${BASE}/watch-zonebar.png`}
                 alt="RunToMax run screen on Apple Watch with live HR-zone bar, lap pace, and big data fields"
@@ -262,13 +263,13 @@ export default function RunToMaxLanding() {
               },
               {
                 color:
-                  "bg-[#FF3D7F] shadow-[0_0_10px_rgba(255,61,127,0.8)]",
+                  "bg-[#1FE26C] shadow-[0_0_10px_rgba(31,226,108,0.8)]",
                 title: "HR-zone discipline, visualized.",
-                desc: "A rainbow zone bar bulges where you are right now. No squinting. No labels. You feel Z2 drift the moment it happens — and pull it back before the workout falls apart.",
+                desc: "A rainbow zone bar bulges where you are right now. No squinting. No labels. You catch an easy run creeping too hard the moment it happens — and pull it back before the workout falls apart.",
               },
               {
                 color:
-                  "bg-[#34C8FF] shadow-[0_0_10px_rgba(52,200,255,0.8)]",
+                  "bg-[#1FE26C] shadow-[0_0_10px_rgba(31,226,108,0.8)]",
                 title: "Lane-exact track mode.",
                 desc: "Pick a lane on a 400 m oval — distance accumulates by the lane's geometry, not GPS noise. Lane 1 is 400.0 m. Lane 5 is 430.5 m. Lane 8 is 453.7 m. IAAF-correct, every lap.",
               },
@@ -342,7 +343,7 @@ export default function RunToMaxLanding() {
                 src: "watch-splits.png",
                 tag: "Splits",
                 desc: "Lap · HR · up/down · % done",
-                glow: "rgba(255,61,127,0.18)",
+                glow: "rgba(31,226,108,0.18)",
               },
               {
                 src: "watch-gauge.png",
@@ -354,13 +355,13 @@ export default function RunToMaxLanding() {
                 src: "watch-grid.png",
                 tag: "Data grid",
                 desc: "Pace · time · distance · HR",
-                glow: "rgba(157,108,255,0.18)",
+                glow: "rgba(31,226,108,0.18)",
               },
               {
                 src: "watch-lap.png",
                 tag: "Big lap",
                 desc: "One number, thumb on LAP",
-                glow: "rgba(255,61,127,0.18)",
+                glow: "rgba(31,226,108,0.18)",
               },
             ].map((shot) => (
               <motion.figure
@@ -413,10 +414,10 @@ export default function RunToMaxLanding() {
               transition={{ duration: 0.8 }}
               className="w-full lg:w-1/2"
             >
-              <div className="p-8 md:p-10 rounded-3xl bg-black border border-zinc-800 shadow-[0_0_40px_rgba(255,140,66,0.15)] relative overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF8C42] to-[#FF3D7F]" />
+              <div className="p-8 md:p-10 rounded-3xl bg-black border border-zinc-800 shadow-[0_0_40px_rgba(31,226,108,0.15)] relative overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#1FE26C] to-[#1FE26C]" />
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-3 h-3 rounded-sm bg-[#FF8C42] animate-pulse" />
+                  <div className="w-3 h-3 rounded-sm bg-[#1FE26C] animate-pulse" />
                   <span className="text-xs font-mono tracking-widest uppercase text-zinc-500">
                     Coach Notes · Tuesday Tempo
                   </span>
@@ -527,19 +528,19 @@ export default function RunToMaxLanding() {
               desc: "Each morning, a 0–100 readiness score from overnight HRV (40%), sleep (25%), resting HR (20%), and yesterday's load (15%). The weights are published. You can see why the number moved.",
             },
             {
-              accent: "#FF8C42",
+              accent: "#1FE26C",
               tag: "Long-arc",
-              title: "Fitness, Fatigue & Form.",
+              title: "Building fitness, or digging a hole?",
               desc: "42-day chronic load, 7-day acute load, Form = CTL – ATL. The same Banister/PMC curves coaches charge a subscription for — built in, no add-on, no extra account.",
             },
             {
-              accent: "#FF3D7F",
+              accent: "#1FE26C",
               tag: "Personal",
               title: "Lactate-threshold HR zones.",
               desc: "Zones derived from your real LTHR — re-estimated weekly from how your heart actually responded to your last block. Not 220-minus-age. Not a generic %HRmax.",
             },
             {
-              accent: "#34C8FF",
+              accent: "#1FE26C",
               tag: "Track-style",
               title: "Personal segments.",
               desc: "Draw a segment on the map. Every past and future run gets auto-matched and ranked. Your own leaderboard, no Strava account required.",
@@ -551,21 +552,21 @@ export default function RunToMaxLanding() {
               desc: "Sliding window across all your runs to find your fastest 1 mi, 5K, 10K, half, and marathon — even if you weren't racing that day.",
             },
             {
-              accent: "#FF8C42",
+              accent: "#1FE26C",
               tag: "Hills",
-              title: "Grade-Adjusted Pace.",
+              title: "Your true effort on every hill.",
               desc: "Minetti polynomial. See your true effort on rolling terrain — finally compare a hilly tempo to a flat one without lying to yourself.",
             },
             {
-              accent: "#FF3D7F",
+              accent: "#1FE26C",
               tag: "Recovery",
               title: "Recovery Time, in hours.",
               desc: "After every run, an estimate of how long until you're ready for the next hard session — scaled by duration, intensity, and how recovered you walked in. The race-watch number that tells you when to push and when to wait.",
             },
             {
-              accent: "#34C8FF",
+              accent: "#1FE26C",
               tag: "Per-run",
-              title: "Training Effect, aerobic + anaerobic.",
+              title: "What each run actually trained.",
               desc: "Two scores, each 0–5, on every run. Did this build your aerobic base, sharpen your top end, or just bank junk miles? You see what the session actually trained — not just that you moved.",
             },
             {
@@ -580,14 +581,8 @@ export default function RunToMaxLanding() {
               variants={fadeUp}
               className="p-8 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-600 transition-colors duration-300 relative overflow-hidden"
             >
-              <div
-                className="absolute top-0 left-0 h-1 w-16 rounded-r-full"
-                style={{ backgroundColor: item.accent, boxShadow: `0 0 14px ${item.accent}66` }}
-              />
-              <p
-                className="font-mono text-[10px] uppercase tracking-widest mb-4"
-                style={{ color: item.accent }}
-              >
+              <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#1FE26C]/50 via-zinc-800 to-transparent" />
+              <p className="font-mono text-[10px] uppercase tracking-widest mb-4 text-zinc-500">
                 {item.tag}
               </p>
               <h4 className="text-white font-bold text-lg mb-3">{item.title}</h4>
@@ -607,7 +602,7 @@ export default function RunToMaxLanding() {
             variants={fadeUp}
             className="text-center md:text-left mb-16 max-w-3xl"
           >
-            <p className="text-[#34C8FF] font-mono text-xs uppercase tracking-widest mb-4 font-semibold">
+            <p className="text-[#1FE26C] font-mono text-xs uppercase tracking-widest mb-4 font-semibold">
               Live, on the wrist
             </p>
             <h2 className="font-bebas text-5xl md:text-7xl uppercase tracking-tight mb-4">
@@ -629,7 +624,7 @@ export default function RunToMaxLanding() {
           >
             {[
               {
-                accent: "#34C8FF",
+                accent: "#1FE26C",
                 tag: "Live pace",
                 title: "GPS pipeline that earns the data.",
                 desc: "Doppler-derived speed from the very first fix — live pace is honest before you've covered 50 m. An anti-jitter accumulator throws out spike-fixes the moment they happen, so a 4:30 tempo never blinks 3:20. We can't make Apple's GPS chip better. We can stop the software from wasting it.",
@@ -641,13 +636,13 @@ export default function RunToMaxLanding() {
                 desc: "Pace, HR, distance, cadence, and zone pinned to your lock screen and the Dynamic Island the entire run. No swipe. No raise-to-wake. The data is there the second you glance.",
               },
               {
-                accent: "#FF8C42",
+                accent: "#1FE26C",
                 tag: "On-device AI",
                 title: "An AI coach with four jobs.",
                 desc: "Pre-run brief grounded in today's readiness. Post-run audit that explains what the numbers mean. Daily readiness with calendar context. Ask-anything Q&A. Gemini 2.5 Flash, your data, your context — never a generic plan.",
               },
               {
-                accent: "#FF3D7F",
+                accent: "#1FE26C",
                 tag: "Indoor",
                 title: "Treadmill calibration that holds up.",
                 desc: "Your outdoor stride length is learned and carried indoors. Cadence × calibrated stride keeps pace and distance honest on the belt — no manual adjust knob, no &ldquo;estimated&rdquo; asterisks.",
@@ -659,19 +654,19 @@ export default function RunToMaxLanding() {
                 desc: "Ask for a 5 km loop from where you stand. The app draws three real walk-routed loops at 0° / 120° / 240° bearings — actual streets, not a circle on a map. Falls back gracefully when the network of paths gets thin.",
               },
               {
-                accent: "#34C8FF",
+                accent: "#1FE26C",
                 tag: "Watch face",
                 title: "Complications that earn their spot.",
                 desc: "QuickStart launches a run from any face in one tap. WeeklyStats keeps your mileage ring visible all week. LastRun shows your last pace and HR at a glance. Built like running-watch UI — not afterthought widgets.",
               },
               {
-                accent: "#FF8C42",
+                accent: "#1FE26C",
                 tag: "Strava",
                 title: "Strava, both directions.",
                 desc: "Connect once. Outdoor runs auto-upload as GPX, indoor runs as manual activities. And your back-catalog imports the other way — so the training science has real history to work with from day one, not an empty graph.",
               },
               {
-                accent: "#FF3D7F",
+                accent: "#1FE26C",
                 tag: "Sensors",
                 title: "External HR straps, paired.",
                 desc: "Don't trust wrist optical at threshold? Pair a Bluetooth chest strap or arm band straight to the watch. The zone bar and every HR metric read from the strap the moment it connects — the pre-run check confirms the source before you start.",
@@ -748,7 +743,7 @@ export default function RunToMaxLanding() {
         id="waitlist"
         className="py-40 px-6 relative overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(31,226,108,0.08)_0%,rgba(52,200,255,0.06)_25%,rgba(255,61,127,0.04)_50%,transparent_80%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(31,226,108,0.08)_0%,rgba(31,226,108,0.06)_25%,rgba(31,226,108,0.04)_50%,transparent_80%)]" />
         <motion.div
           initial="hidden"
           whileInView="visible"
