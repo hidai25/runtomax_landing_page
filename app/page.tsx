@@ -530,7 +530,7 @@ export default function RunToMaxLanding() {
             {
               accent: "#1FE26C",
               tag: "Long-arc",
-              title: "Fitness, Fatigue & Form.",
+              title: "Building fitness, or digging a hole?",
               desc: "42-day chronic load, 7-day acute load, Form = CTL – ATL. The same Banister/PMC curves coaches charge a subscription for — built in, no add-on, no extra account.",
             },
             {
@@ -554,7 +554,7 @@ export default function RunToMaxLanding() {
             {
               accent: "#1FE26C",
               tag: "Hills",
-              title: "Grade-Adjusted Pace.",
+              title: "Your true effort on every hill.",
               desc: "Minetti polynomial. See your true effort on rolling terrain — finally compare a hilly tempo to a flat one without lying to yourself.",
             },
             {
@@ -566,7 +566,7 @@ export default function RunToMaxLanding() {
             {
               accent: "#1FE26C",
               tag: "Per-run",
-              title: "Training Effect, aerobic + anaerobic.",
+              title: "What each run actually trained.",
               desc: "Two scores, each 0–5, on every run. Did this build your aerobic base, sharpen your top end, or just bank junk miles? You see what the session actually trained — not just that you moved.",
             },
             {
