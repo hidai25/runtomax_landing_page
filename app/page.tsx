@@ -104,9 +104,10 @@ export default function RunToMaxLanding() {
             into a real running watch.
           </h1>
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
-            Race-watch training science on the watch you already own.
-            Lactate-threshold HR zones. Fitness, Fatigue & Form. Readiness
-            scored every morning. A plan that adapts before you ask.
+            Everything a dedicated running watch should do — pace and distance
+            you can trust, watch faces you customize, structured intervals,
+            lane-exact track mode — plus a coach that builds your plan and
+            explains every run. The recorder and the coach, finally in one app.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
             <a
