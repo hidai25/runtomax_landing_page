@@ -230,8 +230,8 @@ export default function RunToMaxLanding() {
             serious runners deserve.
           </h2>
           <p className="text-zinc-400 text-lg md:text-xl">
-            Race-watch-grade data fields, clean typography, structured
-            interval support, and lane-exact track mode. Hand-tuned for the
+            Distance and pace you can trust, race-watch-grade data fields you
+            arrange yourself, and lane-exact track mode. Hand-tuned for the
             workout you&apos;re actually doing — not a generic one.
           </p>
         </motion.div>
