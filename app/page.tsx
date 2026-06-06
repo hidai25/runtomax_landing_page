@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Check, ArrowDown } from "lucide-react";
@@ -20,16 +20,6 @@ export default function RunToMaxLanding() {
   const [email, setEmail] = useState("");
   const [botcheck, setBotcheck] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
-  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    let count = localStorage.getItem("runtomax_waitlist_local_count");
-    if (!count) {
-      count = Math.floor(2400 + Math.random() * 200).toString();
-      localStorage.setItem("runtomax_waitlist_local_count", count);
-    }
-    setWaitlistCount(parseInt(count));
-  }, []);
 
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,11 +53,6 @@ export default function RunToMaxLanding() {
       return;
     }
 
-    if (waitlistCount) {
-      const newCount = waitlistCount + 1;
-      localStorage.setItem("runtomax_waitlist_local_count", newCount.toString());
-      setWaitlistCount(newCount);
-    }
     setStatus("success");
   };
 
@@ -818,11 +803,6 @@ export default function RunToMaxLanding() {
             </AnimatePresence>
           </div>
 
-          <p className="text-zinc-500 text-sm mt-8 font-mono tracking-wide">
-            {waitlistCount
-              ? `Joined by ${waitlistCount.toLocaleString()} runners this month`
-              : " "}
-          </p>
 
           <div className="flex justify-center gap-4 mt-8 text-xs text-zinc-600 font-mono tracking-wider uppercase">
             <span>No spam.</span>
