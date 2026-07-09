@@ -18,9 +18,9 @@ export default function SupportPage() {
       intro={
         <p>
           RunToMax is built by one person. Email{" "}
-          <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> with a bug,
-          a question, or a feature request and you&apos;ll get a reply from the
-          developer, usually within a couple of days.
+          <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>{" "}
+          with a bug, a question, or a feature request and you&apos;ll get a
+          reply from the developer, usually within a couple of days.
         </p>
       }
     >
