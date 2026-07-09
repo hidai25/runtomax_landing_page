@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "../_components/LegalLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -62,7 +63,7 @@ export default function PrivacyPage() {
         &quot;our&quot; refer to Hidai Bar-Mor, an individual sole developer
         based in Israel, who develops and operates the RunToMax iPhone and
         Apple Watch application. Contact:{" "}
-        <a href="mailto:hello@runtomax.com">hello@runtomax.com</a>.
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
       <h2>Data we process</h2>
@@ -419,7 +420,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           To delete analytics data tied to your install ID, contact us at{" "}
-          <a href="mailto:hello@runtomax.com">hello@runtomax.com</a> and we
+          <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we
           will request deletion from PostHog.
         </li>
       </ul>
@@ -432,7 +433,7 @@ export default function PrivacyPage() {
         and similar laws. Because RunToMax does not maintain user accounts or
         a server, most of your data already lives on your device under your
         control. For analytics or third-party data, contact us at{" "}
-        <a href="mailto:hello@runtomax.com">hello@runtomax.com</a> and we will
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we will
         respond within a reasonable time.
       </p>
 
@@ -441,7 +442,7 @@ export default function PrivacyPage() {
         RunToMax is not directed to children under 13, and we do not knowingly
         collect personal information from children under 13. If you believe a
         child has provided personal information to us, contact{" "}
-        <a href="mailto:hello@runtomax.com">hello@runtomax.com</a> and we will
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we will
         delete it.
       </p>
 
@@ -473,7 +474,7 @@ export default function PrivacyPage() {
       <h2>Contact</h2>
       <p>
         Questions, requests, or concerns:{" "}
-        <a href="mailto:hello@runtomax.com">hello@runtomax.com</a>.
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
     </LegalLayout>
   );
