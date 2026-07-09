@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "./_components/GoogleAnalytics";
+import { CONTACT_EMAIL } from "@/app/_lib/contact";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bebas = Bebas_Neue({
@@ -91,7 +92,7 @@ const jsonLd = {
       url: SITE_URL,
       logo: `${SITE_URL}/iphone-today.png`,
       founder: { "@type": "Person", name: "Hidai Bar-Mor" },
-      email: "hello@runtomax.com",
+      email: CONTACT_EMAIL,
     },
     {
       "@type": "WebSite",

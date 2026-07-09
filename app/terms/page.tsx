@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "../_components/LegalLayout";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -270,7 +271,7 @@ export default function TermsPage() {
       <h2>19. Contact</h2>
       <p>
         Questions about these Terms:{" "}
-        <a href="mailto:hello@runtomax.com">hello@runtomax.com</a>.
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
     </LegalLayout>
   );

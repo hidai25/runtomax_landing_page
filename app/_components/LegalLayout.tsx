@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
 type LegalLayoutProps = {
   title: string;
@@ -59,6 +60,9 @@ export default function LegalLayout({
             runto<span className="text-zinc-400">max</span>
           </Link>
           <div className="flex gap-6 text-sm text-zinc-500 font-medium">
+            <Link href="/support" className="hover:text-white transition-colors">
+              Support
+            </Link>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>
@@ -66,10 +70,10 @@ export default function LegalLayout({
               Terms
             </Link>
             <a
-              href="mailto:hello@runtomax.com"
+              href={CONTACT_MAILTO}
               className="hover:text-white transition-colors"
             >
-              hello@runtomax.com
+              {CONTACT_EMAIL}
             </a>
           </div>
           <div className="text-zinc-700 text-xs font-mono tracking-widest uppercase">
