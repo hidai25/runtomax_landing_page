@@ -17,10 +17,10 @@ export default function SupportPage() {
       effectiveDate="July 9, 2026"
       intro={
         <p>
-          RunToMax is built by one person. Email{" "}
+          Email{" "}
           <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>{" "}
           with a bug, a question, or a feature request and you&apos;ll get a
-          reply from the developer, usually within a couple of days.
+          reply from the developer as soon as possible.
         </p>
       }
     >
