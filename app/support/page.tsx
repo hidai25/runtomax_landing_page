@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 export const metadata: Metadata = {
   title: "Support",
   description:
-    "Get help with RunToMax: contact the developer, disconnect Strava, manage your subscription, and find the privacy policy.",
+    "Get help with RunToMax: contact the developer, manage your subscription, and find the privacy policy.",
   alternates: { canonical: "/support/" },
   robots: { index: true, follow: true },
 };
@@ -34,6 +34,11 @@ export default function SupportPage() {
         (Settings → About), and what you were doing when it happened.
       </p>
 
+      {/* Strava section PARKED until the Strava API app is approved and the
+          feature flag ships ON in production (see the app repo's Strava
+          unlock checklist). Documenting a disconnect flow for a feature the
+          store build doesn't have reads as inaccurate metadata to App Review
+          — restore this block the day Strava goes live.
       <h2>Disconnecting Strava</h2>
       <p>
         In the app: <strong>Settings → Strava → Disconnect</strong>. This
@@ -41,17 +46,11 @@ export default function SupportPage() {
         further uploads.
       </p>
       <p>
-        You can also revoke RunToMax&apos;s access directly from Strava at{" "}
-        <a
-          href="https://www.strava.com/settings/apps"
-          target="_blank"
-          rel="noreferrer"
-        >
-          strava.com/settings/apps
-        </a>
-        . Activities already uploaded to Strava stay there until you delete
-        them on Strava.
+        You can also revoke RunToMax&apos;s access directly from Strava at
+        strava.com/settings/apps. Activities already uploaded to Strava stay
+        there until you delete them on Strava.
       </p>
+      */}
 
       <h2>Managing your subscription</h2>
       <p>
