@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | RunToMax",
   },
   description:
-    "RunToMax turns your Apple Watch into a real running watch. Adaptive 5K–marathon training plans, VO₂ max, training load, HR zones, structured intervals, lane-exact track mode, and a coach that explains every run. Ships 2026.",
+    "RunToMax is an 18+ Apple Watch running app with adaptive 5K–marathon plans, race-watch-grade metrics, structured intervals, and a coach that explains every run. Ships 2026.",
   applicationName: "RunToMax",
   authors: [{ name: "Hidai Bar-Mor" }],
   creator: "Hidai Bar-Mor",
@@ -109,7 +109,12 @@ const jsonLd = {
       applicationCategory: "HealthApplication",
       applicationSubCategory: "Running",
       description:
-        "RunToMax is an Apple Watch and iPhone running app with race-watch-grade metrics, adaptive training plans, structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run.",
+        "RunToMax is an adult-only (18+) Apple Watch and iPhone running app with race-watch-grade metrics, adaptive training plans, structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run.",
+      contentRating: "18+",
+      audience: {
+        "@type": "PeopleAudience",
+        suggestedMinAge: 18,
+      },
       url: SITE_URL,
       author: { "@id": `${SITE_URL}/#org` },
       releaseNotes: "Ships 2026. Join the waitlist for early TestFlight access.",

@@ -28,6 +28,10 @@ export default function PrivacyPage() {
     >
       <h2>Summary</h2>
       <ul>
+        <li>
+          RunToMax 1.0 is for adults aged 18 and older. Its age gate stores
+          only the eligibility result, policy version, and confirmation time.
+        </li>
         <li>No RunToMax account, email login, or password.</li>
         <li>
           Workouts, GPS routes, heart rate, and health history are stored in
@@ -95,6 +99,13 @@ export default function PrivacyPage() {
         the iPhone app, Watch app, and widgets. RunToMax does not operate an
         account database containing this profile.
       </p>
+      <p>
+        A profile birth year is optional physiology data for heart-rate-zone
+        and calorie calculations. It is separate from the adult-eligibility
+        check. The eligibility check does not ask for or retain a date of
+        birth; it records only whether you confirmed you are 18 or older, the
+        policy version, and the confirmation time.
+      </p>
 
       <h3>Cloud coaching (optional, included with Pro)</h3>
       <p>
@@ -148,9 +159,10 @@ export default function PrivacyPage() {
       </p>
       <p>
         Google&apos;s current Gemini API terms require users of API clients to
-        be at least 18. Cloud coaching is therefore available only to users who
-        are 18 or older. You can withdraw consent at any time in Settings →
-        Privacy → AI coaching; future cloud requests stop immediately.
+        be at least 18. RunToMax 1.0 is therefore an adult-only product, not
+        merely an app with an adult-only coaching toggle. You can withdraw
+        cloud-coaching consent at any time in Settings → Privacy → AI coaching;
+        future cloud requests stop immediately.
       </p>
 
       <h3>Weather and map services (Apple)</h3>
@@ -333,12 +345,26 @@ export default function PrivacyPage() {
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h2>Children</h2>
+      <h2>Age eligibility</h2>
       <p>
-        RunToMax is not directed to children under 13 and we do not knowingly
-        collect their personal information. Users under the age of majority
-        must have a parent or legal guardian agree to the Terms where required.
-        Cloud coaching is restricted to users aged 18 or older.
+        RunToMax 1.0 is intended only for adults aged 18 and older. We do not
+        knowingly provide the app to or process personal information from
+        anyone under 18, and parental consent does not make an under-18 person
+        eligible for this release. The iPhone app fails closed until an adult
+        eligibility result is established. On iOS 26 or later, you may use
+        Apple&apos;s Declared Age Range service, which shares a coarse range rather
+        than a birth date. RunToMax immediately reduces the response to an
+        eligibility result and does not retain the range or its declaration
+        source. If Apple&apos;s service is unavailable or declined, the app offers
+        an explicit adult confirmation. The Apple Watch app requires the
+        phone&apos;s current eligibility result before a workout can start, and
+        complications hide cached run statistics until that result is current.
+      </p>
+      <p>
+        If we learn that an under-18 person has used RunToMax or provided data,
+        we will disable access and take appropriate steps to delete data under
+        our control. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> for an
+        age-eligibility or deletion concern.
       </p>
 
       <h2>International processing</h2>

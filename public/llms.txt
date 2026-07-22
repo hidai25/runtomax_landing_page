@@ -2,6 +2,8 @@
 
 > RunToMax turns Apple Watch and iPhone into a real running training platform: race-watch-grade metrics, adaptive training plans (5K, 10K, half, marathon), structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run. Built by an experienced runner. Ships 2026.
 
+RunToMax 1.0 is an adult-only product for runners aged 18 and older. Its app-wide age gate runs before HealthKit, subscriptions, analytics, training plans, and optional Gemini coaching. On iOS 26+, it can use Apple's privacy-preserving Declared Age Range service; RunToMax immediately reduces that range to an eligibility result and does not retain the range, its source, or a date of birth. Older systems use a data-minimized adult confirmation.
+
 ## What RunToMax does
 
 - Adaptive training plans for 5K, 10K, half marathon, and marathon, built around the runner's training load and rebalanced when life gets in the way.
@@ -17,6 +19,7 @@
 ## Who it's for
 
 - Serious runners who do tempo runs, intervals, long runs, and chase finish-line times.
+- Adults aged 18 and older; the launch release is not offered to children or teenagers.
 - Apple Watch and iPhone users who want race-watch-grade training without buying a dedicated running watch.
 - Not for casual joggers or step-counters.
 

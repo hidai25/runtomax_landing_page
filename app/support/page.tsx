@@ -28,6 +28,24 @@ export default function SupportPage() {
       <p>
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>
       </p>
+
+      <h2>Adult eligibility</h2>
+      <p>
+        RunToMax 1.0 is available only to adults aged 18 and older. The first
+        iPhone screen establishes 18+ eligibility before HealthKit,
+        subscriptions, analytics, or coaching can start. On iOS 26 or later,
+        it can use Apple&apos;s privacy-preserving Declared Age Range service; if
+        that service is unavailable or declined, an adult can confirm manually.
+        RunToMax does not retain Apple&apos;s range or its source. The gate keeps
+        only the eligibility result, policy version, and confirmation time—not
+        a date of birth—and mirrors that result to the paired Apple Watch.
+      </p>
+      <p>
+        The optional birth year in the runner profile is separate on-device
+        physiology data used for heart-rate and calorie calculations. If you
+        selected the wrong age-gate answer, use <strong>Review my age choice</strong>
+        on the locked screen. People under 18 cannot use this release.
+      </p>
       <p>
         If you&apos;re reporting a bug, it helps to include your iPhone and
         Apple Watch models, your iOS and watchOS versions, the RunToMax version

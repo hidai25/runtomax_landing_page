@@ -83,7 +83,7 @@ export default function RunToMaxLanding() {
           className="flex-1 w-full text-center lg:text-left z-10"
         >
           <p className="text-[#1FE26C] font-mono text-xs uppercase tracking-widest mb-6 font-semibold">
-            For runners who measure things · Apple Watch · 2026
+            For adult runners 18+ · Apple Watch · 2026
           </p>
           <h1 className="font-bebas text-6xl md:text-8xl tracking-tight leading-[0.85] mb-8 uppercase">
             Turn your Apple Watch <br className="hidden md:block" />
@@ -94,6 +94,9 @@ export default function RunToMaxLanding() {
             you can trust, watch faces you customize, structured intervals,
             lane-exact track mode — plus a coach that builds your plan and
             explains every run. The recorder and the coach, finally in one app.
+          </p>
+          <p className="text-zinc-500 text-sm max-w-2xl mx-auto lg:mx-0 -mt-6 mb-10">
+            RunToMax 1.0 is for adults aged 18 and older.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
             <a
@@ -301,7 +304,7 @@ export default function RunToMaxLanding() {
             <p className="text-zinc-400 text-lg md:text-xl">
               Not renders. Real frames on Apple Watch Ultra — the pre-run
               sensor check, the start, and four live layouts you flick between
-              mid-effort with the Digital Crown. 13+ ship in the app.
+              mid-effort with the Digital Crown. More than thirteen ship in the app.
             </p>
           </motion.div>
 
@@ -741,7 +744,8 @@ export default function RunToMaxLanding() {
           <p className="text-zinc-400 text-base mb-10 leading-relaxed">
             We&apos;re shipping in 2026. Waitlist members get early TestFlight
             builds, a founder offer on Pro, and a
-            hand-numbered first-1000 badge in the app.
+            hand-numbered first-1000 badge in the app. Registration and app
+            access are for adults aged 18 and older.
           </p>
 
           <div className="min-h-[60px] flex justify-center items-center">
@@ -856,7 +860,7 @@ export default function RunToMaxLanding() {
             </a>
           </div>
           <div className="text-zinc-700 text-xs font-mono tracking-widest uppercase">
-            © 2026 RunToMax. All splits sacred.
+            © 2026 RunToMax · Adults 18+ · All splits sacred.
           </div>
         </div>
       </footer>

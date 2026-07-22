@@ -34,15 +34,22 @@ export default function TermsPage() {
 
       <h2>2. Eligibility</h2>
       <p>
-        You must be at least 13 years old to use RunToMax. If you are under
-        the age of majority where you live, you must have a parent or legal
-        guardian agree to these Terms on your behalf.
+        <strong>You must be at least 18 years old to use RunToMax.</strong> This
+        requirement applies to the entire iPhone app, Apple Watch app,
+        training plans, subscriptions, and cloud or on-device coaching. The
+        launch version is not offered to children or teenagers, and a parent
+        or guardian cannot consent to its use by someone under 18.
       </p>
       <p>
-        Google&apos;s current Gemini API terms require users of API clients to
-        be at least 18. You must therefore be 18 or older to enable RunToMax
-        cloud coaching. Runners under 18 can use the rest of RunToMax and its
-        deterministic on-device coaching, subject to the paragraph above.
+        Before any HealthKit authorization, subscription, analytics, training,
+        or coaching service starts, the app checks the 18+ boundary. On iOS 26
+        or later, you may use Apple&apos;s privacy-preserving Declared Age Range
+        service; if it is unavailable or you decline it, you may explicitly
+        confirm that you are an adult. RunToMax immediately reduces any Apple
+        response to an eligibility result and does not retain the range or its
+        source. It keeps only that result, the age-policy version, and the
+        confirmation time—not your date of birth. An optional birth year used
+        locally for physiology calculations is separate from this record.
       </p>
 
       <h2>3. The app</h2>
