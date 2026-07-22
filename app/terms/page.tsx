@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      effectiveDate="May 5, 2026"
+      effectiveDate="July 22, 2026"
       intro={
         <p>
           These Terms govern your use of the RunToMax iPhone and Apple Watch
@@ -38,16 +38,24 @@ export default function TermsPage() {
         the age of majority where you live, you must have a parent or legal
         guardian agree to these Terms on your behalf.
       </p>
+      <p>
+        Google&apos;s current Gemini API terms require users of API clients to
+        be at least 18. You must therefore be 18 or older to enable RunToMax
+        cloud coaching. Runners under 18 can use the rest of RunToMax and its
+        deterministic on-device coaching, subject to the paragraph above.
+      </p>
 
       <h2>3. The app</h2>
       <p>
         RunToMax is a running app that records workouts on Apple Watch and
         iPhone, computes training metrics, generates adaptive plans, and
-        offers optional integrations with third-party services (Strava,
-        Google Gemini for AI coaching, Apple WeatherKit, and Apple
-        StoreKit/RevenueCat for subscriptions). The app stores your training
-        data on your device through Apple HealthKit. We do not run a server
-        that stores your training data.
+        offers Apple WeatherKit context and optional Google Gemini cloud
+        coaching. Purchases use Apple StoreKit. The launch version does not
+        provide a public Strava integration or use RevenueCat. Your training
+        history is stored through Apple HealthKit and local app storage. A
+        secured RunToMax proxy processes minimized cloud-coaching requests
+        transiently; it is not a RunToMax account or cloud training-history
+        service.
       </p>
 
       <h2>4. License</h2>
@@ -60,11 +68,13 @@ export default function TermsPage() {
 
       <h2>5. Subscriptions and purchases</h2>
       <p>
-        RunToMax offers paid subscriptions (such as Pro and AI Coaching) and
-        non-recurring purchases (such as a lifetime Pro license) through
-        Apple&apos;s App Store using StoreKit. Pricing, billing cycles, and
-        free-trial terms are shown in the app at the point of purchase and
-        are also visible on your Apple ID&apos;s subscription page.
+        RunToMax offers one Pro subscription through Apple&apos;s App Store
+        using StoreKit, with monthly and annual billing options. Pro includes
+        both Cockpit and cloud coaching; cloud coaching is not sold as a
+        separate subscription. The launch version does not offer a Lifetime
+        purchase. Pricing, billing cycles, and any introductory terms are
+        shown in the app before purchase and on your Apple ID subscription
+        page.
       </p>
       <p>
         Apple processes all payments. Your purchase is also subject to{" "}
@@ -85,9 +95,11 @@ export default function TermsPage() {
       <p>
         RunToMax does not require an account. The data you generate (workouts,
         routes, profile, settings) lives on your device. You are responsible
-        for maintaining device security, for backing up your iCloud Health
-        data through Apple if you wish to preserve it, and for what you choose
-        to share with optional third-party integrations like Strava.
+        for maintaining device security and for backing up your iCloud Health
+        data through Apple if you wish to preserve it. If you explicitly
+        enable cloud coaching, the minimized data described in the{" "}
+        <a href="/privacy">Privacy Policy</a> is processed to provide that
+        feature.
       </p>
 
       <h2>7. Acceptable use</h2>
@@ -102,8 +114,8 @@ export default function TermsPage() {
           interfere with other users or third-party services.
         </li>
         <li>
-          Misrepresent activity data (for example, by spoofing GPS or
-          fabricating workouts) when uploading to Strava through RunToMax.
+          Attempt to bypass subscription checks, app verification, rate
+          limits, or other safeguards protecting cloud coaching.
         </li>
         <li>
           Resell, rent, or sublicense the app or your subscription.
@@ -137,19 +149,11 @@ export default function TermsPage() {
 
       <h2>9. Third-party services</h2>
       <p>
-        RunToMax integrates with services operated by Apple, Strava, Google,
-        and (where enabled) RevenueCat and a product analytics provider.
-        Those services have their own terms and privacy policies. RunToMax is
-        not responsible for the availability, accuracy, or content of those
-        third-party services. If you connect Strava, you agree to{" "}
-        <a
-          href="https://www.strava.com/legal/terms"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Strava&apos;s Terms
-        </a>
-        . If you enable AI Coaching, you agree to{" "}
+        RunToMax uses services operated by Apple and, depending on your
+        choices, Google Gemini and PostHog. Those services have their own terms
+        and privacy policies. RunToMax is not responsible for the availability,
+        accuracy, or content of third-party services. If you enable cloud
+        coaching, you agree to{" "}
         <a
           href="https://ai.google.dev/gemini-api/terms"
           target="_blank"
@@ -169,8 +173,8 @@ export default function TermsPage() {
       </p>
       <p>
         You retain ownership of the workout data you generate. By using
-        optional integrations (such as Strava upload or AI Coaching) you
-        grant us the limited right to transmit the data described in our{" "}
+        cloud coaching, you grant us the limited right to transmit the
+        minimized data described in our{" "}
         <a href="/privacy">Privacy Policy</a> to those services on your
         behalf, solely so the integration can function.
       </p>

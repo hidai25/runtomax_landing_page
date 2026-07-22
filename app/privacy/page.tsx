@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How RunToMax handles your data: HealthKit, location, Strava, Google Gemini, WeatherKit, subscriptions, and analytics.",
+    "How RunToMax handles HealthKit, location, optional cloud coaching, WeatherKit, subscriptions, consent-based analytics, and waitlist data.",
   alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
 };
@@ -14,46 +14,41 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="May 5, 2026"
+      effectiveDate="July 22, 2026"
       intro={
         <p>
-          RunToMax is a running app for iPhone and Apple Watch. We do not run
-          our own servers, we do not sell data, and we do not show ads. Your
-          health and location data stays in Apple Health on your device. The
-          only things that ever leave your phone are the optional integrations
-          you turn on yourself, and anonymous product analytics that you can
-          disable in Settings.
+          RunToMax is a running app for iPhone and Apple Watch. It does not
+          require a RunToMax account, show ads, or sell personal data. Your
+          workout history, routes, and health information are stored through
+          Apple Health on your devices. Limited data leaves your device only
+          for the features described below, with your permission where
+          required.
         </p>
       }
     >
       <h2>Summary</h2>
       <ul>
+        <li>No RunToMax account, email login, or password.</li>
         <li>
-          No RunToMax account. No email login. No password.
+          Workouts, GPS routes, heart rate, and health history are stored in
+          Apple Health and local app storage.
         </li>
         <li>
-          Workouts, GPS routes, and heart rate are stored in Apple HealthKit
-          on your device.
+          Pro is one Apple subscription, offered monthly or annually. It
+          includes both Cockpit and optional cloud coaching.
         </li>
         <li>
-          Optional Strava sync uploads your activities to Strava if you connect
-          it.
+          Cloud coaching is off until you explicitly opt in. It sends a
+          minimized summary through a secured RunToMax proxy to Google Gemini;
+          the app does not contact Gemini directly in production.
         </li>
         <li>
-          Optional AI Coaching (Pro) sends anonymized run statistics to Google
-          Gemini.
+          Anonymous product analytics are off until you opt in. RunToMax uses
+          PostHog US Cloud with IP geolocation disabled.
         </li>
         <li>
-          Subscriptions are processed by Apple. We never see your payment
-          information.
-        </li>
-        <li>
-          Anonymous product analytics (PostHog, EU cloud) and crash reports
-          help us improve the app. You can opt out in Settings.
-        </li>
-        <li>
-          No advertising, no third-party trackers, no IDFA, no push
-          notifications.
+          The launch version has no public Strava integration, RevenueCat,
+          Lifetime purchase, advertising, IDFA, or website analytics.
         </li>
       </ul>
 
@@ -66,110 +61,78 @@ export default function PrivacyPage() {
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h2>Data we process</h2>
+      <h2>Data the app processes</h2>
 
-      <h3>Health and fitness data (HealthKit)</h3>
+      <h3>Health and fitness data (Apple HealthKit)</h3>
       <p>
-        With your permission, RunToMax reads the following from Apple
-        HealthKit: workouts, workout routes (GPS), heart rate, active energy,
-        distance, steps, running speed, body mass, resting heart rate, stride
-        length, vertical oscillation, ground contact time, heart rate
-        variability (SDNN), sleep, VO₂ Max, and running power. We write workout
-        summaries (run, heart rate, distance, running-form metrics) back into
-        Health.
+        With your permission, RunToMax reads data needed for its training and
+        recovery features, including workouts, workout routes, heart rate,
+        active energy, distance, steps, running speed, body mass, resting heart
+        rate, stride length, vertical oscillation, ground contact time, heart
+        rate variability, sleep, VO₂ max, and running power. RunToMax writes
+        workouts and related samples that it records back to Apple Health.
       </p>
       <p>
-        HealthKit data is encrypted on your device and is never uploaded to a
-        RunToMax server, because we do not operate one. You can revoke
-        HealthKit access at any time in iOS Settings → Privacy &amp; Security
-        → Health.
+        RunToMax does not use HealthKit data for advertising or sell it to data
+        brokers. You can review or revoke Health access in iOS Settings →
+        Privacy &amp; Security → Health.
       </p>
 
-      <h3>Location (CoreLocation)</h3>
+      <h3>Location and routes (Core Location)</h3>
       <p>
-        During outdoor runs, RunToMax records precise GPS coordinates,
-        elevation (via the barometer and GPS), and the resulting route
-        polyline. Location is recorded only while you are using the app or
-        actively recording a workout. We do not track location in the
-        background outside of an active workout. Routes are stored in HealthKit
-        as part of the workout.
+        During an outdoor workout, RunToMax processes precise GPS coordinates,
+        elevation, speed, and the resulting route. Location is used only while
+        you are using the app or actively recording a workout. It is not used
+        to track you outside an active workout. Completed routes are stored in
+        Apple Health as part of the workout.
       </p>
 
-      <h3>Profile data you enter</h3>
+      <h3>Profile and training settings</h3>
       <p>
-        Your first name, avatar photo, max heart rate, resting heart rate, body
-        mass, race goals, shoe inventory, heart-rate zone settings, and unit
-        preferences are stored locally on your device in an iOS App Group
-        (shared between the iPhone app, the Watch app, and widgets). This data
-        is never transmitted to us.
+        Details such as your first name, avatar, birth year, biological sex,
+        body mass, heart-rate settings, race goals, plan answers, shoes, and
+        unit preferences are stored locally in an Apple App Group shared by
+        the iPhone app, Watch app, and widgets. RunToMax does not operate an
+        account database containing this profile.
       </p>
 
-      <h3>Account and authentication</h3>
+      <h3>Cloud coaching (optional, included with Pro)</h3>
       <p>
-        RunToMax does not provide an account system. There is no Sign in with
-        Apple, no email login, and no RunToMax password.
-      </p>
-
-      <h3>Strava (optional)</h3>
-      <p>
-        If you choose to connect Strava, RunToMax authenticates with Strava
-        using OAuth (Apple&apos;s ASWebAuthenticationSession). Tokens are
-        stored in your iOS Keychain. Once connected, RunToMax can:
-      </p>
-      <ul>
-        <li>
-          Send to Strava: a GPX file of your run, distance, duration, start
-          time, name, description, and indoor flag, plus segment-effort
-          queries.
-        </li>
-        <li>
-          Receive from Strava: your starred segments, segment details, athlete
-          name, and personal records.
-        </li>
-      </ul>
-      <p>
-        You can disconnect Strava at any time in RunToMax Settings, or revoke
-        RunToMax from{" "}
-        <a
-          href="https://www.strava.com/settings/apps"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Strava&apos;s My Apps page
-        </a>
-        . Strava&apos;s handling of your data is governed by their{" "}
-        <a
-          href="https://www.strava.com/legal/privacy"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Privacy Policy
-        </a>
-        .
-      </p>
-
-      <h3>AI Coaching — Google Gemini (optional, Pro feature)</h3>
-      <p>
-        If you enable AI Coaching, RunToMax sends an aggregated, anonymized
-        summary of your run to the Google Gemini API
-        (<code>generativelanguage.googleapis.com</code>) so the model can
-        generate a coaching note. The summary may include: pace, average and
-        maximum heart rate, cadence, elevation gain, stride length, vertical
-        oscillation, ground contact time, time-in-zone, splits, training
-        readiness/CTL/TSB, summaries of similar past runs, and weather
-        (temperature and humidity) at the start of the run.
+        Cockpit and cloud coaching are included in the same Pro subscription;
+        cloud coaching is not a separate subscription. A Pro entitlement alone
+        does not send data. You must also explicitly enable cloud coaching. If
+        you do not enable it—or if the secured service is unavailable—the app
+        uses its deterministic on-device coaching instead.
       </p>
       <p>
-        We do <strong>not</strong> send your name, email, raw GPS coordinates,
-        individual heart-rate samples, or any account identifier. RunToMax does
-        not retain Gemini prompts, because RunToMax has no server. Google
-        processes the request under their{" "}
+        When enabled, RunToMax prepares a minimized coaching context from
+        finalized, validated facts. It may include pace, heart-rate summaries,
+        cadence, elevation gain, running-form averages, time in heart-rate
+        zones, splits, training load and readiness, sleep and recovery
+        summaries, recent comparable-run summaries, plan context, and weather.
+        The language model is asked to explain those supplied facts; it is not
+        the source of record for distance, pace, splits, recovery, or plan
+        calculations.
+      </p>
+      <p>
+        The app sends that context over HTTPS to a secured RunToMax coaching
+        proxy, which verifies the app request, enforces entitlement and rate
+        limits, and forwards it to a billing-enabled Google Gemini service. The
+        production app does not contain a Gemini API secret and does not call
+        Gemini directly. The proxy is designed not to persist prompt or
+        response content in a RunToMax training-history database.
+      </p>
+      <p>
+        We do <strong>not</strong> include your name, email address, raw GPS
+        coordinates, route polyline, contacts, photos, or individual
+        heart-rate samples in the coaching request. Google may process the
+        request and limited technical or abuse-monitoring logs under its{" "}
         <a
           href="https://ai.google.dev/gemini-api/terms"
           target="_blank"
           rel="noreferrer"
         >
-          Gemini API Additional Terms of Service
+          Gemini API Additional Terms
         </a>{" "}
         and{" "}
         <a
@@ -179,161 +142,121 @@ export default function PrivacyPage() {
         >
           Privacy Policy
         </a>
-        . You can disable AI Coaching at any time in Settings.
+        . RunToMax uses a paid Gemini service so Google states that prompts and
+        responses are not used to improve its products. Google may retain data
+        for a limited period for abuse prevention and legal compliance.
+      </p>
+      <p>
+        Google&apos;s current Gemini API terms require users of API clients to
+        be at least 18. Cloud coaching is therefore available only to users who
+        are 18 or older. You can withdraw consent at any time in Settings →
+        Privacy → AI coaching; future cloud requests stop immediately.
       </p>
 
-      <h3>Weather (Apple WeatherKit)</h3>
+      <h3>Weather and map services (Apple)</h3>
       <p>
-        RunToMax requests temperature, humidity, and wind at the starting
-        coordinate of your run from Apple WeatherKit. This is used to compute
-        your training readiness score and, if AI Coaching is enabled, included
-        in the prompt sent to Gemini. Apple&apos;s use of this query is
-        governed by Apple&apos;s{" "}
+        RunToMax may send the coordinate or map region needed to Apple Maps or
+        WeatherKit to render a map, obtain elevation context, or request
+        temperature, humidity, and wind for heat-aware guidance. It does not
+        send your training history or RunToMax identity with that query. See
+        Apple&apos;s{" "}
         <a
           href="https://www.apple.com/legal/privacy/data/en/weather/"
           target="_blank"
           rel="noreferrer"
         >
-          WeatherKit privacy notice
+          Weather privacy notice
         </a>
         .
       </p>
 
-      <h3>Subscriptions and in-app purchases</h3>
+      <h3>Subscriptions</h3>
       <p>
-        RunToMax offers Pro (monthly, annual, lifetime) and AI Coaching
-        (monthly, annual) subscriptions through Apple StoreKit. Apple processes
-        your payment, manages your subscription, and shares only a subscription
-        status with the app. We never receive your credit card, billing
-        address, or Apple ID.
-      </p>
-      <p>
-        If our build includes RevenueCat (a subscription-management library),
-        RevenueCat receives an anonymous app user ID, your purchase receipt,
-        and your entitlement status to validate subscriptions across devices.
-        RevenueCat&apos;s practices are governed by their{" "}
-        <a
-          href="https://www.revenuecat.com/privacy/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Privacy Policy
-        </a>
-        .
+        RunToMax offers Pro as a monthly or annual auto-renewing subscription
+        through Apple StoreKit. Pro includes Cockpit and cloud coaching. Apple
+        processes payment and provides the app with purchase and entitlement
+        status. RunToMax never receives your full card number, billing address,
+        or Apple ID. The launch build does not use RevenueCat and does not offer
+        a Lifetime purchase.
       </p>
 
-      <h3>Bluetooth heart-rate strap (optional)</h3>
+      <h3>Bluetooth heart-rate monitors</h3>
       <p>
-        RunToMax can connect to a Bluetooth Low Energy heart-rate monitor
-        (standard GATT 0x180D service) for higher-accuracy heart rate. The
-        strap&apos;s name and peripheral UUID are stored locally for
-        auto-reconnect. Heart-rate samples are written to HealthKit. Nothing
-        from the strap is transmitted off your device.
+        If you pair a compatible Bluetooth heart-rate monitor, its name and
+        peripheral identifier are stored locally for reconnection. Samples are
+        used during the workout and may be written to Apple Health. They are
+        not sent to RunToMax.
       </p>
 
-      <h3>Apple Watch ↔ iPhone bridge</h3>
+      <h3>Apple Watch, iPhone, and widgets</h3>
       <p>
-        RunToMax uses WatchConnectivity and a shared App Group to move workout
-        data (UUID, times, distance, heart rate, cadence, elevation, splits,
-        post-run findings) from the Watch app to the iPhone app, and then into
-        HealthKit. This communication is on-device only.
+        WatchConnectivity and the shared App Group transfer workout data and
+        settings between your Apple devices. Widgets read local Apple Health
+        and App Group data. These features do not send your training history to
+        a RunToMax account server.
       </p>
 
-      <h3>Widgets</h3>
-      <p>
-        Quick Start, Weekly Stats, and Last Run widgets read from your local
-        HealthKit and App Group. Widgets do not make network requests.
-      </p>
-
-      <h3>Product analytics and crash reporting</h3>
+      <h3>Consent-based product analytics</h3>
       <p>
         RunToMax uses{" "}
         <a href="https://posthog.com" target="_blank" rel="noreferrer">
           PostHog
         </a>{" "}
-        as its product analytics provider, hosted on PostHog&apos;s EU cloud
-        (<code>eu.i.posthog.com</code>) so your analytics data is processed
-        within the European Union. PostHog helps us understand how the app is
-        used so we can improve it. PostHog receives:
-      </p>
-      <ul>
-        <li>
-          Anonymous events describing what happens in the app (for example:
-          &quot;started_run,&quot; &quot;opened_coaching,&quot;
-          &quot;connected_strava,&quot; &quot;subscribed_pro&quot;).
-        </li>
-        <li>
-          A randomly generated install identifier (not your IDFA, not your
-          Apple ID).
-        </li>
-        <li>
-          Device model, operating system version, app version, language, and
-          time zone.
-        </li>
-        <li>
-          Approximate location (city or country level) derived by PostHog from
-          your IP address.
-        </li>
-        <li>
-          Session start/end and session duration.
-        </li>
-      </ul>
-      <p>
-        We do <strong>not</strong> send your name, email, raw GPS coordinates,
-        run routes, individual heart-rate samples, or other HealthKit data to
-        PostHog. Event properties are limited to feature-usage signals; we
-        deliberately do not include health or performance metrics in event
-        properties. Autocapture (which would record every tap automatically)
-        is disabled, and session replay is off by default.
+        US Cloud only after you explicitly opt in. Analytics may include a
+        random installation identifier, categorical feature events, app and OS
+        versions, device class, language, and time zone. RunToMax configures
+        PostHog not to use the request IP for geolocation. Autocapture is off,
+        and session replay is disabled in production.
       </p>
       <p>
-        PostHog&apos;s handling of this data is governed by their{" "}
+        We do not send HealthKit values, pace, heart rate, workout distance,
+        routes, location, coaching text, name, or email to PostHog. You can turn
+        analytics off at any time in Settings → Privacy → Anonymous analytics.
+        See PostHog&apos;s{" "}
+        <a href="https://posthog.com/privacy" target="_blank" rel="noreferrer">
+          Privacy Policy
+        </a>
+        .
+      </p>
+
+      <h2>Website and waitlist</h2>
+      <p>
+        The RunToMax website does not use Google Analytics, advertising
+        trackers, or non-essential analytics cookies. If you join the waitlist,
+        the email address you submit is processed by{" "}
+        <a href="https://web3forms.com" target="_blank" rel="noreferrer">
+          Web3Forms
+        </a>{" "}
+        to deliver the signup to RunToMax. We use it only for TestFlight,
+        launch, and closely related RunToMax updates. You can ask us to remove
+        it at any time by emailing{" "}
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>. See Web3Forms&apos;{" "}
         <a
-          href="https://posthog.com/privacy"
+          href="https://web3forms.com/privacy"
           target="_blank"
           rel="noreferrer"
         >
           Privacy Policy
-        </a>{" "}
-        and{" "}
-        <a href="https://posthog.com/dpa" target="_blank" rel="noreferrer">
-          Data Processing Addendum
         </a>
         .
       </p>
-      <p>
-        We may also collect crash reports and stability diagnostics (a stack
-        trace, device model, and OS version — no personal content) to fix
-        bugs.
-      </p>
-      <p>
-        You can opt out of analytics in RunToMax Settings → Privacy →
-        Analytics. Opting out stops further events from being sent from your
-        device.
-      </p>
 
-      <h2>What we do not collect</h2>
+      <h2>What RunToMax does not use at launch</h2>
       <ul>
-        <li>No advertising, no IDFA, no third-party advertising trackers.</li>
-        <li>
-          No Firebase Analytics, Crashlytics, Sentry, Amplitude, or
-          TelemetryDeck (unless explicitly disclosed above).
-        </li>
-        <li>No push notifications. APNs is not enabled.</li>
-        <li>No CloudKit or iCloud sync of RunToMax data today.</li>
-        <li>No camera, microphone, contacts, or calendar access.</li>
-        <li>
-          No Photos library access beyond letting you pick a single avatar
-          image via the system PhotosPicker (we do not browse or scan your
-          library).
-        </li>
+        <li>No advertising, IDFA, or third-party advertising trackers.</li>
+        <li>No public Strava integration in the launch build.</li>
+        <li>No RevenueCat subscription processing.</li>
+        <li>No Lifetime purchase or separate AI Coaching subscription.</li>
+        <li>No Google Analytics on the website.</li>
+        <li>No RunToMax email/password account or cloud training-history sync.</li>
+        <li>No contacts or calendar access.</li>
       </ul>
 
-      <h2>Third-party services we may share data with</h2>
+      <h2>Service providers</h2>
       <ul>
         <li>
-          <strong>Apple</strong> — HealthKit, WeatherKit, StoreKit,
-          WatchConnectivity (
+          <strong>Apple</strong> — HealthKit, Core Location, Maps, WeatherKit,
+          StoreKit, WatchConnectivity, and App Store services ({" "}
           <a
             href="https://www.apple.com/legal/privacy/"
             target="_blank"
@@ -344,19 +267,8 @@ export default function PrivacyPage() {
           ).
         </li>
         <li>
-          <strong>Strava</strong> — only if you connect it (
-          <a
-            href="https://www.strava.com/legal/privacy"
-            target="_blank"
-            rel="noreferrer"
-          >
-            privacy
-          </a>
-          ).
-        </li>
-        <li>
-          <strong>Google</strong> — Gemini API, only if you enable AI Coaching
-          (
+          <strong>Google</strong> — paid Gemini processing, only after an
+          eligible Pro user explicitly enables cloud coaching ({" "}
           <a
             href="https://policies.google.com/privacy"
             target="_blank"
@@ -367,22 +279,18 @@ export default function PrivacyPage() {
           ).
         </li>
         <li>
-          <strong>RevenueCat</strong> — subscription validation, only if
-          enabled in the shipped build (
-          <a
-            href="https://www.revenuecat.com/privacy/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <strong>PostHog US Cloud</strong> — minimized product analytics, only
+          after opt-in ({" "}
+          <a href="https://posthog.com/privacy" target="_blank" rel="noreferrer">
             privacy
           </a>
           ).
         </li>
         <li>
-          <strong>PostHog (EU cloud)</strong> — anonymous product analytics,
-          opt-out available in Settings (
+          <strong>Web3Forms</strong> — website waitlist form delivery, only if
+          you submit your email ({" "}
           <a
-            href="https://posthog.com/privacy"
+            href="https://web3forms.com/privacy"
             target="_blank"
             rel="noreferrer"
           >
@@ -392,83 +300,71 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>Data retention and deletion</h2>
-      <p>
-        Because RunToMax does not store your data on a server, deletion is
-        controlled entirely by you:
-      </p>
+      <h2>Retention and deletion</h2>
       <ul>
         <li>
-          Deleting the RunToMax app removes all RunToMax-specific data
-          (settings, tokens, cached state).
+          Deleting RunToMax removes its local settings and cached app data.
+          Workouts in Apple Health remain until you delete them in the Health
+          app.
         </li>
         <li>
-          Workouts, routes, and heart-rate samples remain in Apple Health
-          unless you delete them in the Health app.
+          The coaching proxy does not maintain a RunToMax training-history
+          account or intentionally persist prompt and response content. Google
+          may keep limited paid-service logs as described above.
         </li>
         <li>
-          To remove activities you uploaded to Strava, delete them on Strava
-          and revoke RunToMax in your{" "}
-          <a
-            href="https://www.strava.com/settings/apps"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Strava settings
-          </a>
-          .
+          Turning analytics off stops future PostHog events. To request deletion
+          of analytics associated with your random install identifier, contact
+          us.
         </li>
         <li>
-          To delete analytics data tied to your install ID, contact us at{" "}
-          <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we
-          will request deletion from PostHog.
+          Waitlist email addresses are kept until you unsubscribe, request
+          deletion, or they are no longer needed for the launch communications
+          described above.
         </li>
       </ul>
 
       <h2>Your rights</h2>
       <p>
         Depending on where you live, you may have rights to access, correct,
-        delete, or restrict the processing of your personal data, including
-        under the EU/UK GDPR, the California Consumer Privacy Act (CCPA/CPRA),
-        and similar laws. Because RunToMax does not maintain user accounts or
-        a server, most of your data already lives on your device under your
-        control. For analytics or third-party data, contact us at{" "}
-        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we will
-        respond within a reasonable time.
+        delete, restrict, or object to processing of personal data. Most
+        training data is already under your control on your device. For
+        analytics, waitlist, or cloud-coaching questions, email{" "}
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
       <h2>Children</h2>
       <p>
-        RunToMax is not directed to children under 13, and we do not knowingly
-        collect personal information from children under 13. If you believe a
-        child has provided personal information to us, contact{" "}
-        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> and we will
-        delete it.
+        RunToMax is not directed to children under 13 and we do not knowingly
+        collect their personal information. Users under the age of majority
+        must have a parent or legal guardian agree to the Terms where required.
+        Cloud coaching is restricted to users aged 18 or older.
       </p>
 
-      <h2>International transfers</h2>
+      <h2>International processing</h2>
       <p>
-        Apple, Google, Strava, RevenueCat, and PostHog may process data
-        outside your country. PostHog is hosted on its EU cloud for RunToMax.
-        Each provider maintains its own safeguards for international
-        transfers under their respective privacy policies linked above.
+        Apple, Google, PostHog, and Web3Forms may process data outside your
+        country, including in the United States. Their safeguards and transfer
+        practices are described in the policies linked above. RunToMax
+        minimizes what is sent and requires opt-in for cloud coaching and
+        product analytics.
       </p>
 
       <h2>Security</h2>
       <p>
-        Health data and location data are stored by Apple HealthKit, which is
-        encrypted on-device. OAuth tokens are stored in the iOS Keychain.
-        Network requests use HTTPS. No system is perfectly secure; if we
-        become aware of a security incident that affects you, we will notify
-        you as required by law.
+        Apple Health protects health and route data on your devices. Network
+        requests use HTTPS. Cloud coaching uses a server-side credential rather
+        than embedding a Gemini secret in the app, and the production proxy is
+        intended to enforce app verification, entitlement, and rate limits. No
+        system is perfectly secure; if we learn of an incident that requires
+        notice, we will notify affected users as required by law.
       </p>
 
       <h2>Changes to this policy</h2>
       <p>
-        We may update this Privacy Policy. The &quot;Effective&quot; date at
-        the top reflects the latest version. Material changes will be
-        announced in the app or by email if you&apos;ve given us one (for
-        example, by joining the waitlist).
+        We may update this Privacy Policy as the product changes. The effective
+        date above identifies the current version. Material changes will be
+        announced in the app or by email when we have an appropriate address.
       </p>
 
       <h2>Contact</h2>

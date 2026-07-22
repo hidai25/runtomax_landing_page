@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "./_components/GoogleAnalytics";
 import { CONTACT_EMAIL } from "@/app/_lib/contact";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -131,7 +130,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${bebas.variable}`}>
-      <GoogleAnalytics />
       <body className="antialiased bg-black text-white selection:bg-[#1FE26C] selection:text-black overflow-x-hidden">
         <script
           type="application/ld+json"
