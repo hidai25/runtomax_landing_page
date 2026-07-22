@@ -623,9 +623,9 @@ export default function RunToMaxLanding() {
               },
               {
                 accent: "#1FE26C",
-                tag: "On-device AI",
-                title: "An AI coach with four jobs.",
-                desc: "Pre-run brief grounded in today's readiness. Post-run audit that explains what the numbers mean. Daily readiness with calendar context. Ask-anything Q&A. Gemini 2.5 Flash, your data, your context — never a generic plan.",
+                tag: "Cloud coaching",
+                title: "A coach that explains, not invents.",
+                desc: "Pre-run brief grounded in today's readiness. Post-run audit that connects finalized facts. Daily context and ask-anything Q&A. Included with Pro, explicitly opt-in, and sent through a secured proxy to Gemini 2.5 Flash — never a generic plan.",
               },
               {
                 accent: "#1FE26C",
@@ -647,9 +647,9 @@ export default function RunToMaxLanding() {
               },
               {
                 accent: "#1FE26C",
-                tag: "Strava",
-                title: "Strava, both directions.",
-                desc: "Connect once. Outdoor runs auto-upload as GPX, indoor runs as manual activities. And your back-catalog imports the other way — so the training science has real history to work with from day one, not an empty graph.",
+                tag: "Portable",
+                title: "Your run data travels with you.",
+                desc: "Export completed activities as FIT or GPX when you want them. Apple Health remains the source of truth, and RunToMax does not lock your run history inside a proprietary account.",
               },
               {
                 accent: "#1FE26C",
@@ -713,9 +713,6 @@ export default function RunToMaxLanding() {
             WeatherKit <span className="text-zinc-800 ml-2">Hourly</span>
           </span>
           <span className="hover:text-zinc-300 transition-colors">
-            Strava <span className="text-zinc-800 ml-2">Two-Way</span>
-          </span>
-          <span className="hover:text-zinc-300 transition-colors">
             FIT &amp; GPX Export
           </span>
           <span className="text-[#1FE26C]/60 hover:text-[#1FE26C] transition-colors">
@@ -743,7 +740,7 @@ export default function RunToMaxLanding() {
           </h2>
           <p className="text-zinc-400 text-base mb-10 leading-relaxed">
             We&apos;re shipping in 2026. Waitlist members get early TestFlight
-            builds, lifetime founder pricing on Pro coaching, and a
+            builds, a founder offer on Pro, and a
             hand-numbered first-1000 badge in the app.
           </p>
 

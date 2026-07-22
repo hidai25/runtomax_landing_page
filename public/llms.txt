@@ -11,8 +11,8 @@
 - Lane-exact track mode: distance accumulates by the chosen lane's geometry, not GPS noise. Lane 5 is 425 meters per lap.
 - Four hand-tuned mid-run watch faces: outdoor, treadmill, intervals, and track.
 - Coach Notes after every run: explains why the run went the way it did and adjusts the upcoming week.
-- Strava sync, FIT export, HealthKit read/write, WeatherKit context.
-- AI coaching layer powered by Gemini 2.5 Flash.
+- FIT and GPX export, HealthKit read/write, and WeatherKit context.
+- Optional cloud coaching powered by Gemini 2.5 Flash through a secured proxy. It explains finalized RunToMax facts and is included with Pro.
 
 ## Who it's for
 
@@ -23,12 +23,12 @@
 ## Platform
 
 - iOS and watchOS.
-- Ships 2026. Waitlist members get early TestFlight builds, lifetime founder pricing on Pro coaching, and a hand-numbered first-1000 badge in the app.
+- Ships 2026. Waitlist members get early TestFlight builds, a founder offer on Pro, and a hand-numbered first-1000 badge in the app.
 
 ## Pages
 
 - [Home](https://runtomax.com/): Product overview, watch face showcase, coach notes example, waitlist signup.
-- [Privacy Policy](https://runtomax.com/privacy/): Data handling — HealthKit, location, Strava, Google Gemini, WeatherKit, subscriptions, analytics. No RunToMax account, no email login, no ads, no data sales.
+- [Privacy Policy](https://runtomax.com/privacy/): Data handling — HealthKit, location, optional Google Gemini cloud coaching, WeatherKit, StoreKit subscriptions, consent-based PostHog analytics, and the website waitlist. No RunToMax account, no email login, no ads, no data sales.
 - [Terms of Service](https://runtomax.com/terms/): Subscription and usage terms.
 
 ## Contact

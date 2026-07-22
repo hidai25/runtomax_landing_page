@@ -14,7 +14,7 @@ export default function SupportPage() {
   return (
     <LegalLayout
       title="Support"
-      effectiveDate="July 9, 2026"
+      effectiveDate="July 22, 2026"
       intro={
         <p>
           Email{" "}
@@ -54,10 +54,12 @@ export default function SupportPage() {
 
       <h2>Managing your subscription</h2>
       <p>
-        Pro and AI Coaching subscriptions are billed by Apple, not by RunToMax.
-        To change or cancel, open the iOS <strong>Settings</strong> app, tap
-        your name, then <strong>Subscriptions</strong>. Refunds are handled by
-        Apple at{" "}
+        RunToMax has one Pro subscription, offered monthly or annually. Pro
+        includes both Cockpit and cloud coaching; there is no separate AI
+        Coaching subscription. It is billed by Apple, not by RunToMax. To
+        change or cancel, open the iOS <strong>Settings</strong> app, tap your
+        name, then <strong>Subscriptions</strong>. Refunds are handled by Apple
+        at{" "}
         <a
           href="https://reportaproblem.apple.com"
           target="_blank"
@@ -70,9 +72,11 @@ export default function SupportPage() {
 
       <h2>Your data</h2>
       <p>
-        RunToMax has no account and no server. Your workouts, routes, and heart
-        rate live in Apple Health on your device. Deleting the app removes
-        RunToMax&apos;s own settings and tokens; to remove the workouts
+        RunToMax has no account or cloud training-history database. Your
+        workouts, routes, and heart rate live in Apple Health on your device.
+        Optional cloud coaching sends a minimized, consented summary through a
+        secured proxy as explained in the Privacy Policy. Deleting the app
+        removes RunToMax&apos;s local settings; to remove the workouts
         themselves, delete them in the Health app.
       </p>
       <p>
