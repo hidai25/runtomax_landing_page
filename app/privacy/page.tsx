@@ -126,12 +126,24 @@ export default function PrivacyPage() {
         calculations.
       </p>
       <p>
-        The app sends that context over HTTPS to a secured RunToMax coaching
-        proxy, which verifies the app request, enforces entitlement and rate
-        limits, and forwards it to a billing-enabled Google Gemini service. The
-        production app does not contain a Gemini API secret and does not call
-        Gemini directly. The proxy is designed not to persist prompt or
-        response content in a RunToMax training-history database.
+        The app sends that context over HTTPS to a RunToMax coaching proxy,
+        which checks that the request is well-formed and forwards it to a
+        billing-enabled Google Gemini service. The production app does not
+        contain a Gemini API secret and does not call Gemini directly, so the
+        key cannot be extracted from the app. The proxy does not log or store
+        the prompt or the response; it records status codes and timings only,
+        and it does not keep coaching content in any RunToMax database.
+      </p>
+      <p>
+        To be precise about what the proxy does <strong>not</strong> do today:
+        it does not cryptographically verify that a request came from a genuine
+        copy of the app, and it does not apply a per-device rate limit. Its
+        address is contained in the app and could be discovered. Spending is
+        bounded by a capped, billing-enabled key rather than by authentication.
+        Hardening this—verifying Apple App Attest and adding per-device
+        limits—is planned, and this page will be updated when it ships. We
+        would rather describe the current control accurately than imply a
+        stronger one.
       </p>
       <p>
         We do <strong>not</strong> include your name, email address, raw GPS

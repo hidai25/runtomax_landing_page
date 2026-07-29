@@ -60,9 +60,11 @@ export default function TermsPage() {
         coaching. Purchases use Apple StoreKit. The launch version does not
         provide a public Strava integration or use RevenueCat. Your training
         history is stored through Apple HealthKit and local app storage. A
-        secured RunToMax proxy processes minimized cloud-coaching requests
+        RunToMax proxy, which holds the Gemini API key server-side so the app
+        never carries it, processes minimized cloud-coaching requests
         transiently; it is not a RunToMax account or cloud training-history
-        service.
+        service. The Privacy Policy describes what that proxy does and does not
+        currently verify.
       </p>
 
       <h2>4. License</h2>
