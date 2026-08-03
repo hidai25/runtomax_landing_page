@@ -93,7 +93,7 @@ export default function SupportPage() {
         RunToMax has no account or cloud training-history database. Your
         workouts, routes, and heart rate live in Apple Health on your device.
         Optional cloud coaching sends a minimized, consented summary through a
-        secured proxy as explained in the Privacy Policy. Deleting the app
+        RunToMax proxy as explained in the Privacy Policy. Deleting the app
         removes RunToMax&apos;s local settings; to remove the workouts
         themselves, delete them in the Health app.
       </p>

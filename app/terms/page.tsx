@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      effectiveDate="July 22, 2026"
+      effectiveDate="August 3, 2026"
       intro={
         <p>
           These Terms govern your use of the RunToMax iPhone and Apple Watch
@@ -103,9 +103,14 @@ export default function TermsPage() {
       <h2>6. Your account, your data</h2>
       <p>
         RunToMax does not require an account. The data you generate (workouts,
-        routes, profile, settings) lives on your device. You are responsible
-        for maintaining device security and for backing up your iCloud Health
-        data through Apple if you wish to preserve it. If you explicitly
+        routes, profile, settings) lives on your device. Sensitive app-local
+        workout archives, derived caches, effort/plan feedback, and manually
+        entered sleep are excluded from device backups;
+        after reinstall or restore they may be rebuilt from Apple Health or the
+        Watch where possible, while imported runs not stored in Apple Health
+        may need to be imported again. You are responsible for maintaining
+        device security and for configuring Apple Health backup or sync if you
+        wish to preserve Health data. If you explicitly
         enable cloud coaching, the minimized data described in the{" "}
         <a href="/privacy">Privacy Policy</a> is processed to provide that
         feature.

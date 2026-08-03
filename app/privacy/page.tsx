@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="July 22, 2026"
+      effectiveDate="August 3, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -43,12 +43,13 @@ export default function PrivacyPage() {
         </li>
         <li>
           Cloud coaching is off until you explicitly opt in. It sends a
-          minimized summary through a secured RunToMax proxy to Google Gemini;
+          minimized summary through a RunToMax proxy to Google Gemini;
           the app does not contact Gemini directly in production.
         </li>
         <li>
-          Anonymous product analytics are off until you opt in. RunToMax uses
-          PostHog US Cloud with IP geolocation disabled.
+          Optional product and coaching analytics are off until you opt in.
+          RunToMax uses PostHog US Cloud with IP geolocation disabled and does
+          not send exact workout or health values.
         </li>
         <li>
           The launch version has no public Strava integration, RevenueCat,
@@ -135,17 +136,6 @@ export default function PrivacyPage() {
         and it does not keep coaching content in any RunToMax database.
       </p>
       <p>
-        To be precise about what the proxy does <strong>not</strong> do today:
-        it does not cryptographically verify that a request came from a genuine
-        copy of the app, and it does not apply a per-device rate limit. Its
-        address is contained in the app and could be discovered. Spending is
-        bounded by a capped, billing-enabled key rather than by authentication.
-        Hardening this—verifying Apple App Attest and adding per-device
-        limits—is planned, and this page will be updated when it ships. We
-        would rather describe the current control accurately than imply a
-        stronger one.
-      </p>
-      <p>
         We do <strong>not</strong> include your name, email address, raw GPS
         coordinates, route polyline, contacts, photos, or individual
         heart-rate samples in the coaching request. Google may process the
@@ -166,8 +156,10 @@ export default function PrivacyPage() {
           Privacy Policy
         </a>
         . RunToMax uses a paid Gemini service so Google states that prompts and
-        responses are not used to improve its products. Google may retain data
-        for a limited period for abuse prevention and legal compliance.
+        responses are not used to improve its products. Google states that it
+        retains prompts, their context, and responses for 55 days for abuse
+        detection, security, and required legal disclosures. If content is
+        flagged, authorized Google employees may review it.
       </p>
       <p>
         Google&apos;s current Gemini API terms require users of API clients to
@@ -219,6 +211,17 @@ export default function PrivacyPage() {
         and App Group data. These features do not send your training history to
         a RunToMax account server.
       </p>
+      <p>
+        App-local workout-detail archives, derived fingerprints, generated
+        coaching caches, imported-run files, RPE ratings, plan execution
+        feedback, and manually entered sleep use iOS data protection and are
+        excluded from device backups. After reinstalling or restoring a
+        device, reconstructable data may be rebuilt from Apple Health or
+        recovered from the Watch where available. Imported runs that were not
+        written to Apple Health may need to be imported again. Apple Health
+        backup and synchronization are controlled separately by Apple and your
+        device settings.
+      </p>
 
       <h3>Consent-based product analytics</h3>
       <p>
@@ -227,15 +230,19 @@ export default function PrivacyPage() {
           PostHog
         </a>{" "}
         US Cloud only after you explicitly opt in. Analytics may include a
-        random installation identifier, categorical feature events, app and OS
-        versions, device class, language, and time zone. RunToMax configures
-        PostHog not to use the request IP for geolocation. Autocapture is off,
-        and session replay is disabled in production.
+        random installation identifier, app, build and device information,
+        categorical feature events, and categorical or broad-bucket fitness
+        and coaching events. Examples include workout type, broad completion
+        ranges, training-plan feedback, and whether you confirmed or corrected
+        an interpretation. RunToMax configures PostHog not to use the request
+        IP for geolocation. Autocapture is off, and session replay is disabled
+        in production.
       </p>
       <p>
-        We do not send HealthKit values, pace, heart rate, workout distance,
-        routes, location, coaching text, name, or email to PostHog. You can turn
-        analytics off at any time in Settings → Privacy → Anonymous analytics.
+        We do not send your name, email, exact pace, distance, heart-rate or
+        sleep values, location, route, workout identifier or workout time, or
+        coaching text to PostHog. You can turn analytics off at any time in
+        Settings → Privacy → Optional analytics.
         See PostHog&apos;s{" "}
         <a href="https://posthog.com/privacy" target="_blank" rel="noreferrer">
           Privacy Policy
@@ -392,10 +399,11 @@ export default function PrivacyPage() {
       <p>
         Apple Health protects health and route data on your devices. Network
         requests use HTTPS. Cloud coaching uses a server-side credential rather
-        than embedding a Gemini secret in the app, and the production proxy is
-        intended to enforce app verification, entitlement, and rate limits. No
-        system is perfectly secure; if we learn of an incident that requires
-        notice, we will notify affected users as required by law.
+        than embedding a Gemini secret in the app. The proxy validates request
+        shape, applies a strict body-size ceiling, and uses a capped credential.
+        No system is perfectly secure; if we
+        learn of an incident that requires notice, we will notify affected users
+        as required by law.
       </p>
 
       <h2>Changes to this policy</h2>

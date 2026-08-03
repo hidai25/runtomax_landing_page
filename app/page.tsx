@@ -628,7 +628,7 @@ export default function RunToMaxLanding() {
                 accent: "#1FE26C",
                 tag: "Cloud coaching",
                 title: "A coach that explains, not invents.",
-                desc: "Pre-run brief grounded in today's readiness. Post-run audit that connects finalized facts. Daily context and ask-anything Q&A. Included with Pro, explicitly opt-in, and sent through a secured proxy to Gemini 2.5 Flash — never a generic plan.",
+                desc: "Pre-run brief grounded in today's readiness. Post-run audit that connects finalized facts. Daily context and ask-anything Q&A. Included with Pro, explicitly opt-in, and sent through a RunToMax proxy to Gemini 2.5 Flash — never a generic plan.",
               },
               {
                 accent: "#1FE26C",
