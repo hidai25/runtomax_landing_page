@@ -26,9 +26,9 @@ export default function TermsPage() {
       <h2>1. Who these Terms are between</h2>
       <p>
         These Terms are an agreement between you and Hidai Bar-Mor, an
-        individual sole developer based in Israel, who operates RunToMax
-        (&quot;RunToMax,&quot; &quot;we,&quot; &quot;us&quot;). By installing
-        or using the RunToMax app you agree to these Terms and to our{" "}
+        individual sole developer who operates RunToMax (&quot;RunToMax,&quot;
+        &quot;we,&quot; &quot;us&quot;). By installing or using the RunToMax
+        app you agree to these Terms and to our{" "}
         <a href="/privacy">Privacy Policy</a>.
       </p>
 

@@ -61,8 +61,8 @@ export default function PrivacyPage() {
       <p>
         &quot;RunToMax,&quot; &quot;we,&quot; &quot;us,&quot; and
         &quot;our&quot; refer to Hidai Bar-Mor, an individual sole developer
-        based in Israel, who develops and operates the RunToMax iPhone and
-        Apple Watch application. Contact:{" "}
+        who develops and operates the RunToMax iPhone and Apple Watch
+        application. Contact:{" "}
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
