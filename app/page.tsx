@@ -77,11 +77,36 @@ const outcomeReceipts = [
   },
 ];
 
+const phoneShots = [
+  {
+    src: "iphone-training-impact.jpg",
+    tag: "Training impact",
+    title: "See what the work actually did.",
+    desc: "Aerobic and anaerobic stimulus, recovery and effort are grounded in the finalized run—not an early estimate.",
+  },
+  {
+    src: "iphone-workout-structure.jpg",
+    tag: "Workout structure",
+    title: "See every rep and recovery.",
+    desc: "Structured sessions are judged from the work you completed, so warm-up and cool-down do not hide the workout that mattered.",
+  },
+  {
+    src: "iphone-metric-explainer.jpg",
+    tag: "Metric explanations",
+    title: "Every important number explains itself.",
+    desc: "What it is, why it changed, what to do next and which data supports it—available when you want the evidence.",
+  },
+];
+
 const watchShots = [
+  { src: "watch-start.png", tag: "Start", desc: "Session, surface and sensors" },
   { src: "watch-ready.png", tag: "Ready", desc: "Sensors and battery checked" },
-  { src: "watch-splits.png", tag: "Splits", desc: "Lap, HR and progress" },
   { src: "watch-gauge.png", tag: "Target", desc: "Pace against the session" },
+  { src: "watch-lap.png", tag: "Lap", desc: "An instant lap receipt" },
+  { src: "watch-splits.png", tag: "Splits", desc: "Lap, HR and progress" },
+  { src: "watch-zonebar.png", tag: "Zones", desc: "Intensity at a glance" },
   { src: "watch-grid.png", tag: "Your fields", desc: "The numbers you choose" },
+  { src: "watch-select.png", tag: "Layouts", desc: "A view for every workout" },
 ];
 
 export default function RunToMaxLanding() {
@@ -128,6 +153,9 @@ export default function RunToMaxLanding() {
           <div className="flex items-center gap-5">
             <a href="#how-it-works" className="hidden text-sm text-zinc-400 transition-colors hover:text-white sm:block">
               How it works
+            </a>
+            <a href="#product" className="hidden text-sm text-zinc-400 transition-colors hover:text-white md:block">
+              See the app
             </a>
             <a href="#waitlist" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all hover:bg-[#1FE26C]">
               Join the founding runners
@@ -286,6 +314,42 @@ export default function RunToMaxLanding() {
         </div>
       </section>
 
+      <section id="product" className="relative mx-auto max-w-7xl px-6 py-28 sm:py-36">
+        <div className="pointer-events-none absolute left-1/2 top-1/3 h-80 w-[70%] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.05] blur-[120px]" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
+          <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your run becomes an answer—not another dashboard.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">RunToMax reveals the outcome first, then lets you inspect the workout and understand every important metric without leaving the run.</p>
+        </div>
+
+        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+          {phoneShots.map((shot, index) => (
+            <motion.article
+              key={shot.src}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeUp}
+              className="w-[78vw] max-w-[320px] shrink-0 snap-center lg:w-auto lg:max-w-none"
+            >
+              <div className="mx-auto max-w-[290px] overflow-hidden rounded-[2.8rem] border-[8px] border-zinc-800 bg-black shadow-[0_28px_80px_-28px_rgba(31,226,108,.28)]">
+                <img
+                  src={`${BASE}/${shot.src}`}
+                  alt={`RunToMax iPhone ${shot.tag.toLowerCase()} screen`}
+                  className="h-auto w-full"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+              <div className="mx-auto mt-7 max-w-[310px] text-center">
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1FE26C]">{shot.tag}</p>
+                <h3 className="mt-3 text-xl font-bold tracking-tight">{shot.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-500">{shot.desc}</p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 py-28 sm:py-36">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Useful from the first run</p>
@@ -318,9 +382,9 @@ export default function RunToMaxLanding() {
             </div>
             <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Purpose-built layouts, structured workouts, lap haptics, route guidance, external sensors and phone-free recording—designed for a glance, not a scroll.</p>
           </div>
-          <div className="mt-14 flex snap-x gap-5 overflow-x-auto pb-5 lg:grid lg:grid-cols-4 lg:overflow-visible">
+          <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
             {watchShots.map((shot) => (
-              <figure key={shot.src} className="w-48 shrink-0 snap-center lg:w-auto">
+              <figure key={shot.src} className="w-48 shrink-0 snap-center sm:w-auto">
                 <div className="overflow-hidden rounded-[2.25rem] border-[7px] border-zinc-800 bg-black shadow-[0_0_32px_rgba(31,226,108,.12)]">
                   <img src={`${BASE}/${shot.src}`} alt={`RunToMax Apple Watch ${shot.tag.toLowerCase()} screen — ${shot.desc}`} className="h-auto w-full" />
                 </div>
