@@ -11,17 +11,16 @@ const bebas = Bebas_Neue({
 });
 
 const SITE_URL = "https://runtomax.com";
-const OG_IMAGE = `${SITE_URL}/iphone-today.png`;
+const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "RunToMax — Apple Watch running coach with race-watch-grade metrics",
+    default: "RunToMax — Know when to push and when to recover",
     template: "%s | RunToMax",
   },
   description:
-    "RunToMax is an 18+ Apple Watch running app with adaptive 5K–marathon plans, race-watch-grade metrics, structured intervals, and a coach that explains every run. Ships 2026.",
+    "RunToMax turns Apple Watch data into clear daily coaching, reliable workout execution and evidence-backed guidance that helps runners train consistently.",
   applicationName: "RunToMax",
   authors: [{ name: "Hidai Bar-Mor" }],
   creator: "Hidai Bar-Mor",
@@ -46,26 +45,24 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "RunToMax",
-    title:
-      "RunToMax — Apple Watch running coach with race-watch-grade metrics",
+    title: "RunToMax — Know when to push and when to recover",
     description:
-      "Turn your Apple Watch into a real running watch. Adaptive plans, VO₂ max, HR zones, structured intervals, lane-exact track mode. Ships 2026.",
+      "Clear daily coaching, reliable Apple Watch workouts and evidence-backed guidance that helps you run stronger and stay consistent.",
     locale: "en_US",
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "RunToMax running app on iPhone with race-watch-grade metrics",
+        alt: "Run stronger and stay consistent with RunToMax",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "RunToMax — Apple Watch running coach with race-watch-grade metrics",
+    title: "RunToMax — Know when to push and when to recover",
     description:
-      "Turn your Apple Watch into a real running watch. Adaptive plans, VO₂ max, HR zones, structured intervals, lane-exact track mode. Ships 2026.",
+      "Clear daily coaching, reliable Apple Watch workouts and evidence-backed guidance that helps you run stronger and stay consistent.",
     images: [OG_IMAGE],
   },
   robots: {
@@ -89,7 +86,6 @@ const jsonLd = {
       "@id": `${SITE_URL}/#org`,
       name: "RunToMax",
       url: SITE_URL,
-      logo: `${SITE_URL}/iphone-today.png`,
       founder: { "@type": "Person", name: "Hidai Bar-Mor" },
       email: CONTACT_EMAIL,
     },
@@ -109,7 +105,7 @@ const jsonLd = {
       applicationCategory: "HealthApplication",
       applicationSubCategory: "Running",
       description:
-        "RunToMax is an adult-only (18+) Apple Watch and iPhone running app with race-watch-grade metrics, adaptive training plans, structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run.",
+        "RunToMax turns finalized Apple Watch and iPhone workout data into clear daily coaching, reliable workout execution, transparent plan adaptations and evidence-backed guidance for runners aged 18 and older.",
       contentRating: "18+",
       audience: {
         "@type": "PeopleAudience",
@@ -117,13 +113,6 @@ const jsonLd = {
       },
       url: SITE_URL,
       author: { "@id": `${SITE_URL}/#org` },
-      releaseNotes: "Ships 2026. Join the waitlist for early TestFlight access.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/PreOrder",
-      },
     },
   ],
 };

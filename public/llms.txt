@@ -1,40 +1,42 @@
 # RunToMax
 
-> RunToMax turns Apple Watch and iPhone into a real running training platform: race-watch-grade metrics, adaptive training plans (5K, 10K, half, marathon), structured intervals, HR-zone discipline, lane-exact track mode, and a coach that audits every run. Built by an experienced runner. Ships 2026.
+> RunToMax gives adult Apple Watch runners clear daily coaching, reliable workout execution, and evidence-backed guidance for consistent progress.
 
-RunToMax 1.0 is an adult-only product for runners aged 18 and older. Its app-wide age gate runs before HealthKit, subscriptions, analytics, training plans, and optional Gemini coaching. On iOS 26+, it can use Apple's privacy-preserving Declared Age Range service; RunToMax immediately reduces that range to an eligibility result and does not retain the range, its source, or a date of birth. Older systems use a data-minimized adult confirmation.
+## Product
 
-## What RunToMax does
+- [RunToMax Home](https://runtomax.com/): Explains the coaching loop, Watch workout experience, evidence receipts, reversible plan adaptations, and founding-runner launch list.
+- RunToMax is designed for runners aged 18 and older and uses an eligibility result rather than retaining a birth date.
+- The app works with or without a RunToMax training plan; runners can record, understand, and learn from individual workouts.
+- Daily guidance connects finalized workout, recovery, sleep, HRV, load, and plan data without silently changing a runner's training.
+- Recommendations show what changed, why it matters, what the runner can do next, and the supporting data and confidence.
+- Plan adaptations are bounded and reversible. The runner can keep, reduce, replace, or move a session when those options are supported.
+- Structured running and strength workouts execute on Apple Watch with pace targets, laps, cues, offline operation, and phone/Watch finalization.
+- Post-run analysis can cover workout execution, splits, training impact, recovery, weather context, running form, and route comparisons.
+- RunToMax supports HealthKit read and write, Apple Weather, optional Strava export, and FIT and GPX export.
+- Optional cloud coaching uses a secured RunToMax proxy and explains finalized, validated facts rather than independently calculating training metrics.
 
-- Adaptive training plans for 5K, 10K, half marathon, and marathon, built around the runner's training load and rebalanced when life gets in the way.
-- Race-watch-grade metrics on Apple Watch: VO₂ max, training load (acute and chronic balance), recovery time informed by sleep and HRV, HR zones based on lactate-style personalization, and a race predictor.
-- Structured workouts on the wrist: intervals, tempos, and progressions built on the iPhone, executed lap-perfect on the watch with countdowns, pace targets, and audio cues.
-- HR-zone discipline visualization: a rainbow zone bar that bulges at the runner's current zone — Zone 2 drift is felt instantly.
-- Lane-exact track mode: distance accumulates by the chosen lane's geometry, not GPS noise. Lane 5 is 425 meters per lap.
-- Four hand-tuned mid-run watch faces: outdoor, treadmill, intervals, and track.
-- Coach Notes after every run: explains why the run went the way it did and adjusts the upcoming week.
-- FIT and GPX export, HealthKit read/write, and WeatherKit context.
-- Optional cloud coaching powered by Gemini 2.5 Flash through a secured proxy. It explains finalized RunToMax facts and is included with Pro.
+## Trust and privacy
 
-## Who it's for
+- [Privacy Policy](https://runtomax.com/privacy/): Describes HealthKit, location, optional cloud coaching, WeatherKit, StoreKit, consent-based analytics, and website waitlist data handling.
+- RunToMax has no email/password account, does not sell personal data, does not show ads, and does not use HealthKit data for advertising.
+- Training history is stored through Apple Health and local app storage rather than a RunToMax cloud training-history database.
+- AI and analytics are optional and require separate, explicit consent.
+- Coaching waits for canonical workout finalization and uses confidence-aware language when data is incomplete or uncertain.
 
-- Serious runners who do tempo runs, intervals, long runs, and chase finish-line times.
-- Adults aged 18 and older; the launch release is not offered to children or teenagers.
-- Apple Watch and iPhone users who want race-watch-grade training without buying a dedicated running watch.
-- Not for casual joggers or step-counters.
+## Support and legal
 
-## Platform
+- [Support](https://runtomax.com/support/): Provides contact details, subscription help, age eligibility information, Strava disconnection guidance, and data-deletion instructions.
+- [Terms of Service](https://runtomax.com/terms/): Covers eligibility, subscriptions, acceptable use, health disclaimers, third-party services, and legal terms.
 
-- iOS and watchOS.
-- Ships 2026. Waitlist members get early TestFlight builds, a founder offer on Pro, and a hand-numbered first-1000 badge in the app.
+## Key facts
 
-## Pages
-
-- [Home](https://runtomax.com/): Product overview, watch face showcase, coach notes example, waitlist signup.
-- [Privacy Policy](https://runtomax.com/privacy/): Data handling — HealthKit, location, optional Google Gemini cloud coaching, WeatherKit, StoreKit subscriptions, consent-based PostHog analytics, and the website waitlist. No RunToMax account, no email login, no ads, no data sales.
-- [Terms of Service](https://runtomax.com/terms/): Subscription and usage terms.
+- Platforms: iPhone and Apple Watch
+- Audience: runners aged 18 and older
+- Product model: free trial followed by optional monthly or annual RunToMax Pro subscription through Apple's App Store
+- Core principle: the coach explains validated facts, shows its evidence, and does not make silent training changes
+- Developer: Hidai Bar-Mor, independent developer based in Israel
 
 ## Contact
 
+- Website: https://runtomax.com/
 - Email: hidai25@gmail.com
-- Founder: Hidai Bar-Mor (sole developer, based in Israel)

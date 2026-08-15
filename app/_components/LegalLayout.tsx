@@ -23,7 +23,8 @@ export default function LegalLayout({
             href="/"
             className="font-bebas text-2xl tracking-wide select-none"
           >
-            runto<span className="text-[#1FE26C]">max</span>
+            <span className="text-white">RunTo</span>
+            <span className="text-[#1FE26C]">Max</span>
           </Link>
           <Link
             href="/#waitlist"
@@ -57,7 +58,8 @@ export default function LegalLayout({
             href="/"
             className="font-bebas text-xl tracking-wide text-zinc-600 hover:text-zinc-300 select-none transition-colors"
           >
-            runto<span className="text-zinc-400">max</span>
+            <span className="text-white">RunTo</span>
+            <span className="text-[#1FE26C]">Max</span>
           </Link>
           <div className="flex gap-6 text-sm text-zinc-500 font-medium">
             <Link href="/support" className="hover:text-white transition-colors">
