@@ -12,6 +12,7 @@ const bebas = Bebas_Neue({
 
 const SITE_URL = "https://runtomax.com";
 const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
+const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | RunToMax",
   },
   description:
-    "RunToMax turns Apple Watch data into clear daily coaching, reliable workout execution and evidence-backed guidance that helps runners train consistently.",
+    "RunToMax turns Apple Watch data into clear daily coaching, reliable workout execution and evidence-backed guidance that helps runners train consistently. Now on the App Store.",
   applicationName: "RunToMax",
   authors: [{ name: "Hidai Bar-Mor" }],
   creator: "Hidai Bar-Mor",
@@ -112,6 +113,15 @@ const jsonLd = {
         suggestedMinAge: 18,
       },
       url: SITE_URL,
+      downloadUrl: APP_STORE_URL,
+      installUrl: APP_STORE_URL,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        description: "Free trial, then RunToMax Pro: $29.99/year or $5.99/month via the App Store.",
+        url: APP_STORE_URL,
+      },
       author: { "@id": `${SITE_URL}/#org` },
     },
   ],

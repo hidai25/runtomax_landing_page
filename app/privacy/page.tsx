@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How RunToMax handles HealthKit, location, optional cloud coaching, WeatherKit, subscriptions, consent-based analytics, and waitlist data.",
+    "How RunToMax handles HealthKit, location, optional cloud coaching, WeatherKit, subscriptions, consent-based analytics, and website data.",
   alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
 };
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="August 3, 2026"
+      effectiveDate="September 10, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -250,26 +250,14 @@ export default function PrivacyPage() {
         .
       </p>
 
-      <h2>Website and waitlist</h2>
+      <h2>Website</h2>
       <p>
-        The RunToMax website does not use Google Analytics, advertising
-        trackers, or non-essential analytics cookies. If you join the waitlist,
-        the email address you submit is processed by{" "}
-        <a href="https://web3forms.com" target="_blank" rel="noreferrer">
-          Web3Forms
-        </a>{" "}
-        to deliver the signup to RunToMax. We use it only for TestFlight,
-        launch, and closely related RunToMax updates. You can ask us to remove
-        it at any time by emailing{" "}
-        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>. See Web3Forms&apos;{" "}
-        <a
-          href="https://web3forms.com/privacy"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Privacy Policy
-        </a>
-        .
+        The RunToMax website is a static site. It does not use Google
+        Analytics, advertising trackers, non-essential analytics cookies, or
+        signup forms. The only way to send us information from the website is
+        to email <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>, and we use
+        what you send only to reply to you. Links to the App Store are handled
+        by Apple under Apple&apos;s privacy policy.
       </p>
 
       <h2>What RunToMax does not use at launch</h2>
@@ -317,18 +305,6 @@ export default function PrivacyPage() {
           </a>
           ).
         </li>
-        <li>
-          <strong>Web3Forms</strong> — website waitlist form delivery, only if
-          you submit your email ({" "}
-          <a
-            href="https://web3forms.com/privacy"
-            target="_blank"
-            rel="noreferrer"
-          >
-            privacy
-          </a>
-          ).
-        </li>
       </ul>
 
       <h2>Retention and deletion</h2>
@@ -349,9 +325,8 @@ export default function PrivacyPage() {
           us.
         </li>
         <li>
-          Waitlist email addresses are kept until you unsubscribe, request
-          deletion, or they are no longer needed for the launch communications
-          described above.
+          Emails you send to us are kept only as long as needed to answer
+          them and handle any follow-up; ask and we delete the thread.
         </li>
       </ul>
 
@@ -360,7 +335,7 @@ export default function PrivacyPage() {
         Depending on where you live, you may have rights to access, correct,
         delete, restrict, or object to processing of personal data. Most
         training data is already under your control on your device. For
-        analytics, waitlist, or cloud-coaching questions, email{" "}
+        analytics or cloud-coaching questions, email{" "}
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
@@ -388,7 +363,7 @@ export default function PrivacyPage() {
 
       <h2>International processing</h2>
       <p>
-        Apple, Google, PostHog, and Web3Forms may process data outside your
+        Apple, Google, and PostHog may process data outside your
         country, including in the United States. Their safeguards and transfer
         practices are described in the policies linked above. RunToMax
         minimizes what is sent and requires opt-in for cloud coaching and

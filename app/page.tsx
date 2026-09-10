@@ -1,17 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 import {
   Activity,
   ArrowDown,
-  ArrowRight,
   Brain,
   Check,
   CheckCircle2,
   Gauge,
-  History,
   Route,
   ShieldCheck,
   Sparkles,
@@ -22,6 +19,26 @@ import {
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
+
+/**
+ * Apple's official "Download on the App Store" badge, used exactly as supplied
+ * by Apple's badge service (App Store Marketing Guidelines): never recoloured,
+ * never restyled, minimum 40 px tall online, clear space of a quarter of the
+ * badge height on every side. `heightClass` sets the badge height; the wrapper
+ * provides the clear space.
+ */
+function AppStoreBadge({ heightClass = "h-12", className = "" }: { heightClass?: string; className?: string }) {
+  return (
+    <a
+      href={APP_STORE_URL}
+      className={`inline-flex shrink-0 items-center rounded-lg p-1.5 transition-all hover:scale-[1.03] hover:drop-shadow-[0_0_22px_rgba(31,226,108,.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C] ${className}`}
+      aria-label="Download RunToMax on the App Store"
+    >
+      <img src={`${BASE}/app-store-badge.svg`} alt="Download on the App Store" className={`${heightClass} w-auto`} />
+    </a>
+  );
+}
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -110,38 +127,7 @@ const watchShots = [
 ];
 
 export default function RunToMaxLanding() {
-  const [email, setEmail] = useState("");
-  const [botcheck, setBotcheck] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const reduceMotion = useReducedMotion();
-
-  const handleJoin = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || botcheck) return;
-
-    setStatus("loading");
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "97579151-442d-42f8-bdae-ab84b93a8dfe",
-          subject: "New RunToMax waitlist signup",
-          from_name: "RunToMax Landing Page",
-          email,
-          botcheck,
-        }),
-      });
-      const data = await response.json();
-      if (!data.success) {
-        setStatus("idle");
-        return;
-      }
-      setStatus("success");
-    } catch {
-      setStatus("idle");
-    }
-  };
 
   return (
     <main className="min-h-screen overflow-hidden bg-black font-sans text-white">
@@ -157,9 +143,7 @@ export default function RunToMaxLanding() {
             <a href="#product" className="hidden text-sm text-zinc-400 transition-colors hover:text-white md:block">
               See the app
             </a>
-            <a href="#waitlist" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition-all hover:bg-[#1FE26C]">
-              Join the founding runners
-            </a>
+            <AppStoreBadge heightClass="h-10" />
           </div>
         </nav>
       </header>
@@ -168,7 +152,7 @@ export default function RunToMaxLanding() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[760px] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.08] blur-[140px]" />
         <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative z-10 text-center lg:text-left">
           <p className="mb-6 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#1FE26C]">
-            Adaptive coaching for Apple Watch runners
+            Now on the App Store · iPhone + Apple Watch
           </p>
           <h1 className="max-w-5xl font-bebas text-[3.75rem] uppercase leading-[0.88] tracking-[-0.025em] sm:text-7xl lg:text-[5.8rem]">
             Run stronger. Stay consistent. Know when to push—<span className="text-[#1FE26C]">and when to recover.</span>
@@ -176,21 +160,18 @@ export default function RunToMaxLanding() {
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 lg:mx-0 lg:text-xl">
             RunToMax turns your Apple Watch data into clear daily coaching, reliable workout execution and proof of what changed—without guesswork or silent plan changes.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-            <a href="#waitlist" className="group flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition-all hover:bg-[#1FE26C] hover:shadow-[0_0_28px_rgba(31,226,108,.28)] sm:w-auto">
-              Join the founding runners
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a href="#how-it-works" className="flex items-center gap-2 px-5 py-3 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
-              See the coaching loop <ArrowDown className="h-4 w-4" />
+          <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
+            <AppStoreBadge heightClass="h-14" />
+            <a href="#how-it-works" className="group flex items-center gap-2 px-5 py-3 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+              See the coaching loop <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
           <div className="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-zinc-500 lg:justify-start">
-            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> Evidence behind every recommendation</span>
-            <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> iPhone + Apple Watch</span>
-            <span className="flex items-center gap-2"><History className="h-4 w-4 text-[#1FE26C]" /> Your data stays portable</span>
+            <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#1FE26C]" /> Free trial, then RunToMax Pro</span>
+            <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> Runs on your wrist, phone-free</span>
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> No account · your data stays in Apple Health</span>
           </div>
-          <p className="mt-5 text-xs text-zinc-600">Designed for runners aged 18 and older.</p>
+          <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 and watchOS 10 or later · Designed for runners aged 18 and older.</p>
         </motion.div>
 
         <motion.div
@@ -426,32 +407,30 @@ export default function RunToMaxLanding() {
         </div>
       </section>
 
-      <section id="waitlist" className="relative overflow-hidden border-t border-white/[0.06] px-6 py-32 sm:py-40">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(31,226,108,.12),transparent_62%)]" />
+      <section id="download" className="relative overflow-hidden border-t border-white/[0.06] px-6 py-32 sm:py-40">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(31,226,108,.14),transparent_62%)]" />
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative z-10 mx-auto max-w-2xl text-center">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Founding runners</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Available now</p>
           <h2 className="mt-4 font-bebas text-6xl uppercase leading-[.9] sm:text-8xl">Stop guessing. Start training with proof.</h2>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-zinc-400">Join the launch list for early access, product updates and the founding-runner offer when RunToMax opens.</p>
+          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-zinc-400">RunToMax is live on the App Store. Start the free trial on your iPhone, pair your Apple Watch and go for a run—the coach reads the first one.</p>
 
-          <div className="mt-10 flex min-h-[60px] items-center justify-center">
-            <AnimatePresence mode="wait">
-              {status !== "success" ? (
-                <motion.form key="form" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.96 }} onSubmit={handleJoin} className="mx-auto flex w-full max-w-lg flex-col gap-3 sm:flex-row">
-                  <label htmlFor="email" className="sr-only">Email address</label>
-                  <input name="botcheck" tabIndex={-1} autoComplete="off" value={botcheck} onChange={(event) => setBotcheck(event.target.value)} className="absolute -left-[9999px] h-px w-px opacity-0" aria-hidden="true" />
-                  <input id="email" type="email" required placeholder="you@example.com" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} disabled={status === "loading"} className="min-w-0 flex-1 rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-4 text-white outline-none transition-all placeholder:text-zinc-600 focus:border-[#1FE26C] focus:ring-1 focus:ring-[#1FE26C] disabled:opacity-50" />
-                  <button type="submit" disabled={status === "loading"} className="min-w-[176px] rounded-xl bg-white px-6 py-4 text-sm font-bold text-black transition-all hover:bg-[#1FE26C] disabled:opacity-50">
-                    {status === "loading" ? "Joining…" : "Join the founding runners"}
-                  </button>
-                </motion.form>
-              ) : (
-                <motion.div key="success" initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} aria-live="polite" className="flex items-center gap-2 rounded-xl border border-[#1FE26C]/20 bg-[#1FE26C]/10 px-6 py-4 font-medium text-[#1FE26C]">
-                  <Check className="h-5 w-5" /> You&apos;re on the founding-runner list.
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="mt-10 flex justify-center">
+            <AppStoreBadge heightClass="h-16 sm:h-[4.5rem]" />
           </div>
-          <p className="mt-6 text-xs text-zinc-600">No spam · One-click unsubscribe · We do not sell personal data · Adults 18+</p>
+
+          <div className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+            {[
+              ["FREE TRIAL", "14 days on the annual plan, 7 days on monthly"],
+              ["THEN PRO", "$29.99 a year or $5.99 a month, billed by Apple"],
+              ["CANCEL ANYTIME", "One tap in your Apple ID subscriptions"],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-xl border border-white/[0.07] bg-black/40 p-4 text-left">
+                <p className="font-mono text-[9px] font-semibold tracking-[0.18em] text-[#1FE26C]">{label}</p>
+                <p className="mt-2 text-sm text-zinc-300">{value}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-zinc-600">US App Store pricing · iPhone + Apple Watch · Adults 18+</p>
         </motion.div>
       </section>
 
@@ -466,7 +445,11 @@ export default function RunToMaxLanding() {
             <Link href="/terms" className="transition-colors hover:text-white">Terms</Link>
             <a href={CONTACT_MAILTO} className="transition-colors hover:text-white">{CONTACT_EMAIL}</a>
           </div>
+          <AppStoreBadge heightClass="h-10" />
+        </div>
+        <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center gap-2 px-6 text-center md:flex-row md:justify-between md:text-left">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-700">© 2026 RunToMax · All splits sacred.</p>
+          <p className="max-w-2xl text-[10px] leading-relaxed text-zinc-700">Apple, the Apple logo, Apple Watch and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</p>
         </div>
       </footer>
     </main>

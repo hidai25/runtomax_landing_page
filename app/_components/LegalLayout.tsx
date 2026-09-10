@@ -27,10 +27,10 @@ export default function LegalLayout({
             <span className="text-[#1FE26C]">Max</span>
           </Link>
           <Link
-            href="/#waitlist"
+            href="/#download"
             className="text-sm font-medium hover:text-[#1FE26C] transition-colors duration-200"
           >
-            Join the waitlist
+            Get the app
           </Link>
         </div>
       </nav>

@@ -4,7 +4,7 @@
 
 ## Product
 
-- [RunToMax Home](https://runtomax.com/): Explains the coaching loop, Watch workout experience, evidence receipts, reversible plan adaptations, and founding-runner launch list.
+- [RunToMax Home](https://runtomax.com/): Explains the coaching loop, Watch workout experience, evidence receipts and reversible plan adaptations, with a link to download RunToMax on the App Store.
 - RunToMax is designed for runners aged 18 and older and uses an eligibility result rather than retaining a birth date.
 - The app works with or without a RunToMax training plan; runners can record, understand, and learn from individual workouts.
 - Daily guidance connects finalized workout, recovery, sleep, HRV, load, and plan data without silently changing a runner's training.
@@ -17,7 +17,7 @@
 
 ## Trust and privacy
 
-- [Privacy Policy](https://runtomax.com/privacy/): Describes HealthKit, location, optional cloud coaching, WeatherKit, StoreKit, consent-based analytics, and website waitlist data handling.
+- [Privacy Policy](https://runtomax.com/privacy/): Describes HealthKit, location, optional cloud coaching, WeatherKit, StoreKit, consent-based analytics, and website data handling.
 - RunToMax has no email/password account, does not sell personal data, does not show ads, and does not use HealthKit data for advertising.
 - Training history is stored through Apple Health and local app storage rather than a RunToMax cloud training-history database.
 - AI and analytics are optional and require separate, explicit consent.
@@ -29,6 +29,8 @@
 - [Terms of Service](https://runtomax.com/terms/): Covers eligibility, subscriptions, acceptable use, health disclaimers, third-party services, and legal terms.
 
 ## Key facts
+
+- Availability: on the App Store now — https://apps.apple.com/app/runtomax/id6767669260
 
 - Platforms: iPhone and Apple Watch
 - Audience: runners aged 18 and older
