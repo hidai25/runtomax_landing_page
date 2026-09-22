@@ -440,6 +440,12 @@ export default function RunToMaxLanding() {
             <span className="text-white">RunTo</span><span className="text-[#1FE26C]">Max</span>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-zinc-500">
+            <Link href="/features/apple-watch/" className="transition-colors hover:text-white">Apple Watch</Link>
+            <Link href="/features/coaching-from-apple-health/" className="transition-colors hover:text-white">Coaching</Link>
+            <Link href="/features/race-plans/" className="transition-colors hover:text-white">Plans</Link>
+            <Link href="/faq/" className="transition-colors hover:text-white">FAQ</Link>
+            <Link href="/accuracy/" className="transition-colors hover:text-white">Accuracy</Link>
+            <Link href="/fr/" hrefLang="fr" className="transition-colors hover:text-white">Français</Link>
             <Link href="/support" className="transition-colors hover:text-white">Support</Link>
             <Link href="/privacy" className="transition-colors hover:text-white">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-white">Terms</Link>

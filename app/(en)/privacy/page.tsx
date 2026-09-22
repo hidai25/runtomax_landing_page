@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LegalLayout from "../_components/LegalLayout";
+import LegalLayout from "@/app/_components/LegalLayout";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
 export const metadata: Metadata = {

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { CONTACT_EMAIL } from "@/app/_lib/contact";
+import { siteJsonLd } from "@/app/_lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bebas = Bebas_Neue({
@@ -12,7 +13,6 @@ const bebas = Bebas_Neue({
 
 const SITE_URL = "https://runtomax.com";
 const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
-const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "race-watch-grade running app",
   ],
   category: "fitness",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { en: "/", fr: "/fr/", "x-default": "/" } },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -79,53 +79,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#org`,
-      name: "RunToMax",
-      url: SITE_URL,
-      founder: { "@type": "Person", name: "Hidai Bar-Mor" },
-      email: CONTACT_EMAIL,
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: "RunToMax",
-      publisher: { "@id": `${SITE_URL}/#org` },
-      inLanguage: "en",
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": `${SITE_URL}/#app`,
-      name: "RunToMax",
-      operatingSystem: "iOS, watchOS",
-      applicationCategory: "HealthApplication",
-      applicationSubCategory: "Running",
-      description:
-        "RunToMax turns finalized Apple Watch and iPhone workout data into clear daily coaching, reliable workout execution, transparent plan adaptations and evidence-backed guidance for runners aged 18 and older.",
-      contentRating: "18+",
-      audience: {
-        "@type": "PeopleAudience",
-        suggestedMinAge: 18,
-      },
-      url: SITE_URL,
-      downloadUrl: APP_STORE_URL,
-      installUrl: APP_STORE_URL,
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        description: "Free trial, then RunToMax Pro: $29.99/year or $5.99/month via the App Store.",
-        url: APP_STORE_URL,
-      },
-      author: { "@id": `${SITE_URL}/#org` },
-    },
-  ],
-};
+const jsonLd = siteJsonLd("en", CONTACT_EMAIL);
 
 export default function RootLayout({
   children,

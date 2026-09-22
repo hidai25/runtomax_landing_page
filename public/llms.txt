@@ -1,44 +1,34 @@
 # RunToMax
 
-> RunToMax gives adult Apple Watch runners clear daily coaching, reliable workout execution, and evidence-backed guidance for consistent progress.
+> RunToMax is a running app for iPhone and Apple Watch. It records runs on the Apple Watch and coaches from the runs already in Apple Health: a plain-language verdict after every run, a threshold pace estimated from the last 90 days, and race-date training plans that propose changes the runner approves. For runners aged 18 and older. English and French.
 
-## Product
+## Facts (checked against App Store version 1.2.3, 2026-09-22)
 
-- [RunToMax Home](https://runtomax.com/): Explains the coaching loop, Watch workout experience, evidence receipts and reversible plan adaptations, with a link to download RunToMax on the App Store.
-- RunToMax is designed for runners aged 18 and older and uses an eligibility result rather than retaining a birth date.
-- The app works with or without a RunToMax training plan; runners can record, understand, and learn from individual workouts.
-- Daily guidance connects finalized workout, recovery, sleep, HRV, load, and plan data without silently changing a runner's training.
-- Recommendations show what changed, why it matters, what the runner can do next, and the supporting data and confidence.
-- Plan adaptations are bounded and reversible. The runner can keep, reduce, replace, or move a session when those options are supported.
-- Structured running and strength workouts execute on Apple Watch with pace targets, laps, cues, offline operation, and phone/Watch finalization.
-- Post-run analysis can cover workout execution, splits, training impact, recovery, weather context, running form, and route comparisons.
-- RunToMax supports HealthKit read and write, Apple Weather, optional Strava export, and FIT and GPX export.
-- Optional cloud coaching uses a secured RunToMax proxy and explains finalized, validated facts rather than independently calculating training metrics.
+- Requirements: iPhone with iOS 17 or later; Apple Watch with watchOS 10 or later (Series 4 and newer, SE, Ultra). Recording requires the Apple Watch; no phone needed on the run.
+- Other watches (Garmin, Coros, Polar, Suunto): runs synced to Apple Health can be read, with basic data only (distance, time, heart rate). Direct sync is planned, not available.
+- Strava: sync is built and in limited testing; not in the App Store version. Runs are written to Apple Health and can be exported as FIT files.
+- Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. One subscription unlocks the whole app. No free tier; recorded runs stay in Apple Health regardless.
+- Cloud coaching is opt-in and produces only the longer written coach notes; everything else (profile, paces, run classification, verdict, plans, scores, readiness, heat adjustment) runs on the iPhone.
+- Data: no account, no cloud copy of training history, no ads, no data sale.
+- Developer: Hidai Bar-Mor, independent developer.
 
-## Trust and privacy
+## Pages
 
-- [Privacy Policy](https://runtomax.com/privacy/): Describes HealthKit, location, optional cloud coaching, WeatherKit, StoreKit, consent-based analytics, and website data handling.
-- RunToMax has no email/password account, does not sell personal data, does not show ads, and does not use HealthKit data for advertising.
-- Training history is stored through Apple Health and local app storage rather than a RunToMax cloud training-history database.
-- AI and analytics are optional and require separate, explicit consent.
-- Coaching waits for canonical workout finalization and uses confidence-aware language when data is incomplete or uncertain.
+- [Home](https://runtomax.com/) — English overview. French: https://runtomax.com/fr/
+- [Apple Watch run tracking](https://runtomax.com/features/apple-watch/) — custom screens, structured intervals with haptics, phone-free recording, requirements. FR: https://runtomax.com/fr/fonctionnalites/apple-watch/
+- [Coaching from Apple Health](https://runtomax.com/features/coaching-from-apple-health/) — starting profile from existing runs, threshold pace, post-run verdict, readiness, what runs on device. FR: https://runtomax.com/fr/fonctionnalites/coaching-apple-sante/
+- [Race plans](https://runtomax.com/features/race-plans/) — race-date plans, four levels, adaptation with approval, no-plan mode, paste a workout. FR: https://runtomax.com/fr/fonctionnalites/plans-de-course/
+- [FAQ](https://runtomax.com/faq/) — Apple Watch requirement, phone-free, no plan, cloud coaching off, subscription, Garmin, Strava, languages, age, data, accuracy. FR: https://runtomax.com/fr/faq/
+- [Accuracy](https://runtomax.com/accuracy/) — how distance, splits, cadence and elevation are tested against a Garmin on the other wrist; results and limitations. FR: https://runtomax.com/fr/precision/
+- [Support](https://runtomax.com/support/), [Privacy Policy](https://runtomax.com/privacy/), [Terms of Service](https://runtomax.com/terms/)
 
-## Support and legal
+## Accuracy summary
 
-- [Support](https://runtomax.com/support/): Provides contact details, subscription help, age eligibility information, Strava disconnection guidance, and data-deletion instructions.
-- [Terms of Service](https://runtomax.com/terms/): Covers eligibility, subscriptions, acceptable use, health disclaimers, third-party services, and legal terms.
-
-## Key facts
-
-- Availability: on the App Store now — https://apps.apple.com/app/runtomax/id6767669260
-
-- Platforms: iPhone and Apple Watch
-- Audience: runners aged 18 and older
-- Product model: free trial followed by optional monthly or annual RunToMax Pro subscription through Apple's App Store
-- Core principle: the coach explains validated facts, shows its evidence, and does not make silent training changes
-- Developer: Hidai Bar-Mor, independent developer based in Israel
+- Distance uses Apple's workout distance engine. Against a Garmin on the other wrist: within about 1% on steady runs; 1–3% short on interval and stop-heavy runs, mostly from pause handling. More than 35 paired runs since May 2026; a 17-run scored corpus gates any change to the distance code.
+- Cadence matches the Garmin (median 180 vs 181 spm). Elevation from the barometer with GPS drift correction, about 9 m per run. Ground contact time from the wrist is not used for form guidance.
 
 ## Contact
 
 - Website: https://runtomax.com/
+- App Store: https://apps.apple.com/app/runtomax/id6767669260
 - Email: hidai25@gmail.com
