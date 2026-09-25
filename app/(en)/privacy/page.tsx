@@ -214,10 +214,11 @@ export default function PrivacyPage() {
       <p>
         Workout-detail archives, the per-run records the Apple Watch sends to
         your iPhone, use iOS data protection and are included in your own
-        iCloud or computer device backup, so a restore or a new iPhone keeps
-        each run&apos;s type and analysis. That backup is yours, encrypted by
-        Apple, and controlled in your device settings; it is never sent to a
-        RunToMax server. Deleting your data in RunToMax removes these
+        iCloud or computer device backup, so restoring that backup can preserve
+        each run&apos;s type and analysis. iCloud backups are encrypted.
+        Computer backup encryption is optional; we recommend enabling it.
+        Your backups are controlled by your device and backup settings and are
+        never sent to a RunToMax server. Deleting your data in RunToMax removes these
         archives from the device; device backups made earlier keep them until
         you delete or replace those backups. Derived fingerprints, generated coaching caches,
         imported-run files, RPE ratings, plan execution feedback, and manually
