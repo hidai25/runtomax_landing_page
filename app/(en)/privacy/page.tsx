@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="September 10, 2026"
+      effectiveDate="September 25, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -212,15 +212,21 @@ export default function PrivacyPage() {
         a RunToMax account server.
       </p>
       <p>
-        App-local workout-detail archives, derived fingerprints, generated
-        coaching caches, imported-run files, RPE ratings, plan execution
-        feedback, and manually entered sleep use iOS data protection and are
-        excluded from device backups. After reinstalling or restoring a
-        device, reconstructable data may be rebuilt from Apple Health or
-        recovered from the Watch where available. Imported runs that were not
-        written to Apple Health may need to be imported again. Apple Health
-        backup and synchronization are controlled separately by Apple and your
-        device settings.
+        Workout-detail archives, the per-run records the Apple Watch sends to
+        your iPhone, use iOS data protection and are included in your own
+        iCloud or computer device backup, so a restore or a new iPhone keeps
+        each run&apos;s type and analysis. That backup is yours, encrypted by
+        Apple, and controlled in your device settings; it is never sent to a
+        RunToMax server. Deleting your data in RunToMax removes these
+        archives from the device; device backups made earlier keep them until
+        you delete or replace those backups. Derived fingerprints, generated coaching caches,
+        imported-run files, RPE ratings, plan execution feedback, and manually
+        entered sleep also use iOS data protection and are excluded from
+        device backups. After reinstalling or restoring a device, that data
+        may be rebuilt from Apple Health or recovered from the Watch where
+        available. Imported runs that were not written to Apple Health may
+        need to be imported again. Apple Health backup and synchronization are
+        controlled separately by Apple and your device settings.
       </p>
 
       <h3>Consent-based product analytics</h3>
