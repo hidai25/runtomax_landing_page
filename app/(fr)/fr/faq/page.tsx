@@ -49,7 +49,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Où sont stockées mes données ?",
-    a: "Sur votre appareil. Courses, tracés et fréquence cardiaque vivent dans Apple Santé ; RunToMax n’a pas de compte et ne garde aucune copie cloud de votre historique. Le coaching cloud optionnel envoie un résumé minimal via un relais RunToMax, et rien d’autre. Pas de publicité, pas de vente de données.",
+    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. Une synchronisation facultative avec Se connecter avec Apple est prévue dans la version 1.3 et fait actuellement l’objet de tests de développement contrôlés. Si vous l’activez lorsqu’elle sera proposée, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
   },
   {
     q: "Quelle est la précision de la distance ?",
@@ -64,7 +64,7 @@ export default function FaqPageFr() {
       eyebrow="Avant de télécharger"
       title="Les questions que les coureurs posent en premier"
       alternate="/faq/"
-      updated="2026-09-22"
+      updated="2026-09-28"
       intro={<p>Des réponses courtes, vérifiées dans la version actuelle de l’App Store. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
     >
       <Faq items={items} />

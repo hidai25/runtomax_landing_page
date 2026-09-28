@@ -49,7 +49,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Where is my data stored?",
-    a: "On your device. Runs, routes and heart rate live in Apple Health; RunToMax has no account and keeps no cloud copy of your training history. The optional cloud coaching sends a minimized summary through a RunToMax proxy and nothing else. No ads, no data sale.",
+    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. Optional account sync with Sign in with Apple is planned for version 1.3 and is currently in controlled development testing. If you enable it when offered, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
   },
   {
     q: "How accurate is the distance?",
@@ -64,7 +64,7 @@ export default function FaqPage() {
       eyebrow="Before you download"
       title="Questions runners ask first"
       alternate="/fr/faq/"
-      updated="2026-09-22"
+      updated="2026-09-28"
       intro={<p>Short answers, checked against the current App Store version. If yours is missing, email the developer from the support page.</p>}
     >
       <Faq items={items} />

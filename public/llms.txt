@@ -9,7 +9,7 @@
 - Strava: sync is built and in limited testing; not in the App Store version. Runs are written to Apple Health and can be exported as FIT files.
 - Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. One subscription unlocks the whole app. No free tier; recorded runs stay in Apple Health regardless.
 - Cloud coaching is opt-in and produces only the longer written coach notes; everything else (profile, paces, run classification, verdict, plans, scores, readiness, heat adjustment) runs on the iPhone.
-- Data: no account, no cloud copy of training history, no ads, no data sale.
+- Data: no account required, no ads, no data sale. Optional Sign in with Apple training-history sync is planned for version 1.3 and currently limited to controlled development testing; when enabled, it stores an encrypted selected training archive with Cloudflare (workout heart rate included, raw GPS routes excluded). See the privacy policy for the English and French sync disclosure.
 - Developer: Hidai Bar-Mor, independent developer.
 
 ## Pages
