@@ -15,7 +15,7 @@ const features = [
   ["/fr/fonctionnalites/apple-watch/", "Suivi sur Apple Watch", "Écrans à composer, séances structurées avec vibrations, sans téléphone."],
   ["/fr/fonctionnalites/coaching-apple-sante/", "Coaching depuis Apple Santé", "Vos courses passées comptent dès le premier jour. Un verdict après chaque sortie."],
   ["/fr/fonctionnalites/plans-de-course/", "Plans calés sur votre course", "Du 5 km au marathon. Le plan propose, vous décidez."],
-  ["/fr/faq/", "FAQ avant d’acheter", "Faut-il une Apple Watch ? Sans téléphone ? Sans plan ? Que comprend l’abonnement ?"],
+  ["/fr/faq/", "FAQ avant d’acheter", "Faut-il une Apple Watch ? Sans téléphone ? Qu’est-ce qui est gratuit ? Que comprend Pro ?"],
   ["/fr/precision/", "Précision mesurée", "Comment nous testons la distance face à une Garmin, avec les chiffres et les limites."],
 ] as const;
 
@@ -26,7 +26,7 @@ export default function FrenchHome() {
       eyebrow="Coach course à pied pour Apple Watch"
       title="Enregistre sur Apple Watch. Lit toutes vos sorties dans Apple Santé."
       alternate="/"
-      updated="2026-09-22"
+      updated="2026-10-05"
       intro={
         <p>
           RunToMax est un traqueur de course pensé pour la montre et un coach qui lit ce qui s’est vraiment passé sur la sortie — pas
@@ -60,11 +60,12 @@ export default function FrenchHome() {
       </ul>
 
       <h2>Prix</h2>
-      <p>
-        Un seul abonnement, RunToMax Pro, débloque toute l’application : 14 jours d’essai gratuit puis l’abonnement annuel, ou 7 jours d’essai
-        puis l’abonnement mensuel, facturé par Apple au tarif de votre pays. Pas de version gratuite, pas de publicité, aucune vente de données.
-        Vos courses restent dans Apple Santé quoi qu’il arrive.
-      </p>
+      <ul>
+        <li><strong>Gratuit, sans limite de durée :</strong> l’enregistrement des sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export. Sans compte.</li>
+        <li><strong>Trois sorties coachées :</strong> quand vous le souhaitez, activez le coaching une fois. Vos trois prochaines sorties enregistrées (au moins 1 km et 5 minutes actives) incluent la forme du jour, le conseil du jour, une proposition de première semaine et une séance guidée avec son parcours. Aucun délai, aucun abonnement ne démarre.</li>
+        <li><strong>RunToMax Pro :</strong> le coaching continu, les plans, les séances structurées, les parcours, l’analyse approfondie, les écrans personnalisés et le coaching cloud. Abonnement annuel avec 14 jours d’essai, ou mensuel avec 7 jours d’essai, facturé par Apple au tarif de votre pays. Résiliable à tout moment.</li>
+      </ul>
+      <p>Pas de publicité, aucune vente de données. Vos courses restent dans Apple Santé quoi qu’il arrive.</p>
     </PageShell>
   );
 }

@@ -6,7 +6,7 @@ import { alternatesFor } from "@/app/_lib/site";
 export const metadata: Metadata = {
   title: "FAQ — do I need an Apple Watch, and other questions before you buy",
   description:
-    "Straight answers before you download RunToMax: Apple Watch requirement, running without the phone, using it without a plan, what works with cloud coaching off, what the subscription includes, Garmin, Strava, languages and age.",
+    "Straight answers before you download RunToMax: Apple Watch requirement, running without the phone, what is free, the three coached runs, what Pro includes, Garmin, Strava, languages and age.",
   alternates: alternatesFor("/faq/", "en"),
 };
 
@@ -28,8 +28,16 @@ const items: FaqItem[] = [
     a: "Everything except the longer written coach notes. Recording, the starting profile from Apple Health, threshold and training paces, run classification, the post-run verdict, plan building, plan scores, adaptation proposals, readiness and heat-adjusted targets are all computed on your iPhone. Cloud coaching is opt-in and only generates the written notes.",
   },
   {
-    q: "What does the subscription include?",
-    a: "One subscription, RunToMax Pro, unlocks the whole app: Watch recording, analysis, plans and cloud coaching. In the US it is $29.99 per year with a 14-day free trial, or $5.99 per month with a 7-day trial, billed by Apple; local prices vary. There is no free tier: after the trial the app locks until you subscribe, and every run you recorded stays in Apple Health. Cancel any time in your Apple ID subscriptions.",
+    q: "Is RunToMax free?",
+    a: "Recording is. Outdoor and treadmill runs on the Apple Watch, with one data screen showing five fields you choose, chest-strap heart rate, a basic summary, your history, Apple Health and FIT/GPX export stay free, with no account and no time limit. From version 1.3.2 the 3D flyover replay of your route is free too. Coaching is the paid part, and you can try it first: see the next two answers.",
+  },
+  {
+    q: "What are the three coached runs?",
+    a: "When you are ready, activate coaching once in the app. Your next three saved RunToMax runs of at least 1 km and 5 active minutes include the coach: the morning readiness read and today’s call, a first-week training proposal, and a guided workout with a matching route sent to your Watch, each with its post-run analysis. There is no calendar deadline, nothing is charged and no subscription starts. Shorter or discarded runs do not count. The three runs use on-device coaching; cloud AI notes are Pro only. Runners who already had a Pro trial or subscription are not eligible for a new set.",
+  },
+  {
+    q: "What does RunToMax Pro include?",
+    a: "Ongoing coaching: today’s call and readiness every day, race-date plans that adapt, structured sessions and the session library, route planning, deeper run analysis and Trends, customizable Watch screens, Stryd support and optional cloud coaching notes. In the US it is $29.99 per year with a 14-day free trial, or $5.99 per month with a 7-day trial, billed by Apple; local prices vary. If you stop subscribing, recording stays free and your saved runs, exports and earned reports remain. Cancel any time in your Apple ID subscriptions.",
   },
   {
     q: "I run with a Garmin (or Coros, Polar, Suunto). Can I use RunToMax?",
@@ -64,14 +72,14 @@ export default function FaqPage() {
       eyebrow="Before you download"
       title="Questions runners ask first"
       alternate="/fr/faq/"
-      updated="2026-09-28"
+      updated="2026-10-05"
       intro={<p>Short answers, checked against the current App Store version. If yours is missing, email the developer from the support page.</p>}
     >
       <Faq items={items} />
       <h2>Still unsure?</h2>
       <p>
-        The trial is 14 days on the annual plan. Pair the Watch, go for one run, read the verdict — that is the fastest way to know if RunToMax is
-        for you. Support is one email away on the <a href="/support/">support page</a>.
+        Recording is free, so pair the Watch and go for a run. When you want to see the coach, activate the three coached runs — nothing is
+        charged, and you decide afterwards. Support is one email away on the <a href="/support/">support page</a>.
       </p>
     </PageShell>
   );

@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      effectiveDate="September 25, 2026"
+      effectiveDate="October 5, 2026"
       intro={
         <p>
           These Terms govern your use of the RunToMax iPhone and Apple Watch
@@ -57,7 +57,8 @@ export default function TermsPage() {
         RunToMax is a running app that records workouts on Apple Watch and
         iPhone, computes training metrics, generates adaptive plans, and
         offers Apple WeatherKit context and optional Google Gemini cloud
-        coaching. Purchases use Apple StoreKit. The launch version does not
+        coaching. Recording is free; coaching features are offered as
+        described in section 5. Purchases use Apple StoreKit. The launch version does not
         provide a public Strava integration or use RevenueCat. Your training
         history is stored through Apple HealthKit and local app storage. A
         RunToMax proxy, which holds the Gemini API key server-side so the app
@@ -75,15 +76,41 @@ export default function TermsPage() {
         non-commercial use. All rights not expressly granted are reserved.
       </p>
 
-      <h2>5. Subscriptions and purchases</h2>
+      <h2>5. Free use, coached runs, subscriptions and purchases</h2>
       <p>
-        RunToMax offers one Pro subscription through Apple&apos;s App Store
-        using StoreKit, with monthly and annual billing options. Pro includes
-        both Cockpit and cloud coaching; cloud coaching is not sold as a
-        separate subscription. The launch version does not offer a Lifetime
-        purchase. Pricing, billing cycles, and any introductory terms are
-        shown in the app before purchase and on your Apple ID subscription
-        page.
+        <strong>Basic use is free and does not require a purchase.</strong>{" "}
+        Basic includes recording Outdoor and Treadmill runs on Apple Watch
+        with one data screen of five fields you choose, chest-strap heart rate, basic run
+        summaries, your run history, Apple Health and export. We intend to
+        keep these Basic capabilities free; if we ever change that for
+        existing users, we will give reasonable notice under section 16.
+      </p>
+      <p>
+        <strong>Three coached runs.</strong> Eligible users who have not
+        previously used a Pro trial or subscription may activate coaching
+        once, at no charge. Their next three RunToMax Watch runs that are
+        successfully saved with at least 1 km and 5 minutes of active time
+        include on-device coaching features. There is no calendar expiry and
+        no subscription starts automatically. Shorter, discarded or failed
+        saves do not count; deleting a run or reinstalling the app does not
+        restore a used run. A minimal local record of activation, used count
+        and completion is kept so the offer cannot be repeated. Cloud coaching
+        is not part of the three coached runs. We may change or withdraw this
+        offer for future users; runs already activated keep their disclosed
+        terms.
+      </p>
+      <p>
+        <strong>RunToMax Pro</strong> is one auto-renewable subscription
+        through Apple&apos;s App Store using StoreKit, with monthly and annual
+        billing options. Pro includes ongoing coaching, training plans,
+        structured sessions, routes, deeper analysis, customizable Watch
+        screens, supported sensor features and cloud coaching; cloud coaching
+        is not sold as a separate subscription, and no Lifetime purchase is
+        offered. Pricing, billing cycles and any introductory offer you are
+        eligible for are shown in the app before purchase and on your Apple ID
+        subscription page. If your subscription ends, Basic use continues and
+        your saved runs, exports and previously earned analysis remain
+        available.
       </p>
       <p>
         Apple processes all payments. Your purchase is also subject to{" "}

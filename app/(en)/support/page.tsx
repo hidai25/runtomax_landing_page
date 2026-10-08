@@ -14,7 +14,7 @@ export default function SupportPage() {
   return (
     <LegalLayout
       title="Support"
-      effectiveDate="July 22, 2026"
+      effectiveDate="October 5, 2026"
       intro={
         <p>
           Email{" "}
@@ -70,11 +70,28 @@ export default function SupportPage() {
       </p>
       */}
 
+      <h2>Free use and the three coached runs</h2>
+      <p>
+        Recording Outdoor and Treadmill runs on the Apple Watch, with one data
+        screen of five fields you choose, basic summaries, history, Apple Health and export, is
+        free and needs no subscription. Coaching can be tried once: activate
+        it in the app and your next three saved RunToMax runs of at least 1 km
+        and 5 active minutes include the coach, with no deadline and no
+        subscription starting. Runs that are shorter, discarded or fail to save
+        do not use one of the three. Deleting a run or reinstalling the app does
+        not give the runs back, and the offer is not available to runners who
+        already had a Pro trial or subscription. If your Watch shows “Update
+        RunToMax on your Apple Watch”, install the latest Watch version before
+        activating.
+      </p>
+
       <h2>Managing your subscription</h2>
       <p>
         RunToMax has one Pro subscription, offered monthly or annually. Pro
-        includes both Cockpit and cloud coaching; there is no separate AI
-        Coaching subscription. It is billed by Apple, not by RunToMax. To
+        includes ongoing coaching, plans, routes, deeper analysis, custom Watch
+        screens and cloud coaching; there is no separate AI Coaching
+        subscription. It is billed by Apple, not by RunToMax. If it ends, free
+        recording continues and your saved runs and exports stay. To
         change or cancel, open the iOS <strong>Settings</strong> app, tap your
         name, then <strong>Subscriptions</strong>. Refunds are handled by Apple
         at{" "}

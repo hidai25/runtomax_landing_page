@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How RunToMax handles HealthKit, location, optional cloud coaching and account sync, WeatherKit, subscriptions, consent-based analytics, and website data.",
+    "How RunToMax handles HealthKit, location, optional cloud coaching and account sync, WeatherKit, the 3D flyover's map and terrain tiles, free use and subscriptions, consent-based analytics, and website data.",
   alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
 };
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="September 28, 2026"
+      effectiveDate="October 8, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -44,8 +44,10 @@ export default function PrivacyPage() {
           RunToMax using Cloudflare, without raw GPS routes.
         </li>
         <li>
-          Pro is one Apple subscription, offered monthly or annually. It
-          includes both Cockpit and optional cloud coaching.
+          Basic recording is free and needs no purchase. Pro is one Apple
+          subscription, offered monthly or annually, for ongoing coaching,
+          including optional cloud coaching; three coached runs can be tried
+          once without a subscription.
         </li>
         <li>
           Cloud coaching is off until you explicitly opt in. It sends a
@@ -293,12 +295,36 @@ export default function PrivacyPage() {
         .
       </p>
 
-      <h3>Subscriptions</h3>
+      <h3>3D flyover ground modes (Apple Maps, AWS, Esri)</h3>
       <p>
-        RunToMax offers Pro as a monthly or annual auto-renewing subscription
-        through Apple StoreKit. Pro includes Cockpit and cloud coaching. Apple
-        processes payment and provides the app with purchase and entitlement
-        status. RunToMax never receives your full card number, billing address,
+        The 3D flyover replay of a run is available to every user from
+        version 1.3.2. Its ground modes are off by default: nothing is fetched
+        until you choose one in the Flyover view, and fetched tiles are cached
+        on your device. <strong>Terrain</strong> downloads elevation tiles
+        from the public Terrain Tiles dataset hosted by Amazon Web Services;
+        AWS receives the tile coordinates covering your route — a coarse
+        indication of where you ran — and no identity or training data.{" "}
+        <strong>Realistic</strong> draws Apple Maps satellite imagery around
+        your route inside the app only; it is not included in exported videos,
+        and Apple receives the map region needed to render it, as described
+        above. In versions before 1.3.2 the satellite ground mode requested
+        imagery tiles from Esri World Imagery instead, with the same
+        tile-coordinate request going to Esri.
+      </p>
+
+      <h3>Subscriptions and the coached-run offer</h3>
+      <p>
+        Basic recording needs no purchase. RunToMax offers Pro as a monthly or
+        annual auto-renewing subscription through Apple StoreKit; Pro includes
+        ongoing coaching and cloud coaching. To offer the three free coached
+        runs once per eligible user, the app keeps a minimal local record of
+        activation, used-run count and completion in protected storage and the
+        device Keychain, mirrored to the paired Apple Watch. That record
+        contains no health values or run identifiers, is separate from your
+        workout history, and is not restored by deleting runs or reinstalling.
+        The app also reads your StoreKit purchase history on the device to
+        check eligibility; it is not sent to RunToMax. Apple processes payment
+        and provides the app with purchase and entitlement status. RunToMax never receives your full card number, billing address,
         or Apple ID through StoreKit. Optional Sign in with Apple account sync
         uses a separate account identifier as explained above. The launch build
         does not use RevenueCat and does not offer
@@ -397,7 +423,8 @@ export default function PrivacyPage() {
       <h2>Service providers</h2>
       <ul>
         <li>
-          <strong>Apple</strong> — HealthKit, Core Location, Maps, WeatherKit,
+          <strong>Apple</strong> — HealthKit, Core Location, Maps (including the
+          flyover&apos;s satellite imagery), WeatherKit,
           StoreKit, WatchConnectivity, Sign in with Apple for optional account
           sync, and App Store services ({" "}
           <a
@@ -417,6 +444,23 @@ export default function PrivacyPage() {
             target="_blank"
             rel="noreferrer"
           >
+            privacy
+          </a>
+          ).
+        </li>
+        <li>
+          <strong>Amazon Web Services</strong> — the public Terrain Tiles
+          dataset behind the flyover&apos;s Terrain mode, only after you choose
+          it ({" "}
+          <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noreferrer">
+            privacy
+          </a>
+          ).
+        </li>
+        <li>
+          <strong>Esri</strong> — World Imagery for the satellite ground mode
+          in versions before 1.3.2, only after you chose it ({" "}
+          <a href="https://www.esri.com/en-us/privacy/overview" target="_blank" rel="noreferrer">
             privacy
           </a>
           ).
