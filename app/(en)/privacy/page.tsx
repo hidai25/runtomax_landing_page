@@ -62,8 +62,8 @@ export default function PrivacyPage() {
         <li>
           Garmin Connect integration is in preparation. The initial phase is
           optional account connection and delivery of your chosen running
-          workouts to Garmin Connect. It does not import Garmin activity or
-          health data. See the <a href="#garmin">Garmin disclosure</a> below.
+          workouts to Garmin Connect. Testers can separately opt in to importing new Garmin runs. Sleep and
+          all-day health data are not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
           The launch version has no public Strava integration, RevenueCat,
@@ -262,8 +262,25 @@ export default function PrivacyPage() {
         records of the corresponding RunToMax session, Garmin workout and
         calendar identifiers, and send or update status. It does not require
         sending your raw workout history, GPS routes, sleep, HRV or other raw
-        HealthKit samples. The initial integration does not import completed
-        Garmin activities, Garmin health measurements or historical Garmin data.
+        HealthKit samples. Sleep, all-day Garmin health measurements and historical backfill are not imported.
+      </p>
+      <p>
+        Approved testers can separately enable <strong>Import Garmin runs</strong>.
+        After your watch syncs with Garmin Connect, Garmin sends new running
+        activity identifiers, names, dates, distance, duration, GPS route,
+        heart rate, cadence, elevation and lap boundaries when available.
+        RunToMax uses these to show your runs, prevent duplicate records and
+        match completed runs to your plan. Your iPhone downloads available
+        imports while RunToMax is active or when you check for new runs.
+      </p>
+      <p>
+        Imported activity data is encrypted in temporary Cloudflare storage
+        for up to seven days while your iPhone downloads it. This is a sync
+        buffer, not a history archive. Your local runs remain until you delete
+        them. Turning import off stops new imports and clears retained server
+        activity copies. Disconnecting also stops imports. You can separately
+        revoke Activities permission in Garmin Connect. No historical backfill
+        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import">Read the import details</a>.
       </p>
       <p>
         <strong>Cloudflare</strong> hosts the RunToMax authorization and delivery
@@ -287,8 +304,10 @@ export default function PrivacyPage() {
         <a href="https://www.garmin.com/privacy/connect/" target="_blank" rel="noreferrer">Garmin Connect Privacy Policy</a>.
         {" "}Cloudflare and Garmin are the service providers or recipients used
         by this integration. Its connection credentials, identifiers and
-        Garmin-returned records are not sent to Google Gemini, PostHog, the
-        optional RunToMax training backup, advertising services or data brokers.
+        Garmin activity records are not sent to Google Gemini, PostHog, advertising
+        services or data brokers. If you separately enable RunToMax account
+        backup, local imported-run records may be included under the account-sync
+        disclosure; connection credentials are excluded.
         We do not sell Garmin user data. We do not use Garmin data or derived
         data to train, test, evaluate or improve AI models. No Garmin-data AI
         processing is enabled in this initial phase.
