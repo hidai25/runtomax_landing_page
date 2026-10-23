@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How RunToMax handles HealthKit, location, optional cloud coaching and account sync, WeatherKit, the 3D flyover's map and terrain tiles, free use and subscriptions, consent-based analytics, and website data.",
+    "How RunToMax handles HealthKit, location, optional cloud coaching, account sync and Garmin Connect, WeatherKit, map and terrain tiles, subscriptions, consent-based analytics, and website data.",
   alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
 };
@@ -14,11 +14,11 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 8, 2026"
+      effectiveDate="October 23, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
-          require a RunToMax account, show ads, or sell personal data. Your
+          require a RunToMax account for basic use, show ads, or sell personal data. Your
           workout history, routes, and health information are stored through
           Apple Health on your devices. Limited data leaves your device only
           for the features described below, with your permission where
@@ -58,6 +58,12 @@ export default function PrivacyPage() {
           Optional product and coaching analytics are off until you opt in.
           RunToMax uses PostHog US Cloud with IP geolocation disabled and does
           not send exact workout or health values.
+        </li>
+        <li>
+          Garmin Connect integration is in preparation. The initial phase is
+          optional account connection and delivery of your chosen running
+          workouts to Garmin Connect. It does not import Garmin activity or
+          health data. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
           The launch version has no public Strava integration, RevenueCat,
@@ -215,6 +221,102 @@ export default function PrivacyPage() {
         window is not a promise about physical erasure of every provider-managed
         storage copy. For access, correction, a copy of your sync data or deletion
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
+      </p>
+
+      <h3 id="garmin">Garmin Connect (optional, in preparation)</h3>
+      <p>
+        We are preparing an optional connection that lets you send selected
+        RunToMax running workouts and scheduled dates to your Garmin Connect
+        account for use on compatible devices. This feature is not yet
+        available in the public app. The registration and authorization
+        service is being prepared first; visiting its callback page does not
+        connect an account or send any workouts. This section describes the
+        initial connection and workout-delivery phase when offered in testing
+        or a subsequent release.
+      </p>
+      <p>
+        You choose whether to connect Garmin Connect and which workouts to send.
+        We explain this transfer before authorization. Garmin handles your
+        sign-in and permissions; RunToMax never requests or receives your Garmin
+        password. The connection is associated with your authenticated RunToMax
+        account. Connecting does not enable cloud backup, product analytics or
+        AI coaching, and connecting alone does not upload a training plan.
+      </p>
+      <p>
+        For authorization, our service processes an internal RunToMax account
+        identifier, consent version and time, short-lived authorization codes
+        and security values, Garmin&apos;s user identifier, granted permissions,
+        and access and refresh credentials. We store a protected identifier to
+        associate the connection with you, permission and connection status, and
+        encrypted credentials. These records are account-linked, not anonymous.
+        Authorization codes are used for exchange and are not retained in our
+        application database or application logs. Temporary connection attempts
+        expire after ten minutes and are removed by scheduled cleanup.
+      </p>
+      <p>
+        When workout delivery is enabled and you approve a send, the data sent
+        to Garmin consists of the workout name and description, running steps
+        such as warm-up, intervals and recovery, prescribed duration or distance,
+        selected pace or heart-rate targets, and scheduled calendar dates. These
+        targets can reflect your training settings. Delivery also requires
+        records of the corresponding RunToMax session, Garmin workout and
+        calendar identifiers, and send or update status. It does not require
+        sending your raw workout history, GPS routes, sleep, HRV or other raw
+        HealthKit samples. The initial integration does not import completed
+        Garmin activities, Garmin health measurements or historical Garmin data.
+      </p>
+      <p>
+        <strong>Cloudflare</strong> hosts the RunToMax authorization and delivery
+        backend and processes and stores connection records on our behalf.
+        Traffic uses HTTPS; stored authorization credentials are encrypted with
+        keys held by our service, which can decrypt them to operate the
+        connection. This is not end-to-end encryption. Cloudflare may process
+        network and security information, including IP addresses, to deliver
+        and protect the service. Our callback uses no advertising, analytics
+        scripts or tracking cookies, and application request-URL logging is
+        disabled to avoid recording authorization parameters. Cloudflare
+        processing may occur globally. See its{" "}
+        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noreferrer">Privacy Policy</a>
+        {" "}and{" "}
+        <a href="https://www.cloudflare.com/cloudflare-customer-dpa/" target="_blank" rel="noreferrer">Data Processing Addendum</a>.
+      </p>
+      <p>
+        <strong>Garmin</strong> receives the workouts and calendar dates you
+        choose to send and operates your Garmin Connect account as an independent
+        data controller under its{" "}
+        <a href="https://www.garmin.com/privacy/connect/" target="_blank" rel="noreferrer">Garmin Connect Privacy Policy</a>.
+        {" "}Cloudflare and Garmin are the service providers or recipients used
+        by this integration. Its connection credentials, identifiers and
+        Garmin-returned records are not sent to Google Gemini, PostHog, the
+        optional RunToMax training backup, advertising services or data brokers.
+        We do not sell Garmin user data. We do not use Garmin data or derived
+        data to train, test, evaluate or improve AI models. No Garmin-data AI
+        processing is enabled in this initial phase.
+      </p>
+      <p>
+        You can withdraw Garmin authorization through your Garmin Connect
+        account settings. When the integration is offered, RunToMax will also
+        provide a disconnect control; during limited testing you can contact
+        us for disconnection or deletion. Disconnecting stops new operations.
+        Our service requests revocation from Garmin and removes the stored
+        credentials after confirmed revocation. If Garmin is unavailable,
+        encrypted credentials and the minimum pending cleanup records remain
+        for retry until revocation succeeds; contact us for help with an
+        unresolved request. Inactive connection records with no credentials or
+        pending authorization are eligible for removal after 24 hours.
+      </p>
+      <p>
+        Disconnecting or deleting RunToMax does not automatically erase workouts
+        already transferred to Garmin. You can manage or delete those copies
+        in Garmin Connect under Garmin&apos;s controls and retention policies.
+        Disconnecting also does not cancel an App Store subscription. Cloudflare
+        database recovery history may retain earlier database records for up to
+        30 days, depending on its plan; this is separate from the live database.
+        For access, correction, a copy or export of your connection data, deletion,
+        or withdrawal assistance, contact{" "}
+        <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>. We will update this disclosure
+        and request the necessary permissions before adding Garmin activity
+        import or other materially different processing.
       </p>
 
       <h3>Cloud coaching (optional, included with Pro)</h3>
@@ -479,6 +581,9 @@ export default function PrivacyPage() {
         <strong>Cloudflare</strong> also provides processing and EU-configured
         storage for optional account sync, with global service and security
         processing as explained in the <a href="#training-sync">sync disclosure</a>.
+        {" "}The optional Garmin Connect service also uses Cloudflare hosting
+        and storage; Garmin receives the workouts you choose to send, as
+        described in the <a href="#garmin">Garmin disclosure</a>.
       </p>
 
       <h2>Retention and deletion</h2>
