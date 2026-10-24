@@ -316,12 +316,17 @@ export default function PrivacyPage() {
         services or data brokers. If you separately enable RunToMax account
         backup, local imported-run records may be included under the account-sync
         disclosure; connection credentials are excluded.
-        We do not sell Garmin user data. We do not use Garmin data or derived
-        data to train, test, evaluate or improve AI models. No Garmin-data AI
-        processing is enabled in this phase. Personalized cloud coaching stays
-        unavailable when shared training context includes Garmin data. On-device
-        guidance and plan progress remain available. Disconnecting or deleting one
-        run does not remove Garmin contributions from saved training context.
+        We do not sell Garmin user data.
+      </p>
+      <p id="garmin-ai">
+        <strong>Garmin data and AI.</strong> RunToMax does not send Garmin data,
+        or results derived from it, to Google Gemini or any other external AI
+        provider, and no AI service processes Garmin data on our behalf. We do not
+        use Garmin data or derived data to train, test, evaluate or improve AI
+        models. Personalized cloud coaching stays unavailable when shared training
+        context includes Garmin data. On-device guidance and plan progress remain
+        available. Disconnecting or deleting one run does not remove Garmin
+        contributions from saved training context.
       </p>
       <p>
         You can withdraw Garmin authorization through your Garmin Connect
