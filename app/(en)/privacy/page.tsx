@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 23, 2026"
+      effectiveDate="October 24, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -268,9 +268,12 @@ export default function PrivacyPage() {
         Approved testers can separately enable <strong>Import Garmin runs</strong>.
         After your watch syncs with Garmin Connect, Garmin sends new running
         activity identifiers, names, dates, distance, duration, GPS route,
-        heart rate, cadence, elevation and lap boundaries when available.
-        RunToMax uses these to show your runs, prevent duplicate records and
-        match completed runs to your plan. Your iPhone downloads available
+        heart rate, cadence, running power, device temperature, ascent and descent, recording device and lap boundaries when available.
+        RunToMax uses these to show your runs, prevent duplicate records, match
+        completed runs to your plan and update plan progress. On-device
+        calculations provide training-load and recovery estimates and adapt your
+        plan; RunToMax identifies its own estimates separately from Garmin
+        measurements. Your iPhone downloads available
         imports while RunToMax is active or when you check for new runs.
       </p>
       <p>
@@ -302,21 +305,33 @@ export default function PrivacyPage() {
         choose to send and operates your Garmin Connect account as an independent
         data controller under its{" "}
         <a href="https://www.garmin.com/privacy/connect/" target="_blank" rel="noreferrer">Garmin Connect Privacy Policy</a>.
-        {" "}Cloudflare and Garmin are the service providers or recipients used
-        by this integration. Its connection credentials, identifiers and
+        {" "}Cloudflare and Garmin support the connection and delivery service.
+        Optional maps and weather send the needed coordinates or region to Apple.
+        Choosing terrain for a flyover sends tile coordinates covering the route
+        area to AWS. A run image, video or activity file is shared only with the
+        destination you choose and includes Garmin source attribution. These
+        recipients do not receive Garmin connection credentials. See the map,
+        weather and flyover disclosures in this policy. Connection credentials, identifiers and
         Garmin activity records are not sent to Google Gemini, PostHog, advertising
         services or data brokers. If you separately enable RunToMax account
         backup, local imported-run records may be included under the account-sync
         disclosure; connection credentials are excluded.
         We do not sell Garmin user data. We do not use Garmin data or derived
         data to train, test, evaluate or improve AI models. No Garmin-data AI
-        processing is enabled in this initial phase.
+        processing is enabled in this phase. Personalized cloud coaching stays
+        unavailable when shared training context includes Garmin data. On-device
+        guidance and plan progress remain available. Disconnecting or deleting one
+        run does not remove Garmin contributions from saved training context.
       </p>
       <p>
         You can withdraw Garmin authorization through your Garmin Connect
-        account settings. When the integration is offered, RunToMax will also
-        provide a disconnect control; during limited testing you can contact
-        us for disconnection or deletion. Disconnecting stops new operations.
+        account settings or in RunToMax Settings → Connections → Garmin Connect.
+        Disconnecting stops new operations. Garmin permission-change notifications
+        stop the affected processing: removing Activities stops imports and clears
+        temporary server activity copies; removing Training stops workout delivery
+        without stopping permitted imports. A Garmin deregistration notification
+        removes connection credentials. Minimal hashed notification records prevent
+        stale events from restoring revoked access; records without a remaining connection grant are eligible for removal after 30 days.
         Our service requests revocation from Garmin and removes the stored
         credentials after confirmed revocation. If Garmin is unavailable,
         encrypted credentials and the minimum pending cleanup records remain
@@ -334,8 +349,7 @@ export default function PrivacyPage() {
         For access, correction, a copy or export of your connection data, deletion,
         or withdrawal assistance, contact{" "}
         <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>. We will update this disclosure
-        and request the necessary permissions before adding Garmin activity
-        import or other materially different processing.
+        and request the necessary permissions before adding materially different processing.
       </p>
 
       <h3>Cloud coaching (optional, included with Pro)</h3>
