@@ -60,9 +60,9 @@ export default function PrivacyPage() {
           not send exact workout or health values.
         </li>
         <li>
-          Garmin Connect integration is in preparation. The initial phase is
-          optional account connection and delivery of your chosen running
-          workouts to Garmin Connect. Testers can separately opt in to importing new Garmin runs. Sleep and
+          Garmin Connect integration is optional: you can connect your account,
+          send your chosen running workouts to Garmin Connect and separately opt
+          in to importing new Garmin runs. Sleep and
           all-day health data are not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
@@ -223,16 +223,13 @@ export default function PrivacyPage() {
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h3 id="garmin">Garmin Connect (optional, in preparation)</h3>
+      <h3 id="garmin">Garmin Connect (optional)</h3>
       <p>
-        We are preparing an optional connection that lets you send selected
-        RunToMax running workouts and scheduled dates to your Garmin Connect
-        account for use on compatible devices. This feature is not yet
-        available in the public app. The registration and authorization
-        service is being prepared first; visiting its callback page does not
-        connect an account or send any workouts. This section describes the
-        initial connection and workout-delivery phase when offered in testing
-        or a subsequent release.
+        An optional connection lets you send selected RunToMax running workouts
+        and scheduled dates to your Garmin Connect account for use on compatible
+        devices, and, if you choose, import your new Garmin runs into RunToMax.
+        Visiting the authorization callback page on its own does not connect an
+        account or send any workouts.
       </p>
       <p>
         You choose whether to connect Garmin Connect and which workouts to send.
@@ -265,7 +262,7 @@ export default function PrivacyPage() {
         HealthKit samples. Sleep, all-day Garmin health measurements and historical backfill are not imported.
       </p>
       <p>
-        Approved testers can separately enable <strong>Import Garmin runs</strong>.
+        You can separately enable <strong>Import Garmin runs</strong>.
         After your watch syncs with Garmin Connect, Garmin sends new running
         activity identifiers, names, dates, distance, duration, GPS route,
         heart rate, cadence, running power, device temperature, ascent and descent, recording device and lap boundaries when available.
