@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 24, 2026"
+      effectiveDate="October 26, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -311,22 +311,36 @@ export default function PrivacyPage() {
         area to AWS. A run image, video or activity file is shared only with the
         destination you choose and includes Garmin source attribution. These
         recipients do not receive Garmin connection credentials. See the map,
-        weather and flyover disclosures in this policy. Connection credentials, identifiers and
-        Garmin activity records are not sent to Google Gemini, PostHog, advertising
-        services or data brokers. If you separately enable RunToMax account
+        weather and flyover disclosures in this policy. Connection credentials and
+        identifiers are not sent to Google Gemini, PostHog, advertising services or
+        data brokers, and neither are Garmin activity records: Garmin data is
+        processed by AI only on your iPhone, as described under{" "}
+        <a href="#garmin-ai">Garmin data and AI</a>. If you separately enable RunToMax account
         backup, local imported-run records may be included under the account-sync
         disclosure; connection credentials are excluded.
         We do not sell Garmin user data.
       </p>
       <p id="garmin-ai">
-        <strong>Garmin data and AI.</strong> RunToMax does not send Garmin data,
-        or results derived from it, to Google Gemini or any other external AI
-        provider, and no AI service processes Garmin data on our behalf. We do not
-        use Garmin data or derived data to train, test, evaluate or improve AI
-        models. Personalized cloud coaching stays unavailable when shared training
-        context includes Garmin data. On-device guidance and plan progress remain
-        available. Disconnecting or deleting one run does not remove Garmin
-        contributions from saved training context.
+        <strong>Garmin data and AI.</strong> RunToMax never sends Garmin data, or
+        results derived from it, to Google Gemini or any other cloud AI provider.
+        AI processing of Garmin data is off unless you turn on &ldquo;Apple
+        Intelligence with Garmin data&rdquo; in RunToMax. With that explicit
+        consent, Apple&rsquo;s on-device model (Apple Intelligence) writes your
+        daily brief and run analysis from your Garmin runs and figures derived
+        from them (pace, distance, heart rate, laps, cadence and training load)
+        on your iPhone; the data does not leave the device for this. Neither
+        RunToMax nor Apple uses Garmin data, or the answers written from it, to
+        train, test, evaluate or improve AI models, and we build no AI dataset or
+        knowledge base and keep no logs or quality measurements of those answers.
+        You can withdraw this consent at any time in RunToMax Settings &rarr;
+        Privacy or on the Garmin Connect screen; disconnecting Garmin withdraws it
+        too. Without it, or on an iPhone without Apple Intelligence, personalized
+        coaching on Garmin data stays unavailable; on-device guidance and plan
+        progress remain available, and disconnecting or deleting one run does not
+        remove Garmin contributions from saved training context. Runs recorded
+        with RunToMax on Apple Watch may still use Google Gemini under the AI
+        coaching disclosure. We update this statement when laws, regulations or
+        Garmin&rsquo;s policies change.
       </p>
       <p>
         You can withdraw Garmin authorization through your Garmin Connect
