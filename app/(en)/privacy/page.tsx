@@ -62,8 +62,9 @@ export default function PrivacyPage() {
         <li>
           Garmin Connect integration is optional: you can connect your account,
           send your chosen running workouts to Garmin Connect and separately opt
-          in to importing new Garmin runs. Sleep and
-          all-day health data are not imported. See the <a href="#garmin">Garmin disclosure</a> below.
+          in to importing new Garmin runs and, separately, last night&rsquo;s
+          sleep, resting heart rate and overnight HRV for your readiness. Other
+          all-day health data is not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
           The launch version has no public Strava integration, RevenueCat,
@@ -259,7 +260,7 @@ export default function PrivacyPage() {
         records of the corresponding RunToMax session, Garmin workout and
         calendar identifiers, and send or update status. It does not require
         sending your raw workout history, GPS routes, sleep, HRV or other raw
-        HealthKit samples. Sleep, all-day Garmin health measurements and historical backfill are not imported.
+        HealthKit samples. Historical backfill is not imported.
       </p>
       <p>
         You can separately enable <strong>Import Garmin runs</strong>.
@@ -281,6 +282,24 @@ export default function PrivacyPage() {
         activity copies. Disconnecting also stops imports. You can separately
         revoke Activities permission in Garmin Connect. No historical backfill
         is included. <a href="https://garmin.runtomax.com/privacy/garmin-import">Read the import details</a>.
+      </p>
+      <p id="garmin-health">
+        You can separately enable <strong>Import Garmin health data</strong>,
+        which is off by default. With it on, and Daily Health Stats allowed in
+        Garmin Connect, Garmin sends daily summaries after your watch syncs.
+        RunToMax keeps three values from them, with their dates: last
+        night&rsquo;s time asleep, your resting heart rate and your overnight
+        HRV average. Steps, stress, Body Battery, respiration, Pulse Ox, sleep
+        stages and every other value in those summaries are discarded on
+        receipt and never stored. RunToMax uses the three values on your iPhone
+        for your morning readiness and recovery tiles when Apple Health has no
+        value for that night; each source keeps its own baseline. The values
+        are encrypted in the same temporary Cloudflare storage for up to seven
+        days while your iPhone downloads them, then kept on your iPhone. Turning
+        health import off, disconnecting, or revoking Daily Health Stats in
+        Garmin Connect stops new health imports and clears the server copies
+        and the health values on your iPhone. Health values are not included in
+        account backup.
       </p>
       <p>
         <strong>Cloudflare</strong> hosts the RunToMax authorization and delivery
@@ -325,7 +344,9 @@ export default function PrivacyPage() {
         consent, Apple&rsquo;s on-device model (Apple Intelligence) writes your
         daily brief and run analysis from your Garmin runs and figures derived
         from them (pace, distance, heart rate, laps, cadence and training load)
-        on your iPhone; the data does not leave the device for this. Neither
+        and, if you turn on Garmin health import, last night&rsquo;s sleep,
+        resting heart rate and HRV, on your iPhone; the data does not leave the
+        device for this. Neither
         RunToMax nor Apple uses Garmin data, or the answers written from it, to
         train, test, evaluate or improve AI models, and we build no AI dataset or
         knowledge base and keep no logs or quality measurements of those answers.
