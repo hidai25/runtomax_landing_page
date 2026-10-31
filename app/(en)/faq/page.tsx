@@ -21,11 +21,11 @@ const items: FaqItem[] = [
   },
   {
     q: "Can I use it without a training plan?",
-    a: "Yes. Without a plan, every run is still classified, gets a plain-language verdict, updates your threshold and training paces, and feeds the daily readiness read. Plans are optional and anchored to a race date when you want one.",
+    a: "Yes. Plans are optional. You can record without one, and Pro offers additional analysis and coaching based on your runs.",
   },
   {
     q: "What works with cloud coaching disabled?",
-    a: "Everything except the longer written coach notes. Recording, the starting profile from Apple Health, threshold and training paces, run classification, the post-run verdict, plan building, plan scores, adaptation proposals, readiness and heat-adjusted targets are all computed on your iPhone. Cloud coaching is opt-in and only generates the written notes.",
+    a: "Basic recording remains free. Pro includes on-device coaching and analysis even if cloud coaching is off; optional cloud coaching adds written notes. A Pro subscription or eligible trial is needed for Pro features.",
   },
   {
     q: "Is RunToMax free?",

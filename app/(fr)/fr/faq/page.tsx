@@ -21,11 +21,11 @@ const items: FaqItem[] = [
   },
   {
     q: "Peut-on l’utiliser sans plan d’entraînement ?",
-    a: "Oui. Sans plan, chaque sortie est quand même classée, reçoit un verdict clair, met à jour vos allures de seuil et d’entraînement et alimente la forme du jour. Les plans sont optionnels et calés sur une date de course quand vous en voulez un.",
+    a: "Oui. Les plans sont facultatifs. Vous pouvez enregistrer sans plan ; Pro propose des analyses et du coaching supplémentaires à partir de vos sorties.",
   },
   {
     q: "Qu’est-ce qui fonctionne sans le coaching cloud ?",
-    a: "Tout, sauf les notes rédigées plus longues du coach. L’enregistrement, le profil de départ tiré d’Apple Santé, les allures de seuil et d’entraînement, le classement des sorties, le verdict, la construction des plans, leurs notes, les propositions d’ajustement, la forme du jour et les cibles corrigées de la chaleur sont tous calculés sur votre iPhone. Le coaching cloud est en option et ne produit que les notes rédigées.",
+    a: "L’enregistrement de base reste gratuit. Pro comprend du coaching et des analyses sur l’appareil même si le coaching cloud est désactivé ; le coaching cloud facultatif ajoute des notes rédigées. Les fonctions Pro nécessitent un abonnement ou un essai éligible.",
   },
   {
     q: "RunToMax est-il gratuit ?",

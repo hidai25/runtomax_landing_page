@@ -30,7 +30,7 @@ const STRINGS = {
     privacy: "Privacy",
     terms: "Terms",
     cta: "Download on the App Store",
-    ctaSub: "14-day free trial on the annual plan · iPhone + Apple Watch · 18+",
+    ctaSub: "Free trial if eligible · Auto-renews unless cancelled · 18+",
     links: [
       ["/features/apple-watch/", "Apple Watch tracking"],
       ["/features/coaching-from-apple-health/", "Coaching from Apple Health"],
@@ -51,7 +51,7 @@ const STRINGS = {
     privacy: "Confidentialité",
     terms: "Conditions",
     cta: "Télécharger sur l’App Store",
-    ctaSub: "14 jours d’essai gratuit sur l’abonnement annuel · iPhone + Apple Watch · 18 ans et plus",
+    ctaSub: "Essai gratuit si éligible · Renouvellement automatique sauf résiliation · 18 ans et plus",
     links: [
       ["/fr/fonctionnalites/apple-watch/", "Suivi sur Apple Watch"],
       ["/fr/fonctionnalites/coaching-apple-sante/", "Coaching depuis Apple Santé"],
