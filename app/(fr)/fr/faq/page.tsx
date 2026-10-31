@@ -6,7 +6,7 @@ import { alternatesFor } from "@/app/_lib/site";
 export const metadata: Metadata = {
   title: "FAQ — faut-il une Apple Watch, et les autres questions avant d’acheter",
   description:
-    "Des réponses nettes avant de télécharger RunToMax : Apple Watch obligatoire, courir sans téléphone, ce qui est gratuit, les trois sorties coachées, ce que comprend Pro, Garmin, Strava, langues et âge.",
+    "Des réponses nettes avant de télécharger RunToMax : Apple Watch obligatoire, courir sans téléphone, ce qui est gratuit, l’essai Pro, ce que comprend Pro, Garmin, Strava, langues et âge.",
   alternates: alternatesFor("/faq/", "fr"),
 };
 
@@ -32,12 +32,12 @@ const items: FaqItem[] = [
     a: "L’enregistrement, oui. Les sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export FIT/GPX restent gratuits, sans compte et sans limite de durée. À partir de la version 1.3.2, le survol 3D de votre parcours est gratuit lui aussi. Le coaching est la partie payante, et vous pouvez l’essayer d’abord : voir les deux réponses suivantes.",
   },
   {
-    q: "Que sont les trois sorties coachées ?",
-    a: "Quand vous êtes prêt, activez le coaching une fois dans l’app. Vos trois prochaines sorties RunToMax enregistrées d’au moins 1 km et 5 minutes actives incluent le coach : la forme du jour et le conseil du jour, une proposition de première semaine d’entraînement, et une séance guidée avec son parcours envoyée à votre montre, chacune avec son analyse. Aucun délai, rien n’est facturé et aucun abonnement ne démarre. Les sorties plus courtes ou abandonnées ne comptent pas. Ces trois sorties utilisent le coaching calculé sur l’appareil ; les notes du coaching cloud sont réservées à Pro. Les coureurs qui ont déjà eu un essai ou un abonnement Pro n’y ont pas droit une seconde fois.",
+    q: "Puis-je essayer RunToMax Pro ?",
+    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro.",
   },
   {
     q: "Que comprend RunToMax Pro ?",
-    a: "Le coaching continu : le conseil du jour et la forme du jour chaque matin, des plans calés sur une date de course qui s’adaptent, les séances structurées et la bibliothèque de séances, la planification de parcours, l’analyse approfondie et les tendances, les écrans de montre personnalisables, la prise en charge de Stryd et, en option, les notes du coaching cloud. Deux formules facturées par Apple au tarif de votre pays : annuelle avec 14 jours d’essai gratuit, ou mensuelle avec 7 jours d’essai (29,99 $ par an ou 5,99 $ par mois aux États-Unis). Si vous arrêtez l’abonnement, l’enregistrement reste gratuit et vos courses, exports et bilans déjà obtenus restent accessibles. Résiliation à tout moment dans les abonnements de votre identifiant Apple.",
+    a: "Le coaching continu : le conseil du jour et la forme du jour chaque matin, des plans calés sur une date de course qui s’adaptent, les séances structurées et la bibliothèque de séances, la planification de parcours, l’analyse approfondie et les tendances, les écrans de montre personnalisables, la prise en charge de Stryd et, en option, les notes du coaching cloud. Deux formules facturées par Apple au tarif de votre pays : annuelle ou mensuelle, avec un essai gratuit pour les coureurs éligibles (14 jours pour l’annuel ou 7 jours pour le mensuel ; 29,99 $ par an ou 5,99 $ par mois aux États-Unis). L’abonnement se renouvelle automatiquement sauf résiliation. Si vous arrêtez l’abonnement, l’enregistrement reste gratuit et vos courses, exports et bilans déjà obtenus restent accessibles. Résiliation à tout moment dans les abonnements de votre identifiant Apple.",
   },
   {
     q: "Je cours avec une Garmin (ou Coros, Polar, Suunto). RunToMax me sert-il ?",
@@ -78,8 +78,7 @@ export default function FaqPageFr() {
       <Faq items={items} />
       <h2>Encore un doute ?</h2>
       <p>
-        L’enregistrement est gratuit : jumelez la montre et faites une sortie. Quand vous voulez voir le coach, activez les trois sorties
-        coachées — rien n’est facturé, et vous décidez ensuite. Le support est à un e-mail sur la <a href="/support/">page support</a> (en anglais).
+        L’enregistrement est gratuit : jumelez la montre et faites une sortie. Pour le coaching, découvrez Pro et vérifiez votre éligibilité à l’essai dans l’app. Le support est à un e-mail sur la <a href="/support/">page support</a> (en anglais).
       </p>
     </PageShell>
   );

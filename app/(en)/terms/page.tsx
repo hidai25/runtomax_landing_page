@@ -76,7 +76,7 @@ export default function TermsPage() {
         non-commercial use. All rights not expressly granted are reserved.
       </p>
 
-      <h2>5. Free use, coached runs, subscriptions and purchases</h2>
+      <h2>5. Free use, trials, subscriptions and purchases</h2>
       <p>
         <strong>Basic use is free and does not require a purchase.</strong>{" "}
         Basic includes recording Outdoor and Treadmill runs on Apple Watch
@@ -86,18 +86,17 @@ export default function TermsPage() {
         existing users, we will give reasonable notice under section 16.
       </p>
       <p>
-        <strong>Three coached runs.</strong> Eligible users who have not
-        previously used a Pro trial or subscription may activate coaching
-        once, at no charge. Their next three RunToMax Watch runs that are
-        successfully saved with at least 1 km and 5 minutes of active time
-        include on-device coaching features. There is no calendar expiry and
-        no subscription starts automatically. Shorter, discarded or failed
-        saves do not count; deleting a run or reinstalling the app does not
-        restore a used run. A minimal local record of activation, used count
-        and completion is kept so the offer cannot be repeated. Cloud coaching
-        is not part of the three coached runs. We may change or withdraw this
-        offer for future users; runs already activated keep their disclosed
-        terms.
+        <strong>Earlier offers.</strong> An earlier version offered eligible
+        runners a limited coached-run preview. This is no longer offered to
+        new users. Any preview already activated remains subject to the terms
+        disclosed when it was granted.
+      </p>
+      <p>
+        <strong>Free trial.</strong> Apple may offer an introductory free trial
+        to eligible subscribers. Apple shows the trial period, renewal price
+        and billing terms before confirmation. Unless cancelled, the
+        subscription renews automatically after the trial as shown by Apple.
+        Trial eligibility is determined by Apple.
       </p>
       <p>
         <strong>RunToMax Pro</strong> is one auto-renewable subscription

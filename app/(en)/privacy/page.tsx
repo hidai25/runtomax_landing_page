@@ -46,8 +46,8 @@ export default function PrivacyPage() {
         <li>
           Basic recording is free and needs no purchase. Pro is one Apple
           subscription, offered monthly or annually, for ongoing coaching,
-          including optional cloud coaching; three coached runs can be tried
-          once without a subscription.
+          including optional cloud coaching. An Apple free trial may be available
+          to eligible subscribers.
         </li>
         <li>
           Cloud coaching is off until you explicitly opt in. It sends a
