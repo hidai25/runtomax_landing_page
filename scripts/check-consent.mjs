@@ -20,9 +20,14 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext();
 let tags = 0;
-await context.route('https://www.googletagmanager.com/**', async route => {
+let hits = 0;
+await context.route('https://www.googletagmanager.com/gtag/js**', async route => {
   tags++;
-  await route.fulfill({ status: 200, contentType: 'application/javascript', body: '' });
+  await route.continue();
+});
+await context.route('**/g/collect**', async route => {
+  hits++;
+  await route.fulfill({ status: 204, body: '' });
 });
 const page = await context.newPage();
 try {
@@ -38,8 +43,8 @@ try {
   await page.waitForFunction(() => document.querySelector('#rtm-ga-script'));
   await page.waitForTimeout(500);
   assert.equal(tags, 1, 'tag must load after acceptance');
-  const commands = await page.evaluate(() => window.dataLayer);
-  assert(commands.some(row => row[0] === 'event' && row[1] === 'page_view'), 'accepted page view is queued');
+  for (let i = 0; i < 20 && hits === 0; i++) await page.waitForTimeout(500);
+  assert(hits > 0, 'Google Analytics must attempt to send an accepted page view');
   await page.getByRole('button', { name: 'Analytics settings' }).click();
   await Promise.all([page.waitForEvent('load'), page.getByRole('button', { name: 'Reject analytics' }).click()]);
   await page.getByRole('button', { name: 'Analytics settings' }).waitFor();

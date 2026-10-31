@@ -10,7 +10,7 @@ type Language = "en" | "fr";
 
 declare global {
   interface Window {
-    dataLayer?: unknown[][];
+    dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
   }
 }
@@ -48,7 +48,7 @@ export default function AnalyticsConsent({ lang }: { lang: Language }) {
     if (!ready || choice !== "accepted") return;
     (window as unknown as Record<string, unknown>)[`ga-disable-${MEASUREMENT_ID}`] = false;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || ((...args: unknown[]) => { window.dataLayer!.push(args); });
+    window.gtag = window.gtag || function () { window.dataLayer!.push(arguments); };
     const gtag = window.gtag;
     if (!document.getElementById("rtm-ga-script")) {
       gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
