@@ -87,7 +87,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
             name: "RunToMax Pro — annual",
             price: "29.99",
             priceCurrency: "USD",
-            description: "14-day free trial, then $29.99 per year, billed by Apple.",
+            description: "14-day trial if eligible, then $29.99 per year; automatically renews unless cancelled. Billed by Apple.",
             url: APP_STORE_URL,
           },
           {
@@ -95,7 +95,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
             name: "RunToMax Pro — monthly",
             price: "5.99",
             priceCurrency: "USD",
-            description: "7-day free trial, then $5.99 per month, billed by Apple.",
+            description: "7-day trial if eligible, then $5.99 per month; automatically renews unless cancelled. Billed by Apple.",
             url: APP_STORE_URL,
           },
         ],

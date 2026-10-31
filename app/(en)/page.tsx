@@ -167,7 +167,7 @@ export default function RunToMaxLanding() {
             </a>
           </div>
           <div className="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-zinc-500 lg:justify-start">
-            <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#1FE26C]" /> Free recording · 3 coached runs · then Pro</span>
+            <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#1FE26C]" /> Free recording · Pro trial for eligible runners</span>
             <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> Runs on your wrist, phone-free</span>
             <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> No account required · your runs stay in Apple Health</span>
           </div>
@@ -412,7 +412,7 @@ export default function RunToMaxLanding() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative z-10 mx-auto max-w-2xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Available now</p>
           <h2 className="mt-4 font-bebas text-6xl uppercase leading-[.9] sm:text-8xl">Stop guessing. Start training with proof.</h2>
-          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-zinc-400">RunToMax is live on the App Store. Recording on your Apple Watch is free. When you want the coach, activate three coached runs—no subscription starts—and decide afterwards.</p>
+          <p className="mx-auto mt-6 max-w-xl leading-relaxed text-zinc-400">Record your runs for free on Apple Watch. When you’re ready for coaching, explore RunToMax Pro. Eligible runners can start a free trial through Apple.</p>
 
           <div className="mt-10 flex justify-center">
             <AppStoreBadge heightClass="h-16 sm:h-[4.5rem]" />
@@ -421,8 +421,8 @@ export default function RunToMaxLanding() {
           <div className="mx-auto mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
             {[
               ["FREE, FOREVER", "Outdoor and treadmill recording on Apple Watch, one data screen you set up, history, Apple Health and export"],
-              ["3 COACHED RUNS", "Readiness, today’s call and a guided workout on your next three runs. No deadline, no subscription starts"],
-              ["RUNTOMAX PRO", "$29.99 a year or $5.99 a month, billed by Apple, with a free trial. Cancel anytime in your Apple ID subscriptions"],
+              ["TRY PRO", "Explore coaching and training plans with a free trial if eligible. Apple shows the offer and renewal terms before you confirm."],
+              ["RUNTOMAX PRO", "$29.99 a year or $5.99 a month, billed by Apple. Free trial if eligible; renews unless cancelled."],
             ].map(([label, value]) => (
               <div key={label} className="rounded-xl border border-white/[0.07] bg-black/40 p-4 text-left">
                 <p className="font-mono text-[9px] font-semibold tracking-[0.18em] text-[#1FE26C]">{label}</p>
@@ -430,7 +430,7 @@ export default function RunToMaxLanding() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-xs text-zinc-600">US App Store pricing · iPhone + Apple Watch · Adults 18+</p>
+          <p className="mt-6 text-xs text-zinc-600">US App Store pricing · Trial eligibility varies · Subscription renews unless cancelled · Adults 18+</p>
         </motion.div>
       </section>
 

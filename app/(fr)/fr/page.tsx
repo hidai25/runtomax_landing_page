@@ -62,8 +62,8 @@ export default function FrenchHome() {
       <h2>Prix</h2>
       <ul>
         <li><strong>Gratuit, sans limite de durée :</strong> l’enregistrement des sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export. Sans compte.</li>
-        <li><strong>Trois sorties coachées :</strong> quand vous le souhaitez, activez le coaching une fois. Vos trois prochaines sorties enregistrées (au moins 1 km et 5 minutes actives) incluent la forme du jour, le conseil du jour, une proposition de première semaine et une séance guidée avec son parcours. Aucun délai, aucun abonnement ne démarre.</li>
-        <li><strong>RunToMax Pro :</strong> le coaching continu, les plans, les séances structurées, les parcours, l’analyse approfondie, les écrans personnalisés et le coaching cloud. Abonnement annuel avec 14 jours d’essai, ou mensuel avec 7 jours d’essai, facturé par Apple au tarif de votre pays. Résiliable à tout moment.</li>
+        <li><strong>Essai Pro :</strong> les coureurs éligibles peuvent commencer un essai gratuit par Apple. Apple indique les conditions et le prix de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation.</li>
+        <li><strong>RunToMax Pro :</strong> le coaching continu, les plans, les séances structurées, les parcours, l’analyse approfondie, les écrans personnalisés et le coaching cloud. Abonnement annuel ou mensuel facturé par Apple au tarif de votre pays, avec un essai gratuit pour les personnes éligibles. Résiliable à tout moment.</li>
       </ul>
       <p>Pas de publicité, aucune vente de données. Vos courses restent dans Apple Santé quoi qu’il arrive.</p>
     </PageShell>

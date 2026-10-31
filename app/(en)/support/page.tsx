@@ -70,19 +70,16 @@ export default function SupportPage() {
       </p>
       */}
 
-      <h2>Free use and the three coached runs</h2>
+      <h2>Free use and the Pro trial</h2>
       <p>
-        Recording Outdoor and Treadmill runs on the Apple Watch, with one data
-        screen of five fields you choose, basic summaries, history, Apple Health and export, is
-        free and needs no subscription. Coaching can be tried once: activate
-        it in the app and your next three saved RunToMax runs of at least 1 km
-        and 5 active minutes include the coach, with no deadline and no
-        subscription starting. Runs that are shorter, discarded or fail to save
-        do not use one of the three. Deleting a run or reinstalling the app does
-        not give the runs back, and the offer is not available to runners who
-        already had a Pro trial or subscription. If your Watch shows “Update
-        RunToMax on your Apple Watch”, install the latest Watch version before
-        activating.
+        Recording Outdoor and Treadmill runs on Apple Watch, basic summaries,
+        history, Apple Health and export are free. Coaching and other Pro
+        features require a subscription. An Apple free trial may be available
+        if you are eligible. Apple shows the offer, price and renewal terms
+        before you confirm; subscriptions renew automatically unless cancelled.
+        Some app versions may still show an earlier coached-run offer; its disclosed
+        terms continue to apply. If your Watch asks you to update RunToMax,
+        install the latest Watch app.
       </p>
 
       <h2>Managing your subscription</h2>
