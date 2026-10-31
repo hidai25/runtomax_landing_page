@@ -73,7 +73,8 @@ const journey = [
 ];
 
 const phoneShots = [
-  { src: "demo-dashboard.png", tag: "Your trends", title: "See the bigger picture.", desc: "Review readiness, training load and recent running in one place." },
+  { src: "demo-home.png", tag: "Home", title: "Your day at a glance.", desc: "See your latest run and the information available for today." },
+  { src: "demo-plan.png", tag: "Your plan", title: "Know what comes next.", desc: "See your training week and how it fits into your plan." },
   { src: "demo-run.png", tag: "Your run", title: "Understand the effort.", desc: "Explore your route, pace and a concise summary after your run." },
 ];
 
@@ -125,7 +126,7 @@ export default function RunToMaxLanding() {
 
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 mx-auto flex w-full max-w-lg items-end justify-center gap-3 sm:gap-5">
           <div className="w-[65%] max-w-[310px] overflow-hidden rounded-[2.5rem] border-[7px] border-zinc-700 bg-black shadow-[0_30px_100px_-35px_rgba(31,226,108,.4)]">
-            <img src={`${BASE}/demo-dashboard.png`} alt="RunToMax dashboard showing example readiness and training trends" className="h-auto w-full" />
+            <img src={`${BASE}/demo-home.png`} alt="RunToMax Home showing an example run and readiness information" className="h-auto w-full" />
           </div>
           <div className="mb-8 w-[31%] max-w-[155px] overflow-hidden rounded-[2rem] border-[6px] border-zinc-700 bg-black shadow-2xl">
             <img src={`${BASE}/demo-watch.png`} alt="RunToMax running screen on Apple Watch with example distance and time" className="h-auto w-full" />
@@ -198,7 +199,7 @@ export default function RunToMaxLanding() {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">See your training at a glance, then explore the details of each run. Screens show example data.</p>
         </div>
 
-        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:mx-auto lg:max-w-3xl lg:grid-cols-2 lg:overflow-visible lg:pb-0">
+        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
           {phoneShots.map((shot, index) => (
             <motion.article
               key={shot.src}
