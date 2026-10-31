@@ -73,9 +73,9 @@ const journey = [
 ];
 
 const phoneShots = [
-  { src: "demo-home.png", tag: "Home", title: "Your day at a glance.", desc: "See your latest run and the information available for today." },
-  { src: "demo-plan.png", tag: "Your plan", title: "Know what comes next.", desc: "See your training week and how it fits into your plan." },
-  { src: "demo-run.png", tag: "Your run", title: "Understand the effort.", desc: "Explore your route, pace and a concise summary after your run." },
+  { src: "showcase-dashboard.png", tag: "Your dashboard", title: "See how you're doing.", desc: "Keep readiness, training load and progress together in a view you can make your own." },
+  { src: "showcase-plan.png", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
+  { src: "showcase-run.png", tag: "Your run", title: "Look closer at every run.", desc: "Explore your route, pace and workout details after you finish." },
 ];
 
 export default function RunToMaxLanding() {
@@ -100,7 +100,7 @@ export default function RunToMaxLanding() {
 
       <section id="top" className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-16 px-6 pb-20 pt-28 lg:grid-cols-[1.06fr_.94fr] lg:pb-24 lg:pt-36">
         <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[760px] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.08] blur-[140px]" />
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative z-10 text-center lg:text-left">
+        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative z-10 order-2 text-center lg:order-1 lg:text-left">
           <p className="mb-6 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#1FE26C]">
             Now on the App Store · iPhone + Apple Watch
           </p>
@@ -124,15 +124,56 @@ export default function RunToMaxLanding() {
           <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 and watchOS 10 or later · Designed for runners aged 18 and older.</p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 mx-auto flex w-full max-w-lg items-end justify-center gap-3 sm:gap-5">
-          <div className="w-[65%] max-w-[310px] overflow-hidden rounded-[2.5rem] border-[7px] border-zinc-700 bg-black shadow-[0_30px_100px_-35px_rgba(31,226,108,.4)]">
-            <img src={`${BASE}/demo-home.png`} alt="RunToMax Home showing an example run and readiness information" className="h-auto w-full" />
+        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 order-1 mx-auto w-full max-w-xl lg:order-2">
+          <div className="flex items-center justify-center gap-2 sm:gap-4">
+            {[
+              ["showcase-dashboard.png", "Dashboard with example readiness and training trends"],
+              ["showcase-plan.png", "An example training plan in RunToMax"],
+              ["showcase-run.png", "A run summary with example workout data"],
+            ].map(([src, alt], index) => (
+              <div key={src} className={`w-[31%] overflow-hidden rounded-[1.4rem] border-[4px] border-zinc-700 bg-black shadow-2xl sm:rounded-[2rem] sm:border-[6px] ${index === 1 ? "-translate-y-4" : "translate-y-3"}`}>
+                <img src={`${BASE}/${src}`} alt={alt} className="h-auto w-full" />
+              </div>
+            ))}
           </div>
-          <div className="mb-8 w-[31%] max-w-[155px] overflow-hidden rounded-[2rem] border-[6px] border-zinc-700 bg-black shadow-2xl">
-            <img src={`${BASE}/demo-watch.png`} alt="RunToMax running screen on Apple Watch with example distance and time" className="h-auto w-full" />
-          </div>
-          <p className="absolute -bottom-6 text-xs text-zinc-500">Example screens with demo data</p>
+          <p className="mt-8 text-center text-xs text-zinc-500">Actual app screens · example data</p>
         </motion.div>
+      </section>
+
+      <section id="product" className="relative mx-auto max-w-7xl px-6 py-28 sm:py-36">
+        <div className="pointer-events-none absolute left-1/2 top-1/3 h-80 w-[70%] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.05] blur-[120px]" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
+          <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your dashboard, your plan and your runs—each one ready to explore. Screens show example data.</p>
+        </div>
+
+        <div className="relative mt-14 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {phoneShots.map((shot, index) => (
+            <motion.article
+              key={shot.src}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeUp}
+              className="mx-auto w-full max-w-[340px]"
+            >
+              <div className="mx-auto max-w-[290px] overflow-hidden rounded-[2.8rem] border-[8px] border-zinc-800 bg-black shadow-[0_28px_80px_-28px_rgba(31,226,108,.28)]">
+                <img
+                  src={`${BASE}/${shot.src}`}
+                  alt={`RunToMax iPhone ${shot.tag.toLowerCase()} screen`}
+                  className="h-auto w-full"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+              <div className="mx-auto mt-7 max-w-[310px] text-center">
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1FE26C]">{shot.tag}</p>
+                <h3 className="mt-3 text-xl font-bold tracking-tight">{shot.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-zinc-500">{shot.desc}</p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </section>
 
       <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-28 sm:py-36">
@@ -188,42 +229,6 @@ export default function RunToMaxLanding() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="product" className="relative mx-auto max-w-7xl px-6 py-28 sm:py-36">
-        <div className="pointer-events-none absolute left-1/2 top-1/3 h-80 w-[70%] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.05] blur-[120px]" />
-        <div className="relative mx-auto max-w-3xl text-center">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
-          <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">See your training at a glance, then explore the details of each run. Screens show example data.</p>
-        </div>
-
-        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
-          {phoneShots.map((shot, index) => (
-            <motion.article
-              key={shot.src}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={fadeUp}
-              className="w-[78vw] max-w-[320px] shrink-0 snap-center lg:w-auto lg:max-w-none"
-            >
-              <div className="mx-auto max-w-[290px] overflow-hidden rounded-[2.8rem] border-[8px] border-zinc-800 bg-black shadow-[0_28px_80px_-28px_rgba(31,226,108,.28)]">
-                <img
-                  src={`${BASE}/${shot.src}`}
-                  alt={`RunToMax iPhone ${shot.tag.toLowerCase()} screen`}
-                  className="h-auto w-full"
-                  loading={index === 0 ? "eager" : "lazy"}
-                />
-              </div>
-              <div className="mx-auto mt-7 max-w-[310px] text-center">
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1FE26C]">{shot.tag}</p>
-                <h3 className="mt-3 text-xl font-bold tracking-tight">{shot.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-500">{shot.desc}</p>
-              </div>
-            </motion.article>
-          ))}
         </div>
       </section>
 
