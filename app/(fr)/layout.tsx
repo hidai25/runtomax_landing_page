@@ -1,3 +1,4 @@
+import AnalyticsConsent from "@/app/_components/AnalyticsConsent";
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "../globals.css";
@@ -51,6 +52,7 @@ export default function FrenchRootLayout({ children }: { children: React.ReactNo
       <body className="antialiased bg-black text-white selection:bg-[#1FE26C] selection:text-black overflow-x-hidden">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
+        <AnalyticsConsent lang="fr" />
       </body>
     </html>
   );

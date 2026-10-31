@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 26, 2026"
+      effectiveDate="October 31, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           The launch version has no public Strava integration, RevenueCat,
-          Lifetime purchase, advertising, IDFA, or website analytics.
+          Lifetime purchase, advertising, or IDFA. Website analytics is optional.
         </li>
       </ul>
 
@@ -568,14 +568,9 @@ export default function PrivacyPage() {
       </p>
 
       <h2>Website</h2>
-      <p>
-        The RunToMax website is a static site. It does not use Google
-        Analytics, advertising trackers, non-essential analytics cookies, or
-        signup forms. The only way to send us information from the website is
-        to email <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>, and we use
-        what you send only to reply to you. Links to the App Store are handled
-        by Apple under Apple&apos;s privacy policy.
-      </p>
+      <p>With your consent, this website uses Google Analytics to understand website visits and usage. Google receives information such as pages viewed, browser and device information, approximate location, and referral source. Google Analytics uses cookies to distinguish visits. We do not send your workout or health data to website analytics.</p>
+      <p>You can accept or reject analytics using the website banner, or change your choice using Analytics settings. If you reject analytics, the Google Analytics tag is not loaded. Withdrawing consent stops future collection and removes first-party Google Analytics cookies. Your choice is stored in your browser. Google may process information outside your country; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> about website privacy.</p>
+      <p>Links to the App Store are handled by Apple under Apple&apos;s privacy policy.</p>
 
       <h2>What RunToMax does not use at launch</h2>
       <ul>
@@ -583,7 +578,6 @@ export default function PrivacyPage() {
         <li>No public Strava integration in the launch build.</li>
         <li>No RevenueCat subscription processing.</li>
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
-        <li>No Google Analytics on the website.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
           with Sign in with Apple is planned for version 1.3; it is currently
@@ -609,7 +603,8 @@ export default function PrivacyPage() {
           ).
         </li>
         <li>
-          <strong>Google</strong> — paid Gemini processing, only after an
+          <strong>Google</strong> — optional website analytics after you accept,
+          and paid Gemini processing, only after an
           eligible Pro user explicitly enables cloud coaching ({" "}
           <a
             href="https://policies.google.com/privacy"
