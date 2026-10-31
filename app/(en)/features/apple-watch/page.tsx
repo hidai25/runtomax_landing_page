@@ -50,6 +50,8 @@ export default function AppleWatchFeaturePage() {
       </p>
       <Shot src="watch-gauge.png" alt="Apple Watch showing current pace against the session target" caption="Pace against the step target." watch />
 
+      <p><a href="/guides/interval-workouts-apple-watch/">Learn how to build an interval workout in RunToMax</a>.</p>
+
       <h2>Laps and splits, live</h2>
       <p>
         Each kilometre (or mile) posts a lap receipt as it closes, and the splits screen keeps the run’s history in view. Lap pace is a
