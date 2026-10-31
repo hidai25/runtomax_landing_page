@@ -1,5 +1,3 @@
-// PROTOTYPE ONLY: do not publish until consent persistence, withdrawal,
-// route changes, localization, and Google requests are verified in a browser.
 "use client";
 
 import { useEffect, useState } from "react";
@@ -84,6 +82,13 @@ export default function AnalyticsConsent({ lang }: { lang: Language }) {
       // cannot persist the new choice.
       if (value === "rejected") {
         (window as unknown as Record<string, unknown>)[`ga-disable-${MEASUREMENT_ID}`] = true;
+        try {
+          localStorage.removeItem(KEY);
+          if (localStorage.getItem(KEY) === null) {
+            window.location.reload();
+            return;
+          }
+        } catch { /* Show the browser-data clearing instructions below. */ }
         setChoice("rejected");
       }
       setError(true);

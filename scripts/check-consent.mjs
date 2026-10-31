@@ -48,6 +48,28 @@ try {
   await page.goto(origin + '/fr/');
   await page.getByRole('button', { name: 'Paramètres d’analyse' }).waitFor();
   assert.equal(tags, 1, 'rejection must persist on French pages');
+  await page.goto(origin + '/');
+  await page.getByRole('button', { name: 'Analytics settings' }).click();
+  await page.getByRole('button', { name: 'Accept analytics' }).click();
+  await page.waitForFunction(() => document.querySelector('#rtm-ga-script'));
+  await page.waitForTimeout(500);
+  assert.equal(tags, 2);
+  await page.evaluate(() => { Storage.prototype.setItem = () => { throw new Error('blocked'); }; });
+  await page.getByRole('button', { name: 'Analytics settings' }).click();
+  await Promise.all([page.waitForEvent('load'), page.getByRole('button', { name: 'Reject analytics' }).click()]);
+  await page.getByRole('button', { name: 'Reject analytics' }).waitFor();
+  assert.equal(await page.evaluate(() => localStorage.getItem('rtm-website-analytics-choice-v1')), null);
+  assert.equal(tags, 2, 'withdrawal clears acceptance even if saving rejection fails');
+  const blocked = await browser.newContext();
+  await blocked.addInitScript(() => {
+    Storage.prototype.setItem = () => { throw new Error('blocked'); };
+  });
+  const blockedPage = await blocked.newPage();
+  await blockedPage.goto(origin + '/');
+  await blockedPage.getByRole('button', { name: 'Accept analytics' }).click();
+  await blockedPage.getByRole('alert').waitFor();
+  assert.equal(await blockedPage.locator('#rtm-ga-script').count(), 0, 'cannot enable analytics if consent cannot be saved');
+  await blocked.close();
   console.log('Consent browser checks passed');
 } finally {
   await browser.close();

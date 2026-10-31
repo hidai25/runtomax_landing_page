@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 26, 2026"
+      effectiveDate="October 31, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -603,7 +603,8 @@ export default function PrivacyPage() {
           ).
         </li>
         <li>
-          <strong>Google</strong> — paid Gemini processing, only after an
+          <strong>Google</strong> — optional website analytics after you accept,
+          and paid Gemini processing, only after an
           eligible Pro user explicitly enables cloud coaching ({" "}
           <a
             href="https://policies.google.com/privacy"
