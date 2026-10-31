@@ -13,6 +13,7 @@ export default function IntervalGuide() {
   return <main className="min-h-screen bg-black text-white">
     <nav className="border-b border-white/10 px-6 py-5"><div className="mx-auto flex max-w-3xl justify-between"><Link href="/" className="font-bebas text-2xl">RUNTO<span className="text-[#1FE26C]">MAX</span></Link><a href={download} className="text-sm">Get the app</a></div></nav>
     <article className="mx-auto max-w-3xl px-6 py-16">
+      <Link href="/guides/" className="mb-8 inline-block text-sm font-medium text-zinc-400 hover:text-white">← All guides</Link>
       <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#1FE26C]">RunToMax guide · Apple Watch</p>
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">Create an interval workout in RunToMax</h1>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">

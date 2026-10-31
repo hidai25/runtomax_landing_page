@@ -87,6 +87,7 @@ export default function RunToMaxLanding() {
             <span className="text-white">RunTo</span><span className="text-[#1FE26C]">Max</span>
           </a>
           <div className="flex items-center gap-5">
+            <Link href="/guides/" className="text-sm font-medium text-zinc-300 transition-colors hover:text-white">Guides</Link>
             <a href="#how-it-works" className="hidden text-sm text-zinc-400 transition-colors hover:text-white sm:block">
               How it works
             </a>
@@ -340,6 +341,7 @@ export default function RunToMaxLanding() {
             <Link href="/features/apple-watch/" className="transition-colors hover:text-white">Apple Watch</Link>
             <Link href="/features/coaching-from-apple-health/" className="transition-colors hover:text-white">Coaching</Link>
             <Link href="/features/race-plans/" className="transition-colors hover:text-white">Plans</Link>
+            <Link href="/guides/" className="transition-colors hover:text-white">Guides</Link>
             <Link href="/faq/" className="transition-colors hover:text-white">FAQ</Link>
             <Link href="/accuracy/" className="transition-colors hover:text-white">Accuracy</Link>
             <Link href="/fr/" hrefLang="fr" className="transition-colors hover:text-white">Français</Link>
