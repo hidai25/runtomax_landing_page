@@ -73,7 +73,7 @@ const journey = [
 ];
 
 const phoneShots = [
-  { src: "showcase-dashboard.png", tag: "Your dashboard", title: "See how you're doing.", desc: "Keep readiness, training load and progress together in a view you can make your own." },
+  { src: "showcase-trends.png", tag: "Your trends", title: "See how you're progressing.", desc: "Explore your weekly running, training paces and race estimates." },
   { src: "showcase-plan.png", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
   { src: "showcase-run.png", tag: "Your run", title: "Look closer at every run.", desc: "Explore your route, pace and workout details after you finish." },
 ];
@@ -127,7 +127,7 @@ export default function RunToMaxLanding() {
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 order-1 mx-auto w-full max-w-xl lg:order-2">
           <div className="flex items-center justify-center gap-2 sm:gap-4">
             {[
-              ["showcase-dashboard.png", "Dashboard with example readiness and training trends"],
+              ["showcase-trends.png", "RunToMax Trends screen with example weekly running and training paces"],
               ["showcase-plan.png", "An example training plan in RunToMax"],
               ["showcase-run.png", "A run summary with example workout data"],
             ].map(([src, alt], index) => (
@@ -145,7 +145,7 @@ export default function RunToMaxLanding() {
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
           <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your dashboard, your plan and your runs—each one ready to explore. Screens show example data.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens show example data.</p>
         </div>
 
         <div className="relative mt-14 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
