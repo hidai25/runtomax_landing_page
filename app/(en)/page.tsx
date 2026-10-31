@@ -422,7 +422,7 @@ export default function RunToMaxLanding() {
             {[
               ["FREE, FOREVER", "Outdoor and treadmill recording on Apple Watch, one data screen you set up, history, Apple Health and export"],
               ["TRY PRO", "Explore coaching and training plans with a free trial if eligible. Apple shows the offer and renewal terms before you confirm."],
-              ["RUNTOMAX PRO", "$29.99 a year or $5.99 a month, billed by Apple, with a free trial. Cancel anytime in your Apple ID subscriptions"],
+              ["RUNTOMAX PRO", "$29.99 a year or $5.99 a month, billed by Apple. Free trial if eligible; renews unless cancelled."],
             ].map(([label, value]) => (
               <div key={label} className="rounded-xl border border-white/[0.07] bg-black/40 p-4 text-left">
                 <p className="font-mono text-[9px] font-semibold tracking-[0.18em] text-[#1FE26C]">{label}</p>
