@@ -67,7 +67,7 @@ try {
   const blockedPage = await blocked.newPage();
   await blockedPage.goto(origin + '/');
   await blockedPage.getByRole('button', { name: 'Accept analytics' }).click();
-  await blockedPage.getByRole('alert').waitFor();
+  await blockedPage.getByText("Your browser could not save your choice.", { exact: false }).waitFor();
   assert.equal(await blockedPage.locator('#rtm-ga-script').count(), 0, 'cannot enable analytics if consent cannot be saved');
   await blocked.close();
   console.log('Consent browser checks passed');
