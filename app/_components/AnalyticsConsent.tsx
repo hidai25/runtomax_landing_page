@@ -16,8 +16,8 @@ declare global {
 }
 
 const copy = {
-  en: { title: "Website analytics", body: "May we use Google Analytics to understand how people use this website?", accept: "Accept analytics", reject: "Reject analytics", settings: "Analytics settings", privacy: "Privacy policy", saved: "Your choice is saved on this device.", error: "Your browser could not save your choice. Please clear this site's data in your browser settings." },
-  fr: { title: "Analyse du site", body: "Pouvons-nous utiliser Google Analytics pour comprendre l’utilisation de ce site ?", accept: "Accepter l’analyse", reject: "Refuser l’analyse", settings: "Paramètres d’analyse", privacy: "Politique de confidentialité", saved: "Votre choix est enregistré sur cet appareil.", error: "Votre navigateur n’a pas pu enregistrer votre choix. Veuillez effacer les données de ce site dans les réglages du navigateur." },
+  en: { title: "Website analytics", body: "May we use Google Analytics to understand how people use this website?", accept: "Accept analytics", reject: "Reject analytics", settings: "Analytics settings", privacy: "Privacy policy", saved: "Your choice is saved on this device.", close: "Close", error: "Your browser could not save your choice. Please clear this site's data in your browser settings." },
+  fr: { title: "Analyse du site", body: "Pouvons-nous utiliser Google Analytics pour comprendre l’utilisation de ce site ?", accept: "Accepter l’analyse", reject: "Refuser l’analyse", settings: "Paramètres d’analyse", privacy: "Politique de confidentialité", saved: "Votre choix est enregistré sur cet appareil.", close: "Fermer", error: "Votre navigateur n’a pas pu enregistrer votre choix. Veuillez effacer les données de ce site dans les réglages du navigateur." },
 };
 
 function readChoice(): Choice {
@@ -43,6 +43,12 @@ export default function AnalyticsConsent({ lang }: { lang: Language }) {
   const [error, setError] = useState(false);
 
   useEffect(() => { setChoice(readChoice()); setReady(true); }, []);
+
+  useEffect(() => {
+    const showSettings = () => setOpen(true);
+    window.addEventListener("rtm-open-analytics-settings", showSettings);
+    return () => window.removeEventListener("rtm-open-analytics-settings", showSettings);
+  }, []);
 
   useEffect(() => {
     if (!ready || choice !== "accepted") return;
@@ -105,14 +111,14 @@ export default function AnalyticsConsent({ lang }: { lang: Language }) {
 
   if (!ready) return null;
   return <>
-    <button type="button" onClick={() => setOpen(true)} className="fixed bottom-2 left-2 z-[100] rounded-full bg-zinc-900 px-3 py-2 text-xs text-white border border-zinc-600">{t.settings}</button>
-    {(choice === null || open) && <section role="region" aria-label={t.title} className="fixed bottom-14 left-3 right-3 z-[101] mx-auto max-w-xl rounded-2xl border border-zinc-600 bg-zinc-900 p-5 text-white shadow-xl">
+    {(choice === null || open) && <section role="region" aria-label={t.title} className="fixed bottom-3 left-3 right-3 z-[101] mx-auto max-w-xl rounded-2xl border border-zinc-600 bg-zinc-900 p-5 text-white shadow-xl">
       <h2 className="font-semibold text-lg">{t.title}</h2>
       <p className="mt-2 text-sm text-zinc-200">{t.body} <a href="/privacy/" className="underline">{t.privacy}</a></p>
       {!error && <p className="mt-2 text-xs text-zinc-400">{t.saved}</p>}
       {error && <p role="alert" className="mt-2 text-sm text-amber-300">{t.error}</p>}
       <div className="mt-4 flex flex-wrap gap-3">
         <button type="button" onClick={() => choose("accepted")} className="rounded-full border border-white px-4 py-2 text-sm font-semibold">{t.accept}</button>
+        {choice !== null && <button type="button" onClick={() => { setOpen(false); setError(false); }} className="rounded-full px-4 py-2 text-sm underline">{t.close}</button>}
         <button type="button" onClick={() => choose("rejected")} className="rounded-full border border-white px-4 py-2 text-sm font-semibold">{t.reject}</button>
       </div>
     </section>}
