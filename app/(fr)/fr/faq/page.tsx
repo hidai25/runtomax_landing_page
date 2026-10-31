@@ -33,7 +33,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Puis-je essayer RunToMax Pro ?",
-    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro.",
+    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro. Certaines versions de l’app peuvent également afficher une ancienne offre de sorties coachées ; consultez ses conditions dans l’app.",
   },
   {
     q: "Que comprend RunToMax Pro ?",

@@ -86,9 +86,10 @@ export default function TermsPage() {
         existing users, we will give reasonable notice under section 16.
       </p>
       <p>
-        <strong>Earlier coached-run offer (no longer available to new users).</strong>
-        Eligible users who had not previously used a Pro trial or subscription
-        could activate coaching once, at no charge. Their next three RunToMax Watch runs that are
+        <strong>Coached-run offer in some app versions.</strong> Availability
+        depends on the version of the app. Where offered, eligible users who
+        have not previously used a Pro trial or subscription may activate
+        coaching once, at no charge. Their next three RunToMax Watch runs that are
         successfully saved with at least 1 km and 5 minutes of active time
         include on-device coaching features. There is no calendar expiry and
         no subscription starts automatically. Shorter, discarded or failed

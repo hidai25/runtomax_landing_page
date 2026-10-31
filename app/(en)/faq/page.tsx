@@ -33,7 +33,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Can I try RunToMax Pro?",
-    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro.",
+    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro. Some app versions may also show an earlier coached-run offer; see the app for its terms.",
   },
   {
     q: "What does RunToMax Pro include?",

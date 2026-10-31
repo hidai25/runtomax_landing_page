@@ -77,7 +77,9 @@ export default function SupportPage() {
         features require a subscription. An Apple free trial may be available
         if you are eligible. Apple shows the offer, price and renewal terms
         before you confirm; subscriptions renew automatically unless cancelled.
-        If your Watch asks you to update RunToMax, install the latest Watch app.
+        Some app versions may still show an earlier coached-run offer; its disclosed
+        terms continue to apply. If your Watch asks you to update RunToMax,
+        install the latest Watch app.
       </p>
 
       <h2>Managing your subscription</h2>
