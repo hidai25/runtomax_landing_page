@@ -32,6 +32,7 @@ const STRINGS = {
     cta: "Download on the App Store",
     ctaSub: "Free trial if eligible · Auto-renews unless cancelled · 18+",
     links: [
+      ["/guides/", "Guides"],
       ["/features/apple-watch/", "Apple Watch tracking"],
       ["/features/coaching-from-apple-health/", "Coaching from Apple Health"],
       ["/features/race-plans/", "Race plans"],

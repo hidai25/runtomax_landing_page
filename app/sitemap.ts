@@ -21,5 +21,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/privacy/`, lastModified: new Date("2026-10-24"), changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/terms/`, lastModified: new Date("2026-07-22"), changeFrequency: "yearly", priority: 0.4 },
   ];
-  return [...bilingual, ...legal, { url: `${SITE_URL}/guides/interval-workouts-apple-watch/`, lastModified: new Date("2026-10-31"), changeFrequency: "monthly", priority: 0.6 }];
+  return [...bilingual, ...legal, { url: `${SITE_URL}/guides/`, lastModified: new Date("2026-10-31"), changeFrequency: "weekly", priority: 0.7 }, { url: `${SITE_URL}/guides/interval-workouts-apple-watch/`, lastModified: new Date("2026-10-31"), changeFrequency: "monthly", priority: 0.6 }];
 }
