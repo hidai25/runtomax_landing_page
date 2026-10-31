@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   Activity,
   ArrowDown,
   Brain,
   Check,
-  CheckCircle2,
   Gauge,
   Route,
   ShieldCheck,
@@ -73,62 +72,12 @@ const journey = [
   },
 ];
 
-const outcomeReceipts = [
-  {
-    label: "EFFICIENCY",
-    value: "8 s/km faster",
-    detail: "at the same easy-run heart rate this month",
-    color: "text-[#4BEA8A]",
-  },
-  {
-    label: "EXECUTION",
-    value: "6 of 6 reps",
-    detail: "inside your target band",
-    color: "text-[#72B7FF]",
-  },
-  {
-    label: "CONSISTENCY",
-    value: "Next hard day eased",
-    detail: "after recovery and load signals disagreed",
-    color: "text-[#C29BFF]",
-  },
-];
-
 const phoneShots = [
-  {
-    src: "iphone-training-impact.jpg",
-    tag: "Training impact",
-    title: "See what the work actually did.",
-    desc: "Aerobic and anaerobic stimulus, recovery and effort are grounded in the finalized run—not an early estimate.",
-  },
-  {
-    src: "iphone-workout-structure.jpg",
-    tag: "Workout structure",
-    title: "See every rep and recovery.",
-    desc: "Structured sessions are judged from the work you completed, so warm-up and cool-down do not hide the workout that mattered.",
-  },
-  {
-    src: "iphone-metric-explainer.jpg",
-    tag: "Metric explanations",
-    title: "Every important number explains itself.",
-    desc: "What it is, why it changed, what to do next and which data supports it—available when you want the evidence.",
-  },
-];
-
-const watchShots = [
-  { src: "watch-start.png", tag: "Start", desc: "Session, surface and sensors" },
-  { src: "watch-ready.png", tag: "Ready", desc: "Sensors and battery checked" },
-  { src: "watch-gauge.png", tag: "Target", desc: "Pace against the session" },
-  { src: "watch-lap.png", tag: "Lap", desc: "An instant lap receipt" },
-  { src: "watch-splits.png", tag: "Splits", desc: "Lap, HR and progress" },
-  { src: "watch-zonebar.png", tag: "Zones", desc: "Intensity at a glance" },
-  { src: "watch-grid.png", tag: "Your fields", desc: "The numbers you choose" },
-  { src: "watch-select.png", tag: "Layouts", desc: "A view for every workout" },
+  { src: "demo-dashboard.png", tag: "Your trends", title: "See the bigger picture.", desc: "Review readiness, training load and recent running in one place." },
+  { src: "demo-run.png", tag: "Your run", title: "Understand the effort.", desc: "Explore your route, pace and a concise summary after your run." },
 ];
 
 export default function RunToMaxLanding() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <main className="min-h-screen overflow-hidden bg-black font-sans text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-black/75 backdrop-blur-xl">
@@ -174,69 +123,15 @@ export default function RunToMaxLanding() {
           <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 and watchOS 10 or later · Designed for runners aged 18 and older.</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.15 }}
-          className="relative z-10 mx-auto w-full max-w-xl"
-        >
-          <div className="rounded-[2rem] border border-white/10 bg-[#111512]/95 p-5 shadow-[0_35px_100px_-35px_rgba(31,226,108,.32)] sm:p-7">
-            <div className="flex items-center justify-between border-b border-white/[0.07] pb-5">
-              <div>
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Coach&apos;s read · Tomorrow</p>
-                <p className="mt-1 text-sm text-zinc-500">Threshold session</p>
-              </div>
-              <span className="rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1.5 text-xs font-semibold text-amber-200">Recovery mixed</span>
-            </div>
-            <div className="py-7">
-              <p className="text-3xl font-bold tracking-tight sm:text-4xl">Keep the session. Reduce it 15%.</p>
-              <p className="mt-3 max-w-lg leading-relaxed text-zinc-400">Your fitness can support the work, but short sleep and a harder-than-planned run make the full dose unnecessary.</p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                ["HRV", "12% below baseline"],
-                ["SLEEP", "5h 31m"],
-                ["LOAD", "Above usual"],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-xl border border-white/[0.07] bg-black/35 p-4">
-                  <p className="font-mono text-[9px] tracking-[0.18em] text-zinc-600">{label}</p>
-                  <p className="mt-2 text-sm font-semibold text-zinc-200">{value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl bg-[#1FE26C] px-4 py-3 text-center text-sm font-bold text-black">Apply reduced session</div>
-              <div className="rounded-xl border border-white/10 px-4 py-3 text-center text-sm font-semibold text-zinc-300">Keep the original</div>
-            </div>
-            <p className="mt-4 flex items-center gap-2 text-xs text-zinc-600"><CheckCircle2 className="h-3.5 w-3.5 text-[#1FE26C]" /> You decide. RunToMax records why.</p>
+        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 mx-auto flex w-full max-w-lg items-end justify-center gap-3 sm:gap-5">
+          <div className="w-[65%] max-w-[310px] overflow-hidden rounded-[2.5rem] border-[7px] border-zinc-700 bg-black shadow-[0_30px_100px_-35px_rgba(31,226,108,.4)]">
+            <img src={`${BASE}/demo-dashboard.png`} alt="RunToMax dashboard showing example readiness and training trends" className="h-auto w-full" />
           </div>
-          <motion.div
-            animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="absolute -bottom-8 -left-3 hidden w-36 overflow-hidden rounded-[2rem] border-[6px] border-zinc-800 bg-black shadow-2xl sm:block lg:-left-16"
-          >
-            <img src={`${BASE}/watch-gauge.png`} alt="RunToMax target pace screen on Apple Watch" className="h-auto w-full" />
-          </motion.div>
+          <div className="mb-8 w-[31%] max-w-[155px] overflow-hidden rounded-[2rem] border-[6px] border-zinc-700 bg-black shadow-2xl">
+            <img src={`${BASE}/demo-watch.png`} alt="RunToMax running screen on Apple Watch with example distance and time" className="h-auto w-full" />
+          </div>
+          <p className="absolute -bottom-6 text-xs text-zinc-500">Example screens with demo data</p>
         </motion.div>
-      </section>
-
-      <section className="border-y border-white/[0.06] bg-zinc-950/70 py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Your progress, made visible</p>
-            <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-6xl">Not more data. Better evidence that your training is working.</h2>
-            <p className="mt-5 text-zinc-500">Examples of the personalized receipts RunToMax can surface from finalized workout data.</p>
-          </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {outcomeReceipts.map((receipt) => (
-              <motion.article key={receipt.label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="rounded-2xl border border-white/[0.08] bg-black p-7">
-                <p className="font-mono text-[10px] font-semibold tracking-[0.18em] text-zinc-600">{receipt.label}</p>
-                <p className={`mt-5 text-2xl font-bold tracking-tight ${receipt.color}`}>{receipt.value}</p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{receipt.detail}</p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-28 sm:py-36">
@@ -299,11 +194,11 @@ export default function RunToMaxLanding() {
         <div className="pointer-events-none absolute left-1/2 top-1/3 h-80 w-[70%] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.05] blur-[120px]" />
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
-          <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your run becomes an answer—not another dashboard.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">RunToMax reveals the outcome first, then lets you inspect the workout and understand every important metric without leaving the run.</p>
+          <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">See your training at a glance, then explore the details of each run. Screens show example data.</p>
         </div>
 
-        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+        <div className="relative mt-16 flex snap-x snap-mandatory gap-7 overflow-x-auto pb-8 lg:grid lg:mx-auto lg:max-w-3xl lg:grid-cols-2 lg:overflow-visible lg:pb-0">
           {phoneShots.map((shot, index) => (
             <motion.article
               key={shot.src}
@@ -363,18 +258,14 @@ export default function RunToMaxLanding() {
             </div>
             <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Purpose-built layouts, structured workouts, lap haptics, route guidance, external sensors and phone-free recording—designed for a glance, not a scroll.</p>
           </div>
-          <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-4">
-            {watchShots.map((shot) => (
-              <figure key={shot.src} className="w-48 shrink-0 snap-center sm:w-auto">
-                <div className="overflow-hidden rounded-[2.25rem] border-[7px] border-zinc-800 bg-black shadow-[0_0_32px_rgba(31,226,108,.12)]">
-                  <img src={`${BASE}/${shot.src}`} alt={`RunToMax Apple Watch ${shot.tag.toLowerCase()} screen — ${shot.desc}`} className="h-auto w-full" />
-                </div>
-                <figcaption className="mt-4 text-center">
-                  <span className="block text-sm font-bold">{shot.tag}</span>
-                  <span className="mt-1 block text-xs text-zinc-500">{shot.desc}</span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
+            <figure className="w-48 shrink-0">
+              <div className="overflow-hidden rounded-[2.25rem] border-[7px] border-zinc-700 bg-black shadow-[0_0_32px_rgba(31,226,108,.12)]">
+                <img src={`${BASE}/demo-watch.png`} alt="RunToMax Watch screen displaying sample distance and elapsed time" className="h-auto w-full" loading="lazy" />
+              </div>
+              <figcaption className="mt-4 text-center text-xs text-zinc-500">Running screen · example data</figcaption>
+            </figure>
+            <div className="max-w-sm text-center sm:text-left"><p className="text-xl font-bold">Make your screen yours.</p><p className="mt-3 text-sm leading-relaxed text-zinc-400">Choose the numbers that matter to you and keep them close at hand on your run.</p><Link href="/features/apple-watch/" className="mt-5 inline-block text-sm font-semibold text-[#1FE26C] hover:text-white">Explore Apple Watch features →</Link></div>
           </div>
         </div>
       </section>

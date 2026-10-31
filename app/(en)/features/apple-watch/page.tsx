@@ -39,8 +39,7 @@ export default function AppleWatchFeaturePage() {
         if you run with a pod, and more. Layout presets cover easy runs, intervals and races, and you can save your own. A dedicated
         pace-grid screen shows the session target and your current pace side by side so a glance answers the only question that matters mid-rep.
       </p>
-      <Shot src="watch-grid.png" alt="Apple Watch run screen showing a grid of chosen metrics" caption="A custom field grid on the Watch." watch />
-      <Shot src="watch-select.png" alt="Apple Watch layout picker with presets for different workouts" caption="Layouts per workout type." watch />
+      <Shot src="demo-watch.png" alt="RunToMax running screen showing example distance and time" caption="A RunToMax Watch screen with example data." watch />
 
       <h2>Structured sessions on the wrist</h2>
       <p>
@@ -48,7 +47,6 @@ export default function AppleWatchFeaturePage() {
         current step, so you do not need to read the screen to know a rep has started. Sessions come from your RunToMax plan, from a
         workout you paste as text on the iPhone, or from the Watch’s own presets.
       </p>
-      <Shot src="watch-gauge.png" alt="Apple Watch showing current pace against the session target" caption="Pace against the step target." watch />
 
       <p><a href="/guides/interval-workouts-apple-watch/">Learn how to build an interval workout in RunToMax</a>.</p>
 
@@ -57,7 +55,6 @@ export default function AppleWatchFeaturePage() {
         Each kilometre (or mile) posts a lap receipt as it closes, and the splits screen keeps the run’s history in view. Lap pace is a
         single source on the Watch, so the number you see mid-run is the number the summary shows afterwards.
       </p>
-      <Shot src="watch-splits.png" alt="Apple Watch splits screen listing lap times, heart rate and progress" caption="Splits with heart rate and progress." watch />
 
       <h2>What the Watch records</h2>
       <ul>
