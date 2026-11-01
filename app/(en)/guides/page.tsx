@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/guides/" },
 };
 
-const guides = [
+const guides: { href: string; category: string; title: string; description: string; date?: string; dateLabel?: string }[] = [
+  {
+    href: "/guides/export-apple-watch-run-fit/",
+    category: "Apple Watch · Run data",
+    title: "Export an Apple Watch run as a FIT file",
+    description: "Save or share an individual run from RunToMax.",
+  },
   {
     href: "/guides/interval-workouts-apple-watch/",
     category: "Apple Watch · Workouts",
@@ -48,7 +54,7 @@ export default function GuidesPage() {
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1FE26C]">{guide.category}</p>
               <h3 className="mt-6 text-2xl font-bold leading-tight tracking-tight"><Link href={guide.href} className="after:absolute after:inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C]">{guide.title}</Link></h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">{guide.description}</p>
-              <div className="mt-8 flex items-center justify-between border-t border-white/[0.07] pt-5 text-xs text-zinc-500"><time dateTime={guide.date}>{guide.dateLabel}</time><span className="flex items-center gap-2 font-semibold text-zinc-300 group-hover:text-[#1FE26C]">Read guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
+              <div className="mt-8 flex items-center justify-between border-t border-white/[0.07] pt-5 text-xs text-zinc-500">{guide.date && <time dateTime={guide.date}>{guide.dateLabel}</time>}<span className="flex items-center gap-2 font-semibold text-zinc-300 group-hover:text-[#1FE26C]">Read guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
             </article>
           ))}
         </div>
