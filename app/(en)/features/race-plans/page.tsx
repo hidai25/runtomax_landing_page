@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/features/race-plans/", {
   title: "Race-date training plans that adapt with your approval",
   description:
     "RunToMax builds 5K to marathon plans anchored to your race date, sends each session to your Apple Watch, and proposes changes based on how you respond — you approve them. Or run with no plan at all.",
   alternates: alternatesFor("/features/race-plans/", "en"),
-};
+});
 
 export default function RacePlansFeaturePage() {
   return (

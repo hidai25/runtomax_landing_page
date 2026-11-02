@@ -1,20 +1,21 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import LegalLayout from "@/app/_components/LegalLayout";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/support/", {
   title: "Support",
   description:
     "Get help with RunToMax: contact the developer, manage your subscription, and find the privacy policy.",
   alternates: { canonical: "/support/" },
   robots: { index: true, follow: true },
-};
+});
 
 export default function SupportPage() {
   return (
     <LegalLayout
       title="Support"
-      effectiveDate="October 5, 2026"
+      effectiveDate="November 2, 2026"
       intro={
         <p>
           Email{" "}
@@ -31,7 +32,7 @@ export default function SupportPage() {
 
       <h2>Adult eligibility</h2>
       <p>
-        RunToMax 1.0 is available only to adults aged 18 and older. The first
+        RunToMax is available only to adults aged 18 and older. The first
         iPhone screen establishes 18+ eligibility before HealthKit,
         subscriptions, analytics, or coaching can start. On iOS 26 or later,
         it can use Apple&apos;s privacy-preserving Declared Age Range service; if
@@ -77,8 +78,8 @@ export default function SupportPage() {
         features require a subscription. An Apple free trial may be available
         if you are eligible. Apple shows the offer, price and renewal terms
         before you confirm; subscriptions renew automatically unless cancelled.
-        Some app versions may still show an earlier coached-run offer; its disclosed
-        terms continue to apply. If your Watch asks you to update RunToMax,
+        Version 1.3.5 also offers three included coached runs to eligible runners,
+        separately from the Apple trial and without starting a subscription. If your Watch asks you to update RunToMax,
         install the latest Watch app.
       </p>
 
@@ -104,8 +105,13 @@ export default function SupportPage() {
 
       <h2>Your data</h2>
       <p>
-        RunToMax has no account or cloud training-history database. Your
-        workouts, routes, and heart rate live in Apple Health on your device.
+        No account is required for basic use. Your workouts, routes and heart rate
+        are stored in Apple Health and local app storage. In version 1.3.5,
+        optional Sign in with Apple account sync stores an encrypted selected
+        training archive with Cloudflare, including workout heart rate but
+        excluding raw GPS routes. You can turn sync off or delete the sync
+        account in Settings → Account &amp; sync. Uninstalling the app alone
+        does not delete that archive.
         Optional cloud coaching sends a minimized, consented summary through a
         RunToMax proxy as explained in the Privacy Policy. Deleting the app
         removes RunToMax&apos;s local settings; to remove the workouts

@@ -1,13 +1,14 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { APP_STORE_URL } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/guides/", {
   title: "Running Guides for Apple Watch",
   description: "Practical running guides for getting more from RunToMax and your Apple Watch.",
   alternates: { canonical: "/guides/" },
-};
+});
 
 const guides = [
   {

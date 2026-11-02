@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const SITE_URL = "https://runtomax.com";
 export const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
 export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
@@ -45,6 +47,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         url: SITE_URL,
         founder: { "@type": "Person", name: "Hidai Bar-Mor" },
         email: contactEmail,
+        description,
       },
       {
         "@type": "WebSite",
@@ -67,6 +70,8 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         contentRating: "18+",
         audience: { "@type": "PeopleAudience", suggestedMinAge: 18 },
         url: SITE_URL,
+        softwareVersion: "1.3.5",
+        sameAs: [APP_STORE_URL],
         downloadUrl: APP_STORE_URL,
         installUrl: APP_STORE_URL,
         screenshot: [`${SITE_URL}/watch-grid.png`, `${SITE_URL}/iphone-today.png`],
@@ -82,6 +87,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
           "FIT and GPX export",
         ],
         offers: [
+          { "@type": "Offer", name: "Free download and basic recording", price: "0", priceCurrency: "USD", url: APP_STORE_URL },
           {
             "@type": "Offer",
             name: "RunToMax Pro — annual",
@@ -102,5 +108,21 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         author: { "@id": `${SITE_URL}/#org` },
       },
     ],
+  };
+}
+
+/** Each page owns its social preview as well as its canonical URL. */
+export function pageMetadata(path: string, metadata: Metadata): Metadata {
+  const title = typeof metadata.title === "string" ? metadata.title : "RunToMax";
+  const description = metadata.description ?? "";
+  return {
+    ...metadata,
+    openGraph: {
+      type: "website", siteName: "RunToMax", url: `${SITE_URL}${path}`,
+      title, description, locale: path.startsWith("/fr/") ? "fr_FR" : "en_US",
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "RunToMax running app" }],
+      ...metadata.openGraph,
+    },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE], ...metadata.twitter },
   };
 }

@@ -1,4 +1,5 @@
 "use client";
+import dimensions from "@/app/_lib/image-dimensions.json";
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
@@ -34,7 +35,7 @@ function AppStoreBadge({ heightClass = "h-12", className = "" }: { heightClass?:
       className={`inline-flex shrink-0 items-center rounded-lg p-1.5 transition-all hover:scale-[1.03] hover:drop-shadow-[0_0_22px_rgba(31,226,108,.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C] ${className}`}
       aria-label="Download RunToMax on the App Store"
     >
-      <img src={`${BASE}/app-store-badge.svg`} alt="Download on the App Store" className={`${heightClass} w-auto`} />
+      <img src={`${BASE}/app-store-badge.svg`} alt="Download on the App Store" width={120} height={40} className={`${heightClass} w-auto`} />
     </a>
   );
 }
@@ -133,11 +134,11 @@ export default function RunToMaxLanding() {
               ["showcase-run.png", "A run summary with example workout data"],
             ].map(([src, alt], index) => (
               <div key={src} className={`w-[31%] overflow-hidden rounded-[1.4rem] border-[4px] border-zinc-700 bg-black shadow-2xl sm:rounded-[2rem] sm:border-[6px] ${index === 1 ? "-translate-y-4" : "translate-y-3"}`}>
-                <img src={`${BASE}/${src}`} alt={alt} className="h-auto w-full" />
+                <img src={`${BASE}/${src}`} alt={alt} {...dimensions[src as keyof typeof dimensions]} className="h-auto w-full" />
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-xs text-zinc-500">Actual app screens · example data</p>
+          <p className="mt-8 text-center text-xs text-zinc-500">Design preview · example data · App Store 1.3.5 may look different</p>
         </motion.div>
       </section>
 
@@ -146,7 +147,7 @@ export default function RunToMaxLanding() {
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
           <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens show example data.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens preview the updated design with example data; the layout in App Store version 1.3.5 may differ.</p>
         </div>
 
         <div className="relative mt-14 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -162,6 +163,7 @@ export default function RunToMaxLanding() {
               <div className="mx-auto max-w-[290px] overflow-hidden rounded-[2.8rem] border-[8px] border-zinc-800 bg-black shadow-[0_28px_80px_-28px_rgba(31,226,108,.28)]">
                 <img
                   src={`${BASE}/${shot.src}`}
+                  {...dimensions[shot.src as keyof typeof dimensions]}
                   alt={`RunToMax iPhone ${shot.tag.toLowerCase()} screen`}
                   className="h-auto w-full"
                   loading={index === 0 ? "eager" : "lazy"}
@@ -268,7 +270,7 @@ export default function RunToMaxLanding() {
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
             <figure className="w-48 shrink-0">
               <div className="overflow-hidden rounded-[2.25rem] border-[7px] border-zinc-700 bg-black shadow-[0_0_32px_rgba(31,226,108,.12)]">
-                <img src={`${BASE}/demo-watch.png`} alt="RunToMax Watch screen displaying sample distance and elapsed time" className="h-auto w-full" loading="lazy" />
+                <img src={`${BASE}/demo-watch.png`} {...dimensions["demo-watch.png"]} alt="RunToMax Watch screen displaying sample distance and elapsed time" className="h-auto w-full" loading="lazy" />
               </div>
               <figcaption className="mt-4 text-center text-xs text-zinc-500">Running screen · example data</figcaption>
             </figure>

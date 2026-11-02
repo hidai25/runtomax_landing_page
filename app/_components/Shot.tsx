@@ -1,3 +1,4 @@
+import dimensions from "@/app/_lib/image-dimensions.json";
 /* eslint-disable @next/next/no-img-element */
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -7,8 +8,9 @@ export default function Shot({ src, alt, caption, watch = false }: { src: string
       <img
         src={`${BASE}/${src}`}
         alt={alt}
+        {...dimensions[src as keyof typeof dimensions]}
         loading="lazy"
-        className={`w-full border border-white/[0.08] bg-zinc-950 ${watch ? "rounded-[2.2rem]" : "rounded-[1.6rem]"}`}
+        className={`h-auto w-full border border-white/[0.08] bg-zinc-950 ${watch ? "rounded-[2.2rem]" : "rounded-[1.6rem]"}`}
       />
       <figcaption className="mt-3 text-xs text-zinc-500">{caption}</figcaption>
     </figure>

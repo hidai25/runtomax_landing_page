@@ -1,15 +1,16 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/fr/", {
   title: "RunToMax — Coach course à pied pour Apple Watch",
   description:
     "RunToMax enregistre vos sorties sur Apple Watch et vous coache à partir des courses déjà présentes dans Apple Santé : verdict après chaque sortie, allures de seuil, plans calés sur la date de votre course. En français.",
   alternates: alternatesFor("/", "fr"),
-};
+});
 
 const features = [
   ["/fr/fonctionnalites/apple-watch/", "Suivi sur Apple Watch", "Écrans à composer, séances structurées avec vibrations, sans téléphone."],

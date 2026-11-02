@@ -1,11 +1,18 @@
+import GuideDetails from "@/app/_components/GuideDetails";
+import { guides } from "@/app/_lib/guides";
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+const guide = guides.treadmill;
+
+export const metadata: Metadata = pageMetadata("/guides/apple-watch-treadmill-distance/", {
   title: "Apple Watch treadmill distance wrong? Calibrate a run in RunToMax",
   description: "Understand why treadmill and Apple Watch distances differ, and learn how to correct a treadmill run in RunToMax.",
+  authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
+  openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
   alternates: { canonical: "/guides/apple-watch-treadmill-distance/" },
-};
+});
 
 const download = "https://apps.apple.com/app/apple-store/id6767669260?pt=126426469&ct=website-guides&mt=8";
 
@@ -16,6 +23,7 @@ export default function TreadmillDistanceGuide() {
       <Link href="/guides/" className="mb-8 inline-block text-sm font-medium text-zinc-400 hover:text-white">← All guides</Link>
       <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#1FE26C]">RunToMax guide · Apple Watch</p>
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">Apple Watch and treadmill distance don't match?</h1>
+      <GuideDetails guide={guide} />
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
         <p>Your watch and treadmill can report different distances for the same run. The watch estimates indoor distance from motion; the treadmill has its own measurement. Neither number is guaranteed to be exact, so compare a few runs before drawing a conclusion.</p>
         <h2>Correct a run in RunToMax</h2>

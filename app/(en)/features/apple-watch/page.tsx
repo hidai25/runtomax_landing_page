@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/features/apple-watch/", {
   title: "Apple Watch run tracking",
   description:
     "How RunToMax records runs on Apple Watch: custom run screens, structured intervals with haptic cues, phone-free recording, and what it needs (iOS 17, watchOS 10).",
   alternates: alternatesFor("/features/apple-watch/", "en"),
-};
+});
 
 export default function AppleWatchFeaturePage() {
   return (
@@ -17,7 +18,7 @@ export default function AppleWatchFeaturePage() {
       eyebrow="Feature · Apple Watch"
       title="Run tracking on Apple Watch"
       alternate="/fr/fonctionnalites/apple-watch/"
-      updated="2026-09-22"
+      updated="2026-11-02"
       intro={
         <p>
           RunToMax records on the Watch, not on the phone. The screens are yours to design, structured sessions run on the wrist
@@ -69,6 +70,8 @@ export default function AppleWatchFeaturePage() {
         The Watch hands the finished run to the iPhone, where RunToMax classifies it, writes a plain-language verdict and scores it against
         what the plan asked for. That side of the app is described in <a href="/features/coaching-from-apple-health/">coaching from Apple Health</a>.
       </p>
+      <h2>Set up your next session</h2>
+      <p><a href="/guides/interval-workouts-apple-watch/">Build an interval workout in RunToMax</a> or <a href="/guides/apple-watch-treadmill-distance/">correct a treadmill run’s distance</a>.</p>
     </PageShell>
   );
 }
