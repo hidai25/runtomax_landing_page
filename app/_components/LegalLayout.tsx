@@ -61,7 +61,7 @@ export default function LegalLayout({
             <span className="text-white">RunTo</span>
             <span className="text-[#1FE26C]">Max</span>
           </Link>
-          <div className="flex gap-6 text-sm text-zinc-500 font-medium">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-zinc-500 font-medium">
             <Link href="/support" className="hover:text-white transition-colors">
               Support
             </Link>
