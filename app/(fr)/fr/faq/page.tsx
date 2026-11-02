@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Faq, { type FaqItem } from "@/app/_components/Faq";
 import PageShell from "@/app/_components/PageShell";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/fr/faq/", {
   title: "FAQ — faut-il une Apple Watch, et les autres questions avant d’acheter",
   description:
     "Des réponses nettes avant de télécharger RunToMax : Apple Watch obligatoire, courir sans téléphone, ce qui est gratuit, l’essai Pro, ce que comprend Pro, Garmin, Strava, langues et âge.",
   alternates: alternatesFor("/faq/", "fr"),
-};
+});
 
 const items: FaqItem[] = [
   {
@@ -33,7 +34,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Puis-je essayer RunToMax Pro ?",
-    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro. Certaines versions de l’app peuvent également afficher une ancienne offre de sorties coachées ; consultez ses conditions dans l’app.",
+    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro. La version 1.3.5 propose aussi trois sorties coachées incluses aux coureurs éligibles ; consultez les conditions dans l’app. Cette offre distincte ne déclenche pas d’abonnement.",
   },
   {
     q: "Que comprend RunToMax Pro ?",
@@ -41,11 +42,11 @@ const items: FaqItem[] = [
   },
   {
     q: "Je cours avec une Garmin (ou Coros, Polar, Suunto). RunToMax me sert-il ?",
-    a: "En partie. Si votre montre se synchronise avec Apple Santé, RunToMax peut lire ces courses, mais elles ne portent que distance, durée et fréquence cardiaque — ni tracé, ni tours, ni passages — et l’analyse est donc limitée. L’enregistrement et l’analyse complète demandent l’Apple Watch. Une synchronisation directe pour les autres montres est prévue, pas disponible aujourd’hui.",
+    a: "En partie. Si votre montre se synchronise avec Apple Santé, RunToMax peut lire ces courses, mais elles ne portent que distance, durée et fréquence cardiaque — ni tracé, ni tours, ni passages — et l’analyse est donc limitée. L’enregistrement et l’analyse complète demandent l’Apple Watch. La synchronisation directe avec Garmin Connect n’est pas disponible dans la version App Store 1.3.5 ; les versions de test ultérieures peuvent différer.",
   },
   {
     q: "Est-ce synchronisé avec Strava ?",
-    a: "Pas encore dans la version de l’App Store. La synchronisation Strava est construite et en test auprès d’un nombre limité de coureurs pendant que Strava examine l’intégration. Chaque course est écrite dans Apple Santé, et les courses peuvent être exportées en fichiers FIT en attendant.",
+    a: "Pas dans la version App Store 1.3.5. La synchronisation Strava est réservée aux testeurs des versions TestFlight compatibles. Chaque course est écrite dans Apple Santé, et les courses peuvent être exportées en fichiers FIT en attendant.",
   },
   {
     q: "Quelles langues sont prises en charge ?",
@@ -57,11 +58,11 @@ const items: FaqItem[] = [
   },
   {
     q: "Où sont stockées mes données ?",
-    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. Une synchronisation facultative avec Se connecter avec Apple est prévue dans la version 1.3 et fait actuellement l’objet de tests de développement contrôlés. Si vous l’activez lorsqu’elle sera proposée, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
+    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. Dans la version 1.3.5, la synchronisation avec Se connecter avec Apple est facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
   },
   {
     q: "Quelle est la précision de la distance ?",
-    a: "Sur une sortie régulière, à environ 1 % près d’une Garmin portée à l’autre poignet. Sur les sorties avec beaucoup d’arrêts et de reprises, l’écart monte à 1–3 %, surtout à cause de la façon dont les deux montres gèrent les pauses. La méthode et les chiffres sont sur la page précision.",
+    a: "Dans le petit échantillon décrit sur notre page précision, les distances différaient d’environ 1 % d’une Garmin à l’autre poignet sur les sorties régulières, et de 1 à 3 % avec de nombreux arrêts. Ces observations ne garantissent pas le résultat de votre sortie ; aucune des deux montres n’est une référence absolue. La méthode et les chiffres sont sur la page précision.",
   },
 ];
 
@@ -72,8 +73,8 @@ export default function FaqPageFr() {
       eyebrow="Avant de télécharger"
       title="Les questions que les coureurs posent en premier"
       alternate="/faq/"
-      updated="2026-10-05"
-      intro={<p>Des réponses courtes, vérifiées dans la version actuelle de l’App Store. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
+      updated="2026-11-02"
+      intro={<p>Des réponses courtes pour la version App Store 1.3.5. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
     >
       <Faq items={items} />
       <h2>Encore un doute ?</h2>

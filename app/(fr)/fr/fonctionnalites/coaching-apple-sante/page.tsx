@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/fr/fonctionnalites/coaching-apple-sante/", {
   title: "Un coaching bâti sur vos courses déjà dans Apple Santé",
   description:
     "RunToMax lit les courses déjà présentes dans Apple Santé, estime une allure de seuil sur vos 90 derniers jours et donne un verdict clair à chaque sortie. Ce qui est calculé sur l’appareil, et ce qu’ajoute le coaching cloud optionnel.",
   alternates: alternatesFor("/features/coaching-from-apple-health/", "fr"),
-};
+});
 
 export default function CoachingFeaturePageFr() {
   return (
@@ -17,7 +18,7 @@ export default function CoachingFeaturePageFr() {
       eyebrow="Fonctionnalité · Coaching"
       title="Un coaching bâti sur les courses que vous avez déjà"
       alternate="/features/coaching-from-apple-health/"
-      updated="2026-09-22"
+      updated="2026-11-02"
       intro={
         <p>
           Au premier lancement, avec votre accord, RunToMax lit les courses déjà présentes dans Apple Santé et en tire un profil de départ.
@@ -62,15 +63,17 @@ export default function CoachingFeaturePageFr() {
         de chaleur — est calculé <strong>sur votre iPhone</strong>, sans compte et sans serveur RunToMax.
       </p>
       <p>
-        La seule fonction cloud, optionnelle, est celle des <strong>notes rédigées du coach</strong> : des explications plus longues produites par un
+        Le coaching cloud facultatif ajoute les <strong>notes rédigées du coach</strong> : des explications plus longues produites par un
         modèle de langage via un relais RunToMax. Elle est désactivée tant que vous ne l’activez pas, elle reçoit un résumé minimal plutôt que vos
         données brutes, et la désactiver ne retire rien d’autre. Sans coaching cloud, l’application est complète ; les notes sont simplement plus courtes.
       </p>
 
       <h2>Où vivent vos données</h2>
       <p>
-        Vos courses, tracés et fréquences cardiaques vivent dans Apple Santé, sur votre appareil. RunToMax ne garde aucune copie cloud de votre
-        historique et n’a pas de compte avec e-mail et mot de passe. Les courses peuvent être exportées en fichiers FIT. Les détails sont dans la{" "}
+        Vos courses, tracés et fréquences cardiaques sont stockés dans Apple Santé et sur l’appareil. Aucun compte n’est requis. Dans la version 1.3.5,
+        vous pouvez activer séparément la synchronisation avec Se connecter avec Apple : Cloudflare conserve alors une archive chiffrée
+        de votre entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts. Désactiver le coaching cloud
+        ne désactive pas la synchronisation du compte. Les courses peuvent être exportées en fichiers FIT. Les détails sont dans la{" "}
         <a href="/privacy/">politique de confidentialité</a> (en anglais).
       </p>
     </PageShell>

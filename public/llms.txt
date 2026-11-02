@@ -2,14 +2,14 @@
 
 > RunToMax is a running app for iPhone and Apple Watch. It records runs on the Apple Watch and coaches from the runs already in Apple Health: a plain-language verdict after every run, a threshold pace estimated from the last 90 days, and race-date training plans that propose changes the runner approves. For runners aged 18 and older. English and French.
 
-## Facts (checked against App Store version 1.2.3, 2026-09-22)
+## Facts (App Store version 1.3.5; release source reviewed 2026-11-02)
 
 - Requirements: iPhone with iOS 17 or later; Apple Watch with watchOS 10 or later (Series 4 and newer, SE, Ultra). Recording requires the Apple Watch; no phone needed on the run.
-- Other watches (Garmin, Coros, Polar, Suunto): runs synced to Apple Health can be read, with basic data only (distance, time, heart rate). Direct sync is planned, not available.
-- Strava: sync is built and in limited testing; not in the App Store version. Runs are written to Apple Health and can be exported as FIT files.
-- Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. One subscription unlocks the whole app. No free tier; recorded runs stay in Apple Health regardless.
+- Other watches (Garmin, Coros, Polar, Suunto): runs synced to Apple Health can be read, with basic data only (distance, time, heart rate). Direct Garmin Connect support is not included in App Store version 1.3.5; later test builds may differ.
+- Strava: sync is limited to supported TestFlight builds; not in App Store version 1.3.5. Runs are written to Apple Health and can be exported as FIT files.
+- Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. Basic Outdoor and Treadmill recording, history and export are free. Version 1.3.5 also offers three included coached runs to eligible runners, separately from the Apple trial and without starting a subscription. Apple confirms trial eligibility and local prices; Pro auto-renews unless cancelled.
 - Cloud coaching is opt-in and produces only the longer written coach notes; everything else (profile, paces, run classification, verdict, plans, scores, readiness, heat adjustment) runs on the iPhone.
-- Data: no account required, no ads, no data sale. Optional Sign in with Apple training-history sync is planned for version 1.3 and currently limited to controlled development testing; when enabled, it stores an encrypted selected training archive with Cloudflare (workout heart rate included, raw GPS routes excluded). See the privacy policy for the English and French sync disclosure.
+- Data: no account required, no ads, no data sale. Optional Sign in with Apple training-history sync is available in version 1.3.5 and off until the runner opts in; when enabled, it stores an encrypted selected training archive with Cloudflare (workout heart rate included, raw GPS routes excluded). See the privacy policy for the English and French sync disclosure.
 - Developer: Hidai Bar-Mor, independent developer.
 
 ## Pages
@@ -22,10 +22,18 @@
 - [Accuracy](https://runtomax.com/accuracy/) — how distance, splits, cadence and elevation are tested against a Garmin on the other wrist; results and limitations. FR: https://runtomax.com/fr/precision/
 - [Support](https://runtomax.com/support/), [Privacy Policy](https://runtomax.com/privacy/), [Terms of Service](https://runtomax.com/terms/)
 
-## Accuracy summary
+## Historical accuracy observations (reported September 22, 2026)
 
-- Distance uses Apple's workout distance engine. Against a Garmin on the other wrist: within about 1% on steady runs; 1–3% short on interval and stop-heavy runs, mostly from pause handling. More than 35 paired runs since May 2026; a 17-run scored corpus gates any change to the distance code.
-- Cadence matches the Garmin (median 180 vs 181 spm). Elevation from the barometer with GPS drift correction, about 9 m per run. Ground contact time from the wrist is not used for form guidance.
+These small-sample comparisons are not a validation of every release or a guaranteed error bound. Neither watch is ground truth.
+
+- The reported sample used Apple's workout distance engine. Against a Garmin on the other wrist: within about 1% on steady runs; 1–3% short on interval and stop-heavy runs, mostly from pause handling. More than 35 paired runs since May 2026; 17 runs formed the historical scored comparison set.
+- Cadence matches the Garmin (median 180 vs 181 spm). The report described elevation differences of about 9 m per run; this is not a guarantee. Ground contact time from the wrist is not used for form guidance.
+
+## Guides
+
+- [Running guides](https://runtomax.com/guides/) — practical RunToMax help.
+- [Create interval workouts](https://runtomax.com/guides/interval-workouts-apple-watch/) — iPhone Watch tab → Workouts in version 1.3.5; build and send intervals to RunToMax on Apple Watch.
+- [Treadmill distance](https://runtomax.com/guides/apple-watch-treadmill-distance/) — correct a treadmill run in RunToMax; limitations and separate Apple calibration guidance.
 
 ## Contact
 

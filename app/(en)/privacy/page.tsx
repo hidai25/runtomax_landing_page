@@ -1,20 +1,21 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import LegalLayout from "@/app/_components/LegalLayout";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/privacy/", {
   title: "Privacy Policy",
   description:
     "How RunToMax handles HealthKit, location, optional cloud coaching, account sync and Garmin Connect, WeatherKit, map and terrain tiles, subscriptions, consent-based analytics, and website data.",
   alternates: { canonical: "/privacy/" },
   robots: { index: true, follow: true },
-};
+});
 
 export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="October 31, 2026"
+      effectiveDate="November 2, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -29,12 +30,12 @@ export default function PrivacyPage() {
       <h2>Summary</h2>
       <ul>
         <li>
-          RunToMax 1.0 is for adults aged 18 and older. Its age gate stores
+          RunToMax is for adults aged 18 and older. Its age gate stores
           only the eligibility result, policy version, and confirmation time.
         </li>
         <li>
           No account is required. Optional Sign in with Apple account sync is
-          planned for version 1.3 and is described below; no email login or
+          available in version 1.3.5 and described below; no email login or
           password is required.
         </li>
         <li>
@@ -60,14 +61,15 @@ export default function PrivacyPage() {
           not send exact workout or health values.
         </li>
         <li>
-          Garmin Connect integration is optional: you can connect your account,
+          Garmin Connect is not included in App Store version 1.3.5. In supported
+          later test builds, the integration is optional: you can connect your account,
           send your chosen running workouts to Garmin Connect and separately opt
           in to importing new Garmin runs and, separately, last night&rsquo;s
           sleep, resting heart rate and overnight HRV for your readiness. Other
           all-day health data is not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
-          The launch version has no public Strava integration, RevenueCat,
+          App Store version 1.3.5 has no public Strava integration, RevenueCat,
           Lifetime purchase, advertising, or IDFA. Website analytics is optional.
         </li>
       </ul>
@@ -125,12 +127,10 @@ export default function PrivacyPage() {
         policy version, and the confirmation time.
       </p>
 
-      <h3 id="training-sync">Account sync (optional, planned for version 1.3)</h3>
+      <h3 id="training-sync">Account sync (optional)</h3>
       <p>
-        Account sync is being tested in controlled development builds and is
-        planned for version 1.3; it is not yet available to everyone in the
-        App Store version. The following describes the feature when it is
-        offered. You can use RunToMax without a sync account. A French version
+        Account sync is available in App Store version 1.3.5 and is off until
+        you choose to connect. The following describes this optional feature. You can use RunToMax without a sync account. A French version
         of this disclosure is <a href="#synchronisation">available below</a>.
       </p>
       <p>
@@ -224,7 +224,8 @@ export default function PrivacyPage() {
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h3 id="garmin">Garmin Connect (optional)</h3>
+      <h3 id="garmin">Garmin Connect (optional, later test builds)</h3>
+      <p>This section applies when Garmin Connect is offered in your build. It is not available in App Store version 1.3.5.</p>
       <p>
         An optional connection lets you send selected RunToMax running workouts
         and scheduled dates to your Garmin Connect account for use on compatible
@@ -572,16 +573,15 @@ export default function PrivacyPage() {
       <p>You can accept or reject analytics using the website banner, or change your choice using Analytics settings. If you reject analytics, the Google Analytics tag is not loaded. Withdrawing consent stops future collection and removes first-party Google Analytics cookies. Your choice is stored in your browser. Google may process information outside your country; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> about website privacy.</p>
       <p>Links to the App Store are handled by Apple under Apple&apos;s privacy policy.</p>
 
-      <h2>What RunToMax does not use at launch</h2>
+      <h2>What App Store version 1.3.5 does not use</h2>
       <ul>
         <li>No advertising, IDFA, or third-party advertising trackers.</li>
-        <li>No public Strava integration in the launch build.</li>
+        <li>No public Strava integration in App Store version 1.3.5; supported TestFlight builds may offer it.</li>
         <li>No RevenueCat subscription processing.</li>
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
-          with Sign in with Apple is planned for version 1.3; it is currently
-          limited to controlled development testing.
+          with Sign in with Apple is available in version 1.3.5 and requires your opt-in.
         </li>
         <li>No contacts or calendar access.</li>
       </ul>
@@ -734,9 +734,8 @@ export default function PrivacyPage() {
         <h2 id="synchronisation">Synchronisation du compte — français</h2>
         <p>
           Cette information complète la politique ci-dessus pour la
-          synchronisation facultative prévue dans la version 1.3. Elle est
-          actuellement testée dans des versions de développement contrôlées et
-          n’est pas encore disponible pour tous dans la version App Store.
+          synchronisation facultative disponible dans la version App Store 1.3.5.
+          Elle reste désactivée tant que vous ne choisissez pas de connecter votre compte.
           Vous pouvez utiliser RunToMax sans compte de synchronisation.
           Le responsable est Hidai Bar-Mor, développeur indépendant de RunToMax.
           Contact : <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.

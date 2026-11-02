@@ -27,6 +27,7 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+      - run: python3 scripts/check-seo.py
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

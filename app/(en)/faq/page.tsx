@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Faq, { type FaqItem } from "@/app/_components/Faq";
 import PageShell from "@/app/_components/PageShell";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/faq/", {
   title: "FAQ — do I need an Apple Watch, and other questions before you buy",
   description:
     "Straight answers before you download RunToMax: Apple Watch requirement, running without the phone, what is free, the Pro trial, what Pro includes, Garmin, Strava, languages and age.",
   alternates: alternatesFor("/faq/", "en"),
-};
+});
 
 const items: FaqItem[] = [
   {
@@ -33,7 +34,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Can I try RunToMax Pro?",
-    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro. Some app versions may also show an earlier coached-run offer; see the app for its terms.",
+    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro. Version 1.3.5 also offers three included coached runs to eligible runners; check eligibility and terms in the app. This separate offer does not start a subscription.",
   },
   {
     q: "What does RunToMax Pro include?",
@@ -41,11 +42,11 @@ const items: FaqItem[] = [
   },
   {
     q: "I run with a Garmin (or Coros, Polar, Suunto). Can I use RunToMax?",
-    a: "Partly. If your watch syncs to Apple Health, RunToMax can read those runs, but they carry only distance, time and heart rate — no route, laps or splits — so the analysis is limited. Recording and the full analysis need the Apple Watch. Direct sync for other watches is planned, not available today.",
+    a: "Partly. If your watch syncs to Apple Health, RunToMax can read those runs, but they carry only distance, time and heart rate — no route, laps or splits — so the analysis is limited. Recording and the full analysis need the Apple Watch. Direct Garmin Connect sync is not available in App Store version 1.3.5; later test builds may differ.",
   },
   {
     q: "Does it sync with Strava?",
-    a: "Not in the App Store version yet. Strava sync is built and in testing with a limited number of runners while Strava reviews the integration. Every run is written to Apple Health, and runs can be exported as FIT files in the meantime.",
+    a: "Not in App Store version 1.3.5. Strava sync is available only to testers in supported TestFlight builds. Every run is written to Apple Health, and runs can be exported as FIT files in the meantime.",
   },
   {
     q: "Which languages does it support?",
@@ -57,11 +58,11 @@ const items: FaqItem[] = [
   },
   {
     q: "Where is my data stored?",
-    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. Optional account sync with Sign in with Apple is planned for version 1.3 and is currently in controlled development testing. If you enable it when offered, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
+    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. In version 1.3.5, account sync with Sign in with Apple is optional. If you enable it, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
   },
   {
     q: "How accurate is the distance?",
-    a: "On steady runs, within about 1% of a Garmin worn on the other wrist. On runs with many stops and restarts the gap widens to 1–3%, mostly from how the two watches handle pauses. The method and the numbers are on the accuracy page.",
+    a: "In the small paired-run sample described on our accuracy page, steady-run distances differed by about 1% from a Garmin on the other wrist; stop-heavy runs differed by 1–3%. These observations are not a guarantee for your run, and neither watch is ground truth. The method and the numbers are on the accuracy page.",
   },
 ];
 
@@ -72,8 +73,8 @@ export default function FaqPage() {
       eyebrow="Before you download"
       title="Questions runners ask first"
       alternate="/fr/faq/"
-      updated="2026-10-05"
-      intro={<p>Short answers, checked against the current App Store version. If yours is missing, email the developer from the support page.</p>}
+      updated="2026-11-02"
+      intro={<p>Short answers for App Store version 1.3.5. If yours is missing, email the developer from the support page.</p>}
     >
       <Faq items={items} />
       <h2>Still unsure?</h2>

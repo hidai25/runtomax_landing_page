@@ -1,0 +1,90 @@
+{
+  "app-store-badge-white.svg": {
+    "width": 120,
+    "height": 40
+  },
+  "app-store-badge.svg": {
+    "width": 120,
+    "height": 40
+  },
+  "demo-home.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "demo-plan.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "demo-run.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "demo-watch.png": {
+    "width": 422,
+    "height": 514
+  },
+  "iphone-metric-explainer.jpg": {
+    "width": 590,
+    "height": 1280
+  },
+  "iphone-today.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "iphone-training-impact.jpg": {
+    "width": 590,
+    "height": 1280
+  },
+  "iphone-workout-structure.jpg": {
+    "width": 590,
+    "height": 1280
+  },
+  "og-runtomax.png": {
+    "width": 1200,
+    "height": 630
+  },
+  "showcase-plan.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "showcase-run.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "showcase-trends.png": {
+    "width": 1206,
+    "height": 2622
+  },
+  "watch-gauge.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-grid.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-lap.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-ready.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-select.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-splits.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-start.png": {
+    "width": 422,
+    "height": 514
+  },
+  "watch-zonebar.png": {
+    "width": 422,
+    "height": 514
+  }
+}

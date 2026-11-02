@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import LegalLayout from "@/app/_components/LegalLayout";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/terms/", {
   title: "Terms of Service",
   description:
     "The terms that govern your use of the RunToMax app and any subscriptions purchased through it.",
   alternates: { canonical: "/terms/" },
   robots: { index: true, follow: true },
-};
+});
 
 export default function TermsPage() {
   return (

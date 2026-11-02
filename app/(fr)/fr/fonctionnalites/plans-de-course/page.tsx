@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/fr/fonctionnalites/plans-de-course/", {
   title: "Des plans d’entraînement calés sur la date de votre course",
   description:
     "RunToMax construit des plans du 5 km au marathon calés sur votre date de course, envoie chaque séance sur votre Apple Watch et propose des ajustements selon votre réponse — c’est vous qui approuvez. Ou courez sans plan.",
   alternates: alternatesFor("/features/race-plans/", "fr"),
-};
+});
 
 export default function RacePlansFeaturePageFr() {
   return (

@@ -12,7 +12,7 @@ type PageShellProps = {
   intro?: ReactNode;
   /** The same page in the other language, for the switch link. */
   alternate?: string;
-  /** Machine-readable date the page content was last checked against the app. */
+  /** Date of the last substantive editorial update. */
   updated: string;
   children: ReactNode;
 };
@@ -22,7 +22,7 @@ const STRINGS = {
     home: "/",
     get: "Get the app",
     switch: "Français",
-    updated: "Checked against the app on",
+    updated: "Updated",
     features: "Features",
     faq: "FAQ",
     accuracy: "Accuracy",
@@ -44,7 +44,7 @@ const STRINGS = {
     home: "/fr/",
     get: "Télécharger",
     switch: "English",
-    updated: "Vérifié dans l’app le",
+    updated: "Mis à jour le",
     features: "Fonctionnalités",
     faq: "FAQ",
     accuracy: "Précision",

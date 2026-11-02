@@ -1,14 +1,15 @@
+import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import PageShell from "@/app/_components/PageShell";
 import Shot from "@/app/_components/Shot";
 import { alternatesFor } from "@/app/_lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata("/fr/fonctionnalites/apple-watch/", {
   title: "Suivi de course sur Apple Watch",
   description:
     "Comment RunToMax enregistre vos sorties sur Apple Watch : écrans personnalisés, fractionné structuré avec vibrations, enregistrement sans téléphone, et la configuration requise (iOS 17, watchOS 10).",
   alternates: alternatesFor("/features/apple-watch/", "fr"),
-};
+});
 
 export default function AppleWatchFeaturePageFr() {
   return (
