@@ -15,8 +15,8 @@ const guides = [
     category: "Apple Watch · Treadmill",
     title: "Apple Watch and treadmill distance don’t match?",
     description: "Understand the difference and correct a treadmill run in RunToMax.",
-    date: "",
-    dateLabel: "",
+    date: "2026-11-02",
+    dateLabel: "November 2, 2026",
   },
   {
     href: "/guides/interval-workouts-apple-watch/",
