@@ -16,8 +16,8 @@ const guides = [
     category: "Apple Watch · Getting started",
     title: "Can you run with Apple Watch without your iPhone?",
     description: "What works without cellular, what to sync first, and when to bring your phone.",
-    date: "",
-    dateLabel: "Draft — awaiting publication",
+    date: "2026-11-03",
+    dateLabel: "November 3, 2026",
   },
   {
     href: "/guides/apple-watch-treadmill-distance/",

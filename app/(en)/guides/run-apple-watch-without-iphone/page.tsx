@@ -12,9 +12,8 @@ export const metadata: Metadata = pageMetadata(guide.path, {
   title: "Run with Apple Watch without your iPhone",
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
-  openGraph: { type: "article", modifiedTime: guide.updated },
+  openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
   alternates: { canonical: guide.path },
-  robots: { index: false, follow: true }, // Remove only when approved for publication.
 });
 
 export default function RunWithoutPhoneGuide() {

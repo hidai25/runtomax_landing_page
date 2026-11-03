@@ -5,8 +5,7 @@ export const guides = {
     path: "/guides/run-apple-watch-without-iphone/",
     title: "Can you run with Apple Watch without your iPhone?",
     description: "You do not need cellular to record a run. Here is what to prepare in RunToMax, what works on the Watch, and what still needs a connection.",
-    // Set the actual release date only after the owner approves publication.
-    published: null, updated: "2026-11-03",
+    published: "2026-11-03", updated: "2026-11-03",
   },
   intervals: {
     path: "/guides/interval-workouts-apple-watch/",

@@ -20,9 +20,7 @@ No health outcomes, safety guarantees, search volume, testimonials, or first-han
 
 ## Publication gate
 
-Draft PR only. `published: null`, visible Draft status and noindex prevent an invented release date. Sitemap code is ready to include the guide once its actual date is set; the draft is intentionally absent from sitemap.xml. The guide index includes a draft card on this branch for review only.
-
-After owner approval: set the real publication date in app/_lib/guides.ts and the index card, add publishedTime to article Open Graph metadata, remove this page's noindex, rerun build/SEO/mobile checks, then merge and verify deployment. Do not merge merely because the build passes.
+The owner approved this specific article for deployment on November 3, 2026. Publication metadata and the index now use that date, noindex is removed, and the sitemap includes the guide. Production deployment remains subject to the checks below and successful GitHub Pages publication.
 
 ## Validation
 
@@ -33,4 +31,10 @@ After owner approval: set the real publication date in app/_lib/guides.ts and th
 - Rejected analytics in the local preview; banner dismissed. No consent or collection code changed.
 - Apple guidance, public runner sources and App Store page opened. The exact website-guides campaign URL returned HTTP 200 after its App Store redirect (the web reader could not open the parameterized URL; curl verified it). This is source verification, not a fresh offline physical-device test.
 - Native desktop access was locked, but the browser preview and Search Console worked. No personal health records accessed.
-- Not merged, deployed or published. Awaiting owner review of this specific article.
+- Initial review was completed as a draft. Owner approval is now recorded above; deployment will be verified separately.
+
+## Publication checks after owner approval
+
+- Production build/TypeScript passed again. SEO checker passed all 19 sitemap pages.
+- Exported article has no noindex or draft label, has the November 3 publication date in article schema, and appears in the sitemap.
+- Article copy and layout are unchanged from the reviewed 320/390/1440 px preview.
