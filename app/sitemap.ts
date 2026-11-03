@@ -28,10 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/privacy/`, lastModified: new Date("2026-11-02"), changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/terms/`, lastModified: new Date("2026-10-31"), changeFrequency: "yearly", priority: 0.4 },
   ];
-  const articles: MetadataRoute.Sitemap = Object.values(guides).map(guide => ({
+  // Drafts gain a sitemap entry automatically once their release date is set.
+  const publishedGuides = Object.values(guides).filter(guide => guide.published);
+  const articles: MetadataRoute.Sitemap = publishedGuides.map(guide => ({
     url: `${SITE_URL}${guide.path}`, lastModified: new Date(guide.updated), changeFrequency: "monthly", priority: 0.6,
   }));
-  const latestGuideUpdate = Object.values(guides).map(guide => guide.updated).sort().at(-1)!;
+  const latestGuideUpdate = publishedGuides.map(guide => guide.updated).sort().at(-1)!;
   return [...bilingual, ...legal, ...articles, {
     url: `${SITE_URL}/guides/`, lastModified: new Date(latestGuideUpdate), changeFrequency: "weekly", priority: 0.7,
   }];
