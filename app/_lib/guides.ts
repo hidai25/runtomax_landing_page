@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  withoutPhone: {
+    path: "/guides/run-apple-watch-without-iphone/",
+    title: "Can you run with Apple Watch without your iPhone?",
+    description: "You do not need cellular to record a run. Here is what to prepare in RunToMax, what works on the Watch, and what still needs a connection.",
+    // Set the actual release date only after the owner approves publication.
+    published: null, updated: "2026-11-03",
+  },
   intervals: {
     path: "/guides/interval-workouts-apple-watch/",
     title: "Create an interval workout in RunToMax",
@@ -23,7 +30,7 @@ export function guideJsonLd(guide: Guide) {
       {
         "@type": "BlogPosting", "@id": `${url}#article`, url,
         headline: guide.title, description: guide.description, inLanguage: "en",
-        datePublished: guide.published, dateModified: guide.updated,
+        datePublished: guide.published ?? undefined, dateModified: guide.updated,
         author: { "@type": "Organization", "@id": `${SITE_URL}/#org`, name: "RunToMax", url: SITE_URL },
         publisher: { "@id": `${SITE_URL}/#org` },
         mainEntityOfPage: url, image: OG_IMAGE,

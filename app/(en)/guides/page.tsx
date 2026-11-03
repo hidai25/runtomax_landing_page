@@ -12,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: "/guides/run-apple-watch-without-iphone/",
+    category: "Apple Watch · Getting started",
+    title: "Can you run with Apple Watch without your iPhone?",
+    description: "What works without cellular, what to sync first, and when to bring your phone.",
+    date: "",
+    dateLabel: "Draft — awaiting publication",
+  },
+  {
     href: "/guides/apple-watch-treadmill-distance/",
     category: "Apple Watch · Treadmill",
     title: "Apple Watch and treadmill distance don’t match?",
@@ -57,7 +65,7 @@ export default function GuidesPage() {
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1FE26C]">{guide.category}</p>
               <h3 className="mt-6 text-2xl font-bold leading-tight tracking-tight"><Link href={guide.href} className="after:absolute after:inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C]">{guide.title}</Link></h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-zinc-400">{guide.description}</p>
-              <div className="mt-8 flex items-center justify-between border-t border-white/[0.07] pt-5 text-xs text-zinc-500">{guide.date ? <time dateTime={guide.date}>{guide.dateLabel}</time> : <span />}<span className="flex items-center gap-2 font-semibold text-zinc-300 group-hover:text-[#1FE26C]">Read guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
+              <div className="mt-8 flex items-center justify-between border-t border-white/[0.07] pt-5 text-xs text-zinc-500">{guide.date ? <time dateTime={guide.date}>{guide.dateLabel}</time> : <span>{guide.dateLabel}</span>}<span className="flex items-center gap-2 font-semibold text-zinc-300 group-hover:text-[#1FE26C]">Read guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></div>
             </article>
           ))}
         </div>
