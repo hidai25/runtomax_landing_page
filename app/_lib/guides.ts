@@ -5,7 +5,7 @@ export const guides = {
     path: "/guides/apple-watch-running-pace/",
     title: "Apple Watch pace jumping? Choose the right pace field",
     description: "Understand Pace, Lap Pace, Smoothed Pace and Avg Pace, then choose the running fields you want in RunToMax on Apple Watch.",
-    published: undefined, updated: "2026-11-04",
+    published: "2026-11-04", updated: "2026-11-04",
   },
   withoutPhone: {
     path: "/guides/run-apple-watch-without-iphone/",

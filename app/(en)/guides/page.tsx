@@ -16,8 +16,8 @@ const guides = [
     category: "Apple Watch · Pace",
     title: "Apple Watch pace jumping? Choose the right pace field",
     description: "What each pace number means and how to choose your fields in RunToMax.",
-    date: undefined,
-    dateLabel: "Draft · awaiting review",
+    date: "2026-11-04",
+    dateLabel: "November 4, 2026",
   },
   {
     href: "/guides/run-apple-watch-without-iphone/",

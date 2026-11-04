@@ -1,6 +1,6 @@
 # Daily guide: Apple Watch running pace — November 4, 2026
 
-Status: **draft for owner review; do not merge or publish**. Route: `/guides/apple-watch-running-pace/`.
+Status: **approved by the owner for publication on November 4, 2026**. Route: `/guides/apple-watch-running-pace/`.
 
 ## Reader question and scope
 
@@ -26,7 +26,7 @@ Search Console: no connector was available and the signed-in Chrome browser coul
 - No screenshots of the unreleased app redesign; text and accessible comparison cards explain the choice without misrepresenting shipping UI.
 - No health records, invented volumes, quotes, testimonials or medical outcomes used. No Stryd live-pace claims from PR #239.
 
-## Publication checklist after specific owner approval
+## Publication checklist
 
 1. Set `guides.runningPace.published` and `updated` to the actual publication date; add `publishedTime` to page Open Graph metadata.
 2. Remove the draft `robots: { index: false, follow: true }`; change the guide-index draft label to the publication date.
@@ -43,3 +43,7 @@ Search Console: no connector was available and the signed-in Chrome browser coul
 - Public citation pages opened successfully. App Store listing also checked; campaign destination retains the existing website-guides attribution parameters.
 - Local analytics consent rejected during preview. No production publication or consent-code change.
 - Local evidence: `output/guides/2026-11-04/` in the app working directory (copy, mobile/full-mobile/desktop screenshots, build logs, draft metadata checks).
+
+## Owner-approved publication
+
+The owner approved this specific article with “Ok deploy” on November 4, 2026. Publication metadata and index date are set to November 4; draft noindex is removed. The registered guide now enters the sitemap. Article copy is unchanged from the approved draft. Final build, SEO and live deployment checks are recorded in the publication report under `output/guides/2026-11-04/`.

@@ -11,8 +11,7 @@ export const metadata: Metadata = pageMetadata(guide.path, {
   title: "Apple Watch pace jumping? Choose the right pace field",
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
-  robots: { index: false, follow: true },
-  openGraph: { type: "article", modifiedTime: guide.updated },
+  openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
   alternates: { canonical: guide.path },
 });
 
