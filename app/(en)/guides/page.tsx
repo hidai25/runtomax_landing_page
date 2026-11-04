@@ -12,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: "/guides/apple-watch-running-pace/",
+    category: "Apple Watch · Pace",
+    title: "Apple Watch pace jumping? Choose the right pace field",
+    description: "What each pace number means and how to choose your fields in RunToMax.",
+    date: "2026-11-04",
+    dateLabel: "November 4, 2026",
+  },
+  {
     href: "/guides/run-apple-watch-without-iphone/",
     category: "Apple Watch · Getting started",
     title: "Can you run with Apple Watch without your iPhone?",
