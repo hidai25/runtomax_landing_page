@@ -12,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: "/guides/apple-watch-heart-rate-chest-strap/",
+    category: "Apple Watch · Sensors",
+    title: "Use a heart-rate chest strap with Apple Watch",
+    description: "Pair your strap in RunToMax, check live readings and understand what reaches Apple Health.",
+    date: null,
+    dateLabel: "Draft · awaiting review",
+  },
+  {
     href: "/guides/apple-watch-running-pace/",
     category: "Apple Watch · Pace",
     title: "Apple Watch pace jumping? Choose the right pace field",
