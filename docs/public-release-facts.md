@@ -44,3 +44,15 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 - `Shared/BasicWatchScreenPreferences.swift` includes all four fields in `allowedFields`. Basic editing preserves one five-field screen; additional screens/layouts are gated by paid access in `LibraryRootView`.
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
+
+## November 5 draft guide check: external heart-rate straps
+
+The public US App Store page still lists **1.3.5** on November 5, 2026. Source checked at the same submission tag and commit above; no development-main features are described.
+
+- `runtomax Watch App/Views/HomeView.swift:246,283` opens app settings from the gear. `Views/SettingsView.swift:62–66,1018–1025` routes **Sensors → External Strap** to `HRStrapPairingView` without a paid-access gate (the adjacent Stryd entry has its own gate).
+- `Views/HRStrapPairingView.swift` supplies **Scan for Straps**, sensor selection, **Live · BPM**, **Waiting for first sample**, and **Forget Strap**. Connected and live are different states.
+- `Model/BluetoothHRManager.swift:25–26,49–55,130–136` uses the standard Bluetooth heart-rate service/measurement and accepts connected positive BPM samples less than six seconds old. ANT+-only sensors do not match this Bluetooth discovery path.
+- `Model/WorkoutManager.swift:4158–4161,6264–6280,10568–10575` attempts reconnection on start, uses fresh strap BPM for live metrics, and allows incoming HealthKit HR again when the strap is no longer live. The app does not manually save these external HR samples to HealthKit; `BluetoothHRManager.swift:16–18` documents that limit, consistent with the save paths inspected.
+- Public release notes for 1.3.2 list heart-rate chest straps with free Outdoor/Treadmill recording; pairing remains ungated in the 1.3.5 source.
+
+**Publication blocker:** no physical Watch/strap test was available in this run. Keep the article as a noindex draft without a publication date until pairing, live sample display and the saved-data distinction are checked on the shipping version. Do not infer that app-level pairing controls watchOS's system-level sensor selection. No real health records were accessed and no compatibility or accuracy test is claimed. Research and the proposed device checks are in `docs/guide-research/2026-11-05-heart-rate-strap.md`.

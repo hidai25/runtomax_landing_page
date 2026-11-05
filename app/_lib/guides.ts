@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  heartRateStrap: {
+    path: "/guides/apple-watch-heart-rate-chest-strap/",
+    title: "Use a heart-rate chest strap with Apple Watch",
+    description: "Pair a Bluetooth heart-rate strap in RunToMax, check for live readings, and understand what this changes during your run and in Apple Health.",
+    published: null, updated: "2026-11-05",
+  },
   runningPace: {
     path: "/guides/apple-watch-running-pace/",
     title: "Apple Watch pace jumping? Choose the right pace field",
