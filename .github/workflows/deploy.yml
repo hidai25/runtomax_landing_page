@@ -42,3 +42,6 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages can remain in updating_pages beyond the default 10 minutes.
+          timeout: 1200000
