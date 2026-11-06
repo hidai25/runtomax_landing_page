@@ -1,10 +1,10 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
-  pausing: {
-    path: "/guides/pause-running-watch-traffic-lights/",
-    title: "Should you pause your running watch at traffic lights?",
-    description: "Understand moving versus elapsed time, set auto-pause in RunToMax on Apple Watch, and keep planned interval recovery on the clock.",
+  manualLaps: {
+    path: "/guides/apple-watch-manual-laps/",
+    title: "How to mark laps on Apple Watch during a run",
+    description: "Mark manual laps in RunToMax without building a workout first. Find the LAP control, set the Ultra Action button and manage automatic laps.",
     published: null, updated: "2026-11-06",
   },
   runningPace: {

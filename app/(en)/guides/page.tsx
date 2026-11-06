@@ -12,10 +12,10 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
-    href: "/guides/pause-running-watch-traffic-lights/",
-    category: "Apple Watch · Recording",
-    title: "Should you pause your running watch at traffic lights?",
-    description: "Moving time, elapsed time and the RunToMax auto-pause setting for your next run.",
+    href: "/guides/apple-watch-manual-laps/",
+    category: "Apple Watch · Laps",
+    title: "How to mark laps on Apple Watch during a run",
+    description: "Record warm-ups, reps and recoveries as you go, with LAP or the Ultra’s Action button.",
     date: null,
     dateLabel: "Draft · awaiting review",
   },

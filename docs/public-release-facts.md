@@ -45,14 +45,15 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
 
-## November 6 draft guide check: pausing at traffic lights
+## November 6 draft guide check: manual laps
 
 The public US App Store page still lists **1.3.5** on November 6, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, rather than development main:
 
-- `runtomax Watch App/Views/HomeView.swift:246,283` opens settings from the gear. `Views/SettingsView.swift:39–43,317–319` routes **Workout → Session → Auto-Pause** to the preference, without a paid gate.
-- `Model/UserPreferences.swift:1746` defaults auto-pause to false. `Model/WorkoutManager.swift:6244–6254,7824–7879` implements speed-based automatic pause/resume. Automatic resumption is guarded by `isAutoPaused`; do not imply that a manual pause automatically resumes.
-- `Model/WorkoutManager.swift:3618,7825` defines an active interval session from interval runtime state and skips speed-based auto-pause for that session. This does not promise immunity from manual or system interruptions, nor cover improvised intervals in ordinary Outdoor mode.
-- `Model/WorkoutManager.swift:4301–4307` notes that Race mode's manual-pause confirmation does not disable the separate auto-pause path. The article explicitly advises turning auto-pause off before racing if the live timer should count stops.
-- `runtomax/Views/WorkoutDetailView.swift:844–849,3904` exposes elapsed time/pace and explains the difference from pause-excluded time/average pace. The guide's 5 km, 30-minute moving / 32-minute elapsed example is synthetic arithmetic, not observed activity data.
+- `runtomax Watch App/Views/SessionView.swift:540–567` places Controls to the right of metrics (swipe left), without the separate advanced Laps tab’s paid gate. `ControlsView.swift` returns to metrics after a Lap action.
+- `Model/ControlLayout.swift` defaults bottom-left to Lap. Plain Lap calls `wm.lap()`; Lap + Pause also toggles pause, while Lap + End requests an end through the controls confirmation path. `Model/WorkoutManager.swift:4910` records the lap and resets its anchors without ending an ordinary run.
+- `Views/SettingsView.swift` provides the Buttons category, with a Buttons row that opens `ControlsEditorView.swift`. That editor assigns Lap to a position; controls editing is not gated by Pro.
+- `Views/ShortcutsView.swift` provides **System workout style**: Action button = Lap, Action + Side button = pause/resume. Its binding help explains the required Apple Watch app configuration. These mappings differ from the RunToMax preset; do not claim every Ultra is configured to lap by default.
+- `Views/SettingsView.swift:294,1283–1296` exposes **Workout → Auto-Lap → Enabled**. `Model/WorkoutManager.swift:2825–2840,7158–7185` confirms that a manual lap does not disable automatic distance lap recording in an ordinary run. The guide is scoped to ordinary Outdoor mode, not the interval runtime or Track mode.
+- Lap Pace availability was checked in the November 4 entry above. Do not promise the separately gated advanced Laps tab as a free feature.
 
-**Publication blocker:** source verification is complete, but no physical test of the shipping Watch app was performed. Check settings persistence, an ordinary run's stop/resume, a manual pause, a timed interval recovery, and the resulting iPhone time/pace fields before publication. Keep this article as a noindex draft with no publication date until those checks and article-specific owner approval are complete. Research and web validation are recorded in `docs/guide-research/2026-11-06-traffic-lights.md`.
+**Publication blocker:** source verification is complete, but no physical test of the shipping Watch app was performed. Verify swipe direction, the default LAP control, continued recording, the settings labels, Auto-Lap off/on, and both Ultra shortcut actions before publication. Keep this article as a noindex draft with no publication date until those checks and article-specific owner approval are complete. Research and web validation are recorded in `docs/guide-research/2026-11-06-manual-laps.md`.
