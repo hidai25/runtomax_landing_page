@@ -5,7 +5,7 @@ export const guides = {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",
     description: "Sweaty fingers making screen taps difficult? Set up the Apple Watch Ultra Action button in RunToMax to pause, resume, mark laps and start a run.",
-    published: null, updated: "2026-11-06",
+    published: "2026-11-06", updated: "2026-11-06",
   },
   runningPace: {
     path: "/guides/apple-watch-running-pace/",

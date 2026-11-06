@@ -16,8 +16,8 @@ const guides = [
     category: "Apple Watch Ultra · Controls",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",
     description: "Set up physical controls for pause, resume and laps when sweaty fingers make screen taps frustrating.",
-    date: null,
-    dateLabel: "Draft · awaiting review",
+    date: "2026-11-06",
+    dateLabel: "November 6, 2026",
   },
   {
     href: "/guides/apple-watch-running-pace/",

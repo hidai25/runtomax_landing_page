@@ -2,7 +2,7 @@
 
 Question: **Sweaty screen? Use the Apple Watch Ultra Action button.**
 
-Status: **Draft. Do not merge or deploy.** Physical shipping-app checks and approval of the completed article remain pending.
+Status: **Owner approved publication on November 6, 2026.** The owner explicitly requested deployment of PR #35. Instructions are verified against the shipping source; no physical Ultra or wet-screen test has been performed.
 
 ## Scope and evidence
 
@@ -20,7 +20,7 @@ Search Console was unavailable through the authenticated browser connector. No s
 
 Checked `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`; references are in `docs/public-release-facts.md`. Verified watchOS 11 availability for intents, Workout picker entries, Buttons → Shortcuts, both presets, Precision Start labels/branches and during-run dispatch. No development-only capabilities, personal health data or fabricated screenshots were used.
 
-Before publishing, verify on a physical Ultra with the shipping app:
+Remaining physical-device validation (not claimed as completed):
 
 - Apple’s Workout app picker exposes RunToMax and the Outdoor Run choice using the stated labels.
 - Precision Start from idle opens readiness; the next press starts; an already armed run starts on the next press.
@@ -28,7 +28,7 @@ Before publishing, verify on a physical Ultra with the shipping app:
 - System workout style: Action marks a lap; Action + Side pauses and resumes. Verify behavior after a pause, not just the first running-state press.
 - Reopening settings retains the chosen mapping. The regular End/save flow succeeds.
 
-This is source-verified instructional content, not a completed physical/wet-screen test. No universal reliability claim is made. Keep noindex, no publication date and sitemap exclusion until checks and owner approval are complete.
+This is source-verified instructional content, not a completed physical/wet-screen test. No universal reliability claim is made. Following the owner’s publication approval, add the publication date and sitemap entry and remove draft indexing restrictions. The article identifies the source verification and recommends a short practice run.
 
 ## Web validation
 
@@ -39,3 +39,12 @@ This is source-verified instructional content, not a completed physical/wet-scre
 - `git diff --check` passed. No deployment, app source, analytics settings or personal records changed.
 
 Build log: `/private/tmp/rtm-guide-ultra-action-build-20261106.log`. Screenshots and browser/link results: `/private/tmp/rtm-guide-ultra-action-20261106-evidence/`. Durable preview copy: the chat visualization directory’s `guide-ultra-action-20261106` folder.
+
+## Approved publication validation
+
+Owner approved deployment of PR #35 on November 6. Publication date, index card,
+Open Graph article date, BlogPosting date and automatic sitemap inclusion are
+now enabled. Production webpack build and SEO checks passed for 21 pages.
+Headless Chrome passed at 320, 390 and 1440 px with no overflow or page errors;
+guide-index navigation and published metadata/schema passed. `git diff --check`
+passed. Physical Ultra testing remains unperformed and is not claimed.

@@ -11,8 +11,7 @@ export const metadata: Metadata = pageMetadata(guide.path, {
   title: guide.title,
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
-  robots: { index: false, follow: true },
-  openGraph: { type: "article", modifiedTime: guide.updated },
+  openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
   alternates: { canonical: guide.path },
 });
 
@@ -57,7 +56,7 @@ export default function UltraActionButtonGuide() {
         <h2>Try it before your next session</h2>
         <p>On a short practice run, check your chosen start, pause, resume and lap controls. Do this before relying on them during a hard rep or at a finish line. Setup and saving still use the screen; the aim is fewer taps while you are running.</p>
         <p>If the button opens another app, recheck Apple’s Action Button setting. Apple’s Workout app also supports physical controls; its behavior is described in <a href="https://support.apple.com/en-mt/guide/watch/apda005904ef/watchos">Apple’s Action button guide</a>. RunToMax’s two layouts above let you choose whether one press prioritizes pausing or laps.</p>
-        <p className="text-sm text-zinc-400">RunToMax instructions checked against the App Store 1.3.5 release source on November 6, 2026. Physical Ultra checks are still pending before this draft is published.</p>
+        <p className="text-sm text-zinc-400">RunToMax instructions checked against the App Store 1.3.5 release source on November 6, 2026. Button behavior was checked in the release source; this guide does not claim a physical wet-screen test.</p>
         <p><Link href="/guides/apple-watch-running-pace/">Choose your pace fields</Link> · <Link href="/features/apple-watch/">RunToMax on Apple Watch</Link> · <Link href="/support/">Setup help</Link></p>
       </div>
       <a href={download} className="mt-10 inline-block rounded-full bg-[#1FE26C] px-7 py-3 font-semibold text-black">Explore RunToMax on Apple Watch</a>
