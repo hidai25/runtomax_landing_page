@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  pausing: {
+    path: "/guides/pause-running-watch-traffic-lights/",
+    title: "Should you pause your running watch at traffic lights?",
+    description: "Understand moving versus elapsed time, set auto-pause in RunToMax on Apple Watch, and keep planned interval recovery on the clock.",
+    published: null, updated: "2026-11-06",
+  },
   runningPace: {
     path: "/guides/apple-watch-running-pace/",
     title: "Apple Watch pace jumping? Choose the right pace field",

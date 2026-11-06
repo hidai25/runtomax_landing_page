@@ -44,3 +44,15 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 - `Shared/BasicWatchScreenPreferences.swift` includes all four fields in `allowedFields`. Basic editing preserves one five-field screen; additional screens/layouts are gated by paid access in `LibraryRootView`.
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
+
+## November 6 draft guide check: pausing at traffic lights
+
+The public US App Store page still lists **1.3.5** on November 6, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, rather than development main:
+
+- `runtomax Watch App/Views/HomeView.swift:246,283` opens settings from the gear. `Views/SettingsView.swift:39–43,317–319` routes **Workout → Session → Auto-Pause** to the preference, without a paid gate.
+- `Model/UserPreferences.swift:1746` defaults auto-pause to false. `Model/WorkoutManager.swift:6244–6254,7824–7879` implements speed-based automatic pause/resume. Automatic resumption is guarded by `isAutoPaused`; do not imply that a manual pause automatically resumes.
+- `Model/WorkoutManager.swift:3618,7825` defines an active interval session from interval runtime state and skips speed-based auto-pause for that session. This does not promise immunity from manual or system interruptions, nor cover improvised intervals in ordinary Outdoor mode.
+- `Model/WorkoutManager.swift:4301–4307` notes that Race mode's manual-pause confirmation does not disable the separate auto-pause path. The article explicitly advises turning auto-pause off before racing if the live timer should count stops.
+- `runtomax/Views/WorkoutDetailView.swift:844–849,3904` exposes elapsed time/pace and explains the difference from pause-excluded time/average pace. The guide's 5 km, 30-minute moving / 32-minute elapsed example is synthetic arithmetic, not observed activity data.
+
+**Publication blocker:** source verification is complete, but no physical test of the shipping Watch app was performed. Check settings persistence, an ordinary run's stop/resume, a manual pause, a timed interval recovery, and the resulting iPhone time/pace fields before publication. Keep this article as a noindex draft with no publication date until those checks and article-specific owner approval are complete. Research and web validation are recorded in `docs/guide-research/2026-11-06-traffic-lights.md`.
