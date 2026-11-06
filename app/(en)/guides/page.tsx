@@ -12,10 +12,10 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
-    href: "/guides/apple-watch-manual-laps/",
-    category: "Apple Watch · Laps",
-    title: "How to mark laps on Apple Watch during a run",
-    description: "Record warm-ups, reps and recoveries as you go, with LAP or the Ultra’s Action button.",
+    href: "/guides/apple-watch-ultra-action-button/",
+    category: "Apple Watch Ultra · Controls",
+    title: "Sweaty screen? Use the Apple Watch Ultra Action button",
+    description: "Set up physical controls for pause, resume and laps when sweaty fingers make screen taps frustrating.",
     date: null,
     dateLabel: "Draft · awaiting review",
   },

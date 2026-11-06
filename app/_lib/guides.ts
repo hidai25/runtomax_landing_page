@@ -1,10 +1,10 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
-  manualLaps: {
-    path: "/guides/apple-watch-manual-laps/",
-    title: "How to mark laps on Apple Watch during a run",
-    description: "Mark manual laps in RunToMax without building a workout first. Find the LAP control, set the Ultra Action button and manage automatic laps.",
+  ultraActionButton: {
+    path: "/guides/apple-watch-ultra-action-button/",
+    title: "Sweaty screen? Use the Apple Watch Ultra Action button",
+    description: "Sweaty fingers making screen taps difficult? Set up the Apple Watch Ultra Action button in RunToMax to pause, resume, mark laps and start a run.",
     published: null, updated: "2026-11-06",
   },
   runningPace: {
