@@ -44,3 +44,15 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 - `Shared/BasicWatchScreenPreferences.swift` includes all four fields in `allowedFields`. Basic editing preserves one five-field screen; additional screens/layouts are gated by paid access in `LibraryRootView`.
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
+
+## November 6 draft guide check: Ultra Action button
+
+The public US App Store page still lists **1.3.5** on November 6, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, rather than development main:
+
+- `runtomax Watch App/Intents/WorkoutIntents.swift` gates the Workout picker / Smart Action intents to **watchOS 11 or later**. `RunToMaxStartWorkoutIntent.suggestedWorkouts` registers Outdoor Run and Treadmill Run. The during-run branch dispatches the configured action instead of starting a second activity.
+- `Views/SettingsView.swift` exposes the **Buttons → Shortcuts** path without a paid gate. `Views/ShortcutsView.swift` provides two presets: **RunToMax** maps Action to pause/resume and Action + Side to Lap; **System workout style** maps Action to Lap and Action + Side to pause/resume. Individual pickers can override these presets. Basic Outdoor recording remains free.
+- `Model/WorkoutManager.swift:5389–5445` executes these actions and shows feedback. `Model/ControlLayout.swift` maps pause/resume and lap to distinct actions. Pausing does not end/save the activity. The article uses the normal End/save flow and makes no claim of a completely screen-free session.
+- `Shared/StartMode.swift` names the mode **Precision Start**. `RunToMaxStartWorkoutIntent.perform()` first arms a cold run in this mode, then starts an already armed run. `ShortcutsView` exposes **Start mode**. The guide fixes the Workout binding to Outdoor Run; it does not promise a mode-independent start or automatic waiting for a GPS threshold.
+- Apple’s opened Action button guide documents Settings → Action Button → Action → Workout, selecting a supported app, and different press-and-hold behavior. The RunToMax-specific workout choices and mappings come from release source, not from Apple’s generic instructions.
+
+**Publication blocker:** no physical shipping-app Ultra test was performed. Check the system app/workout picker labels, Precision Start from idle and armed states, both presets’ pause/resume/lap behavior, displayed confirmation and normal End/save flow. Keep this article as a noindex draft with no publication date until these checks and article-specific owner approval are complete. Evidence is in `docs/guide-research/2026-11-06-ultra-action-button.md`.

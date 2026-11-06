@@ -12,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: "/guides/apple-watch-ultra-action-button/",
+    category: "Apple Watch Ultra · Controls",
+    title: "Sweaty screen? Use the Apple Watch Ultra Action button",
+    description: "Set up physical controls for pause, resume and laps when sweaty fingers make screen taps frustrating.",
+    date: "2026-11-06",
+    dateLabel: "November 6, 2026",
+  },
+  {
     href: "/guides/apple-watch-running-pace/",
     category: "Apple Watch · Pace",
     title: "Apple Watch pace jumping? Choose the right pace field",
