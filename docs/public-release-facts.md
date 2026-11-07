@@ -45,6 +45,12 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
 
+## November 7 draft guide check: track lanes
+
+The public App Store listing still shows 1.3.5. Checked tag `v1.3.5-b57-submission` (`6b27f42cf2a2febf33b9672906dce46a6794ba04`): Watch `HomeView` gates TRACK on paid Watch access; `TrackLanePickerView` supports lanes 1–8, displays the configured lap distance and remembers the last lane. Its **Start Track Run** button calls `WorkoutManager.arm`, which prepares the run rather than itself proving recording has started. `TrackRuntime` uses GPS return-to-start conditions and the fixed lane lengths in `TrackPlan`; this is not measurement of an arbitrary oval or an accuracy guarantee.
+
+The article stays a noindex draft pending browser visual checks, a shipping Watch setup check and owner approval. No new physical track test or app screenshot is claimed. See `docs/guide-research/2026-11-07-track-lanes.md` for evidence and publication steps.
+
 ## November 6 draft guide check: Ultra Action button
 
 The public US App Store page still lists **1.3.5** on November 6, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, rather than development main:
