@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  trackLanes: {
+    path: "/guides/apple-watch-track-lane/",
+    title: "Running on a track? Choose your lane in RunToMax",
+    description: "Set up Track mode in RunToMax on Apple Watch, choose your lane, and understand when a 400 m track setting does not fit your run.",
+    published: null as string | null, updated: "2026-11-07",
+  },
   ultraActionButton: {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",

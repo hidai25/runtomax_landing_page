@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { APP_STORE_URL } from "@/app/_lib/site";
+import { guides as guideDetails } from "@/app/_lib/guides";
 
 export const metadata: Metadata = pageMetadata("/guides/", {
   title: "Running Guides for Apple Watch",
@@ -11,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 });
 
 const guides = [
+  ...(guideDetails.trackLanes.published ? [{
+    href: guideDetails.trackLanes.path,
+    category: "Apple Watch · Track running",
+    title: guideDetails.trackLanes.title,
+    description: guideDetails.trackLanes.description,
+    date: guideDetails.trackLanes.published,
+    dateLabel: new Date(`${guideDetails.trackLanes.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: "/guides/apple-watch-ultra-action-button/",
     category: "Apple Watch Ultra · Controls",
