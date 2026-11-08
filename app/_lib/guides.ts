@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  missingRunMap: {
+    path: "/guides/apple-watch-run-map-missing/",
+    title: "Run saved but no map? Check these two permissions",
+    description: "A saved Apple Watch run can arrive without its route. Check Health route access and Watch location permissions in RunToMax before your next outdoor run.",
+    published: null as string | null, updated: "2026-11-08",
+  },
   ultraActionButton: {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",
