@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { APP_STORE_URL } from "@/app/_lib/site";
+import { guides as guideDefinitions } from "@/app/_lib/guides";
 
 export const metadata: Metadata = pageMetadata("/guides/", {
   title: "Running Guides for Apple Watch",
@@ -11,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 });
 
 const guides = [
+  ...(guideDefinitions.missingRunMap.published ? [{
+    href: guideDefinitions.missingRunMap.path,
+    category: "Apple Watch · Troubleshooting",
+    title: guideDefinitions.missingRunMap.title,
+    description: guideDefinitions.missingRunMap.description,
+    date: guideDefinitions.missingRunMap.published,
+    dateLabel: new Date(`${guideDefinitions.missingRunMap.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: "/guides/apple-watch-ultra-action-button/",
     category: "Apple Watch Ultra · Controls",
