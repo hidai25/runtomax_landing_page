@@ -45,6 +45,17 @@ Apple's public App Store page still shows 1.3.5 on November 4, 2026. Checked sou
 
 This is release-source verification, not a new device or GPS accuracy test. The guide intentionally excludes live Stryd pace from development PR #239 and does not use screenshots of the unreleased redesign.
 
+## November 9 draft guide check: traffic-light pauses
+
+The public US App Store page still lists **1.3.5** on November 9, 2026. Checked `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`:
+
+- Watch `Views/SettingsView.swift` exposes **Settings → Workout → Session → Auto-Pause**. This is inside RunToMax, distinct from Apple's system Workout settings.
+- Watch `Model/WorkoutManager.swift` skips `tickAutoPause` whenever `isInIntervalWorkout` is true. `handleAutoResumeIfNeeded` requires an automatic pause; a manual pause does not enable movement-triggered resume.
+- The iPhone summary in `Views/WorkoutDetailView.swift` uses **Time / Avg Pace** and **Elapsed Time / Elapsed Pace**. The elapsed tiles open the moving/elapsed explanation.
+- `Model/AppModel.swift` separates active duration from elapsed duration using recorded pause data. Pace is time divided by distance; an existing explanation string reverses that formula, so the draft follows actual model arithmetic instead.
+
+These are release-source checks, not a new physical-device test. Keep the guide unpublished until the shipping Watch/iPhone checks and owner approval described in `docs/guide-research/2026-11-09-running-pauses.md` are complete. No imported or private workout records were inspected.
+
 ## November 6 draft guide check: Ultra Action button
 
 The public US App Store page still lists **1.3.5** on November 6, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, rather than development main:
