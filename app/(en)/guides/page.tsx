@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/app/_lib/site";
+import { guides as guideDefinitions } from "@/app/_lib/guides";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
@@ -11,6 +12,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 });
 
 const guides = [
+  ...(guideDefinitions.runningPauses.published ? [{
+    href: guideDefinitions.runningPauses.path,
+    category: "Apple Watch · Run timing",
+    title: guideDefinitions.runningPauses.title,
+    description: "Set up auto-pause in RunToMax and understand what traffic-light stops do to your average pace.",
+    date: guideDefinitions.runningPauses.published,
+    dateLabel: new Date(`${guideDefinitions.runningPauses.published}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: "/guides/apple-watch-ultra-action-button/",
     category: "Apple Watch Ultra · Controls",

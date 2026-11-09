@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  runningPauses: {
+    path: "/guides/apple-watch-running-auto-pause/",
+    title: "Should you pause your Apple Watch run at traffic lights?",
+    description: "Choose auto-pause or manual control in RunToMax, understand moving versus elapsed time, and know what changes during interval workouts.",
+    published: null as string | null, updated: "2026-11-09",
+  },
   ultraActionButton: {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",
