@@ -13,13 +13,13 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
-    href: guideDefinitions.distanceUnits.path,
-    category: "Apple Watch · Units",
-    title: guideDefinitions.distanceUnits.title,
-    description: "Choose kilometres or miles, understand pace conversion, and check auto-lap separately.",
-    date: guideDefinitions.distanceUnits.published,
-    dateLabel: guideDefinitions.distanceUnits.published
-      ? new Date(`${guideDefinitions.distanceUnits.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+    href: guideDefinitions.strydPower.path,
+    category: "Apple Watch · Running power",
+    title: guideDefinitions.strydPower.title,
+    description: "Set a power range, connect your pod and follow watts in RunToMax Pro.",
+    date: guideDefinitions.strydPower.published,
+    dateLabel: guideDefinitions.strydPower.published
+      ? new Date(`${guideDefinitions.strydPower.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
       : "Draft",
   },
   {

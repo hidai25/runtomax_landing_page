@@ -1,10 +1,10 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
-  distanceUnits: {
-    path: "/guides/runtomax-kilometres-miles/",
-    title: "Kilometres or miles? Set your running units in RunToMax",
-    description: "Choose kilometres or miles in RunToMax on iPhone and Apple Watch, understand pace conversion, and keep display units separate from auto-lap distance.",
+  strydPower: {
+    path: "/guides/stryd-power-apple-watch/",
+    title: "Run by watts with Stryd and RunToMax on Apple Watch",
+    description: "Pair your Stryd pod with RunToMax, set a power target in watts or a percentage of your threshold, and follow the guidance on Apple Watch. Requires RunToMax Pro.",
     published: null, updated: "2026-11-10",
   },
   ultraActionButton: {
