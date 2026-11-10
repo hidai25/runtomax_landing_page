@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { APP_STORE_URL } from "@/app/_lib/site";
+import { guides as guideDefinitions } from "@/app/_lib/guides";
 
 export const metadata: Metadata = pageMetadata("/guides/", {
   title: "Running Guides for Apple Watch",
@@ -11,6 +12,16 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 });
 
 const guides = [
+  {
+    href: guideDefinitions.strydPower.path,
+    category: "Apple Watch · Running power",
+    title: guideDefinitions.strydPower.title,
+    description: "Set a power range, connect your pod and follow watts in RunToMax Pro.",
+    date: guideDefinitions.strydPower.published,
+    dateLabel: guideDefinitions.strydPower.published
+      ? new Date(`${guideDefinitions.strydPower.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
   {
     href: "/guides/apple-watch-ultra-action-button/",
     category: "Apple Watch Ultra · Controls",
@@ -76,7 +87,7 @@ export default function GuidesPage() {
           <div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#1FE26C]">For your next run</p><h2 id="latest-heading" className="mt-3 font-bebas text-4xl uppercase">Latest guides</h2></div>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {guides.map((guide) => (
+          {guides.filter(guide => guide.date).map((guide) => (
             <article key={guide.href} className="group relative flex flex-col rounded-3xl border border-white/[0.09] bg-zinc-950 p-7 transition-colors hover:border-[#1FE26C]/40">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1FE26C]">{guide.category}</p>
               <h3 className="mt-6 text-2xl font-bold leading-tight tracking-tight"><Link href={guide.href} className="after:absolute after:inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C]">{guide.title}</Link></h3>

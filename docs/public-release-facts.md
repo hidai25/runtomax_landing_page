@@ -56,3 +56,18 @@ The public US App Store page still lists **1.3.5** on November 6, 2026. Verified
 - Apple’s opened Action button guide documents Settings → Action Button → Action → Workout, selecting a supported app, and different press-and-hold behavior. The RunToMax-specific workout choices and mappings come from release source, not from Apple’s generic instructions.
 
 **Publication blocker:** no physical shipping-app Ultra test was performed. Check the system app/workout picker labels, Precision Start from idle and armed states, both presets’ pause/resume/lap behavior, displayed confirmation and normal End/save flow. Keep this article as a noindex draft with no publication date until these checks and article-specific owner approval are complete. Evidence is in `docs/guide-research/2026-11-06-ultra-action-button.md`.
+
+## November 10: Stryd power guide
+
+Replaces the owner-rejected distance-units draft. Uses public 1.3.5 source, tag `v1.3.5-b57-submission` (`6b27f42cf2a2febf33b9672906dce46a6794ba04`). This is source verification, not a new physical-device test.
+
+The owner explicitly instructed publication on November 10 after the pending connected-pod walkthrough was disclosed. Publish with the source-review qualification and non-affiliation statement intact; do not claim that device verification took place.
+
+- Stryd pairing and target-power editing require paid Watch access in this release. State RunToMax Pro up front (`runtomax Watch App/Views/SettingsView.swift:1040`, `TargetPowerEditorView`).
+- Pair on Watch: RunToMax Settings → Sensors → Stryd Foot Pod. Tap Scan for Stryd if needed, then select the pod (`StrydPairingView.swift`). “Record with Stryd” is a separate saved-distance choice, not a prerequisite for live power guidance.
+- iPhone: Watch → Watch Screens → choose run type → Target power. Select W or % of threshold and set From/To. Tap a preview field for Stryd Power or Power vs target (`LibraryRootView.swift:485`, Watch `UserPreferences.swift:115`).
+- Watch: Settings → Workout → Target Power; Threshold power is under YOUR NUMBERS in the same Workout settings. Percentages need a confirmed threshold (`PowerTargetFields.swift`, `PowerTarget.swift`). RunToMax's own estimate is not Stryd's Auto-Calculated Critical Power, and this flow is not account/CP sync with Stryd.
+- Power guidance uses live pod watts, with roughly five-second smoothing; voice/haptics are separate settings. Missing readings clear guidance, rather than treating another sensor's watts as equivalent (`WorkoutManager.swift:292`, `:7303`; `Shared/PowerGuidance.swift`).
+- Structured block editor includes Work power and Recovery power (`IntervalBuilderView.swift:449–450`). The guide links the existing interval tutorial; it does not reproduce Stryd plans or zone tables.
+- Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
+- Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).

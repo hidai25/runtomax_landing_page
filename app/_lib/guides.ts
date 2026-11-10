@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  strydPower: {
+    path: "/guides/stryd-power-apple-watch/",
+    title: "Run by watts with Stryd and RunToMax on Apple Watch",
+    description: "Pair your Stryd pod with RunToMax, set a power target in watts or a percentage of your threshold, and follow the guidance on Apple Watch. Requires RunToMax Pro.",
+    published: "2026-11-10", updated: "2026-11-10",
+  },
   ultraActionButton: {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",
