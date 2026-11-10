@@ -11,8 +11,7 @@ export const metadata: Metadata = pageMetadata(guide.path, {
   title: guide.title,
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
-  robots: { index: false, follow: true },
-  openGraph: { type: "article", modifiedTime: guide.updated },
+  openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
   alternates: { canonical: guide.path },
 });
 
@@ -24,7 +23,6 @@ export default function StrydPowerGuide() {
       <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#1FE26C]">RunToMax guide · Running power</p>
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">{guide.title}</h1>
       <GuideDetails guide={guide} />
-      <aside aria-label="Draft status" className="mt-6 rounded-2xl border border-amber-300/30 p-5 text-sm leading-relaxed text-amber-100">Unpublished draft. Instructions are checked against release source; a shipping-app walkthrough with a connected pod is still pending.</aside>
       <div className="mt-8 rounded-2xl border border-[#1FE26C]/25 bg-[#1FE26C]/[0.07] p-6">
         <p className="text-lg leading-relaxed"><strong>Have a workout written in watts?</strong> RunToMax Pro can use power from your Stryd pod to guide a run or an interval session on Apple Watch. Set your range, put power on your running screen, and keep pace visible alongside it.</p>
       </div>

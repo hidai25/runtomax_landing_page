@@ -43,9 +43,9 @@ App source tag: `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46
 | Missing readings do not substitute Apple's separate watts | `WorkoutManager.livePodWatts` checks the pod's live status; `PowerGuidance` clears the average when missing. |
 | Work and recovery power targets | Phone `Views/IntervalBuilderView.swift`: separate `Work power` / `Recovery power` fields; Watch interval HUD compares live power with the active step's target. |
 
-## Publication gate and verification
+## Publication authorization and verification
 
-Keep `published: null`, `noindex, follow`, visible draft status, no `datePublished` or Open Graph publication time, and exclusion from the public guide index and sitemap. The existing sitemap reads the registry automatically. Do not merge or deploy without approval of this specific article.
+The owner explicitly requested “Deploy the guide” on November 10 after receiving the Stryd draft and the disclosure that a connected-pod walkthrough remained pending. This authorizes publication of this specific article. Set the actual publication date to November 10, remove draft/noindex markers, and activate the registry-driven index and sitemap entry. Retain the public source-verification qualification; this instruction is not evidence of a physical-device test.
 
 Pending physical shipping-app check with a connected pod: verify pairing and waking; a live watt reading; the separate distance switch; phone/Watch target sync; both display fields; manually confirmed percentage conversion; work/recovery target transitions; missing-pod behavior; and spoken/haptic/Quiet Mode settings. Use synthetic example targets and no uploaded personal health data. No physical-device test or screenshot is claimed here.
 
@@ -54,7 +54,7 @@ Website validation completed November 10:
 - `npm ci` succeeded (144 packages). Lockfile and dependencies unchanged.
 - `npm run build -- --webpack` succeeded: 26 static routes. Existing React 18 deprecation warning only.
 - `python3 scripts/check-seo.py` passed for 21 published pages.
-- Separate static checks passed for the draft's canonical URL, noindex/follow directive, JSON-LD without a publication date, absence of Open Graph publication time, exclusion from the guide index and sitemap, all internal link destinations and removal of the rejected units route from the build.
+- Initial draft checks passed for canonical URL, noindex/follow, unpublished schema, exclusion from index/sitemap, internal links and removal of the rejected units route. Publication checks subsequently verify the dated article metadata, index/sitemap inclusion and absence of draft/noindex markers.
 - Browser review at 390×844 and 1280×900: title, setup instructions and percentage/interval text wrap readably; document scroll width equals viewport width at both sizes. Viewport override reset afterward.
 - The article's three Stryd help links were opened as original sources above. The unchanged App Store campaign link was opened during the same day's initial guide validation.
-- Analytics/consent code unchanged. No deployment or app/device test performed.
+- Analytics/consent code unchanged. No app/device test performed. Publication deployment follows the owner's explicit approval through PR #40 and the existing GitHub Pages workflow.

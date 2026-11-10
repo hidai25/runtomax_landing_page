@@ -57,9 +57,11 @@ The public US App Store page still lists **1.3.5** on November 6, 2026. Verified
 
 **Publication blocker:** no physical shipping-app Ultra test was performed. Check the system app/workout picker labels, Precision Start from idle and armed states, both presets’ pause/resume/lap behavior, displayed confirmation and normal End/save flow. Keep this article as a noindex draft with no publication date until these checks and article-specific owner approval are complete. Evidence is in `docs/guide-research/2026-11-06-ultra-action-button.md`.
 
-## November 10: Stryd power guide — draft only
+## November 10: Stryd power guide
 
 Replaces the owner-rejected distance-units draft. Uses public 1.3.5 source, tag `v1.3.5-b57-submission` (`6b27f42cf2a2febf33b9672906dce46a6794ba04`). This is source verification, not a new physical-device test.
+
+The owner explicitly instructed publication on November 10 after the pending connected-pod walkthrough was disclosed. Publish with the source-review qualification and non-affiliation statement intact; do not claim that device verification took place.
 
 - Stryd pairing and target-power editing require paid Watch access in this release. State RunToMax Pro up front (`runtomax Watch App/Views/SettingsView.swift:1040`, `TargetPowerEditorView`).
 - Pair on Watch: RunToMax Settings → Sensors → Stryd Foot Pod. Tap Scan for Stryd if needed, then select the pod (`StrydPairingView.swift`). “Record with Stryd” is a separate saved-distance choice, not a prerequisite for live power guidance.
