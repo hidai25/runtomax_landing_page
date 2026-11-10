@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  distanceUnits: {
+    path: "/guides/runtomax-kilometres-miles/",
+    title: "Kilometres or miles? Set your running units in RunToMax",
+    description: "Choose kilometres or miles in RunToMax on iPhone and Apple Watch, understand pace conversion, and keep display units separate from auto-lap distance.",
+    published: null, updated: "2026-11-10",
+  },
   ultraActionButton: {
     path: "/guides/apple-watch-ultra-action-button/",
     title: "Sweaty screen? Use the Apple Watch Ultra Action button",

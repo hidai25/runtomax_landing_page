@@ -56,3 +56,13 @@ The public US App Store page still lists **1.3.5** on November 6, 2026. Verified
 - Apple’s opened Action button guide documents Settings → Action Button → Action → Workout, selecting a supported app, and different press-and-hold behavior. The RunToMax-specific workout choices and mappings come from release source, not from Apple’s generic instructions.
 
 **Publication blocker:** no physical shipping-app Ultra test was performed. Check the system app/workout picker labels, Precision Start from idle and armed states, both presets’ pause/resume/lap behavior, displayed confirmation and normal End/save flow. Keep this article as a noindex draft with no publication date until these checks and article-specific owner approval are complete. Evidence is in `docs/guide-research/2026-11-06-ultra-action-button.md`.
+
+## November 10: distance-units guide — draft only
+
+Source reviewed at `v1.3.5-b57-submission` (`6b27f42cf2a2febf33b9672906dce46a6794ba04`); App Store listing still shows 1.3.5. No physical shipping-app test performed.
+
+- iPhone: Settings gear → Units & language → Distance → KM / MI (`SettingsView.swift:384`, `unitsCard` around 1563).
+- Watch: RunToMax Settings → System → Distance → Kilometers / Miles (`SettingsView.swift:74`, `SystemSettingsView` around 1114).
+- `Shared/RunDisplayUnits.swift` converts distance and pace for display with factor 1.609344. Do not treat unit selection as a recording-accuracy fix.
+- **Publication blocker for mile-alert instructions:** Watch `AutoLapEditorView` labels `autoLapKm` with the selected unit, while `WorkoutManager.swift:4022` configures the recorder with that value × 1000 metres. The unit setter does not convert the lap setting. This is source evidence, not a device reproduction; do not promise that the displayed “1.0 mi” sets a one-mile lap.
+- Full research, source locations and release checklist: [November 10 research](guide-research/2026-11-10-distance-units.md).
