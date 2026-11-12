@@ -533,6 +533,17 @@ export default function PrivacyPage() {
         you can change them in iOS Settings.
       </p>
 
+      <h3>Apple Music</h3>
+      <p>
+        While you record a run on your iPhone, RunToMax can show the song
+        playing in Apple Music, with its artwork, and let you pause, play or
+        skip it from the run screen. Apple Music access is asked for only when
+        you tap to show your music there. RunToMax reads what is playing at
+        that moment and does not store, upload or analyse your music, your
+        library or your listening history. You can turn this access off in
+        iOS Settings.
+      </p>
+
       <h3>Apple Watch, iPhone, and widgets</h3>
       <p>
         WatchConnectivity and the shared App Group transfer workout data and
