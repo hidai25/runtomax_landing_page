@@ -71,3 +71,16 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Structured block editor includes Work power and Recovery power (`IntervalBuilderView.swift:449–450`). The guide links the existing interval tutorial; it does not reproduce Stryd plans or zone tables.
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
+
+## November 12 draft: running-shoe mileage
+
+Public US App Store listing checked November 12: **1.3.5**. Source tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`; development main is not shipping evidence.
+
+- `runtomax/Views/RootView.swift:221–223,239–244`: phone **Watch** hub and **Runs** tab. These differ from the unreleased redesigned You tab.
+- `runtomax/Views/LibraryRootView.swift:209,277–283,369`: Shoes is in the Gear group and opens ShoesLibraryView. `sectionIsLocked` checks paid app access for this destination. The article explicitly scopes its Shoes-library flow to Pro; it does not claim all shoe entry paths are paywalled.
+- `runtomax/Views/ShoesLibraryView.swift`: plus / Add a shoe, Name, Brand, Already run, Retire at, Save; tapping an existing card opens the editor. Units are converted through RunDisplayUnits; target defaults are not scientific lifetime estimates.
+- `runtomax/Views/WorkoutDetailView.swift:7089,7167–7210`: shoe row opens ShoePickerSheet; unassigned label is No shoe logged. `ShoePickerSheet.swift` lets the runner assign another pair or choose Unassigned. No automatically detected shoe is represented by this flow.
+- `runtomax/Model/ShoeStore.swift`: totalKm equals baseKm plus distances of runs assigned by UUID. Reassignment changes the mapping, not the original run distance; historical distance in both baseKm and assigned runs is counted twice. wearLevel compares this total with targetKm; it is not a physical condition sensor.
+- No Strava/Garmin shoe-import or synchronization claim. No health, injury-prevention or performance claim. The example (240 + 10 = 250 km) is explicitly hypothetical.
+
+**Publication blocked:** iPhone Mirroring reported iPhone Not Found; no physical shipping iPhone/Watch verification was performed. Source verification does not satisfy that walkthrough. The article remains unpublished/noindex, excluded from the guide index and sitemap until a real release date is set. Owner approval is required for this specific guide. Research and remaining checks: [shoe mileage research](guide-research/2026-11-12-shoe-mileage.md).

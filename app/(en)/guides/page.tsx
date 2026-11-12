@@ -13,6 +13,16 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: guideDefinitions.shoeMileage.path,
+    category: "Running gear · Shoe mileage",
+    title: guideDefinitions.shoeMileage.title,
+    description: "Keep a total for each pair, including earlier mileage, and correct assignments when you rotate shoes.",
+    date: guideDefinitions.shoeMileage.published,
+    dateLabel: guideDefinitions.shoeMileage.published
+      ? new Date(`${guideDefinitions.shoeMileage.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
+  {
     href: guideDefinitions.strydPower.path,
     category: "Apple Watch · Running power",
     title: guideDefinitions.strydPower.title,
