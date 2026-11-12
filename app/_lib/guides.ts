@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  shoeMileage: {
+    path: "/guides/track-running-shoe-mileage/",
+    title: "Track running-shoe mileage from your Apple Watch runs",
+    description: "Add your shoes in RunToMax, carry over earlier mileage and assign each run to the right pair. Avoid counting old runs twice when you switch apps.",
+    published: null, updated: "2026-11-12",
+  },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
     title: "Run by watts with Stryd and RunToMax on Apple Watch",
