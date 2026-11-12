@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 2, 2026"
+      effectiveDate="November 12, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -268,6 +268,13 @@ export default function PrivacyPage() {
         After your watch syncs with Garmin Connect, Garmin sends new running
         activity identifiers, names, dates, distance, duration, GPS route,
         heart rate, cadence, running power, device temperature, ascent and descent, recording device and lap boundaries when available.
+        When Garmin also provides the run&apos;s activity file, RunToMax reads
+        from it the workout&apos;s steps (warm-up, efforts, recoveries,
+        cool-down) and values an accessory recorded through your watch, such
+        as a Stryd pod&apos;s running power, form power, air power, leg spring
+        stiffness, ground contact time and vertical oscillation. The file is
+        read on our server and is not stored; only these values are kept with
+        the run.
         RunToMax uses these to show your runs, prevent duplicate records, match
         completed runs to your plan and update plan progress. On-device
         calculations provide training-load and recovery estimates and adapt your
