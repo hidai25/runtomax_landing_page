@@ -520,6 +520,19 @@ export default function PrivacyPage() {
         account sync; the monitor name and peripheral identifier are not.
       </p>
 
+      <h3>Camera and photos</h3>
+      <p>
+        If you take a photo from the run screen while recording a run on your
+        iPhone, RunToMax opens the camera and saves the photo to your Photos
+        library. If you choose to put a photo on a share card, RunToMax shows
+        the photos you took during that run so you can pick one. Story cards
+        and videos are saved to Photos only when you choose to save them.
+        Your photos stay on your iPhone: RunToMax does not upload them, and
+        they are not part of cloud coaching, analytics or account sync. Camera
+        and Photos access are asked for only when you use these features, and
+        you can change them in iOS Settings.
+      </p>
+
       <h3>Apple Watch, iPhone, and widgets</h3>
       <p>
         WatchConnectivity and the shared App Group transfer workout data and
