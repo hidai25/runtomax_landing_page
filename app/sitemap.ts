@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   const legal: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/support/`, lastModified: new Date("2026-11-02"), changeFrequency: "monthly", priority: 0.5 },
-    { url: `${SITE_URL}/privacy/`, lastModified: new Date("2026-11-02"), changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE_URL}/privacy/`, lastModified: new Date("2026-11-12"), changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/terms/`, lastModified: new Date("2026-10-31"), changeFrequency: "yearly", priority: 0.4 },
   ];
   // Drafts gain a sitemap entry automatically once their release date is set.
