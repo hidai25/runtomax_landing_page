@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  gpxRoute: {
+    path: "/guides/import-gpx-route-apple-watch/",
+    title: "Follow a GPX running route on Apple Watch with RunToMax",
+    description: "Import a GPX track into RunToMax, check it has reached your Apple Watch, and start following the course. Includes sync checks and the Pro requirement.",
+    published: null as string | null, updated: "2026-11-11",
+  },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
     title: "Run by watts with Stryd and RunToMax on Apple Watch",

@@ -71,3 +71,15 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Structured block editor includes Work power and Recovery power (`IntervalBuilderView.swift:449–450`). The guide links the existing interval tutorial; it does not reproduce Stryd plans or zone tables.
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
+
+## November 11 draft: import and follow a GPX route
+
+The US App Store page still lists **1.3.5** on November 11, 2026. Checked tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, not development main.
+
+- **Watch → Routes → Import GPX**: `RootView.swift:216–223`, `LibraryRootView.swift:68,365`, `RoutesLibraryView.swift:332–352`. Import/send require paid access. `GPXRouteParser.swift:23–35,65–90,123–129` requires at least two track points; route-point-only/waypoint-only files are not accepted as tracks.
+- **Send to Watch**: `RoutesLibraryView.swift:355–375,468–489`. Its optimistic confirmation follows `WatchBridge.sendStartRoute`, which uses `sendPayloadCommand` (`Model/WatchBridge.swift:1552–1562,1919–1966`). The latter can queue a transfer and does not await a Watch acknowledgement. The guide requires checking the wrist, rather than treating Sent as received.
+- **ROUTE READY**, or **ROUTE → My Routes**: Watch `HomeView.swift:81–90,206–216,347–356,517–520`, `RoutePickerView.swift:17–39`. Delivery saves a route and does not start recording (`Model/WatchBridge.swift:1817–1826`). The runner selects/arms it, then uses the displayed start control (`ArmedView.swift`).
+- **Map** during a route run: Watch `SessionView.swift:373–379` and `RouteMapView.swift:83–120,179–194`: course polyline, current position, direction markers/cues, off-course banner. No guarantee of every turn being announced or automatic rerouting.
+- **Map cache** is labelled **Load regions on this iPhone** in `RoutesLibraryView.swift:195–196`. The guide does not claim offline Watch basemap downloads. GPX elevation may be absent; source hides profiles without meaningful vertical range.
+
+**Blocker:** shipping iPhone/Watch walkthrough unavailable while the Mac is locked. Keep unpublished, `noindex`, without a publication date; the index entry is hidden and the existing sitemap's published-only filter excludes it. Complete the synthetic GPX walkthrough and obtain approval for this article before release. Research and acceptance checklist: [GPX guide evidence](guide-research/2026-11-11-gpx-route.md).
