@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  audioCues: {
+    path: "/guides/apple-watch-running-voice-cues/",
+    title: "Fewer running announcements, without losing your interval cues",
+    description: "Choose which RunToMax voice cues you hear on Apple Watch. Keep rep changes, quieten kilometre or mile updates, and test your headphone setup before a run.",
+    published: null, updated: "2026-11-13",
+  },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
     title: "Run by watts with Stryd and RunToMax on Apple Watch",
