@@ -13,6 +13,16 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: guideDefinitions.runningCadence.path,
+    category: "Apple Watch · Cadence",
+    title: guideDefinitions.runningCadence.title,
+    description: guideDefinitions.runningCadence.description,
+    date: guideDefinitions.runningCadence.published,
+    dateLabel: guideDefinitions.runningCadence.published
+      ? new Date(`${guideDefinitions.runningCadence.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
+  {
     href: guideDefinitions.strydPower.path,
     category: "Apple Watch · Running power",
     title: guideDefinitions.strydPower.title,
