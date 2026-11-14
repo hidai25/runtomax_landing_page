@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  runningCadence: {
+    path: "/guides/apple-watch-running-cadence/",
+    title: "How to see running cadence on Apple Watch",
+    description: "Find running cadence in Apple’s Workout app or add it to your RunToMax screen. Understand steps per minute, free field choices and the difference from pace.",
+    published: null, updated: "2026-11-14",
+  },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
     title: "Run by watts with Stryd and RunToMax on Apple Watch",

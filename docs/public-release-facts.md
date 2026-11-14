@@ -71,3 +71,16 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Structured block editor includes Work power and Recovery power (`IntervalBuilderView.swift:449–450`). The guide links the existing interval tutorial; it does not reproduce Stryd plans or zone tables.
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
+
+
+## November 14 draft: running cadence on Apple Watch
+
+Public US App Store listing checked November 14: **1.3.5**, October 22. Audited its source tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`. This is source verification, not a physical-device test.
+
+- `Shared/BasicWatchScreenPreferences.swift:12–18,33–42`: cadence is a default and allowed free field; five fields, saved per workspace.
+- `runtomax/Model/ButtonMapping.swift:208,242–243,277–282`: Running Form category contains Cadence, filtered through the free allowlist.
+- `runtomax/Views/LibraryRootView.swift:64,619–631,653–660,726–743,2414–2443`: Watch Screens title, optional Sync, automatic persistence and sending, separate run-type choices, preview field picker.
+- `runtomax Watch App/Views/MetricValue.swift:89–91`: Cadence displays `metrics.cadenceSPM` with `spm` units.
+- `runtomax Watch App/Model/UserPreferences.swift:102`: picker title Cadence.
+
+**Publication blocked:** a shipping 1.3.5 phone/Watch walkthrough is unavailable. The owner's development installation does not establish public-release behavior. No private run records were opened. Keep this noindex draft without a release date until the checks in [the research note](guide-research/2026-11-14-running-cadence.md) and owner approval are complete.
