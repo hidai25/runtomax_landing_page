@@ -43,8 +43,8 @@ export default function AppleWatchFeaturePageFr() {
       </p>
 
       <div className="grid items-start gap-x-8 sm:grid-cols-2">
-        <Shot src="watch-metrics-fr.webp" alt="Cinq mesures sur Apple Watch Ultra, dont l’allure moyenne, la cadence et la fréquence cardiaque" caption="Temps écoulé, allure moyenne, distance, cadence et fréquence cardiaque. Exemple de sortie." watch />
-        <Shot src="watch-buttons-fr.webp" alt="Éditeur de commandes RunToMax sur Apple Watch Ultra avec quatre boutons à l’écran" caption="Les quatre commandes à l’écran et les actions attribuées aux boutons physiques." watch />
+        <Shot src="watch-ultra4-metrics-fr.webp" alt="Cinq mesures sur Apple Watch Ultra 4, dont l’allure moyenne, la cadence et la fréquence cardiaque" caption="Temps écoulé, allure moyenne, distance, cadence et fréquence cardiaque. Exemple de sortie." watch />
+        <Shot src="watch-ultra4-buttons-fr.webp" alt="Éditeur de commandes RunToMax sur Apple Watch Ultra 4 avec quatre boutons à l’écran" caption="Les quatre commandes à l’écran et les actions attribuées aux boutons physiques." watch />
       </div>
 
       <h2>Des séances structurées au poignet</h2>
@@ -60,7 +60,7 @@ export default function AppleWatchFeaturePageFr() {
         L’allure du tour a une seule source sur la montre : le chiffre que vous voyez en courant est celui du résumé après la course.
       </p>
 
-      <Shot src="watch-race-fr.webp" alt="Temps de passage sur Apple Watch Ultra avec allure du tour et estimation du chrono final" caption="L’allure du tour et le chrono final estimé sur un exemple de course." watch />
+      <Shot src="watch-ultra4-race-fr.webp" alt="Temps de passage sur Apple Watch Ultra 4 avec allure du tour et estimation du chrono final" caption="L’allure du tour et le chrono final estimé sur un exemple de course." watch />
 
       <h2>Ce que la montre enregistre</h2>
       <ul>
