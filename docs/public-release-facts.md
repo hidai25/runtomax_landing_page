@@ -72,11 +72,11 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
 
-## November 19 draft guide check — Water Lock on a run
+## November 19 guide check — Water Lock on a run
 
 Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. Checked the Watch source at `v1.3.5-b57-submission` (`31c0797f38f4381d90629aa5c85b091d9af63efa`).
 
 - `Views/SessionView.swift` places Controls one leftward swipe from metrics during recording. `Views/ControlsView.swift` reads the configured layout. Only the lap action returns to metrics automatically.
 - `Model/ControlLayout.swift` puts LOCK in the bottom-right default slot and calls WatchKit’s water lock API without changing workout state. END opens the confirmation in `ControlsView.swift`, where SAVE finalizes the run.
 - Apple documents Control Center, the droplet, the Crown hold and the speaker tones in [Water Lock support](https://support.apple.com/en-us/108352). A [runner’s wet-sleeve question](https://www.reddit.com/r/running/comments/rjkejj/) motivated the topic. Search Console was unavailable for this run.
-- Pending physical check on a shipping watch: start a run, lock from the metrics screen through Control Center, confirm the visible screen and advancing timer, unlock, repeat with LOCK in RunToMax, and finish with END and SAVE. The guide is an unpublished draft pending verification and owner review.
+- The owner approved deployment on November 19 after the physical Watch check was disclosed as pending. The instructions were checked against the release source and Apple’s documentation. No hands-on Water Lock test was performed.
