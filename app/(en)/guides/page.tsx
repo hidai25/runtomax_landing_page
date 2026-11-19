@@ -13,6 +13,16 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const guides = [
   {
+    href: guideDefinitions.gpxRoute.path,
+    category: "Apple Watch · Routes",
+    title: guideDefinitions.gpxRoute.title,
+    description: "Import a course, confirm it is on your wrist, and follow it with RunToMax Pro.",
+    date: guideDefinitions.gpxRoute.published,
+    dateLabel: guideDefinitions.gpxRoute.published
+      ? new Date(`${guideDefinitions.gpxRoute.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
+  {
     href: guideDefinitions.strydPower.path,
     category: "Apple Watch · Running power",
     title: guideDefinitions.strydPower.title,
