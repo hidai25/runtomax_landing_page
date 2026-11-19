@@ -88,3 +88,7 @@ Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) 
 - Watch `Views/SummaryView.swift` and `Views/TreadmillCalibrationCard.swift` gate the card on treadmill mode and recorded active steps. The runner sets the belt distance in the displayed unit and the incline, then saves. The summary adjusts the run and the card records the stride baseline.
 - Watch `Model/TreadmillHealthCorrection.swift` targets a RunToMax-authored indoor running workout. It verifies the replacement distance before removing the original. The summary exposes a pending state and a retry action. The guide makes the Health result conditional on a successful sync.
 - The 5.0 km and 4.7 km readings are an illustrative example. This review used release source and [Apple’s calibration instructions](https://support.apple.com/en-us/105048). A physical Watch-to-Health sync was not tested for this revision.
+
+## November 19 Garmin compatibility check
+
+The [US App Store lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. The Garmin Connect descriptions apply to the 1.4 submission (`v1.4-b63-submission`, commit `530130ef8c03d4a4aa7e2e1995b72754ca75b10c`). The tagged iPhone GarminConnectView and the [Garmin privacy disclosure](https://runtomax.com/privacy/#garmin) describe account connection, selected workout sends and separately enabled new-run import. Available data depends on the run. The 1.3.5 Apple Health route remains documented. This review used release source and the store listing.
