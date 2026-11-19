@@ -18,7 +18,7 @@ export default function AppleWatchFeaturePageFr() {
       eyebrow="Fonctionnalité · Apple Watch"
       title="Le suivi de course sur Apple Watch"
       alternate="/features/apple-watch/"
-      updated="2026-09-22"
+      updated="2026-11-19"
       intro={
         <p>
           RunToMax enregistre sur la montre, pas sur le téléphone. Les écrans sont à vous, les séances structurées se déroulent au poignet avec
@@ -41,8 +41,11 @@ export default function AppleWatchFeaturePageFr() {
         la course ; vous pouvez enregistrer les vôtres. Un écran « grille d’allure » affiche côte à côte la cible de la séance et votre allure
         actuelle, pour répondre d’un coup d’œil à la seule question qui compte en pleine répétition.
       </p>
-      <Shot src="watch-grid.png" alt="Écran de course Apple Watch avec une grille de métriques choisies" caption="Une grille de champs personnalisée sur la montre." watch />
-      <Shot src="watch-select.png" alt="Sélecteur de disposition Apple Watch avec des préréglages par type de séance" caption="Une disposition par type de séance." watch />
+
+      <div className="grid items-start gap-x-8 sm:grid-cols-2">
+        <Shot src="watch-metrics-fr.webp" alt="Cinq mesures sur Apple Watch Ultra, dont l’allure moyenne, la cadence et la fréquence cardiaque" caption="Temps écoulé, allure moyenne, distance, cadence et fréquence cardiaque. Exemple de sortie." watch />
+        <Shot src="watch-buttons-fr.webp" alt="Éditeur de commandes RunToMax sur Apple Watch Ultra avec quatre boutons à l’écran" caption="Les quatre commandes à l’écran et les actions attribuées aux boutons physiques." watch />
+      </div>
 
       <h2>Des séances structurées au poignet</h2>
       <p>
@@ -50,14 +53,14 @@ export default function AppleWatchFeaturePageFr() {
         la fourchette cible de l’étape en cours : pas besoin de lire l’écran pour savoir qu’une répétition a commencé. Les séances viennent de votre
         plan RunToMax, d’une séance collée en texte sur l’iPhone, ou des préréglages de la montre.
       </p>
-      <Shot src="watch-gauge.png" alt="Apple Watch affichant l’allure actuelle face à la cible de la séance" caption="L’allure face à la cible de l’étape." watch />
 
       <h2>Tours et temps de passage, en direct</h2>
       <p>
         Chaque kilomètre affiche son reçu dès qu’il se termine, et l’écran des temps de passage garde l’historique de la sortie sous les yeux.
         L’allure du tour a une seule source sur la montre : le chiffre que vous voyez en courant est celui du résumé après la course.
       </p>
-      <Shot src="watch-splits.png" alt="Écran des temps de passage Apple Watch avec temps au tour, fréquence cardiaque et progression" caption="Les passages avec fréquence cardiaque et progression." watch />
+
+      <Shot src="watch-race-fr.webp" alt="Temps de passage sur Apple Watch Ultra avec allure du tour et estimation du chrono final" caption="L’allure du tour et le chrono final estimé sur un exemple de course." watch />
 
       <h2>Ce que la montre enregistre</h2>
       <ul>

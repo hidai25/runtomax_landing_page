@@ -6,8 +6,8 @@ export const dynamic = "force-static";
 
 // Dates reflect substantive page revisions, not the time of deployment.
 const CONTENT_DATES: Record<string, string> = {
-  "/": "2026-11-02", "/fr/": "2026-10-31",
-  "/features/apple-watch/": "2026-11-02", "/fr/fonctionnalites/apple-watch/": "2026-09-22",
+  "/": "2026-11-19", "/fr/": "2026-11-19",
+  "/features/apple-watch/": "2026-11-19", "/fr/fonctionnalites/apple-watch/": "2026-11-19",
   "/features/coaching-from-apple-health/": "2026-11-02", "/fr/fonctionnalites/coaching-apple-sante/": "2026-11-02",
   "/features/race-plans/": "2026-09-22", "/fr/fonctionnalites/plans-de-course/": "2026-09-22",
   "/faq/": "2026-11-02", "/fr/faq/": "2026-11-02",
