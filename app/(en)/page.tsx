@@ -76,9 +76,9 @@ const journey = [
 ];
 
 const phoneShots = [
-  { src: "iphone17-trends-en.webp", tag: "Your trends", title: "See how you're progressing.", desc: "Explore your weekly running, training paces and race estimates." },
-  { src: "iphone17-plan-en.webp", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
-  { src: "iphone17-runs-en.webp", tag: "Your runs", title: "Revisit your running week.", desc: "Browse recent runs and compare the distances in your training log." },
+  { src: "iphone17-trends-en.webp", alt: "RunToMax weekly running distance chart on iPhone", tag: "Your trends", title: "See how you're progressing.", desc: "Explore your weekly running, training paces and race estimates." },
+  { src: "iphone17-plan-en.webp", alt: "RunToMax weekly training plan on iPhone", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
+  { src: "iphone17-runs-routes-en.webp", alt: "RunToMax Runs list on iPhone with route maps beside four outdoor runs", tag: "Your runs", title: "Revisit your running week.", desc: "Browse recent runs and compare the distances in your training log." },
 ];
 
 export default function RunToMaxLanding() {
@@ -155,7 +155,7 @@ export default function RunToMaxLanding() {
                 <img
                   src={`${BASE}/${shot.src}`}
                   {...dimensions[shot.src as keyof typeof dimensions]}
-                  alt={`RunToMax iPhone ${shot.tag.toLowerCase()} screen`}
+                  alt={shot.alt}
                   className="h-auto w-full"
                   loading={index === 0 ? "eager" : "lazy"}
                 />
