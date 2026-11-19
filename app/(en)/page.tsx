@@ -1,4 +1,5 @@
 "use client";
+import Shot from "@/app/_components/Shot";
 import dimensions from "@/app/_lib/image-dimensions.json";
 
 import Link from "next/link";
@@ -268,12 +269,7 @@ export default function RunToMaxLanding() {
             <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Purpose-built layouts, structured workouts, lap haptics, route guidance, external sensors and phone-free recording—designed for a glance, not a scroll.</p>
           </div>
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
-            <figure className="w-48 shrink-0">
-              <div className="overflow-hidden rounded-[2.25rem] border-[7px] border-zinc-700 bg-black shadow-[0_0_32px_rgba(31,226,108,.12)]">
-                <img src={`${BASE}/demo-watch.png`} {...dimensions["demo-watch.png"]} alt="RunToMax Watch screen displaying sample distance and elapsed time" className="h-auto w-full" loading="lazy" />
-              </div>
-              <figcaption className="mt-4 text-center text-xs text-zinc-500">Running screen · example data</figcaption>
-            </figure>
+            <div className="w-full max-w-[280px] shrink-0"><Shot src="watch-metrics-en.webp" alt="Five running fields on Apple Watch Ultra, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch /></div>
             <div className="max-w-sm text-center sm:text-left"><p className="text-xl font-bold">Make your screen yours.</p><p className="mt-3 text-sm leading-relaxed text-zinc-400">Choose the numbers that matter to you and keep them close at hand on your run.</p><Link href="/features/apple-watch/" className="mt-5 inline-block text-sm font-semibold text-[#1FE26C] hover:text-white">Explore Apple Watch features →</Link></div>
           </div>
         </div>

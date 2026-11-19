@@ -55,6 +55,14 @@
     "width": 1206,
     "height": 2622
   },
+  "watch-buttons-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-buttons-fr.webp": {
+    "width": 600,
+    "height": 960
+  },
   "watch-gauge.png": {
     "width": 422,
     "height": 514
@@ -66,6 +74,22 @@
   "watch-lap.png": {
     "width": 422,
     "height": 514
+  },
+  "watch-metrics-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-metrics-fr.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-race-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-race-fr.webp": {
+    "width": 600,
+    "height": 960
   },
   "watch-ready.png": {
     "width": 422,

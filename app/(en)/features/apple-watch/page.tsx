@@ -18,7 +18,7 @@ export default function AppleWatchFeaturePage() {
       eyebrow="Feature · Apple Watch"
       title="Run tracking on Apple Watch"
       alternate="/fr/fonctionnalites/apple-watch/"
-      updated="2026-11-02"
+      updated="2026-11-19"
       intro={
         <p>
           RunToMax records on the Watch, not on the phone. The screens are yours to design, structured sessions run on the wrist
@@ -40,7 +40,11 @@ export default function AppleWatchFeaturePage() {
         if you run with a pod, and more. Layout presets cover easy runs, intervals and races, and you can save your own. A dedicated
         pace-grid screen shows the session target and your current pace side by side so a glance answers the only question that matters mid-rep.
       </p>
-      <Shot src="demo-watch.png" alt="RunToMax running screen showing example distance and time" caption="A RunToMax Watch screen with example data." watch />
+
+      <div className="grid items-start gap-x-8 sm:grid-cols-2">
+        <Shot src="watch-metrics-en.webp" alt="Five running fields on Apple Watch Ultra, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch />
+        <Shot src="watch-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra" caption="The four on-screen controls and the hardware button assignments." watch />
+      </div>
 
       <h2>Structured sessions on the wrist</h2>
       <p>
@@ -56,6 +60,8 @@ export default function AppleWatchFeaturePage() {
         Each kilometre (or mile) posts a lap receipt as it closes, and the splits screen keeps the run’s history in view. Lap pace is a
         single source on the Watch, so the number you see mid-run is the number the summary shows afterwards.
       </p>
+
+      <Shot src="watch-race-en.webp" alt="Race split on Apple Watch Ultra showing lap pace and predicted finish" caption="At mile 13, the split shows lap pace and a projected finish. Example race." watch />
 
       <h2>What the Watch records</h2>
       <ul>

@@ -27,7 +27,7 @@ export default function FrenchHome() {
       eyebrow="Coach course à pied pour Apple Watch"
       title="Enregistre sur Apple Watch. Lit toutes vos sorties dans Apple Santé."
       alternate="/"
-      updated="2026-10-05"
+      updated="2026-11-19"
       intro={
         <p>
           RunToMax est un traqueur de course pensé pour la montre et un coach qui lit ce qui s’est vraiment passé sur la sortie — pas
@@ -42,7 +42,7 @@ export default function FrenchHome() {
         <li><strong>Après chaque sortie :</strong> un verdict en français clair — ce que la course dit, et quoi faire ensuite. Chaque jour de plan reçoit une note face à ce qui était demandé.</li>
         <li><strong>Des plans calés sur une date de course</strong>, du 5 km au marathon, qui proposent des ajustements selon votre réponse à l’entraînement. Rien ne change en silence : vous approuvez.</li>
       </ul>
-      <Shot src="watch-grid.png" alt="Écran de course Apple Watch avec une grille de métriques choisies" caption="Une grille de champs personnalisée sur la montre." watch />
+      <Shot src="watch-metrics-fr.webp" alt="Cinq mesures sur Apple Watch Ultra, dont l’allure moyenne, la cadence et la fréquence cardiaque" caption="Temps écoulé, allure moyenne, distance, cadence et fréquence cardiaque. Exemple de sortie." watch />
 
       <h2>En détail</h2>
       <ul>
