@@ -2,7 +2,7 @@ import dimensions from "@/app/_lib/image-dimensions.json";
 
 export default function HomeDevices({ lang }: { lang: "en" | "fr" }) {
   const phone = `iphone17-home-${lang}.webp` as const;
-  const watch = `watch-metrics-${lang}.webp` as const;
+  const watch = `watch-ultra4-race-${lang}.webp` as const;
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const french = lang === "fr";
   return (
@@ -19,8 +19,8 @@ export default function HomeDevices({ lang }: { lang: "en" | "fr" }) {
           src={`${base}/${watch}`}
           {...dimensions[watch]}
           alt={french
-            ? "Mesures de course sur Apple Watch Ultra avec bracelet Ocean"
-            : "Running metrics on Apple Watch Ultra with an Ocean Band"}
+            ? "Temps de passage RunToMax sur Apple Watch Ultra 4 avec bracelet Ocean gris translucide"
+            : "RunToMax race split on Apple Watch Ultra 4 with a translucent gray Ocean Band"}
           className="h-auto w-auto max-h-[23svh] max-w-[33%] object-contain lg:max-h-[275px]"
         />
       </div>

@@ -259,7 +259,7 @@ export default function RunToMaxLanding() {
             <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Set up your watch for the next session. <Link className="text-white underline underline-offset-4" href="/guides/interval-workouts-apple-watch/">Build an interval workout</Link> with work and recovery steps, or <Link className="text-white underline underline-offset-4" href="/guides/stryd-power-apple-watch/">run by watts with a Stryd pod</Link> and RunToMax Pro.</p>
           </div>
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
-            <div className="w-full max-w-[280px] shrink-0"><Shot src="watch-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra" caption="On-screen controls and hardware button assignments." watch /></div>
+            <div className="w-full max-w-[280px] shrink-0"><Shot src="watch-ultra4-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra 4" caption="On-screen controls and hardware button assignments." watch /></div>
             <div className="max-w-sm text-center sm:text-left"><p className="text-xl font-bold">Make your screen yours.</p><p className="mt-3 text-sm leading-relaxed text-zinc-400">Choose the numbers that matter to you and keep them close at hand on your run.</p><Link href="/features/apple-watch/" className="mt-5 inline-block text-sm font-semibold text-[#1FE26C] hover:text-white">Explore Apple Watch features →</Link></div>
           </div>
         </div>

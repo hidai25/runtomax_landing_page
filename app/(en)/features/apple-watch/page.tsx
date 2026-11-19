@@ -42,8 +42,8 @@ export default function AppleWatchFeaturePage() {
       </p>
 
       <div className="grid items-start gap-x-8 sm:grid-cols-2">
-        <Shot src="watch-metrics-en.webp" alt="Five running fields on Apple Watch Ultra, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch />
-        <Shot src="watch-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra" caption="The four on-screen controls and the hardware button assignments." watch />
+        <Shot src="watch-ultra4-metrics-en.webp" alt="Five running fields on Apple Watch Ultra 4, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch />
+        <Shot src="watch-ultra4-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra 4" caption="The four on-screen controls and the hardware button assignments." watch />
       </div>
 
       <h2>Structured sessions on the wrist</h2>
@@ -61,7 +61,7 @@ export default function AppleWatchFeaturePage() {
         single source on the Watch, so the number you see mid-run is the number the summary shows afterwards.
       </p>
 
-      <Shot src="watch-race-en.webp" alt="Race split on Apple Watch Ultra showing lap pace and predicted finish" caption="At mile 13, the split shows lap pace and a projected finish. Example race." watch />
+      <Shot src="watch-ultra4-race-en.webp" alt="Race split on Apple Watch Ultra 4 showing lap pace and predicted finish" caption="At lap 13, the screen shows lap pace and a projected finish. Example race." watch />
 
       <h2>What the Watch records</h2>
       <ul>
