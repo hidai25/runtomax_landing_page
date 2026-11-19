@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 12, 2026"
+      effectiveDate="November 19, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -61,15 +61,15 @@ export default function PrivacyPage() {
           not send exact workout or health values.
         </li>
         <li>
-          Garmin Connect is not included in App Store version 1.3.5. In supported
-          later test builds, the integration is optional: you can connect your account,
+          From App Store version 1.4, Garmin Connect is available and
+          optional: you can connect your account,
           send your chosen running workouts to Garmin Connect and separately opt
           in to importing new Garmin runs and, separately, last night&rsquo;s
           sleep, resting heart rate and overnight HRV for your readiness. Other
           all-day health data is not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
-          App Store version 1.3.5 has no public Strava integration, RevenueCat,
+          App Store version 1.4 has no public Strava integration, RevenueCat,
           Lifetime purchase, advertising, or IDFA. Website analytics is optional.
         </li>
       </ul>
@@ -224,8 +224,8 @@ export default function PrivacyPage() {
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h3 id="garmin">Garmin Connect (optional, later test builds)</h3>
-      <p>This section applies when Garmin Connect is offered in your build. It is not available in App Store version 1.3.5.</p>
+      <h3 id="garmin">Garmin Connect (optional)</h3>
+      <p>Garmin Connect is available from App Store version 1.4. Earlier versions do not include it.</p>
       <p>
         An optional connection lets you send selected RunToMax running workouts
         and scheduled dates to your Garmin Connect account for use on compatible
@@ -604,15 +604,15 @@ export default function PrivacyPage() {
       <p>You can accept or reject analytics using the website banner, or change your choice using Analytics settings. If you reject analytics, the Google Analytics tag is not loaded. Withdrawing consent stops future collection and removes first-party Google Analytics cookies. Your choice is stored in your browser. Google may process information outside your country; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> about website privacy.</p>
       <p>Links to the App Store are handled by Apple under Apple&apos;s privacy policy.</p>
 
-      <h2>What App Store version 1.3.5 does not use</h2>
+      <h2>What App Store version 1.4 does not use</h2>
       <ul>
         <li>No advertising, IDFA, or third-party advertising trackers.</li>
-        <li>No public Strava integration in App Store version 1.3.5; supported TestFlight builds may offer it.</li>
+        <li>No public Strava integration in App Store version 1.4; supported TestFlight builds may offer it.</li>
         <li>No RevenueCat subscription processing.</li>
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
-          with Sign in with Apple is available in version 1.3.5 and requires your opt-in.
+          with Sign in with Apple is available from version 1.3.5 and requires your opt-in.
         </li>
         <li>No contacts or calendar access.</li>
       </ul>
