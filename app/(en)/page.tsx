@@ -265,7 +265,7 @@ export default function RunToMaxLanding() {
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">Own the Watch experience</p>
               <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">The workout stays clear when the effort gets hard.</h2>
             </div>
-            <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Purpose-built layouts, structured workouts, lap haptics, route guidance, external sensors and phone-free recording—designed for a glance, not a scroll.</p>
+            <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Set up your watch for the next session. <Link className="text-white underline underline-offset-4" href="/guides/interval-workouts-apple-watch/">Build an interval workout</Link> with work and recovery steps, or <Link className="text-white underline underline-offset-4" href="/guides/stryd-power-apple-watch/">run by watts with a Stryd pod</Link> and RunToMax Pro.</p>
           </div>
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
             <figure className="w-48 shrink-0">
@@ -347,9 +347,9 @@ export default function RunToMaxLanding() {
             <Link href="/faq/" className="transition-colors hover:text-white">FAQ</Link>
             <Link href="/accuracy/" className="transition-colors hover:text-white">Accuracy</Link>
             <Link href="/fr/" hrefLang="fr" className="transition-colors hover:text-white">Français</Link>
-            <Link href="/support" className="transition-colors hover:text-white">Support</Link>
-            <Link href="/privacy" className="transition-colors hover:text-white">Privacy</Link>
-            <Link href="/terms" className="transition-colors hover:text-white">Terms</Link>
+            <Link href="/support/" className="transition-colors hover:text-white">Support</Link>
+            <Link href="/privacy/" className="transition-colors hover:text-white">Privacy</Link>
+            <Link href="/terms/" className="transition-colors hover:text-white">Terms</Link>
             <a href={CONTACT_MAILTO} className="transition-colors hover:text-white">{CONTACT_EMAIL}</a>
           </div>
           <AppStoreBadge heightClass="h-10" />

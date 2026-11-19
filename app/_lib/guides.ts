@@ -45,6 +45,8 @@ export const guides = {
   },
 } as const;
 export type Guide = (typeof guides)[keyof typeof guides];
+export const publishedGuides = Object.values(guides).filter(guide => guide.published);
+
 export function guideJsonLd(guide: Guide) {
   const url = `${SITE_URL}${guide.path}`;
   return {

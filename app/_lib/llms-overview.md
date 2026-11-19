@@ -29,12 +29,6 @@ These small-sample comparisons are not a validation of every release or a guaran
 - The reported sample used Apple's workout distance engine. Against a Garmin on the other wrist: within about 1% on steady runs; 1–3% short on interval and stop-heavy runs, mostly from pause handling. More than 35 paired runs since May 2026; 17 runs formed the historical scored comparison set.
 - Cadence matches the Garmin (median 180 vs 181 spm). The report described elevation differences of about 9 m per run; this is not a guarantee. Ground contact time from the wrist is not used for form guidance.
 
-## Guides
-
-- [Running guides](https://runtomax.com/guides/) — practical RunToMax help.
-- [Create interval workouts](https://runtomax.com/guides/interval-workouts-apple-watch/) — iPhone Watch tab → Workouts in version 1.3.5; build and send intervals to RunToMax on Apple Watch.
-- [Treadmill distance](https://runtomax.com/guides/apple-watch-treadmill-distance/) — correct a treadmill run in RunToMax; limitations and separate Apple calibration guidance.
-
 ## Contact
 
 - Website: https://runtomax.com/
