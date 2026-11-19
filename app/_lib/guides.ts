@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  waterLock: {
+    path: "/guides/apple-watch-water-lock-running/",
+    title: "How to lock your Apple Watch screen on a rainy run",
+    description: "Stop rain or a wet sleeve from tapping your Apple Watch. Turn on Water Lock during a run, then unlock the screen to pause or save in RunToMax.",
+    published: null as string | null, updated: "2026-11-19",
+  },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
     title: "Run by watts with Stryd and RunToMax on Apple Watch",
