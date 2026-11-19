@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata("/fr/faq/", {
 const items: FaqItem[] = [
   {
     q: "Faut-il une Apple Watch ?",
-    a: "Oui, pour enregistrer. RunToMax enregistre sur l’Apple Watch (watchOS 10 ou plus récent : Series 4 et suivantes, SE, Ultra) et analyse sur l’iPhone (iOS 17 ou plus récent). Les courses enregistrées par d’autres appareils peuvent être lues depuis Apple Santé, mais avec des données de base seulement.",
+    a: "L’Apple Watch permet d’enregistrer directement avec RunToMax (watchOS 10 ou plus récent). Avec une Garmin compatible, vous pouvez enregistrer sur votre montre et importer vos sorties sur iPhone via Garmin Connect dans RunToMax 1.4.",
   },
   {
     q: "Peut-on courir sans téléphone ?",
@@ -41,8 +41,13 @@ const items: FaqItem[] = [
     a: "Le coaching continu : le conseil du jour et la forme du jour chaque matin, des plans calés sur une date de course qui s’adaptent, les séances structurées et la bibliothèque de séances, la planification de parcours, l’analyse approfondie et les tendances, les écrans de montre personnalisables, la prise en charge de Stryd et, en option, les notes du coaching cloud. Deux formules facturées par Apple au tarif de votre pays : annuelle ou mensuelle, avec un essai gratuit pour les coureurs éligibles (14 jours pour l’annuel ou 7 jours pour le mensuel ; 29,99 $ par an ou 5,99 $ par mois aux États-Unis). L’abonnement se renouvelle automatiquement sauf résiliation. Si vous arrêtez l’abonnement, l’enregistrement reste gratuit et vos courses, exports et bilans déjà obtenus restent accessibles. Résiliation à tout moment dans les abonnements de votre identifiant Apple.",
   },
   {
-    q: "Je cours avec une Garmin (ou Coros, Polar, Suunto). RunToMax me sert-il ?",
-    a: "En partie. Si votre montre se synchronise avec Apple Santé, RunToMax peut lire ces courses, mais elles ne portent que distance, durée et fréquence cardiaque — ni tracé, ni tours, ni passages — et l’analyse est donc limitée. L’enregistrement et l’analyse complète demandent l’Apple Watch. La synchronisation directe avec Garmin Connect n’est pas disponible dans la version App Store 1.3.5 ; les versions de test ultérieures peuvent différer.",
+    id: "garmin-connect",
+    q: "Puis-je utiliser RunToMax avec ma montre Garmin ?",
+    a: "Oui. Dans RunToMax 1.4 sur iPhone, identifiez-vous dans RunToMax, puis associez votre compte Garmin Connect. Choisissez une séance de course à envoyer à votre montre Garmin compatible. Pour retrouver vos sorties dans RunToMax, activez aussi l’importation des sorties Garmin. Les nouvelles sorties arrivent après la synchronisation de la montre avec Garmin Connect et peuvent inclure le tracé, les tours et la fréquence cardiaque si la montre les a enregistrés. Avec la version 1.3.5, RunToMax peut lire la distance, la durée et la fréquence cardiaque disponible des sorties partagées avec Apple Santé.",
+  },
+  {
+    q: "Et avec une montre COROS, Polar ou Suunto ?",
+    a: "Si votre montre partage ses sorties avec Apple Santé, RunToMax peut en lire la distance, la durée et la fréquence cardiaque lorsqu’elle est disponible.",
   },
   {
     q: "Est-ce synchronisé avec Strava ?",
@@ -73,8 +78,8 @@ export default function FaqPageFr() {
       eyebrow="Avant de télécharger"
       title="Les questions que les coureurs posent en premier"
       alternate="/faq/"
-      updated="2026-11-02"
-      intro={<p>Des réponses courtes pour la version App Store 1.3.5. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
+      updated="2026-11-19"
+      intro={<p>Ces réponses couvrent la version 1.3.5 et l’intégration de Garmin Connect dans la version 1.4. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
     >
       <Faq items={items} />
       <h2>Encore un doute ?</h2>

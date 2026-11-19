@@ -2,10 +2,11 @@
 
 > RunToMax is a running app for iPhone and Apple Watch. It records runs on the Apple Watch and coaches from the runs already in Apple Health: a plain-language verdict after every run, a threshold pace estimated from the last 90 days, and race-date training plans that propose changes the runner approves. For runners aged 18 and older. English and French.
 
-## Facts (App Store version 1.3.5; release source reviewed 2026-11-02)
+## App Store 1.3.5 and Garmin Connect in version 1.4
 
 - Requirements: iPhone with iOS 17 or later; Apple Watch with watchOS 10 or later (Series 4 and newer, SE, Ultra). Recording requires the Apple Watch; no phone needed on the run.
-- Other watches (Garmin, Coros, Polar, Suunto): runs synced to Apple Health can be read, with basic data only (distance, time, heart rate). Direct Garmin Connect support is not included in App Store version 1.3.5; later test builds may differ.
+- Garmin Connect (RunToMax 1.4): on iPhone, connect a Garmin account to send selected planned running workouts to a compatible Garmin watch. Separately enable run import to receive new Garmin runs after the watch syncs with Garmin Connect. Route, laps and heart rate depend on what was recorded. [Garmin compatibility](https://runtomax.com/faq/#garmin-connect).
+- Apple Health (including version 1.3.5): runs shared by Garmin, COROS, Polar or Suunto can provide distance, duration and available heart rate.
 - Strava: sync is limited to supported TestFlight builds; not in App Store version 1.3.5. Runs are written to Apple Health and can be exported as FIT files.
 - Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. Basic Outdoor and Treadmill recording, history and export are free. Version 1.3.5 also offers three included coached runs to eligible runners, separately from the Apple trial and without starting a subscription. Apple confirms trial eligibility and local prices; Pro auto-renews unless cancelled.
 - Cloud coaching is opt-in and produces only the longer written coach notes; everything else (profile, paces, run classification, verdict, plans, scores, readiness, heat adjustment) runs on the iPhone.

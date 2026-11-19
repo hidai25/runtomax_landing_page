@@ -112,7 +112,7 @@ export default function RunToMaxLanding() {
             Run stronger. Stay consistent. Know when to push—<span className="text-[#1FE26C]">and when to recover.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 lg:mx-0 lg:text-xl">
-            RunToMax turns your Apple Watch data into clear daily coaching, reliable workout execution and proof of what changed—without guesswork or silent plan changes.
+            Record runs on Apple Watch and plan your next session on iPhone. Run with a Garmin? In RunToMax 1.4, <Link className="text-white underline underline-offset-4" href="/faq/#garmin-connect">connect Garmin</Link> to send planned workouts to your watch and import new runs.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
             <AppStoreBadge heightClass="h-14" />
@@ -123,9 +123,9 @@ export default function RunToMaxLanding() {
           <div className="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-zinc-500 lg:justify-start">
             <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#1FE26C]" /> Free recording · Pro trial for eligible runners</span>
             <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> Runs on your wrist, phone-free</span>
-            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> No account required · your runs stay in Apple Health</span>
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> Apple Watch recording works without an account</span>
           </div>
-          <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 and watchOS 10 or later · Designed for runners aged 18 and older.</p>
+          <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 or later · Apple Watch recording requires watchOS 10 or later · Designed for runners aged 18 and older.</p>
         </motion.div>
 
         <div className="relative z-10 order-1 lg:order-2">

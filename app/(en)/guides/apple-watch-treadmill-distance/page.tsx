@@ -39,6 +39,8 @@ export default function TreadmillDistanceGuide() {
         <p>If the summary says <strong>Updating Apple Health…</strong>, the sync is still in progress. If it reports a failure, open RunToMax on the watch, check its Health permissions and tap <strong>Retry Apple Health sync</strong>. If the old distance persists, <Link href="/support/">contact RunToMax support</Link> with your app and watchOS versions.</p>
         <h2>What if I recorded the run with Apple’s Workout app?</h2>
         <p>RunToMax can correct a workout it recorded. For future runs recorded with Apple’s Workout app, you can help the watch learn your stride. On iPhone, check that <strong>Settings → Privacy &amp; Security → Location Services → System Services → Motion Calibration &amp; Distance</strong> is on. Then record about 20 minutes at your usual pace with <strong>Outdoor Run</strong> or <strong>Outdoor Walk</strong> on flat, open ground with good GPS reception. If you train at different speeds, Apple recommends calibrating at each pace. <a href="https://support.apple.com/en-us/105048">Apple’s calibration instructions</a></p>
+        <h2>What if I recorded my treadmill run on a Garmin?</h2>
+        <p>Use the distance saved by your Garmin. The belt correction above applies to runs recorded with RunToMax on Apple Watch. In RunToMax 1.4, you can bring new runs into your iPhone training log through <Link href="/faq/#garmin-connect">Garmin Connect</Link>.</p>
         <p><Link href="/features/apple-watch/">Explore RunToMax on Apple Watch</Link> · <Link href="/guides/interval-workouts-apple-watch/">Create intervals in RunToMax</Link></p>
       </div>
       <a href={download} className="mt-10 inline-block rounded-full bg-[#1FE26C] px-7 py-3 font-semibold text-black">Get RunToMax</a>
