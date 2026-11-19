@@ -71,3 +71,17 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Structured block editor includes Work power and Recovery power (`IntervalBuilderView.swift:449–450`). The guide links the existing interval tutorial; it does not reproduce Stryd plans or zone tables.
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
+
+
+## November 13 draft: choose running voice cues
+
+Public US App Store listing checked November 13: **1.3.5**, dated October 22. Source reference: `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`. Source verification is separate from physical-device testing.
+
+- `runtomax/Views/SettingsView.swift:327–328,382,1888–1959`: reachable Audio coach group, Spoken cues, Auto-lap splits, Km/mile cues in sessions, Manual laps, Interval transitions and Quiet Mode note.
+- `runtomax/Views/LibraryRootView.swift:201–207`: Audio Coach tile was removed from the Watch library; do not direct runners to the retained but unreachable standalone view.
+- `runtomax Watch App/Views/SettingsView.swift:56–60,728–815`: Settings → Voice, separate cue switches and Pro-only Coach cues.
+- Same Watch file `:744–750,895–935`: Speak cues on iPhone and Test cue, including output-route explanation. This is not proof of successful physical headphone delivery.
+- `runtomax Watch App/Model/WorkoutManager.swift:5055–5077,7147–7162`: split speech gates and the separate structured-distance cue switch. Muting a spoken split does not disable distance recording.
+- `runtomax Watch App/Model/AudioCoachEngine.swift:412–414,516–520,646–657`: Spoken cues and Quiet Mode gates. The guide tells runners to configure before a run and avoids a mid-run immediacy promise.
+
+**Publication blocked:** shipping 1.3.5 iPhone/Watch audio walkthrough is pending; current development installation is not shipping verification. No new device/headphone test or app screenshot is claimed. Article remains unpublished/noindex until device checks and article-specific owner approval. [Research and acceptance checklist](guide-research/2026-11-13-audio-cues.md).
