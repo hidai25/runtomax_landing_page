@@ -40,8 +40,8 @@ export const guides = {
   treadmill: {
     path: "/guides/apple-watch-treadmill-distance/",
     title: "Apple Watch and treadmill distance don’t match?",
-    description: "Understand why treadmill and Apple Watch distances differ, and learn how to correct a treadmill run in RunToMax.",
-    published: "2026-11-02", updated: "2026-11-02",
+    description: "Decide which treadmill distance to log, correct a run recorded with RunToMax, and sync the belt distance to Apple Health.",
+    published: "2026-11-02", updated: "2026-11-19",
   },
 } as const;
 export type Guide = (typeof guides)[keyof typeof guides];
