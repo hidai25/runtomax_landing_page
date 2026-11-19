@@ -92,3 +92,10 @@ Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) 
 ## November 19 Garmin compatibility check
 
 The [US App Store lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. The Garmin Connect descriptions apply to the 1.4 submission (`v1.4-b63-submission`, commit `530130ef8c03d4a4aa7e2e1995b72754ca75b10c`). The tagged iPhone GarminConnectView and the [Garmin privacy disclosure](https://runtomax.com/privacy/#garmin) describe account connection, selected workout sends and separately enabled new-run import. Available data depends on the run. The 1.3.5 Apple Health route remains documented. This review used release source and the store listing.
+
+## French Garmin guide and FAQ — November 19, 2026
+
+The French App Store listing for 1.4 confirms free recording, Garmin run import and week one of each plan, Pro calendar sends, auto-renewal and French prices (€6.99 monthly, €29.99 yearly). Checked the 1.4 submission source at 530130ef8c03d4a4aa7e2e1995b72754ca75b10c, especially GarminConnectView and IntervalsLibraryView, for authorization, calendar date, confirmation and same-day library replacement. Garmin documents the subsequent sync to a compatible device. No physical-watch delivery or pilot result is claimed.
+
+- https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260
+- https://support.garmin.com/fr-FR/?faq=Oyqt6jUjOF8L1Rnuc9Sms8

@@ -4,10 +4,10 @@ import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { guides as guideDefinitions } from "@/app/_lib/guides";
 
-const description = "Learn how to build Apple Watch interval workouts, run by watts with Stryd, choose a pace field and record runs with RunToMax.";
+const description = "Learn how to send intervals to Garmin Connect, build Apple Watch workouts, run by watts with Stryd, choose a pace field and record runs with RunToMax.";
 
 export const metadata: Metadata = pageMetadata("/guides/", {
-  title: "Running Guides for Apple Watch",
+  title: "Running Guides for Apple Watch and Garmin",
   description,
   alternates: { canonical: "/guides/" },
 });
@@ -15,6 +15,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 const waterLock = guideDefinitions.waterLock;
 
 const guides = [
+  {
+    href: guideDefinitions.garminFractionne.path,
+    category: "Garmin Connect · Français",
+    title: guideDefinitions.garminFractionne.title,
+    description: guideDefinitions.garminFractionne.description,
+    date: guideDefinitions.garminFractionne.published,
+    dateLabel: "November 19, 2026",
+  },
   {
     href: waterLock.path,
     category: "Apple Watch · Run controls",
@@ -82,7 +90,7 @@ const collection = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   url: `${SITE_URL}/guides/`,
-  name: "Apple Watch running guides",
+  name: "Running guides for Apple Watch and Garmin",
   description,
   isPartOf: { "@id": `${SITE_URL}/#website` },
   mainEntity: {
@@ -107,7 +115,7 @@ export default function GuidesPage() {
         <div className="pointer-events-none absolute -right-16 top-0 h-64 w-64 rounded-full bg-[#1FE26C]/[0.09] blur-[100px]" />
         <div className="relative mx-auto max-w-6xl">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">RunToMax guides</p>
-          <h1 className="mt-6 max-w-3xl font-bebas text-6xl uppercase leading-[0.92] sm:text-8xl">Apple Watch<br /><span className="text-[#1FE26C]">running guides</span></h1>
+          <h1 className="mt-6 max-w-3xl font-bebas text-6xl uppercase leading-[0.92] sm:text-8xl">Running<br /><span className="text-[#1FE26C]">guides</span></h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-400">{description}</p>
           <a href="#latest" className="mt-9 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#1FE26C]">Explore the guides <ArrowDownRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>

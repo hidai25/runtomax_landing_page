@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata("/fr/faq/", {
 const items: FaqItem[] = [
   {
     q: "Faut-il une Apple Watch ?",
-    a: "L’Apple Watch permet d’enregistrer directement avec RunToMax (watchOS 10 ou plus récent). Avec une Garmin compatible, vous pouvez enregistrer sur votre montre et importer vos sorties sur iPhone via Garmin Connect dans RunToMax 1.4.",
+    a: "Vous pouvez enregistrer une sortie avec une Apple Watch ou avec l’iPhone seul (iOS 26 ou ultérieur pour l’enregistrement sur iPhone). Avec une Garmin compatible, enregistrez sur la montre puis importez gratuitement votre sortie via Garmin Connect.",
   },
   {
     q: "Peut-on courir sans téléphone ?",
@@ -30,20 +30,20 @@ const items: FaqItem[] = [
   },
   {
     q: "RunToMax est-il gratuit ?",
-    a: "L’enregistrement, oui. Les sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export FIT/GPX restent gratuits, sans compte et sans limite de durée. À partir de la version 1.3.2, le survol 3D de votre parcours est gratuit lui aussi. Le coaching est la partie payante, et vous pouvez l’essayer d’abord : voir les deux réponses suivantes.",
+    a: "Oui. Enregistrer vos sorties, importer vos nouvelles courses depuis Garmin Connect et suivre la première semaine de chaque plan sont gratuits. La semaine offerte ne déclenche aucun abonnement. Envoyer une séance vers Garmin Connect nécessite RunToMax Pro.",
   },
   {
     q: "Puis-je essayer RunToMax Pro ?",
-    a: "Les coureurs éligibles peuvent commencer un essai gratuit de Pro par Apple. Apple indique l’éligibilité, la durée de l’essai, le prix et les conditions de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation ; gérez-le dans les abonnements de votre compte Apple. L’enregistrement reste gratuit sans Pro. La version 1.3.5 propose aussi trois sorties coachées incluses aux coureurs éligibles ; consultez les conditions dans l’app. Cette offre distincte ne déclenche pas d’abonnement.",
+    a: "Si vous êtes éligible, Apple vous propose un essai gratuit. Avant de confirmer, vous voyez sa durée, le tarif et la date de renouvellement. À la fin de l’essai, Apple facture la formule choisie, puis la renouvelle automatiquement sauf résiliation. Pour annuler sur iPhone, ouvrez Réglages, touchez votre nom, puis Abonnements et RunToMax.",
   },
   {
     q: "Que comprend RunToMax Pro ?",
-    a: "Le coaching continu : le conseil du jour et la forme du jour chaque matin, des plans calés sur une date de course qui s’adaptent, les séances structurées et la bibliothèque de séances, la planification de parcours, l’analyse approfondie et les tendances, les écrans de montre personnalisables, la prise en charge de Stryd et, en option, les notes du coaching cloud. Deux formules facturées par Apple au tarif de votre pays : annuelle ou mensuelle, avec un essai gratuit pour les coureurs éligibles (14 jours pour l’annuel ou 7 jours pour le mensuel ; 29,99 $ par an ou 5,99 $ par mois aux États-Unis). L’abonnement se renouvelle automatiquement sauf résiliation. Si vous arrêtez l’abonnement, l’enregistrement reste gratuit et vos courses, exports et bilans déjà obtenus restent accessibles. Résiliation à tout moment dans les abonnements de votre identifiant Apple.",
+    a: "Pro permet notamment de poursuivre le plan après sa première semaine, de recevoir un conseil selon votre récupération et d’envoyer vos séances de fractionné au calendrier Garmin Connect. Sur l’App Store français, Pro coûte 6,99 € par mois ou 29,99 € par an. Le tarif applicable est celui qu’Apple affiche avant la confirmation.",
   },
   {
     id: "garmin-connect",
     q: "Puis-je utiliser RunToMax avec ma montre Garmin ?",
-    a: "Oui. Dans RunToMax 1.4 sur iPhone, identifiez-vous dans RunToMax, puis associez votre compte Garmin Connect. Choisissez une séance de course à envoyer à votre montre Garmin compatible. Pour retrouver vos sorties dans RunToMax, activez aussi l’importation des sorties Garmin. Les nouvelles sorties arrivent après la synchronisation de la montre avec Garmin Connect et peuvent inclure le tracé, les tours et la fréquence cardiaque si la montre les a enregistrés. Avec la version 1.3.5, RunToMax peut lire la distance, la durée et la fréquence cardiaque disponible des sorties partagées avec Apple Santé.",
+    a: "Oui. Sur iPhone, associez votre compte Garmin Connect dans les réglages de RunToMax. Activez l’import des courses pour retrouver gratuitement vos nouvelles sorties après synchronisation. Dans l’autre sens, avec Pro, vous pouvez envoyer une séance au calendrier Garmin Connect, puis synchroniser une montre compatible.",
   },
   {
     q: "Et avec une montre COROS, Polar ou Suunto ?",
@@ -51,7 +51,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Est-ce synchronisé avec Strava ?",
-    a: "Pas dans la version App Store 1.3.5. La synchronisation Strava est réservée aux testeurs des versions TestFlight compatibles. Chaque course est écrite dans Apple Santé, et les courses peuvent être exportées en fichiers FIT en attendant.",
+    a: "La synchronisation directe avec Strava ne fait pas partie de la version publique 1.4. La synchronisation Strava est réservée aux testeurs des versions TestFlight compatibles. Chaque course est écrite dans Apple Santé, et les courses peuvent être exportées en fichiers FIT en attendant.",
   },
   {
     q: "Quelles langues sont prises en charge ?",
@@ -63,7 +63,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Où sont stockées mes données ?",
-    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. Dans la version 1.3.5, la synchronisation avec Se connecter avec Apple est facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
+    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. La synchronisation avec Se connecter avec Apple est facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
   },
   {
     q: "Quelle est la précision de la distance ?",
@@ -79,9 +79,10 @@ export default function FaqPageFr() {
       title="Les questions que les coureurs posent en premier"
       alternate="/faq/"
       updated="2026-11-19"
-      intro={<p>Ces réponses couvrent la version 1.3.5 et l’intégration de Garmin Connect dans la version 1.4. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
+      intro={<p>Ces réponses concernent RunToMax 1.4 sur iPhone, Apple Watch et montres Garmin compatibles. S’il manque la vôtre, écrivez au développeur depuis la page support.</p>}
     >
       <Faq items={items} />
+      <p><a href="/fr/guides/fractionne-garmin-connect-iphone/">Envoyer une séance de fractionné sur sa Garmin depuis un iPhone</a></p>
       <h2>Encore un doute ?</h2>
       <p>
         L’enregistrement est gratuit : jumelez la montre et faites une sortie. Pour le coaching, découvrez Pro et vérifiez votre éligibilité à l’essai dans l’app. Le support est à un e-mail sur la <a href="/support/">page support</a> (en anglais).

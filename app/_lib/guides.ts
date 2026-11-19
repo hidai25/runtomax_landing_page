@@ -1,6 +1,12 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  garminFractionne: {
+    path: "/fr/guides/fractionne-garmin-connect-iphone/",
+    title: "Comment envoyer une séance de fractionné vers Garmin Connect depuis son iPhone ?",
+    description: "Retrouvez votre séance RunToMax dans le calendrier Garmin Connect et vérifiez les répétitions sur votre montre avant de courir. L’envoi nécessite Pro.",
+    published: "2026-11-19", updated: "2026-11-19",
+  },
   waterLock: {
     path: "/guides/apple-watch-water-lock-running/",
     title: "How to lock your Apple Watch screen on a rainy run",
@@ -54,7 +60,7 @@ export function guideJsonLd(guide: Guide) {
     "@graph": [
       {
         "@type": "BlogPosting", "@id": `${url}#article`, url,
-        headline: guide.title, description: guide.description, inLanguage: "en",
+        headline: guide.title, description: guide.description, inLanguage: guide.path.startsWith("/fr/") ? "fr" : "en",
         datePublished: guide.published ?? undefined, dateModified: guide.updated,
         author: { "@type": "Organization", "@id": `${SITE_URL}/#org`, name: "RunToMax", url: SITE_URL },
         publisher: { "@id": `${SITE_URL}/#org` },
