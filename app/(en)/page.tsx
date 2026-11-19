@@ -1,4 +1,5 @@
 "use client";
+import HomeDevices from "@/app/_components/HomeDevices";
 import Shot from "@/app/_components/Shot";
 import dimensions from "@/app/_lib/image-dimensions.json";
 
@@ -75,9 +76,9 @@ const journey = [
 ];
 
 const phoneShots = [
-  { src: "showcase-trends.png", tag: "Your trends", title: "See how you're progressing.", desc: "Explore your weekly running, training paces and race estimates." },
-  { src: "showcase-plan.png", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
-  { src: "showcase-run.png", tag: "Your run", title: "Look closer at every run.", desc: "Explore your route, pace and workout details after you finish." },
+  { src: "iphone17-trends-en.webp", tag: "Your trends", title: "See how you're progressing.", desc: "Explore your weekly running, training paces and race estimates." },
+  { src: "iphone17-plan-en.webp", tag: "Your plan", title: "Know what's next.", desc: "See your training week, your completed runs and the sessions ahead." },
+  { src: "iphone17-runs-en.webp", tag: "Your runs", title: "Revisit your running week.", desc: "Browse recent runs and compare the distances in your training log." },
 ];
 
 export default function RunToMaxLanding() {
@@ -127,20 +128,9 @@ export default function RunToMaxLanding() {
           <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 and watchOS 10 or later · Designed for runners aged 18 and older.</p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.15 }} className="relative z-10 order-1 mx-auto w-full max-w-xl lg:order-2">
-          <div className="flex items-center justify-center gap-2 sm:gap-4">
-            {[
-              ["showcase-trends.png", "RunToMax Trends screen with example weekly running and training paces"],
-              ["showcase-plan.png", "An example training plan in RunToMax"],
-              ["showcase-run.png", "A run summary with example workout data"],
-            ].map(([src, alt], index) => (
-              <div key={src} className={`w-[31%] overflow-hidden rounded-[1.4rem] border-[4px] border-zinc-700 bg-black shadow-2xl sm:rounded-[2rem] sm:border-[6px] ${index === 1 ? "-translate-y-4" : "translate-y-3"}`}>
-                <img src={`${BASE}/${src}`} alt={alt} {...dimensions[src as keyof typeof dimensions]} className="h-auto w-full" />
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-xs text-zinc-500">Design preview · example data · App Store 1.3.5 may look different</p>
-        </motion.div>
+        <div className="relative z-10 order-1 lg:order-2">
+          <HomeDevices lang="en" />
+        </div>
       </section>
 
       <section id="product" className="relative mx-auto max-w-7xl px-6 py-28 sm:py-36">
@@ -161,7 +151,7 @@ export default function RunToMaxLanding() {
               variants={fadeUp}
               className="mx-auto w-full max-w-[340px]"
             >
-              <div className="mx-auto max-w-[290px] overflow-hidden rounded-[2.8rem] border-[8px] border-zinc-800 bg-black shadow-[0_28px_80px_-28px_rgba(31,226,108,.28)]">
+              <div className="mx-auto max-w-[290px]">
                 <img
                   src={`${BASE}/${shot.src}`}
                   {...dimensions[shot.src as keyof typeof dimensions]}
@@ -269,7 +259,7 @@ export default function RunToMaxLanding() {
             <p className="max-w-2xl text-lg leading-relaxed text-zinc-400">Set up your watch for the next session. <Link className="text-white underline underline-offset-4" href="/guides/interval-workouts-apple-watch/">Build an interval workout</Link> with work and recovery steps, or <Link className="text-white underline underline-offset-4" href="/guides/stryd-power-apple-watch/">run by watts with a Stryd pod</Link> and RunToMax Pro.</p>
           </div>
           <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
-            <div className="w-full max-w-[280px] shrink-0"><Shot src="watch-metrics-en.webp" alt="Five running fields on Apple Watch Ultra, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch /></div>
+            <div className="w-full max-w-[280px] shrink-0"><Shot src="watch-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra" caption="On-screen controls and hardware button assignments." watch /></div>
             <div className="max-w-sm text-center sm:text-left"><p className="text-xl font-bold">Make your screen yours.</p><p className="mt-3 text-sm leading-relaxed text-zinc-400">Choose the numbers that matter to you and keep them close at hand on your run.</p><Link href="/features/apple-watch/" className="mt-5 inline-block text-sm font-semibold text-[#1FE26C] hover:text-white">Explore Apple Watch features →</Link></div>
           </div>
         </div>

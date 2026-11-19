@@ -74,7 +74,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         sameAs: [APP_STORE_URL],
         downloadUrl: APP_STORE_URL,
         installUrl: APP_STORE_URL,
-        screenshot: [`${SITE_URL}/watch-metrics-${lang}.webp`, `${SITE_URL}/iphone-today.png`],
+        screenshot: [`${SITE_URL}/watch-metrics-${lang}.webp`, `${SITE_URL}/iphone17-home-${lang}.webp`],
         featureList: [
           "Apple Watch run recording with custom screens",
           "Structured intervals with haptic cues, no phone needed",
