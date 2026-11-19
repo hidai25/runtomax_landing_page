@@ -3,6 +3,7 @@
 Usage: python3 scripts/check-seo.py [out-directory]. Standard library only.
 """
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -71,6 +72,8 @@ for url in urls:
         if href.scheme and (href.scheme not in ('http','https') or href.netloc!='runtomax.com'):continue
         target=unquote(href.path) or path
         if not target.startswith('/'): continue
+        if target in ('/privacy', '/terms', '/support'):
+            check(False, f'{path}: link directly to {target}/')
         dest=root/target.lstrip('/')
         check(dest.is_file() or (dest/'index.html').is_file(),f'{path}: broken local link {target}')
 for path,p in pages.items():
@@ -81,6 +84,18 @@ for path,p in pages.items():
             check(any(urlparse(b.get('href','')).path==path for b in pages[other].links if b.get('hreflang')),f'{path}: non-reciprocal hreflang')
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
+guide_paths = {path for path in pages if path.startswith('/guides/') and path != '/guides/'}
+hub = pages['/guides/']
+cards = [a['href'] for a in hub.links if a.get('href', '').startswith('/guides/') and a['href'] != '/guides/']
+check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
+collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
+items = collection.get('mainEntity', {}).get('itemListElement', [])
+check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')
+llms_guides = set(re.findall(r'\]\(https://runtomax\.com(/guides/[^/)]+/)\)', llms))
+check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree')
+for path in guide_paths | {'/guides/'}:
+    for agent in ('robots', 'googlebot'):
+        check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
 check('Watch → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:

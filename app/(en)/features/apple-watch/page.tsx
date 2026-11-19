@@ -67,7 +67,7 @@ export default function AppleWatchFeaturePage() {
       <ul>
         <li>Distance and route from the Watch GPS, using Apple’s workout distance engine. How this compares with a Garmin is documented on the <a href="/accuracy/">accuracy page</a>.</li>
         <li>Heart rate from the Watch’s optical sensor, cadence from the Watch’s motion sensors, elevation from the barometer.</li>
-        <li>Optional running power and pod distance from a Stryd pod, when paired.</li>
+        <li>Optional running power and pod distance from a paired Stryd pod. See <a href="/guides/stryd-power-apple-watch/">how to set a running power target with Stryd</a>.</li>
         <li>Every run is written to Apple Health as a normal workout. Nothing is locked inside RunToMax.</li>
       </ul>
 

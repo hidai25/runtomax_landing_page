@@ -289,7 +289,7 @@ export default function PrivacyPage() {
         them. Turning import off stops new imports and clears retained server
         activity copies. Disconnecting also stops imports. You can separately
         revoke Activities permission in Garmin Connect. No historical backfill
-        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import">Read the import details</a>.
+        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import/">Read the import details</a>.
       </p>
       <p id="garmin-health">
         You can separately enable <strong>Import Garmin health data</strong>,
