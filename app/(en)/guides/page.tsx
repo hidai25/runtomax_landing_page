@@ -11,7 +11,19 @@ export const metadata: Metadata = pageMetadata("/guides/", {
   alternates: { canonical: "/guides/" },
 });
 
+const waterLock = guideDefinitions.waterLock;
+
 const guides = [
+  {
+    href: waterLock.path,
+    category: "Apple Watch · Run controls",
+    title: waterLock.title,
+    description: "Use Water Lock to keep rain and wet sleeves from tapping your run controls.",
+    date: waterLock.published,
+    dateLabel: waterLock.published
+      ? new Date(`${waterLock.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
   {
     href: guideDefinitions.strydPower.path,
     category: "Apple Watch · Running power",
