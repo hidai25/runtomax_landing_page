@@ -80,3 +80,11 @@ Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) 
 - `Model/ControlLayout.swift` puts LOCK in the bottom-right default slot and calls WatchKit’s water lock API without changing workout state. END opens the confirmation in `ControlsView.swift`, where SAVE finalizes the run.
 - Apple documents Control Center, the droplet, the Crown hold and the speaker tones in [Water Lock support](https://support.apple.com/en-us/108352). A [runner’s wet-sleeve question](https://www.reddit.com/r/running/comments/rjkejj/) motivated the topic. Search Console was unavailable for this run.
 - The owner approved deployment on November 19 after the physical Watch check was disclosed as pending. The instructions were checked against the release source and Apple’s documentation. No hands-on Water Lock test was performed.
+
+## November 19 guide check — treadmill distance and Apple Health
+
+Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned version 1.3.5. Checked the app release tag `v1.3.5-b57-submission` (peeled commit `31c0797f38f4381d90629aa5c85b091d9af63efa`).
+
+- Watch `Views/SummaryView.swift` and `Views/TreadmillCalibrationCard.swift` gate the card on treadmill mode and recorded active steps. The runner sets the belt distance in the displayed unit and the incline, then saves. The summary adjusts the run and the card records the stride baseline.
+- Watch `Model/TreadmillHealthCorrection.swift` targets a RunToMax-authored indoor running workout. It verifies the replacement distance before removing the original. The summary exposes a pending state and a retry action. The guide makes the Health result conditional on a successful sync.
+- The 5.0 km and 4.7 km readings are an illustrative example. This review used release source and [Apple’s calibration instructions](https://support.apple.com/en-us/105048). A physical Watch-to-Health sync was not tested for this revision.
