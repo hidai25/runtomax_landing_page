@@ -6,7 +6,7 @@ export const guides = {
     title: "How to see running cadence on Apple Watch",
     description: "Find running cadence in Apple’s Workout app or add it to your RunToMax screen. Understand steps per minute, free field choices and the difference from pace.",
     release: "1.4",
-    published: null, updated: "2026-11-20",
+    published: "2026-11-20", updated: "2026-11-20",
   },
   garminFractionne: {
     path: "/fr/guides/fractionne-garmin-connect-iphone/",

@@ -28,6 +28,7 @@ export default function RunningCadenceGuide() {
         <p className="text-lg leading-relaxed"><strong>Look for cadence in steps per minute (spm).</strong> In Apple’s Workout app, open the Metrics 2 view during an Outdoor Run. In RunToMax, cadence is already one of the five default fields on the free running screen.</p>
       </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
+        <p>An <a href="https://www.reddit.com/r/AppleWatchFitness/comments/1r3p9oy/cadence_on_apple_watch/">Apple Watch Ultra runner</a> wondered whether they needed another app to see live cadence. After finding the field in Apple’s Workout app, they confirmed they could see their steps per minute.</p>
         <h2>Where is cadence in Apple’s Workout app?</h2>
         <p>For Outdoor Run, Apple lists cadence in the <strong>Metrics 2</strong> and <strong>Power</strong> views. During the run, turn the Digital Crown to move between enabled views. If you only see pace and distance, check which views you’ve included for Outdoor Run. <a href="https://support.apple.com/guide/watch/workout-views-and-running-metrics-apd1f24d4d35/26/watchos/26">Apple’s guide to running metrics</a></p>
         <h2>How do I put cadence on my RunToMax screen?</h2>
@@ -36,7 +37,7 @@ export default function RunningCadenceGuide() {
           <li>In RunToMax 1.4, open <strong>You → Apple Watch → Watch screens</strong>.</li>
           <li>Choose the run type you’ll start on your Watch, such as <strong>Outdoor</strong> or <strong>Treadmill</strong>. Each has its own field choices.</li>
           <li>Tap a field in the watch preview and choose <strong>Running Form → Cadence</strong>.</li>
-          <li>Your changes save automatically. Open RunToMax on your paired Watch. If the old field still appears on that run screen, tap <strong>Sync</strong> in the iPhone editor to resend the settings.</li>
+          <li>Changes save on your iPhone. Open RunToMax on your paired Watch and check the field on your next run of that type. If you still see the previous layout, tap <strong>Sync</strong> in the iPhone editor to request another transfer.</li>
         </ol>
         <h2>What does 170 spm mean?</h2>
         <p>At 170 spm, your left and right feet together take about 170 steps per minute. The number on your wrist describes your current rhythm. Your workout summary can show a different average if you walked during the warm-up or changed speed. <a href="https://www8.garmin.com/manuals/webhelp/GUID-607F08F6-33FC-40BF-9727-84E54043D82D/EN-GB/GUID-73BCE454-042E-420D-96A4-9DBA46626CD4.html">Garmin’s cadence field definitions</a></p>
