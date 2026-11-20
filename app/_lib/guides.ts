@@ -5,7 +5,20 @@ export const guides = {
     path: "/guides/apple-watch-running-cadence/",
     title: "How to see running cadence on Apple Watch",
     description: "Find running cadence in Apple’s Workout app or add it to your RunToMax screen. Understand steps per minute, free field choices and the difference from pace.",
-    published: null, updated: "2026-11-14",
+    release: "1.4",
+    published: null, updated: "2026-11-20",
+  },
+  garminFractionne: {
+    path: "/fr/guides/fractionne-garmin-connect-iphone/",
+    title: "Comment envoyer une séance de fractionné vers Garmin Connect depuis son iPhone ?",
+    description: "Retrouvez votre séance RunToMax dans le calendrier Garmin Connect et vérifiez les répétitions sur votre montre avant de courir. L’envoi nécessite Pro.",
+    published: "2026-11-19", updated: "2026-11-19",
+  },
+  waterLock: {
+    path: "/guides/apple-watch-water-lock-running/",
+    title: "How to lock your Apple Watch screen on a rainy run",
+    description: "Stop rain or a wet sleeve from tapping your Apple Watch. Turn on Water Lock during a run, then unlock the screen to pause or save in RunToMax.",
+    published: "2026-11-19", updated: "2026-11-19",
   },
   strydPower: {
     path: "/guides/stryd-power-apple-watch/",
@@ -40,11 +53,13 @@ export const guides = {
   treadmill: {
     path: "/guides/apple-watch-treadmill-distance/",
     title: "Apple Watch and treadmill distance don’t match?",
-    description: "Understand why treadmill and Apple Watch distances differ, and learn how to correct a treadmill run in RunToMax.",
-    published: "2026-11-02", updated: "2026-11-02",
+    description: "Decide which treadmill distance to log, correct a run recorded with RunToMax, and sync the belt distance to Apple Health.",
+    published: "2026-11-02", updated: "2026-11-19",
   },
 } as const;
 export type Guide = (typeof guides)[keyof typeof guides];
+export const publishedGuides = Object.values(guides).filter(guide => guide.published);
+
 export function guideJsonLd(guide: Guide) {
   const url = `${SITE_URL}${guide.path}`;
   return {
@@ -52,7 +67,7 @@ export function guideJsonLd(guide: Guide) {
     "@graph": [
       {
         "@type": "BlogPosting", "@id": `${url}#article`, url,
-        headline: guide.title, description: guide.description, inLanguage: "en",
+        headline: guide.title, description: guide.description, inLanguage: guide.path.startsWith("/fr/") ? "fr" : "en",
         datePublished: guide.published ?? undefined, dateModified: guide.updated,
         author: { "@type": "Organization", "@id": `${SITE_URL}/#org`, name: "RunToMax", url: SITE_URL },
         publisher: { "@id": `${SITE_URL}/#org` },

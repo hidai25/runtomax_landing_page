@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/app/_lib/contact";
-import { APP_STORE_URL } from "@/app/_lib/site";
+import { APP_STORE_URL, FR_APP_STORE_URL } from "@/app/_lib/site";
 
 type Lang = "en" | "fr";
 
@@ -14,6 +14,7 @@ type PageShellProps = {
   alternate?: string;
   /** Date of the last substantive editorial update. */
   updated: string;
+  storeUrl?: string;
   children: ReactNode;
 };
 
@@ -63,7 +64,7 @@ const STRINGS = {
   },
 } as const;
 
-export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, children }: PageShellProps) {
+export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, storeUrl = lang === "fr" ? FR_APP_STORE_URL : APP_STORE_URL, children }: PageShellProps) {
   const t = STRINGS[lang];
   const updatedLabel = new Date(updated).toLocaleDateString(lang === "en" ? "en-US" : "fr-FR", {
     year: "numeric",
@@ -84,7 +85,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
                 {t.switch}
               </Link>
             ) : null}
-            <a href={APP_STORE_URL} className="hover:text-[#1FE26C] transition-colors duration-200">
+            <a href={storeUrl} className="hover:text-[#1FE26C] transition-colors duration-200">
               {t.get}
             </a>
           </div>
@@ -106,7 +107,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
       <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto rounded-2xl border border-white/[0.08] bg-gradient-to-br from-zinc-900 to-[#0d1510] p-8 text-center">
           <a
-            href={APP_STORE_URL}
+            href={storeUrl}
             className="inline-block rounded-full bg-[#1FE26C] px-7 py-3 text-sm font-bold text-black hover:bg-[#4BEA8A] transition-colors"
           >
             {t.cta}

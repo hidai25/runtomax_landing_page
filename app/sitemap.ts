@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
-import { guides } from "@/app/_lib/guides";
+import { publishedGuides } from "@/app/_lib/guides";
 import { LOCALE_PAIRS, SITE_URL } from "@/app/_lib/site";
 
 export const dynamic = "force-static";
 
 // Dates reflect substantive page revisions, not the time of deployment.
 const CONTENT_DATES: Record<string, string> = {
-  "/": "2026-11-02", "/fr/": "2026-10-31",
-  "/features/apple-watch/": "2026-11-02", "/fr/fonctionnalites/apple-watch/": "2026-09-22",
+  "/": "2026-11-19", "/fr/": "2026-11-19",
+  "/features/apple-watch/": "2026-11-19", "/fr/fonctionnalites/apple-watch/": "2026-11-19",
   "/features/coaching-from-apple-health/": "2026-11-02", "/fr/fonctionnalites/coaching-apple-sante/": "2026-11-02",
   "/features/race-plans/": "2026-09-22", "/fr/fonctionnalites/plans-de-course/": "2026-09-22",
-  "/faq/": "2026-11-02", "/fr/faq/": "2026-11-02",
+  "/faq/": "2026-11-19", "/fr/faq/": "2026-11-19",
   "/accuracy/": "2026-11-02", "/fr/precision/": "2026-11-02",
 };
 
@@ -29,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/terms/`, lastModified: new Date("2026-10-31"), changeFrequency: "yearly", priority: 0.4 },
   ];
   // Drafts gain a sitemap entry automatically once their release date is set.
-  const publishedGuides = Object.values(guides).filter(guide => guide.published);
   const articles: MetadataRoute.Sitemap = publishedGuides.map(guide => ({
     url: `${SITE_URL}${guide.path}`, lastModified: new Date(guide.updated), changeFrequency: "monthly", priority: 0.6,
   }));

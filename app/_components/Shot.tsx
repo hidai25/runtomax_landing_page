@@ -4,13 +4,13 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Shot({ src, alt, caption, watch = false }: { src: string; alt: string; caption: string; watch?: boolean }) {
   return (
-    <figure className={`my-8 ${watch ? "max-w-[220px]" : "max-w-[300px]"}`}>
+    <figure className={`my-8 ${watch ? "mx-auto w-full max-w-[280px] text-center" : "max-w-[300px]"}`}>
       <img
         src={`${BASE}/${src}`}
         alt={alt}
         {...dimensions[src as keyof typeof dimensions]}
         loading="lazy"
-        className={`h-auto w-full border border-white/[0.08] bg-zinc-950 ${watch ? "rounded-[2.2rem]" : "rounded-[1.6rem]"}`}
+        className={`h-auto w-full ${watch ? "" : "rounded-[1.6rem] border border-white/[0.08] bg-zinc-950"}`}
       />
       <figcaption className="mt-3 text-xs text-zinc-500">{caption}</figcaption>
     </figure>

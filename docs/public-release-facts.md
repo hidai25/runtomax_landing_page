@@ -84,3 +84,37 @@ Public US App Store listing checked November 14: **1.3.5**, October 22. Audited 
 - `runtomax Watch App/Model/UserPreferences.swift:102`: picker title Cadence.
 
 **Publication blocked:** a shipping 1.3.5 phone/Watch walkthrough is unavailable. The owner's development installation does not establish public-release behavior. No private run records were opened. Keep this noindex draft without a release date until the checks in [the research note](guide-research/2026-11-14-running-cadence.md) and owner approval are complete.
+
+## November 19 guide check — Water Lock on a run
+
+Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. Checked the Watch source at `v1.3.5-b57-submission` (`31c0797f38f4381d90629aa5c85b091d9af63efa`).
+
+- `Views/SessionView.swift` places Controls one leftward swipe from metrics during recording. `Views/ControlsView.swift` reads the configured layout. Only the lap action returns to metrics automatically.
+- `Model/ControlLayout.swift` puts LOCK in the bottom-right default slot and calls WatchKit’s water lock API without changing workout state. END opens the confirmation in `ControlsView.swift`, where SAVE finalizes the run.
+- Apple documents Control Center, the droplet, the Crown hold and the speaker tones in [Water Lock support](https://support.apple.com/en-us/108352). A [runner’s wet-sleeve question](https://www.reddit.com/r/running/comments/rjkejj/) motivated the topic. Search Console was unavailable for this run.
+- The owner approved deployment on November 19 after the physical Watch check was disclosed as pending. The instructions were checked against the release source and Apple’s documentation. No hands-on Water Lock test was performed.
+
+## November 19 guide check — treadmill distance and Apple Health
+
+Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned version 1.3.5. Checked the app release tag `v1.3.5-b57-submission` (peeled commit `31c0797f38f4381d90629aa5c85b091d9af63efa`).
+
+- Watch `Views/SummaryView.swift` and `Views/TreadmillCalibrationCard.swift` gate the card on treadmill mode and recorded active steps. The runner sets the belt distance in the displayed unit and the incline, then saves. The summary adjusts the run and the card records the stride baseline.
+- Watch `Model/TreadmillHealthCorrection.swift` targets a RunToMax-authored indoor running workout. It verifies the replacement distance before removing the original. The summary exposes a pending state and a retry action. The guide makes the Health result conditional on a successful sync.
+- The 5.0 km and 4.7 km readings are an illustrative example. This review used release source and [Apple’s calibration instructions](https://support.apple.com/en-us/105048). A physical Watch-to-Health sync was not tested for this revision.
+
+## November 19 Garmin compatibility check
+
+The [US App Store lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. The Garmin Connect descriptions apply to the 1.4 submission (`v1.4-b63-submission`, commit `530130ef8c03d4a4aa7e2e1995b72754ca75b10c`). The tagged iPhone GarminConnectView and the [Garmin privacy disclosure](https://runtomax.com/privacy/#garmin) describe account connection, selected workout sends and separately enabled new-run import. Available data depends on the run. The 1.3.5 Apple Health route remains documented. This review used release source and the store listing.
+
+## French Garmin guide and FAQ — November 19, 2026
+
+The French App Store listing for 1.4 confirms free recording, Garmin run import and week one of each plan, Pro calendar sends, auto-renewal and French prices (€6.99 monthly, €29.99 yearly). Checked the 1.4 submission source at 530130ef8c03d4a4aa7e2e1995b72754ca75b10c, especially GarminConnectView and IntervalsLibraryView, for authorization, calendar date, confirmation and same-day library replacement. Garmin documents the subsequent sync to a compatible device. No physical-watch delivery or pilot result is claimed.
+
+- https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260
+- https://support.garmin.com/fr-FR/?faq=Oyqt6jUjOF8L1Rnuc9Sms8
+
+## November 20 cadence guide check
+
+Apple’s US lookup reports 1.4, released November 19. The paired iPhone reports 1.4 (63). The submission tag is `v1.4-b63-submission` at `530130ef`. In that tag, `YouTabView.swift` opens the Apple Watch device row and `YourAppleWatchPage.swift` opens Watch screens. `Shared/BasicWatchScreenPreferences.swift` includes cadence in both the free defaults and allowed fields. The editor in `LibraryRootView.swift` saves the selected workspace, sends changes and offers a Sync retry. `ButtonMapping.swift` puts Cadence in Running Form. The Watch’s `MetricValue.swift` renders the cadence field in spm.
+
+This supersedes the November 14 applicability and acceptance notes for the cadence draft. The Watch Bluetooth connection timed out during two device checks. Physical delivery and a live cadence reading remain unverified.

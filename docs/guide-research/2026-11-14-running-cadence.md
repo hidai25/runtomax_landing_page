@@ -27,9 +27,9 @@ Before publishing:
 
 Draft uses `published: null`, noindex and no publication timestamp. The index has an entry filtered out until publication; the existing sitemap reads the registry and excludes drafts automatically.
 
-## Trial completion
+## First trial history (November 14)
 
-Automation created October 31 after the scheduled hour, with fourteen daily occurrences. November 1–14 is the scheduled trial; this is day 14. Stop the automation after completing this draft. No next-day guide is authorized by this trial. Existing drafts remain for owner review, not automatic publishing.
+Automation created October 31 after the scheduled hour, with fourteen daily occurrences. November 1–14 is the scheduled trial; this is day 14. Stop the automation after completing this draft. The first trial ended on November 14. Existing drafts remain for owner review, not automatic publishing.
 
 ## Validation
 
@@ -40,3 +40,13 @@ Automation created October 31 after the scheduled hour, with fourteen daily occu
 - Apple and Garmin citations opened with relevant original content. The App Store campaign URL returned HTTP 429 to the link check; its destination listing was readable through web search. Campaign-link resolution remains unverified and must be rechecked before publication.
 - `git diff --check` passed. No shipping-device walkthrough, sensor validation or Search Console performance check. No app screenshots fabricated.
 - Work isolated in a temporary clone based on main 045deb3dd3ea3d3598095479b97953458d6e032a. No owner checkout, app code, dependency, analytics or deployment changes.
+
+## November 20, renewed trial
+
+The production hub included eight guides across both languages. The last guide PR merged on November 19 in Jerusalem. Reused this draft from the earlier trial. The runner question and Apple and Garmin sources above were rechecked. There was no authenticated Search Console cadence report for this review.
+
+Apple now lists version 1.4. The paired iPhone reported 1.4 (63). Two read-only attempts to inspect the paired physical Watch failed during Bluetooth tunnel setup. The release source supports the new You → Apple Watch → Watch screens path and confirms that a fresh free layout already has cadence. The draft now answers the Apple Workout question first and gives the alternate RunToMax instructions for 1.4. See the November 20 entry in [public release facts](../public-release-facts.md).
+
+Current checks passed: npm ci, the deployment workflow’s default npm run build (30 static routes), and the repository SEO script (24 published pages). A preliminary webpack build stopped after export on a Next.js dependency security advisory. Keep dependency maintenance separate from this article. The guide’s Apple campaign link resolved to the intended listing with HTTP 200. Chrome rendered the article at 375 and 1280 px, with one heading, the expected canonical and social URL, draft robots markup, matching article and breadcrumb data, no publication date, working internal links, no horizontal overflow or browser errors. Navigation to the hub worked. The hub and sitemap omit the draft until release.
+
+Before release, confirm that an edit under You → Apple Watch → Watch screens on 1.4 reaches the matching Watch run screen and that cadence displays in spm during a run. Obtain approval for PR #47 and date the article on the day it goes live.

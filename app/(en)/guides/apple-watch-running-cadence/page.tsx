@@ -25,27 +25,22 @@ export default function RunningCadenceGuide() {
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">{guide.title}</h1>
       <GuideDetails guide={guide} />
       <div className="mt-8 rounded-2xl border border-[#1FE26C]/25 bg-[#1FE26C]/[0.07] p-6">
-        <p className="text-lg leading-relaxed"><strong>You can see running cadence during an Apple Watch run.</strong> Apple’s Workout app includes it, and RunToMax lets you choose it as a field on your running screen. You do not need another app just to see the number.</p>
+        <p className="text-lg leading-relaxed"><strong>Look for cadence in steps per minute (spm).</strong> In Apple’s Workout app, open the Metrics 2 view during an Outdoor Run. In RunToMax, cadence is already one of the five default fields on the free running screen.</p>
       </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
-        <h2>What does spm mean?</h2>
-        <p>Running cadence is steps per minute, counting both feet. A reading of <strong>170 spm</strong> means a rate of 170 steps a minute across left and right, not 170 per foot. It is a rate, not your total steps. Garmin’s <a href="https://www8.garmin.com/manuals/webhelp/GUID-607F08F6-33FC-40BF-9727-84E54043D82D/EN-GB/GUID-73BCE454-042E-420D-96A4-9DBA46626CD4.html">data-field definitions</a> distinguish running cadence from average cadence and heart rate.</p>
-        <p>Keep the units in view: <strong>spm</strong> is step rate, <strong>bpm</strong> is heart rate, and <strong>min/km or min/mi</strong> is pace. The 170 example is an explanation, not a target for your running.</p>
-        <h2>If you use Apple’s Workout app</h2>
-        <p>Apple lists running cadence in the <strong>Metrics 2</strong> and <strong>Power</strong> views for Outdoor Run. Check the workout’s available views before installing something else. See Apple’s <a href="https://support.apple.com/guide/watch/workout-views-and-running-metrics-apd1f24d4d35/26/watchos/26">watchOS 26 running-metrics guide</a>; view names and controls can differ by software version.</p>
-        <h2>Put cadence on your RunToMax screen</h2>
-        <p>These steps apply to the public <strong>RunToMax 1.3.5</strong> layout on iPhone:</p>
+        <h2>Where is cadence in Apple’s Workout app?</h2>
+        <p>For Outdoor Run, Apple lists cadence in the <strong>Metrics 2</strong> and <strong>Power</strong> views. During the run, turn the Digital Crown to move between enabled views. If you only see pace and distance, check which views you’ve included for Outdoor Run. <a href="https://support.apple.com/guide/watch/workout-views-and-running-metrics-apd1f24d4d35/26/watchos/26">Apple’s guide to running metrics</a></p>
+        <h2>How do I put cadence on my RunToMax screen?</h2>
+        <p>If you’ve changed the default layout or want cadence in a different spot, use your iPhone to choose where it appears.</p>
         <ol className="list-decimal space-y-3 pl-5">
-          <li>Open the <strong>Watch</strong> tab, then <strong>Watch Screens</strong>.</li>
-          <li>Select the run type you intend to use, such as <strong>Outdoor</strong>. Each run type has its own saved field choices.</li>
-          <li>Tap the field you want to replace in the Watch preview. Choose <strong>Running Form → Cadence</strong>.</li>
-          <li>Changes save automatically. Open RunToMax on your paired Watch and check the matching run screen before heading out. The editor’s <strong>Sync</strong> button can resend saved settings.</li>
+          <li>In RunToMax 1.4, open <strong>You → Apple Watch → Watch screens</strong>.</li>
+          <li>Choose the run type you’ll start on your Watch, such as <strong>Outdoor</strong> or <strong>Treadmill</strong>. Each has its own field choices.</li>
+          <li>Tap a field in the watch preview and choose <strong>Running Form → Cadence</strong>.</li>
+          <li>Your changes save automatically. Open RunToMax on your paired Watch. If the old field still appears on that run screen, tap <strong>Sync</strong> in the iPhone editor to resend the settings.</li>
         </ol>
-        <p><strong>Cadence is a free field.</strong> The free screen has five selectable fields; additional screens and advanced layouts require Pro. Selecting a field is not proof that a live sensor reading has arrived.</p>
-        <h2>Keep the number useful</h2>
-        <p>Place cadence beside a pace field if you want to read step rate and speed together. Use <Link href="/guides/apple-watch-running-pace/">our pace-field guide</Link> to choose between current, lap and average pace. A live cadence reading and a whole-run average describe different time windows, so they need not match.</p>
-        <p>If cadence is missing, first check that you edited the same run type you started and that the saved screen reached the Watch. Report a persistent missing reading through <Link href="/support/">RunToMax support</Link>, with your app version, Watch model and run type. This guide does not diagnose sensor accuracy or prescribe a cadence target.</p>
-        <p className="text-sm text-zinc-400">Checked against RunToMax 1.3.5 release source on November 14, 2026. A shipping iPhone and Watch walkthrough is pending; no new device test or accuracy claim is made.</p>
+        <h2>What does 170 spm mean?</h2>
+        <p>At 170 spm, your left and right feet together take about 170 steps per minute. The number on your wrist describes your current rhythm. Your workout summary can show a different average if you walked during the warm-up or changed speed. <a href="https://www8.garmin.com/manuals/webhelp/GUID-607F08F6-33FC-40BF-9727-84E54043D82D/EN-GB/GUID-73BCE454-042E-420D-96A4-9DBA46626CD4.html">Garmin’s cadence field definitions</a></p>
+        <p>To see how your rhythm changes with speed, put cadence beside <Link href="/guides/apple-watch-running-pace/">a pace field</Link>. If the field stays empty while you run, tell <Link href="/support/">RunToMax support</Link> your Watch model, run type and app version.</p>
       </div>
       <a href={download} className="mt-10 inline-block rounded-full bg-[#1FE26C] px-7 py-3 font-semibold text-black">Get RunToMax</a>
     </article>

@@ -39,6 +39,30 @@
     "width": 590,
     "height": 1280
   },
+  "iphone17-home-en.webp": {
+    "width": 810,
+    "height": 1656
+  },
+  "iphone17-home-fr.webp": {
+    "width": 810,
+    "height": 1656
+  },
+  "iphone17-plan-en.webp": {
+    "width": 810,
+    "height": 1656
+  },
+  "iphone17-runs-en.webp": {
+    "width": 810,
+    "height": 1656
+  },
+  "iphone17-runs-routes-en.webp": {
+    "width": 810,
+    "height": 1656
+  },
+  "iphone17-trends-en.webp": {
+    "width": 810,
+    "height": 1656
+  },
   "og-runtomax.png": {
     "width": 1200,
     "height": 630
@@ -55,6 +79,14 @@
     "width": 1206,
     "height": 2622
   },
+  "watch-buttons-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-buttons-fr.webp": {
+    "width": 600,
+    "height": 960
+  },
   "watch-gauge.png": {
     "width": 422,
     "height": 514
@@ -66,6 +98,22 @@
   "watch-lap.png": {
     "width": 422,
     "height": 514
+  },
+  "watch-metrics-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-metrics-fr.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-race-en.webp": {
+    "width": 600,
+    "height": 960
+  },
+  "watch-race-fr.webp": {
+    "width": 600,
+    "height": 960
   },
   "watch-ready.png": {
     "width": 422,
@@ -82,6 +130,30 @@
   "watch-start.png": {
     "width": 422,
     "height": 514
+  },
+  "watch-ultra4-buttons-en.webp": {
+    "width": 620,
+    "height": 940
+  },
+  "watch-ultra4-buttons-fr.webp": {
+    "width": 620,
+    "height": 940
+  },
+  "watch-ultra4-metrics-en.webp": {
+    "width": 620,
+    "height": 940
+  },
+  "watch-ultra4-metrics-fr.webp": {
+    "width": 620,
+    "height": 940
+  },
+  "watch-ultra4-race-en.webp": {
+    "width": 620,
+    "height": 940
+  },
+  "watch-ultra4-race-fr.webp": {
+    "width": 620,
+    "height": 940
   },
   "watch-zonebar.png": {
     "width": 422,

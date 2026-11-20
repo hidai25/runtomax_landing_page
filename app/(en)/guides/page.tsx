@@ -1,15 +1,18 @@
-import { pageMetadata } from "@/app/_lib/site";
+import { APP_STORE_URL, SITE_URL, pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
-import { APP_STORE_URL } from "@/app/_lib/site";
 import { guides as guideDefinitions } from "@/app/_lib/guides";
 
+const description = "Learn how to send intervals to Garmin Connect, build Apple Watch workouts, run by watts with Stryd, choose a pace field and record runs with RunToMax.";
+
 export const metadata: Metadata = pageMetadata("/guides/", {
-  title: "Running Guides for Apple Watch",
-  description: "Practical running guides for getting more from RunToMax and your Apple Watch.",
+  title: "Running Guides for Apple Watch and Garmin",
+  description,
   alternates: { canonical: "/guides/" },
 });
+
+const waterLock = guideDefinitions.waterLock;
 
 const guides = [
   {
@@ -20,6 +23,24 @@ const guides = [
     date: guideDefinitions.runningCadence.published,
     dateLabel: guideDefinitions.runningCadence.published
       ? new Date(`${guideDefinitions.runningCadence.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
+  {
+    href: guideDefinitions.garminFractionne.path,
+    category: "Garmin Connect · Français",
+    title: guideDefinitions.garminFractionne.title,
+    description: guideDefinitions.garminFractionne.description,
+    date: guideDefinitions.garminFractionne.published,
+    dateLabel: "November 19, 2026",
+  },
+  {
+    href: waterLock.path,
+    category: "Apple Watch · Run controls",
+    title: waterLock.title,
+    description: "Use Water Lock to keep rain and wet sleeves from tapping your run controls.",
+    date: waterLock.published,
+    dateLabel: waterLock.published
+      ? new Date(`${waterLock.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
       : "Draft",
   },
   {
@@ -74,9 +95,26 @@ const guides = [
   },
 ];
 
+const visibleGuides = guides.filter(guide => guide.date);
+const collection = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  url: `${SITE_URL}/guides/`,
+  name: "Running guides for Apple Watch and Garmin",
+  description,
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: visibleGuides.map((guide, index) => ({
+      "@type": "ListItem", position: index + 1, name: guide.title, url: SITE_URL + guide.href,
+    })),
+  },
+};
+
 export default function GuidesPage() {
   return (
     <main className="min-h-screen bg-black text-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection).replace(/</g, "\\u003c") }} />
       <header className="border-b border-white/[0.08]">
         <nav className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-6" aria-label="Primary">
           <Link href="/" className="font-bebas text-2xl tracking-wide" aria-label="RunToMax home">RUNTO<span className="text-[#1FE26C]">MAX</span></Link>
@@ -87,8 +125,8 @@ export default function GuidesPage() {
         <div className="pointer-events-none absolute -right-16 top-0 h-64 w-64 rounded-full bg-[#1FE26C]/[0.09] blur-[100px]" />
         <div className="relative mx-auto max-w-6xl">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">RunToMax guides</p>
-          <h1 className="mt-6 max-w-3xl font-bebas text-6xl uppercase leading-[0.92] sm:text-8xl">Make every run<br /><span className="text-[#1FE26C]">make sense.</span></h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-400">Practical help for your running, your Apple Watch and getting more from RunToMax.</p>
+          <h1 className="mt-6 max-w-3xl font-bebas text-6xl uppercase leading-[0.92] sm:text-8xl">Running<br /><span className="text-[#1FE26C]">guides</span></h1>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-400">{description}</p>
           <a href="#latest" className="mt-9 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#1FE26C]">Explore the guides <ArrowDownRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>
       </section>
@@ -97,7 +135,7 @@ export default function GuidesPage() {
           <div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#1FE26C]">For your next run</p><h2 id="latest-heading" className="mt-3 font-bebas text-4xl uppercase">Latest guides</h2></div>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {guides.filter(guide => guide.date).map((guide) => (
+          {visibleGuides.map((guide) => (
             <article key={guide.href} className="group relative flex flex-col rounded-3xl border border-white/[0.09] bg-zinc-950 p-7 transition-colors hover:border-[#1FE26C]/40">
               <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1FE26C]">{guide.category}</p>
               <h3 className="mt-6 text-2xl font-bold leading-tight tracking-tight"><Link href={guide.href} className="after:absolute after:inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1FE26C]">{guide.title}</Link></h3>
