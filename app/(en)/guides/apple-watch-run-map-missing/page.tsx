@@ -25,30 +25,23 @@ export default function MissingRunMapGuide() {
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">{guide.title}</h1>
       <GuideDetails guide={guide} />
       <div className="mt-8 rounded-2xl border border-[#1FE26C]/25 bg-[#1FE26C]/[0.07] p-6">
-        <p className="text-lg leading-relaxed"><strong>A distance and a finish time do not guarantee a recorded route.</strong> For an outdoor run, check two separate things: whether the recording app could use your location, and whether RunToMax can read Workout Routes in Apple Health.</p>
+        <p className="text-lg leading-relaxed"><strong>First, open the same workout in Fitness on your iPhone.</strong> If you see a map there, the route exists. Check whether RunToMax can read it. If the map is missing there too, check the app that recorded the run.</p>
       </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
-        <h2>First, give a new run time to sync</h2>
-        <p>A workout can reach your iPhone before its route. Bring the Watch and iPhone back together, let them reconnect, then reopen the run in RunToMax. Check that you recorded an outdoor run; a treadmill session does not produce an outdoor route.</p>
-        <p>Waiting is worth trying, but it is not a diagnosis. In <a href="https://www.reddit.com/r/AppleWatchFitness/comments/1u7br2j/why_no_apple_watch_maproute_data/">one runner discussion</a>, a reply described a short delay while the original poster still had no map hours later.</p>
-
-        <h2>1. Let RunToMax read the route</h2>
+        <p>A <a href="https://www.reddit.com/r/AppleWatchFitness/comments/1u7br2j/why_no_apple_watch_maproute_data/">Series 7 runner</a> usually saw a route after running with their iPhone. On a phone-free Outdoor Run, the map was still missing hours later, even though Location Services appeared enabled. A GPS-only Apple Watch can use its own GPS on an outdoor run. <a href="https://support.apple.com/en-euro/guide/watch/apd0443fb403/watchos">Apple’s guide to using the Watch without its paired iPhone</a></p>
+        <h2>The map is in Fitness but missing in RunToMax</h2>
         <ol className="list-decimal space-y-3 pl-6">
-          <li>On your iPhone, open <strong>Health</strong> and tap your profile picture.</li>
-          <li>Under <strong>Privacy → Apps</strong>, choose <strong>RunToMax</strong>. Some Health versions also offer app access through <strong>Sharing → Apps</strong>.</li>
-          <li>Check that RunToMax can read <strong>Workouts</strong> and <strong>Workout Routes</strong>, then return to RunToMax and reopen the run.</li>
+          <li>On iPhone, open <strong>Health</strong>, tap your profile picture, then choose <strong>Apps</strong> under <strong>Privacy</strong>.</li>
+          <li>Choose <strong>RunToMax</strong>. Check whether it can read both <strong>Workouts</strong> and <strong>Workout Routes</strong>. The workout can supply distance and time even when the app cannot read its route.</li>
+          <li>Let the Watch and iPhone reconnect. Return to <strong>Runs</strong> in RunToMax and reopen that workout.</li>
         </ol>
-        <p>Apple explains where to manage <a href="https://support.apple.com/en-us/108779">Health access for each app</a>. Allowing workouts and allowing their routes are separate choices.</p>
-        <p>RunToMax may show an <strong>Open Health</strong> notice on the Runs page when recent outdoor runs arrive without readable routes. It is a prompt to check access, not proof that you denied it. A missing notice does not prove every permission is correct.</p>
-
-        <h2>2. Check location on the Watch</h2>
-        <p>On Apple Watch, open <strong>Settings → Privacy &amp; Security → Location Services</strong>. Check that Location Services is on and that the app you use to record can access your location. Apple documents <a href="https://support.apple.com/en-au/guide/watch/apdea7480950/26/watchos/26">this Watch settings path</a> and <a href="https://support.apple.com/en-us/102515">how app location permissions work</a>.</p>
-        <p>If you record with RunToMax, check RunToMax’s permission. If you record with Apple’s Workout app instead, check that app’s permission; you can also inspect the original workout in Fitness before troubleshooting its appearance in RunToMax. RunToMax’s iPhone Health access does not grant location access to the recording app.</p>
-
-        <h2>Will this bring an old map back?</h2>
-        <p>It may help if the route exists but was unavailable because of access or syncing. If no route was recorded, changing a permission cannot recreate the path from distance and pace alone. Keep the saved workout while investigating.</p>
-        <p>Before your next important run, try a short <strong>Outdoor</strong> recording in RunToMax, save it, and check its map after syncing. If routes remain missing, <Link href="/support/">contact support</Link> with your app and watchOS versions, the recording app, and whether one run or every outdoor run is affected.</p>
-        <p className="text-sm text-zinc-500">Instructions checked against the App Store 1.3.5 source on November 8, 2026. This is troubleshooting guidance, not a new physical-device recovery test.</p>
+        <p>Apple explains how to <a href="https://support.apple.com/en-us/108779">review Health access for each app</a>. An empty map alone cannot tell you which permission you granted.</p>
+        <h2>The map is missing in Fitness too</h2>
+        <p>Check which workout you started. An indoor treadmill workout can have distance and splits without a GPS path. If you recorded outdoors with another app, open its copy of the workout. A map there means the app has a route. Whether it shared the route with Apple Health is a separate question.</p>
+        <p>Before your next outdoor run, open <strong>Settings → Privacy &amp; Security → Location Services</strong> on the Watch. Check location access for the app you use to record, such as Workout or RunToMax. Try a short Outdoor Run, save it, and check for a map after your devices reconnect. <a href="https://support.apple.com/en-gb/guide/personal-safety/ips9bf20ad2f/web">Apple Watch Location Services settings</a></p>
+        <h2>Can I recover yesterday’s route?</h2>
+        <p>If the recording app saved the route, syncing or restoring access may make it visible. If it never saved GPS points, distance and pace alone cannot reconstruct the streets you ran. Keep the original workout while you check.</p>
+        <p>If another outdoor run also has no map, <Link href="/support/">contact RunToMax support</Link> with the Watch model, recording app, and whether the route appears in Fitness.</p>
       </div>
       <aside className="mt-12 rounded-2xl border border-white/10 bg-zinc-950 p-6" aria-label="Related guides">
         <h2 className="text-xl font-bold">Before your next run</h2>

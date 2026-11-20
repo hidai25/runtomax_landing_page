@@ -2,13 +2,13 @@ import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/app/_components/PageShell";
-import Shot from "@/app/_components/Shot";
+import HomeDevices from "@/app/_components/HomeDevices";
 import { alternatesFor } from "@/app/_lib/site";
 
 export const metadata: Metadata = pageMetadata("/fr/", {
   title: "RunToMax — Coach course à pied pour Apple Watch",
   description:
-    "RunToMax enregistre vos sorties sur Apple Watch et vous coache à partir des courses déjà présentes dans Apple Santé : verdict après chaque sortie, allures de seuil, plans calés sur la date de votre course. En français.",
+    "Enregistrez vos sorties sur Apple Watch et préparez vos séances sur iPhone. RunToMax 1.4 ajoute l’envoi de séances et l’importation de sorties via Garmin Connect.",
   alternates: alternatesFor("/", "fr"),
 });
 
@@ -27,12 +27,14 @@ export default function FrenchHome() {
       eyebrow="Coach course à pied pour Apple Watch"
       title="Enregistre sur Apple Watch. Lit toutes vos sorties dans Apple Santé."
       alternate="/"
-      updated="2026-10-05"
+      updated="2026-11-19"
       intro={
-        <p>
-          RunToMax est un traqueur de course pensé pour la montre et un coach qui lit ce qui s’est vraiment passé sur la sortie — pas
-          seulement ce qui était prévu. Il sait quand vous pousser et quand vous freiner, et il explique pourquoi.
-        </p>
+        <div className="grid items-center gap-6 sm:grid-cols-2">
+          <HomeDevices lang="fr" />
+          <p className="sm:col-start-1 sm:row-start-1">
+            Enregistrez vos sorties sur Apple Watch et préparez votre prochaine séance sur iPhone. Vous courez avec une Garmin ? Avec RunToMax 1.4, <Link href="/fr/faq/#garmin-connect" className="text-white underline underline-offset-4">connectez votre compte Garmin</Link> pour envoyer des séances à votre montre et importer vos nouvelles sorties.
+          </p>
+        </div>
       }
     >
       <h2>Ce que fait RunToMax</h2>
@@ -42,7 +44,6 @@ export default function FrenchHome() {
         <li><strong>Après chaque sortie :</strong> un verdict en français clair — ce que la course dit, et quoi faire ensuite. Chaque jour de plan reçoit une note face à ce qui était demandé.</li>
         <li><strong>Des plans calés sur une date de course</strong>, du 5 km au marathon, qui proposent des ajustements selon votre réponse à l’entraînement. Rien ne change en silence : vous approuvez.</li>
       </ul>
-      <Shot src="watch-grid.png" alt="Écran de course Apple Watch avec une grille de métriques choisies" caption="Une grille de champs personnalisée sur la montre." watch />
 
       <h2>En détail</h2>
       <ul>
@@ -55,8 +56,8 @@ export default function FrenchHome() {
 
       <h2>Ce qu’il faut</h2>
       <ul>
-        <li>Un iPhone sous iOS 17 ou plus récent et une Apple Watch sous watchOS 10 ou plus récent (Series 4 et suivantes, SE, Ultra).</li>
-        <li>L’enregistrement se fait sur l’Apple Watch. Les montres Garmin et autres passent par Apple Santé, avec des données de base seulement.</li>
+        <li>Un iPhone sous iOS 17 ou plus récent. Pour enregistrer avec RunToMax sur Apple Watch, il faut watchOS 10 ou plus récent (Series 4 et suivantes, SE, Ultra).</li>
+        <li>Avec RunToMax 1.3.5, les sorties Garmin synchronisées avec Apple Santé fournissent la distance, la durée et la fréquence cardiaque lorsqu’elle est disponible.</li>
         <li>Réservé aux coureurs de 18 ans et plus. Application disponible en français et en anglais.</li>
       </ul>
 
@@ -66,7 +67,7 @@ export default function FrenchHome() {
         <li><strong>Essai Pro :</strong> les coureurs éligibles peuvent commencer un essai gratuit par Apple. Apple indique les conditions et le prix de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation.</li>
         <li><strong>RunToMax Pro :</strong> le coaching continu, les plans, les séances structurées, les parcours, l’analyse approfondie, les écrans personnalisés et le coaching cloud. Abonnement annuel ou mensuel facturé par Apple au tarif de votre pays, avec un essai gratuit pour les personnes éligibles. Résiliable à tout moment.</li>
       </ul>
-      <p>Pas de publicité, aucune vente de données. Vos courses restent dans Apple Santé quoi qu’il arrive.</p>
+      <p>Pas de publicité, aucune vente de données. Vous choisissez les données à partager avec Garmin Connect.</p>
     </PageShell>
   );
 }

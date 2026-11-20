@@ -16,14 +16,15 @@ const bebas = Bebas_Neue({
 const SITE_URL = "https://runtomax.com";
 const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 
+const description = "Record runs on Apple Watch and train with a plan on iPhone. RunToMax 1.4 adds Garmin Connect workout sending and new-run imports.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "RunToMax — Know when to push and when to recover",
     template: "%s | RunToMax",
   },
-  description:
-    "RunToMax turns Apple Watch data into clear daily coaching, reliable workout execution and evidence-backed guidance that helps runners train consistently. Now on the App Store.",
+  description,
   applicationName: "RunToMax",
   authors: [{ name: "Hidai Bar-Mor" }],
   creator: "Hidai Bar-Mor",
@@ -49,8 +50,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "RunToMax",
     title: "RunToMax — Know when to push and when to recover",
-    description:
-      "Clear daily coaching, reliable Apple Watch workouts and evidence-backed guidance that helps you run stronger and stay consistent.",
+    description,
     locale: "en_US",
     images: [
       {
@@ -64,8 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "RunToMax — Know when to push and when to recover",
-    description:
-      "Clear daily coaching, reliable Apple Watch workouts and evidence-backed guidance that helps you run stronger and stay consistent.",
+    description,
     images: [OG_IMAGE],
   },
   robots: {

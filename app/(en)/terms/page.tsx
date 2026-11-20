@@ -30,7 +30,7 @@ export default function TermsPage() {
         individual sole developer who operates RunToMax (&quot;RunToMax,&quot;
         &quot;we,&quot; &quot;us&quot;). By installing or using the RunToMax
         app you agree to these Terms and to our{" "}
-        <a href="/privacy">Privacy Policy</a>.
+        <a href="/privacy/">Privacy Policy</a>.
       </p>
 
       <h2>2. Eligibility</h2>
@@ -149,7 +149,7 @@ export default function TermsPage() {
         device security and for configuring Apple Health backup or sync if you
         wish to preserve Health data. If you explicitly
         enable cloud coaching, the minimized data described in the{" "}
-        <a href="/privacy">Privacy Policy</a> is processed to provide that
+        <a href="/privacy/">Privacy Policy</a> is processed to provide that
         feature.
       </p>
 
@@ -226,7 +226,7 @@ export default function TermsPage() {
         You retain ownership of the workout data you generate. By using
         cloud coaching, you grant us the limited right to transmit the
         minimized data described in our{" "}
-        <a href="/privacy">Privacy Policy</a> to those services on your
+        <a href="/privacy/">Privacy Policy</a> to those services on your
         behalf, solely so the integration can function.
       </p>
 

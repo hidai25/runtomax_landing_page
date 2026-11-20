@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 2, 2026"
+      effectiveDate="November 19, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -61,15 +61,15 @@ export default function PrivacyPage() {
           not send exact workout or health values.
         </li>
         <li>
-          Garmin Connect is not included in App Store version 1.3.5. In supported
-          later test builds, the integration is optional: you can connect your account,
+          From App Store version 1.4, Garmin Connect is available and
+          optional: you can connect your account,
           send your chosen running workouts to Garmin Connect and separately opt
           in to importing new Garmin runs and, separately, last night&rsquo;s
           sleep, resting heart rate and overnight HRV for your readiness. Other
           all-day health data is not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
-          App Store version 1.3.5 has no public Strava integration, RevenueCat,
+          App Store version 1.4 has no public Strava integration, RevenueCat,
           Lifetime purchase, advertising, or IDFA. Website analytics is optional.
         </li>
       </ul>
@@ -224,8 +224,8 @@ export default function PrivacyPage() {
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h3 id="garmin">Garmin Connect (optional, later test builds)</h3>
-      <p>This section applies when Garmin Connect is offered in your build. It is not available in App Store version 1.3.5.</p>
+      <h3 id="garmin">Garmin Connect (optional)</h3>
+      <p>Garmin Connect is available from App Store version 1.4. Earlier versions do not include it.</p>
       <p>
         An optional connection lets you send selected RunToMax running workouts
         and scheduled dates to your Garmin Connect account for use on compatible
@@ -268,6 +268,13 @@ export default function PrivacyPage() {
         After your watch syncs with Garmin Connect, Garmin sends new running
         activity identifiers, names, dates, distance, duration, GPS route,
         heart rate, cadence, running power, device temperature, ascent and descent, recording device and lap boundaries when available.
+        When Garmin also provides the run&apos;s activity file, RunToMax reads
+        from it the workout&apos;s steps (warm-up, efforts, recoveries,
+        cool-down) and values an accessory recorded through your watch, such
+        as a Stryd pod&apos;s running power, form power, air power, leg spring
+        stiffness, ground contact time and vertical oscillation. The file is
+        read on our server and is not stored; only these values are kept with
+        the run.
         RunToMax uses these to show your runs, prevent duplicate records, match
         completed runs to your plan and update plan progress. On-device
         calculations provide training-load and recovery estimates and adapt your
@@ -282,7 +289,7 @@ export default function PrivacyPage() {
         them. Turning import off stops new imports and clears retained server
         activity copies. Disconnecting also stops imports. You can separately
         revoke Activities permission in Garmin Connect. No historical backfill
-        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import">Read the import details</a>.
+        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import/">Read the import details</a>.
       </p>
       <p id="garmin-health">
         You can separately enable <strong>Import Garmin health data</strong>,
@@ -513,6 +520,30 @@ export default function PrivacyPage() {
         account sync; the monitor name and peripheral identifier are not.
       </p>
 
+      <h3>Camera and photos</h3>
+      <p>
+        If you take a photo from the run screen while recording a run on your
+        iPhone, RunToMax opens the camera and saves the photo to your Photos
+        library. If you choose to put a photo on a share card, RunToMax shows
+        the photos you took during that run so you can pick one. Story cards
+        and videos are saved to Photos only when you choose to save them.
+        Your photos stay on your iPhone: RunToMax does not upload them, and
+        they are not part of cloud coaching, analytics or account sync. Camera
+        and Photos access are asked for only when you use these features, and
+        you can change them in iOS Settings.
+      </p>
+
+      <h3>Apple Music</h3>
+      <p>
+        While you record a run on your iPhone, RunToMax can show the song
+        playing in Apple Music, with its artwork, and let you pause, play or
+        skip it from the run screen. Apple Music access is asked for only when
+        you tap to show your music there. RunToMax reads what is playing at
+        that moment and does not store, upload or analyse your music, your
+        library or your listening history. You can turn this access off in
+        iOS Settings.
+      </p>
+
       <h3>Apple Watch, iPhone, and widgets</h3>
       <p>
         WatchConnectivity and the shared App Group transfer workout data and
@@ -573,15 +604,15 @@ export default function PrivacyPage() {
       <p>You can accept or reject analytics using the website banner, or change your choice using Analytics settings. If you reject analytics, the Google Analytics tag is not loaded. Withdrawing consent stops future collection and removes first-party Google Analytics cookies. Your choice is stored in your browser. Google may process information outside your country; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> about website privacy.</p>
       <p>Links to the App Store are handled by Apple under Apple&apos;s privacy policy.</p>
 
-      <h2>What App Store version 1.3.5 does not use</h2>
+      <h2>What App Store version 1.4 does not use</h2>
       <ul>
         <li>No advertising, IDFA, or third-party advertising trackers.</li>
-        <li>No public Strava integration in App Store version 1.3.5; supported TestFlight builds may offer it.</li>
+        <li>No public Strava integration in App Store version 1.4; supported TestFlight builds may offer it.</li>
         <li>No RevenueCat subscription processing.</li>
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
-          with Sign in with Apple is available in version 1.3.5 and requires your opt-in.
+          with Sign in with Apple is available from version 1.3.5 and requires your opt-in.
         </li>
         <li>No contacts or calendar access.</li>
       </ul>
