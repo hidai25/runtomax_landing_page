@@ -16,6 +16,16 @@ const waterLock = guideDefinitions.waterLock;
 
 const guides = [
   {
+    href: guideDefinitions.runningCadence.path,
+    category: "Apple Watch · Cadence",
+    title: guideDefinitions.runningCadence.title,
+    description: guideDefinitions.runningCadence.description,
+    date: guideDefinitions.runningCadence.published,
+    dateLabel: guideDefinitions.runningCadence.published
+      ? new Date(`${guideDefinitions.runningCadence.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Draft",
+  },
+  {
     href: guideDefinitions.garminFractionne.path,
     category: "Garmin Connect · Français",
     title: guideDefinitions.garminFractionne.title,

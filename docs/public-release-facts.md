@@ -72,6 +72,19 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
 
+
+## November 14 draft: running cadence on Apple Watch
+
+Public US App Store listing checked November 14: **1.3.5**, October 22. Audited its source tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`. This is source verification, not a physical-device test.
+
+- `Shared/BasicWatchScreenPreferences.swift:12–18,33–42`: cadence is a default and allowed free field; five fields, saved per workspace.
+- `runtomax/Model/ButtonMapping.swift:208,242–243,277–282`: Running Form category contains Cadence, filtered through the free allowlist.
+- `runtomax/Views/LibraryRootView.swift:64,619–631,653–660,726–743,2414–2443`: Watch Screens title, optional Sync, automatic persistence and sending, separate run-type choices, preview field picker.
+- `runtomax Watch App/Views/MetricValue.swift:89–91`: Cadence displays `metrics.cadenceSPM` with `spm` units.
+- `runtomax Watch App/Model/UserPreferences.swift:102`: picker title Cadence.
+
+**Publication blocked:** a shipping 1.3.5 phone/Watch walkthrough is unavailable. The owner's development installation does not establish public-release behavior. No private run records were opened. Keep this noindex draft without a release date until the checks in [the research note](guide-research/2026-11-14-running-cadence.md) and owner approval are complete.
+
 ## November 19 guide check — Water Lock on a run
 
 Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. Checked the Watch source at `v1.3.5-b57-submission` (`31c0797f38f4381d90629aa5c85b091d9af63efa`).
@@ -99,3 +112,11 @@ The French App Store listing for 1.4 confirms free recording, Garmin run import 
 
 - https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260
 - https://support.garmin.com/fr-FR/?faq=Oyqt6jUjOF8L1Rnuc9Sms8
+
+## November 20 cadence guide check
+
+Apple’s US lookup reports 1.4, released November 19. The paired iPhone reports 1.4 (63). The submission tag is `v1.4-b63-submission` at `530130ef`. In that tag, `YouTabView.swift` opens the Apple Watch device row and `YourAppleWatchPage.swift` opens Watch screens. `Shared/BasicWatchScreenPreferences.swift` includes cadence in both the free defaults and allowed fields. The editor in `LibraryRootView.swift` saves the selected workspace, sends changes and offers a Sync retry. `ButtonMapping.swift` puts Cadence in Running Form. The Watch’s `MetricValue.swift` renders the cadence field in spm.
+
+This supersedes the November 14 applicability and acceptance notes for the cadence draft. The Watch Bluetooth connection timed out during two device checks. Physical delivery and a live cadence reading remain unverified.
+
+Publication check on November 20: both paired physical devices reported 1.4 (63). The submission-tag Watch simulator rendered synthetic cadence in its default position and then at the top left after loading the moved Outdoor field. The shipping preference payload preserved the separate Treadmill layout. The [research note](guide-research/2026-11-14-running-cadence.md) records the test boundaries and owner approval.
