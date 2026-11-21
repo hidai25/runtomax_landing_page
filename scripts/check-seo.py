@@ -70,7 +70,8 @@ for url in urls:
         text=' '.join(p.text)
         version, byline = ('1.4', 'Par ') if path.startswith('/fr/') else ('1.3.5', 'By ')
         if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/',
-                    '/guides/send-interval-workout-garmin-connect/'):
+                    '/guides/send-interval-workout-garmin-connect/',
+                    '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/'):
             version = '1.4'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
@@ -103,7 +104,8 @@ for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
-check('Watch → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
+# 1.4 is the public release: Workouts is a row on the You tab.
+check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:
     print('\n'.join(errors));sys.exit(1)
 print(f'PASS: {len(pages)} pages; canonical/social metadata, internal links, hreflang, {image_count} image dimensions, {schema_count} JSON-LD blocks, guide metadata and release facts.')

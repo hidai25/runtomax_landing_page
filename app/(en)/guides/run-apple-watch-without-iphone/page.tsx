@@ -34,18 +34,18 @@ export default function RunWithoutPhoneGuide() {
         <h2>Before your first RunToMax run without the phone</h2>
         <ol className="list-decimal space-y-4 pl-5">
           <li><strong>Set up both apps.</strong> Open RunToMax on your iPhone and Watch, complete setup, and allow the Health and location permissions needed for recording.</li>
-          <li><strong>Send the session before leaving.</strong> For a structured workout, use <strong>Watch → Workouts</strong> on iPhone and <strong>Send to Watch</strong> (or <strong>Send workout &amp; route</strong>). Open RunToMax on the Watch and check that the intended session has arrived. <Link href="/guides/interval-workouts-apple-watch/">Follow the interval setup guide</Link> if needed.</li>
+          <li><strong>Send the session before leaving.</strong> For a structured workout, open <strong>You → Workouts</strong> on iPhone and <strong>Send to Watch</strong> (or <strong>Send workout &amp; route</strong>). Open RunToMax on the Watch and check that the intended session has arrived. <Link href="/guides/interval-workouts-apple-watch/">Follow the interval setup guide</Link> if needed.</li>
           <li><strong>Check the Watch itself.</strong> Confirm the workout and battery before you put the phone away. If you want music, download it to the Watch in your music app and check playback through your headphones first.</li>
           <li><strong>Start on your wrist.</strong> For an ordinary run, choose <strong>Outdoor</strong> in RunToMax on the Watch. For a sent session, open that workout and follow the Watch’s start flow.</li>
         </ol>
         <p>Basic Outdoor and Treadmill recording is free. Structured guidance and additional screen layouts are Pro features; the app shows the access available to your account.</p>
         <h2>What happens when you get home?</h2>
         <p>End and save the workout on the Watch. Bring it near your iPhone and open RunToMax to review the run when syncing completes. Recording on the wrist does not require the phone to stay reachable throughout the run.</p>
-        <p>A fresh coaching decision is different from a workout already on the Watch. In RunToMax 1.3.5, refreshing Today’s call needs the iPhone to be reachable. Check the day’s guidance before leaving; do not assume a disconnected Watch has the latest adjustment.</p>
+        <p>A fresh coaching decision is different from a workout already on the Watch. In RunToMax 1.4, refreshing Today’s call needs the iPhone to be reachable. Check the day’s guidance before leaving; do not assume a disconnected Watch has the latest adjustment.</p>
         <h2>When would you still carry the phone?</h2>
         <p>Bring it if you want its camera, prefer its music setup, or rely on phone-based contact or location sharing. Runners describe <a href="https://www.reddit.com/r/AppleWatch/comments/1v98ipf/jogging_with_or_without_phone_if_you_have_gps/">both choices in this discussion</a>; that is individual preference, not evidence that one setup suits everyone.</p>
         <p>GPS recording alone does not mean you can make a call or share your location live. Check the connection and safety features available on your particular Watch before relying on them.</p>
-        <p className="text-sm text-zinc-400">RunToMax instructions checked against the App Store 1.3.5 release source on November 3, 2026. This is not a new device test.</p>
+        <p className="text-sm text-zinc-400">RunToMax instructions checked against the 1.4 release source on November 21, 2026. This is not a new device test.</p>
         <p><Link href="/features/apple-watch/">Explore RunToMax on Apple Watch</Link> · <Link href="/support/">Setup help</Link></p>
       </div>
       <a href={download} className="mt-10 inline-block rounded-full bg-[#1FE26C] px-7 py-3 font-semibold text-black">Get RunToMax</a>
