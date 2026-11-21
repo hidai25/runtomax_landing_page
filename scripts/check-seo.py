@@ -30,6 +30,8 @@ class Page(HTMLParser):
         if tag=='script' and self.current is not None:
             self.schemas.append(json.loads(self.current)); self.current=None
 
+# The guide indexes, English and French: lists of guides, not guides.
+GUIDE_HUBS = {'/guides/', '/fr/guides/'}
 root=Path(sys.argv[1] if len(sys.argv)>1 else 'out')
 site='https://runtomax.com'
 urls=[e.text for e in ET.parse(root/'sitemap.xml').findall('.//{*}loc')]
@@ -59,7 +61,7 @@ for url in urls:
     app=next((n for n in nodes if n.get('@type')=='SoftwareApplication'),{})
     check(any(o.get('price')=='0' for o in app.get('offers',[])),f'{path}: free download offer missing')
     check(app.get('softwareVersion')=='1.4',f'{path}: public version missing')
-    if path.startswith(('/guides/', '/fr/guides/')) and path!='/guides/':
+    if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS:
         article=next((n for n in nodes if n.get('@type')=='BlogPosting'),{})
         check(article.get('url')==url,f'{path}: missing article URL')
         check(article.get('datePublished') and article.get('dateModified'),f'{path}: missing dates')
@@ -67,7 +69,8 @@ for url in urls:
         check(any(n.get('@type')=='BreadcrumbList' for n in nodes),f'{path}: missing breadcrumbs')
         text=' '.join(p.text)
         version, byline = ('1.4', 'Par ') if path.startswith('/fr/') else ('1.3.5', 'By ')
-        if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/'):
+        if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/',
+                    '/guides/send-interval-workout-garmin-connect/'):
             version = '1.4'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
@@ -87,16 +90,16 @@ for path,p in pages.items():
             check(any(urlparse(b.get('href','')).path==path for b in pages[other].links if b.get('hreflang')),f'{path}: non-reciprocal hreflang')
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
-guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path != '/guides/'}
+guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS}
 hub = pages['/guides/']
-cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] != '/guides/']
+cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] not in GUIDE_HUBS]
 check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
 collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
 items = collection.get('mainEntity', {}).get('itemListElement', [])
 check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')
 llms_guides = set(re.findall(r'\]\(https://runtomax\.com(/(?:fr/)?guides/[^/)]+/)\)', llms))
 check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree')
-for path in guide_paths | {'/guides/'}:
+for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
