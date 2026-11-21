@@ -40,7 +40,7 @@ export default function FrenchHome() {
       <h2>Ce que fait RunToMax</h2>
       <ul>
         <li><strong>Sur l’Apple Watch :</strong> des écrans que vous composez, des séances structurées (échauffement, répétitions, récupérations) avec une vibration à chaque transition, et aucune obligation d’emporter l’iPhone.</li>
-        <li><strong>Avec une Garmin compatible :</strong> associez votre compte Garmin Connect dans RunToMax. Vos nouvelles sorties arrivent dans l’app après synchronisation, gratuitement. Avec Pro, vous envoyez vos séances au calendrier Garmin Connect, puis à la montre.</li>
+        <li><strong>Avec une Garmin compatible :</strong> utilisez « Se connecter avec Apple » dans RunToMax, puis autorisez la connexion à Garmin Connect. Vos nouvelles sorties arrivent dans l’app après synchronisation, gratuitement. Avec Pro, vous envoyez vos séances au calendrier Garmin Connect, puis à la montre.</li>
         <li><strong>Sur l’iPhone :</strong> au premier lancement, avec votre accord, il lit les courses déjà présentes dans Apple Santé et en tire un profil de départ, dont une allure de seuil estimée sur vos 90 derniers jours.</li>
         <li><strong>Après chaque sortie :</strong> un verdict en français clair — ce que la course dit, et quoi faire ensuite. Chaque jour de plan reçoit une note face à ce qui était demandé.</li>
         <li><strong>Des plans calés sur une date de course</strong>, du 5 km au marathon, qui proposent des ajustements selon votre réponse à l’entraînement. Rien ne change en silence : vous approuvez.</li>
@@ -65,7 +65,7 @@ export default function FrenchHome() {
 
       <h2>Prix</h2>
       <ul>
-        <li><strong>Gratuit, sans limite de durée :</strong> l’enregistrement des sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export. L’import de vos nouvelles sorties depuis Garmin Connect est gratuit lui aussi. Sans compte RunToMax.</li>
+        <li><strong>Gratuit, sans limite de durée :</strong> l’enregistrement des sorties en extérieur et sur tapis sur l’Apple Watch, avec un écran de données et cinq champs au choix, la ceinture cardio, un résumé de base, votre historique, Apple Santé et l’export. L’enregistrement local ne demande aucun compte RunToMax. L’import de vos nouvelles sorties est également gratuit une fois Garmin Connect associé.</li>
         <li><strong>La première semaine de chaque plan est offerte :</strong> elle ne déclenche aucun abonnement.</li>
         <li><strong>Essai Pro :</strong> les coureurs éligibles peuvent commencer un essai gratuit par Apple. Apple indique les conditions et le prix de renouvellement avant confirmation. L’abonnement se renouvelle automatiquement sauf résiliation.</li>
         <li><strong>RunToMax Pro :</strong> le coaching continu, la suite des plans après leur première semaine, les séances structurées, l’envoi de séances vers Garmin Connect, les parcours, l’analyse approfondie, les écrans personnalisés et le coaching cloud. Abonnement annuel ou mensuel facturé par Apple au tarif de votre pays, avec un essai gratuit pour les personnes éligibles. Résiliable à tout moment.</li>
