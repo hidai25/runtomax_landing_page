@@ -6,7 +6,7 @@ export const guides = {
     title: "Apple Watch saved my run. Where is the route map?",
     description: "Find out what to check when Apple Watch saves your distance but the route map is missing in Fitness or RunToMax, even after a phone-free outdoor run.",
     release: "1.4",
-    published: null as string | null, updated: "2026-11-20",
+    published: "2026-11-21", updated: "2026-11-21",
   },
   runningCadence: {
     path: "/guides/apple-watch-running-cadence/",

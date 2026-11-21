@@ -50,3 +50,7 @@ Read Apple’s documentation on [Watch GPS without its paired phone](https://sup
 Apple’s US lookup returned 1.4. The paired iPhone and Watch had been verified at 1.4 (63) earlier that day. Ran the submission tag’s RunNoMapTests and RunDetailLoadOutcomeTests on an isolated iPhone simulator. All 10 tests passed with synthetic workouts, including a late-arriving outdoor route and an indoor workout without GPS. These checks verify app behavior, not the cause of the runner’s missing route or a physical GPS recovery. Removed the older draft’s unverified banner and alternate menu path.
 
 Locked install and production static export passed, as did the repository SEO check (25 published pages) and browser checks at 375 and 1280 px. The draft has a canonical URL, social metadata, article and breadcrumb schema, noindex, and no publication date. Its registry and hub entries are prepared for release. The visible hub and sitemap exclude it. The first local build stopped on the framework dependency advisory after export; the repeat production build passed. Owner approval for this article is pending.
+
+## November 21 publication
+
+The owner approved PR #38 in the editorial chat on November 20 for the November 21 slot. The US App Store lookup still reports 1.4. The approved article text is unchanged.
