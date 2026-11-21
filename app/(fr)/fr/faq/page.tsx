@@ -43,7 +43,7 @@ const items: FaqItem[] = [
   {
     id: "garmin-connect",
     q: "Puis-je utiliser RunToMax avec ma montre Garmin ?",
-    a: "Oui. Sur iPhone, associez votre compte Garmin Connect dans les réglages de RunToMax. Activez l’import des courses pour retrouver gratuitement vos nouvelles sorties après synchronisation. Dans l’autre sens, avec Pro, vous pouvez envoyer une séance au calendrier Garmin Connect, puis synchroniser une montre compatible.",
+    a: "Oui. Sur iPhone, ouvrez Garmin Connect dans les réglages de RunToMax, utilisez « Se connecter avec Apple », puis autorisez la connexion à Garmin. Activez l’import des courses pour retrouver gratuitement vos nouvelles sorties après synchronisation. Dans l’autre sens, avec Pro, vous pouvez envoyer une séance au calendrier Garmin Connect, puis synchroniser une montre compatible.",
   },
   {
     q: "Et avec une montre COROS, Polar ou Suunto ?",
@@ -63,7 +63,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Où sont stockées mes données ?",
-    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis. La synchronisation avec Se connecter avec Apple est facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
+    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis pour l’enregistrement local. La connexion Garmin demande « Se connecter avec Apple ». La sauvegarde dans le cloud reste facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
   },
   {
     q: "Quelle est la précision de la distance ?",
