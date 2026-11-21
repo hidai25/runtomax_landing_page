@@ -11,6 +11,7 @@ export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 export const LOCALE_PAIRS: Record<string, string> = {
   "/": "/fr/",
   "/features/apple-watch/": "/fr/fonctionnalites/apple-watch/",
+  "/features/garmin/": "/fr/fonctionnalites/garmin/",
   "/features/coaching-from-apple-health/": "/fr/fonctionnalites/coaching-apple-sante/",
   "/features/race-plans/": "/fr/fonctionnalites/plans-de-course/",
   "/faq/": "/fr/faq/",

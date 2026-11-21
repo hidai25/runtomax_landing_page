@@ -1,6 +1,34 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  garminIntervalsEn: {
+    path: "/guides/send-interval-workout-garmin-connect/",
+    title: "How to send an interval workout to Garmin Connect from your iPhone",
+    description: "Send a RunToMax session to your Garmin Connect calendar and check the repeats on your watch before you run. Sending requires RunToMax Pro.",
+    release: "1.4", devices: "iPhone and Garmin Connect",
+    published: "2026-11-21", updated: "2026-11-21",
+  },
+  frWithoutPhone: {
+    path: "/fr/guides/courir-apple-watch-sans-iphone/",
+    title: "Peut-on courir avec son Apple Watch sans iPhone ?",
+    description: "Pas besoin de forfait cellulaire pour enregistrer une sortie. Ce qu’il faut préparer dans RunToMax, ce qui fonctionne sur la montre et ce qui demande une connexion.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-21", updated: "2026-11-21",
+  },
+  frTreadmill: {
+    path: "/fr/guides/distance-tapis-apple-watch/",
+    title: "Apple Watch et tapis de course : les distances ne correspondent pas ?",
+    description: "Quelle distance retenir entre le tapis et la montre, comment corriger une sortie enregistrée avec RunToMax et reporter la distance du tapis dans Apple Santé.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-21", updated: "2026-11-21",
+  },
+  frIntervals: {
+    path: "/fr/guides/fractionne-apple-watch/",
+    title: "Créer une séance de fractionné pour son Apple Watch",
+    description: "Composez votre séance de fractionné dans RunToMax sur l’iPhone, envoyez-la à votre Apple Watch et suivez les répétitions au poignet.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-21", updated: "2026-11-21",
+  },
   missingRunMap: {
     path: "/guides/apple-watch-run-map-missing/",
     title: "Apple Watch saved my run. Where is the route map?",
@@ -19,6 +47,7 @@ export const guides = {
     path: "/fr/guides/fractionne-garmin-connect-iphone/",
     title: "Comment envoyer une séance de fractionné vers Garmin Connect depuis son iPhone ?",
     description: "Retrouvez votre séance RunToMax dans le calendrier Garmin Connect et vérifiez les répétitions sur votre montre avant de courir. L’envoi nécessite Pro.",
+    devices: "iPhone et Garmin Connect",
     published: "2026-11-19", updated: "2026-11-19",
   },
   waterLock: {
@@ -67,8 +96,26 @@ export const guides = {
 export type Guide = (typeof guides)[keyof typeof guides];
 export const publishedGuides = Object.values(guides).filter(guide => guide.published);
 
+/** A guide and its translation: English path -> French path. The pages'
+ *  hreflang alternates and the sitemap are derived from it. */
+export const GUIDE_PAIRS: Record<string, string> = {
+  "/guides/send-interval-workout-garmin-connect/": "/fr/guides/fractionne-garmin-connect-iphone/",
+  "/guides/run-apple-watch-without-iphone/": "/fr/guides/courir-apple-watch-sans-iphone/",
+  "/guides/apple-watch-treadmill-distance/": "/fr/guides/distance-tapis-apple-watch/",
+  "/guides/interval-workouts-apple-watch/": "/fr/guides/fractionne-apple-watch/",
+};
+
+/** `alternates` for a guide: its own canonical, plus the hreflang pair when
+ *  it has a translation. */
+export function guideAlternates(path: string) {
+  const en = path in GUIDE_PAIRS ? path : Object.keys(GUIDE_PAIRS).find(key => GUIDE_PAIRS[key] === path);
+  if (!en) return { canonical: path };
+  return { canonical: path, languages: { en, fr: GUIDE_PAIRS[en], "x-default": en } };
+}
+
 export function guideJsonLd(guide: Guide) {
   const url = `${SITE_URL}${guide.path}`;
+  const fr = guide.path.startsWith("/fr/");
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -83,8 +130,8 @@ export function guideJsonLd(guide: Guide) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "RunToMax", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides/` },
+          { "@type": "ListItem", position: 1, name: "RunToMax", item: `${SITE_URL}${fr ? "/fr/" : "/"}` },
+          { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}${fr ? "/fr/guides/" : "/guides/"}` },
           { "@type": "ListItem", position: 3, name: guide.title, item: url },
         ],
       },

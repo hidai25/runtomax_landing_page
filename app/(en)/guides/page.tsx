@@ -9,12 +9,20 @@ const description = "Learn how to send intervals to Garmin Connect, build Apple 
 export const metadata: Metadata = pageMetadata("/guides/", {
   title: "Running Guides for Apple Watch and Garmin",
   description,
-  alternates: { canonical: "/guides/" },
+  alternates: { canonical: "/guides/", languages: { en: "/guides/", fr: "/fr/guides/", "x-default": "/guides/" } },
 });
 
 const waterLock = guideDefinitions.waterLock;
 
 const guides = [
+  {
+    href: guideDefinitions.garminIntervalsEn.path,
+    category: "Garmin Connect · Intervals",
+    title: guideDefinitions.garminIntervalsEn.title,
+    description: guideDefinitions.garminIntervalsEn.description,
+    date: guideDefinitions.garminIntervalsEn.published,
+    dateLabel: new Date(`${guideDefinitions.garminIntervalsEn.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  },
   ...(guideDefinitions.missingRunMap.published ? [{
     href: guideDefinitions.missingRunMap.path,
     category: "Apple Watch · Troubleshooting",

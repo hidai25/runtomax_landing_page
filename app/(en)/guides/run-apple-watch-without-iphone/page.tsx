@@ -1,5 +1,5 @@
 import GuideDetails from "@/app/_components/GuideDetails";
-import { guides } from "@/app/_lib/guides";
+import { guideAlternates, guides } from "@/app/_lib/guides";
 import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(guide.path, {
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
   openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
-  alternates: { canonical: guide.path },
+  alternates: guideAlternates(guide.path),
 });
 
 export default function RunWithoutPhoneGuide() {

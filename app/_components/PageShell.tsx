@@ -35,6 +35,7 @@ const STRINGS = {
     links: [
       ["/guides/", "Guides"],
       ["/features/apple-watch/", "Apple Watch tracking"],
+      ["/features/garmin/", "With a Garmin watch"],
       ["/features/coaching-from-apple-health/", "Coaching from Apple Health"],
       ["/features/race-plans/", "Race plans"],
       ["/faq/", "FAQ"],
@@ -55,7 +56,9 @@ const STRINGS = {
     cta: "Télécharger sur l’App Store",
     ctaSub: "Essai gratuit si éligible · Renouvellement automatique sauf résiliation · 18 ans et plus",
     links: [
+      ["/fr/guides/", "Guides"],
       ["/fr/fonctionnalites/apple-watch/", "Suivi sur Apple Watch"],
+      ["/fr/fonctionnalites/garmin/", "Avec une montre Garmin"],
       ["/fr/fonctionnalites/coaching-apple-sante/", "Coaching depuis Apple Santé"],
       ["/fr/fonctionnalites/plans-de-course/", "Plans de course"],
       ["/fr/faq/", "FAQ"],
