@@ -112,7 +112,7 @@ export default function RunToMaxLanding() {
             Run stronger. Stay consistent. Know when to push—<span className="text-[#1FE26C]">and when to recover.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 lg:mx-0 lg:text-xl">
-            Record runs on Apple Watch and plan your next session on iPhone. Run with a Garmin? In RunToMax 1.4, <Link className="text-white underline underline-offset-4" href="/faq/#garmin-connect">connect Garmin</Link> to send planned workouts to your watch and import new runs.
+            Record runs on Apple Watch and plan your next session on iPhone. Run with a Garmin? In RunToMax 1.4, <Link className="text-white underline underline-offset-4" href="/features/garmin/">connect Garmin</Link> to send planned workouts to your watch and import new runs.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
             <AppStoreBadge heightClass="h-14" />
@@ -327,6 +327,7 @@ export default function RunToMaxLanding() {
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-zinc-500">
             <Link href="/features/apple-watch/" className="transition-colors hover:text-white">Apple Watch</Link>
+            <Link href="/features/garmin/" className="transition-colors hover:text-white">Garmin</Link>
             <Link href="/features/coaching-from-apple-health/" className="transition-colors hover:text-white">Coaching</Link>
             <Link href="/features/race-plans/" className="transition-colors hover:text-white">Plans</Link>
             <Link href="/guides/" className="transition-colors hover:text-white">Guides</Link>

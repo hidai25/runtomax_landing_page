@@ -1,5 +1,5 @@
 import GuideDetails from "@/app/_components/GuideDetails";
-import { guides } from "@/app/_lib/guides";
+import { guideAlternates, guides } from "@/app/_lib/guides";
 import { pageMetadata } from "@/app/_lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata("/guides/apple-watch-treadmill-di
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
   openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
-  alternates: { canonical: "/guides/apple-watch-treadmill-distance/" },
+  alternates: guideAlternates(guide.path),
 });
 
 const download = "https://apps.apple.com/app/apple-store/id6767669260?pt=126426469&ct=website-guides&mt=8";

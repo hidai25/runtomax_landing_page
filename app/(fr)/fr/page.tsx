@@ -14,9 +14,11 @@ export const metadata: Metadata = pageMetadata("/fr/", {
 
 const features = [
   ["/fr/fonctionnalites/apple-watch/", "Suivi sur Apple Watch", "Écrans à composer, séances structurées avec vibrations, sans téléphone."],
+  ["/fr/fonctionnalites/garmin/", "Avec une montre Garmin", "Vos nouvelles sorties importées gratuitement, vos séances envoyées à la montre avec Pro."],
   ["/fr/fonctionnalites/coaching-apple-sante/", "Coaching depuis Apple Santé", "Vos courses passées comptent dès le premier jour. Un verdict après chaque sortie."],
   ["/fr/fonctionnalites/plans-de-course/", "Plans calés sur votre course", "Du 5 km au marathon. Le plan propose, vous décidez."],
   ["/fr/faq/", "FAQ avant d’acheter", "Faut-il une Apple Watch ? Et avec une Garmin ? Qu’est-ce qui est gratuit ? Que comprend Pro ?"],
+  ["/fr/guides/", "Guides pratiques", "Fractionné, sortie sans iPhone, distance sur tapis : les réponses pas à pas."],
   ["/fr/precision/", "Précision mesurée", "Comment nous testons la distance face à une Garmin, avec les chiffres et les limites."],
 ] as const;
 
@@ -32,7 +34,7 @@ export default function FrenchHome() {
         <div className="grid items-center gap-6 sm:grid-cols-2">
           <HomeDevices lang="fr" />
           <p className="sm:col-start-1 sm:row-start-1">
-            Suivez vos séances sur Apple Watch ou enregistrez vos sorties avec votre iPhone (iOS 26 ou ultérieur). Sur Garmin compatible, <Link href="/fr/faq/#garmin-connect" className="text-white underline underline-offset-4">importez vos nouvelles sorties gratuitement</Link> et envoyez vos séances vers Garmin Connect avec Pro. La première semaine de votre plan est offerte, sans abonnement.
+            Suivez vos séances sur Apple Watch ou enregistrez vos sorties avec votre iPhone (iOS 26 ou ultérieur). Sur Garmin compatible, <Link href="/fr/fonctionnalites/garmin/" className="text-white underline underline-offset-4">importez vos nouvelles sorties gratuitement</Link> et envoyez vos séances vers Garmin Connect avec Pro. La première semaine de votre plan est offerte, sans abonnement.
           </p>
         </div>
       }
