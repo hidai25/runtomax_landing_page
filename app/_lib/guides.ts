@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  missingRunMap: {
+    path: "/guides/apple-watch-run-map-missing/",
+    title: "Apple Watch saved my run. Where is the route map?",
+    description: "Find out what to check when Apple Watch saves your distance but the route map is missing in Fitness or RunToMax, even after a phone-free outdoor run.",
+    release: "1.4",
+    published: "2026-11-21", updated: "2026-11-21",
+  },
   runningCadence: {
     path: "/guides/apple-watch-running-cadence/",
     title: "How to see running cadence on Apple Watch",

@@ -15,6 +15,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 const waterLock = guideDefinitions.waterLock;
 
 const guides = [
+  ...(guideDefinitions.missingRunMap.published ? [{
+    href: guideDefinitions.missingRunMap.path,
+    category: "Apple Watch · Troubleshooting",
+    title: guideDefinitions.missingRunMap.title,
+    description: guideDefinitions.missingRunMap.description,
+    date: guideDefinitions.missingRunMap.published,
+    dateLabel: new Date(`${guideDefinitions.missingRunMap.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: guideDefinitions.runningCadence.path,
     category: "Apple Watch · Cadence",

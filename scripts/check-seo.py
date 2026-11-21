@@ -67,7 +67,8 @@ for url in urls:
         check(any(n.get('@type')=='BreadcrumbList' for n in nodes),f'{path}: missing breadcrumbs')
         text=' '.join(p.text)
         version, byline = ('1.4', 'Par ') if path.startswith('/fr/') else ('1.3.5', 'By ')
-        if path == '/guides/apple-watch-running-cadence/': version = '1.4'
+        if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/'):
+            version = '1.4'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
         href=urlparse(a.get('href',''))

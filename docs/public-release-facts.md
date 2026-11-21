@@ -19,6 +19,18 @@ Accuracy statistics remain historical observations from the September 22 website
 
 When the next version goes live, recheck this matrix, FAQ (both languages), support, coaching pages, privacy availability text, llms.txt and guide navigation together. Keep per-page content dates and article metadata synchronized. Never add invented reviews, ratings, credentials or performance results.
 
+## November 8 draft guide check: saved run without a map
+
+Apple's public US App Store listing still displays **1.3.5** on November 8, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, without changing the app checkout:
+
+- `runtomax/Views/HistoryView.swift:1023–1049` renders the missing-route notice and **Open Health** action. It points to Workout Routes in Health and Location on the Watch.
+- `runtomax/Views/PermissionsView.swift:32–45` presents inferred **Workout Routes — Looks off**; it does not report definitive read authorization. `HealthRouteAccessHint.swift:16–38` excludes recent runs (two-hour settling threshold), indoor/imported/recovered summaries, and checks whether any probed route is readable. The guide does not promise a two-hour sync deadline or universal notice.
+- `runtomax/Model/HealthKitManager.swift:51` requests route read access; `hasRoute(for:)` returns nil when the workout has not reached HealthKit and probes the separate workout-route type. `AppModel.refreshRouteAccessState` refreshes on foreground/run-list updates.
+- Watch `WorkoutManager.swift:3468–3480` requests route authorization; `:7889` requests location while in use. Health read access on the phone and location permission for recording are distinct.
+- Apple's Health support article documents the profile → Privacy → Apps path. RunToMax's release wording also names Sharing → Apps. System labels can vary with OS version.
+
+Source verification is complete; no physical shipping-iPhone/Watch permission-change or route-recovery test was performed. Keep the article unpublished, noindex and without a publication date until the checks in `docs/guide-research/2026-11-08-missing-run-map.md` and article-specific owner approval are complete. No private Health records or real route coordinates were accessed.
+
 ## November 3 guide check: running without the iPhone
 
 Apple's public App Store page still shows version 1.3.5 on November 3, 2026:
@@ -120,3 +132,7 @@ Apple’s US lookup reports 1.4, released November 19. The paired iPhone reports
 This supersedes the November 14 applicability and acceptance notes for the cadence draft. The Watch Bluetooth connection timed out during two device checks. Physical delivery and a live cadence reading remain unverified.
 
 Publication check on November 20: both paired physical devices reported 1.4 (63). The submission-tag Watch simulator rendered synthetic cadence in its default position and then at the top left after loading the moved Outdoor field. The shipping preference payload preserved the separate Treadmill layout. The [research note](guide-research/2026-11-14-running-cadence.md) records the test boundaries and owner approval.
+
+## November 20 verification for the missing-map guide
+
+Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. The phone’s HealthKitManager requests workout and route data separately. RunDetailLoadOutcome treats an available outdoor workout with no route as retryable and an indoor workout with an available source as complete. RunNoMap distinguishes an unqueried or restored summary from a confirmed empty route. The Watch WorkoutManager requests location access and uses HKWorkoutRouteBuilder. Both tagged app test suites passed on an isolated iPhone simulator with synthetic records. The article makes no claim about restoring an unrecorded route. See the [complaint, sources and release checks](guide-research/2026-11-08-missing-run-map.md).
