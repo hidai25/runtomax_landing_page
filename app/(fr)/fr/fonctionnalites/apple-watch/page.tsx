@@ -31,7 +31,7 @@ export default function AppleWatchFeaturePageFr() {
         <li>Une Apple Watch sous <strong>watchOS 10 ou plus récent</strong> — Series 4 et suivantes, toutes les Apple Watch SE, toutes les Apple Watch Ultra.</li>
         <li>Un iPhone sous <strong>iOS 17 ou plus récent</strong>, pour la configuration, l’analyse et les plans.</li>
         <li>Ni forfait cellulaire ni téléphone pendant la sortie : GPS, fréquence cardiaque et mouvement viennent de la montre.</li>
-        <li>L’enregistrement nécessite l’Apple Watch. Les courses enregistrées par d’autres montres peuvent être lues depuis Apple Santé, mais avec des données de base seulement (voir la <a href="/fr/faq/">FAQ</a>).</li>
+        <li>Vous pouvez enregistrer vos sorties sur Apple Watch ou directement sur un iPhone sous iOS 26 ou version ultérieure.</li>
       </ul>
 
       <h2>Des écrans que vous composez</h2>

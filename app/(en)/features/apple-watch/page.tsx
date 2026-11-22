@@ -31,7 +31,7 @@ export default function AppleWatchFeaturePage() {
         <li>An Apple Watch running <strong>watchOS 10 or later</strong> — Series 4 and newer, every Apple Watch SE, every Apple Watch Ultra.</li>
         <li>An iPhone running <strong>iOS 17 or later</strong>, for setup, analysis and plans.</li>
         <li>No cellular plan and no phone on the run: GPS, heart rate and motion come from the Watch itself.</li>
-        <li>Recording requires the Apple Watch. Runs recorded by other watches can be read from Apple Health, but with basic data only (see the <a href="/faq/">FAQ</a>).</li>
+        <li>You can record on Apple Watch or directly on an iPhone running iOS 26 or later.</li>
       </ul>
 
       <h2>Screens you design</h2>
