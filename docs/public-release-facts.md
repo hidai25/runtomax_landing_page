@@ -19,6 +19,18 @@ Accuracy statistics remain historical observations from the September 22 website
 
 When the next version goes live, recheck this matrix, FAQ (both languages), support, coaching pages, privacy availability text, llms.txt and guide navigation together. Keep per-page content dates and article metadata synchronized. Never add invented reviews, ratings, credentials or performance results.
 
+## November 8 draft guide check: saved run without a map
+
+Apple's public US App Store listing still displays **1.3.5** on November 8, 2026. Verified against `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`, without changing the app checkout:
+
+- `runtomax/Views/HistoryView.swift:1023–1049` renders the missing-route notice and **Open Health** action. It points to Workout Routes in Health and Location on the Watch.
+- `runtomax/Views/PermissionsView.swift:32–45` presents inferred **Workout Routes — Looks off**; it does not report definitive read authorization. `HealthRouteAccessHint.swift:16–38` excludes recent runs (two-hour settling threshold), indoor/imported/recovered summaries, and checks whether any probed route is readable. The guide does not promise a two-hour sync deadline or universal notice.
+- `runtomax/Model/HealthKitManager.swift:51` requests route read access; `hasRoute(for:)` returns nil when the workout has not reached HealthKit and probes the separate workout-route type. `AppModel.refreshRouteAccessState` refreshes on foreground/run-list updates.
+- Watch `WorkoutManager.swift:3468–3480` requests route authorization; `:7889` requests location while in use. Health read access on the phone and location permission for recording are distinct.
+- Apple's Health support article documents the profile → Privacy → Apps path. RunToMax's release wording also names Sharing → Apps. System labels can vary with OS version.
+
+Source verification is complete; no physical shipping-iPhone/Watch permission-change or route-recovery test was performed. Keep the article unpublished, noindex and without a publication date until the checks in `docs/guide-research/2026-11-08-missing-run-map.md` and article-specific owner approval are complete. No private Health records or real route coordinates were accessed.
+
 ## November 3 guide check: running without the iPhone
 
 Apple's public App Store page still shows version 1.3.5 on November 3, 2026:
@@ -84,3 +96,60 @@ Public US App Store listing checked November 12: **1.3.5**. Source tag `v1.3.5-b
 - No Strava/Garmin shoe-import or synchronization claim. No health, injury-prevention or performance claim. The example (240 + 10 = 250 km) is explicitly hypothetical.
 
 **Publication blocked:** iPhone Mirroring reported iPhone Not Found; no physical shipping iPhone/Watch verification was performed. Source verification does not satisfy that walkthrough. The article remains unpublished/noindex, excluded from the guide index and sitemap until a real release date is set. Owner approval is required for this specific guide. Research and remaining checks: [shoe mileage research](guide-research/2026-11-12-shoe-mileage.md).
+
+
+## November 14 draft: running cadence on Apple Watch
+
+Public US App Store listing checked November 14: **1.3.5**, October 22. Audited its source tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`. This is source verification, not a physical-device test.
+
+- `Shared/BasicWatchScreenPreferences.swift:12–18,33–42`: cadence is a default and allowed free field; five fields, saved per workspace.
+- `runtomax/Model/ButtonMapping.swift:208,242–243,277–282`: Running Form category contains Cadence, filtered through the free allowlist.
+- `runtomax/Views/LibraryRootView.swift:64,619–631,653–660,726–743,2414–2443`: Watch Screens title, optional Sync, automatic persistence and sending, separate run-type choices, preview field picker.
+- `runtomax Watch App/Views/MetricValue.swift:89–91`: Cadence displays `metrics.cadenceSPM` with `spm` units.
+- `runtomax Watch App/Model/UserPreferences.swift:102`: picker title Cadence.
+
+**Publication blocked:** a shipping 1.3.5 phone/Watch walkthrough is unavailable. The owner's development installation does not establish public-release behavior. No private run records were opened. Keep this noindex draft without a release date until the checks in [the research note](guide-research/2026-11-14-running-cadence.md) and owner approval are complete.
+
+## November 19 guide check — Water Lock on a run
+
+Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. Checked the Watch source at `v1.3.5-b57-submission` (`31c0797f38f4381d90629aa5c85b091d9af63efa`).
+
+- `Views/SessionView.swift` places Controls one leftward swipe from metrics during recording. `Views/ControlsView.swift` reads the configured layout. Only the lap action returns to metrics automatically.
+- `Model/ControlLayout.swift` puts LOCK in the bottom-right default slot and calls WatchKit’s water lock API without changing workout state. END opens the confirmation in `ControlsView.swift`, where SAVE finalizes the run.
+- Apple documents Control Center, the droplet, the Crown hold and the speaker tones in [Water Lock support](https://support.apple.com/en-us/108352). A [runner’s wet-sleeve question](https://www.reddit.com/r/running/comments/rjkejj/) motivated the topic. Search Console was unavailable for this run.
+- The owner approved deployment on November 19 after the physical Watch check was disclosed as pending. The instructions were checked against the release source and Apple’s documentation. No hands-on Water Lock test was performed.
+
+## November 19 guide check — treadmill distance and Apple Health
+
+Apple’s [US lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned version 1.3.5. Checked the app release tag `v1.3.5-b57-submission` (peeled commit `31c0797f38f4381d90629aa5c85b091d9af63efa`).
+
+- Watch `Views/SummaryView.swift` and `Views/TreadmillCalibrationCard.swift` gate the card on treadmill mode and recorded active steps. The runner sets the belt distance in the displayed unit and the incline, then saves. The summary adjusts the run and the card records the stride baseline.
+- Watch `Model/TreadmillHealthCorrection.swift` targets a RunToMax-authored indoor running workout. It verifies the replacement distance before removing the original. The summary exposes a pending state and a retry action. The guide makes the Health result conditional on a successful sync.
+- The 5.0 km and 4.7 km readings are an illustrative example. This review used release source and [Apple’s calibration instructions](https://support.apple.com/en-us/105048). A physical Watch-to-Health sync was not tested for this revision.
+
+## November 19 Garmin compatibility check
+
+The [US App Store lookup](https://itunes.apple.com/lookup?id=6767669260&country=us) returned 1.3.5. The Garmin Connect descriptions apply to the 1.4 submission (`v1.4-b63-submission`, commit `530130ef8c03d4a4aa7e2e1995b72754ca75b10c`). The tagged iPhone GarminConnectView and the [Garmin privacy disclosure](https://runtomax.com/privacy/#garmin) describe account connection, selected workout sends and separately enabled new-run import. Available data depends on the run. The 1.3.5 Apple Health route remains documented. This review used release source and the store listing.
+
+## French Garmin guide and FAQ — November 19, 2026
+
+The French App Store listing for 1.4 confirms free recording, Garmin run import and week one of each plan, Pro calendar sends, auto-renewal and French prices (€6.99 monthly, €29.99 yearly). Checked the 1.4 submission source at 530130ef8c03d4a4aa7e2e1995b72754ca75b10c, especially GarminConnectView and IntervalsLibraryView, for authorization, calendar date, confirmation and same-day library replacement. Garmin documents the subsequent sync to a compatible device. No physical-watch delivery or pilot result is claimed.
+
+- https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260
+- https://support.garmin.com/fr-FR/?faq=Oyqt6jUjOF8L1Rnuc9Sms8
+
+## November 20 cadence guide check
+
+Apple’s US lookup reports 1.4, released November 19. The paired iPhone reports 1.4 (63). The submission tag is `v1.4-b63-submission` at `530130ef`. In that tag, `YouTabView.swift` opens the Apple Watch device row and `YourAppleWatchPage.swift` opens Watch screens. `Shared/BasicWatchScreenPreferences.swift` includes cadence in both the free defaults and allowed fields. The editor in `LibraryRootView.swift` saves the selected workspace, sends changes and offers a Sync retry. `ButtonMapping.swift` puts Cadence in Running Form. The Watch’s `MetricValue.swift` renders the cadence field in spm.
+
+This supersedes the November 14 applicability and acceptance notes for the cadence draft. The Watch Bluetooth connection timed out during two device checks. Physical delivery and a live cadence reading remain unverified.
+
+Publication check on November 20: both paired physical devices reported 1.4 (63). The submission-tag Watch simulator rendered synthetic cadence in its default position and then at the top left after loading the moved Outdoor field. The shipping preference payload preserved the separate Treadmill layout. The [research note](guide-research/2026-11-14-running-cadence.md) records the test boundaries and owner approval.
+
+## November 20 verification for the missing-map guide
+
+Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. The phone’s HealthKitManager requests workout and route data separately. RunDetailLoadOutcome treats an available outdoor workout with no route as retryable and an indoor workout with an available source as complete. RunNoMap distinguishes an unqueried or restored summary from a confirmed empty route. The Watch WorkoutManager requests location access and uses HKWorkoutRouteBuilder. Both tagged app test suites passed on an isolated iPhone simulator with synthetic records. The article makes no claim about restoring an unrecorded route. See the [complaint, sources and release checks](guide-research/2026-11-08-missing-run-map.md).
+
+## Shoe mileage in 1.4.1 (65), November 22
+
+The [US App Store listing](https://apps.apple.com/us/app/runtomax-running-coach-plan/id6767669260) reported 1.4.1. Both apps in the November 21 release archive reported 1.4.1 (65). The build-65 phone source places the shoe library under You → Gear and routes, with Pro access. ShoesLibraryView, WorkoutDetailView and ShoeStore support entering prior mileage and changing the pair assigned to a saved run. The Watch picker is optional. An isolated simulator displayed the library with synthetic pairs, and 11 tests covered starting mileage, reassignment and Watch selection. See the [research and verification notes](guide-research/2026-11-12-shoe-mileage.md) for the exact example and physical-device test boundary.

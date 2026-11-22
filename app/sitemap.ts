@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
-import { guides } from "@/app/_lib/guides";
+import { GUIDE_PAIRS, publishedGuides } from "@/app/_lib/guides";
 import { LOCALE_PAIRS, SITE_URL } from "@/app/_lib/site";
 
 export const dynamic = "force-static";
 
 // Dates reflect substantive page revisions, not the time of deployment.
 const CONTENT_DATES: Record<string, string> = {
-  "/": "2026-11-02", "/fr/": "2026-10-31",
-  "/features/apple-watch/": "2026-11-02", "/fr/fonctionnalites/apple-watch/": "2026-09-22",
+  "/": "2026-11-19", "/fr/": "2026-11-21",
+  "/features/apple-watch/": "2026-11-19", "/fr/fonctionnalites/apple-watch/": "2026-11-19",
+  "/features/garmin/": "2026-11-21", "/fr/fonctionnalites/garmin/": "2026-11-21",
   "/features/coaching-from-apple-health/": "2026-11-02", "/fr/fonctionnalites/coaching-apple-sante/": "2026-11-02",
   "/features/race-plans/": "2026-09-22", "/fr/fonctionnalites/plans-de-course/": "2026-09-22",
-  "/faq/": "2026-11-02", "/fr/faq/": "2026-11-02",
+  "/faq/": "2026-11-19", "/fr/faq/": "2026-11-19",
   "/accuracy/": "2026-11-02", "/fr/precision/": "2026-11-02",
 };
 
@@ -28,13 +29,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/privacy/`, lastModified: new Date("2026-11-12"), changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/terms/`, lastModified: new Date("2026-10-31"), changeFrequency: "yearly", priority: 0.4 },
   ];
+  // Training plans: English only for now.
+  const plans: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/plans/beginner-half-marathon-12-weeks/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
+  ];
   // Drafts gain a sitemap entry automatically once their release date is set.
-  const publishedGuides = Object.values(guides).filter(guide => guide.published);
-  const articles: MetadataRoute.Sitemap = publishedGuides.map(guide => ({
-    url: `${SITE_URL}${guide.path}`, lastModified: new Date(guide.updated), changeFrequency: "monthly", priority: 0.6,
-  }));
+  const articles: MetadataRoute.Sitemap = publishedGuides.map(guide => {
+    // A translated guide names both languages, as the bilingual pages do.
+    const en = guide.path in GUIDE_PAIRS ? guide.path : Object.keys(GUIDE_PAIRS).find(key => GUIDE_PAIRS[key] === guide.path);
+    const languages = en
+      ? { en: `${SITE_URL}${en}`, fr: `${SITE_URL}${GUIDE_PAIRS[en]}`, "x-default": `${SITE_URL}${en}` } : undefined;
+    return {
+      url: `${SITE_URL}${guide.path}`, lastModified: new Date(guide.updated), changeFrequency: "monthly" as const, priority: 0.6,
+      ...(languages ? { alternates: { languages } } : {}),
+    };
+  });
   const latestGuideUpdate = publishedGuides.map(guide => guide.updated).sort().at(-1)!;
-  return [...bilingual, ...legal, ...articles, {
+  const guideIndexes = { en: `${SITE_URL}/guides/`, fr: `${SITE_URL}/fr/guides/`, "x-default": `${SITE_URL}/guides/` };
+  return [...bilingual, ...legal, ...plans, ...articles, {
     url: `${SITE_URL}/guides/`, lastModified: new Date(latestGuideUpdate), changeFrequency: "weekly", priority: 0.7,
+    alternates: { languages: guideIndexes },
+  }, {
+    url: `${SITE_URL}/fr/guides/`, lastModified: new Date(latestGuideUpdate), changeFrequency: "weekly", priority: 0.6,
+    alternates: { languages: guideIndexes },
   }];
 }

@@ -3,6 +3,7 @@
 Usage: python3 scripts/check-seo.py [out-directory]. Standard library only.
 """
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -29,6 +30,8 @@ class Page(HTMLParser):
         if tag=='script' and self.current is not None:
             self.schemas.append(json.loads(self.current)); self.current=None
 
+# The guide indexes, English and French: lists of guides, not guides.
+GUIDE_HUBS = {'/guides/', '/fr/guides/'}
 root=Path(sys.argv[1] if len(sys.argv)>1 else 'out')
 site='https://runtomax.com'
 urls=[e.text for e in ET.parse(root/'sitemap.xml').findall('.//{*}loc')]
@@ -57,20 +60,30 @@ for url in urls:
     for schema in p.schemas: nodes.extend(schema.get('@graph',[schema])); schema_count+=1
     app=next((n for n in nodes if n.get('@type')=='SoftwareApplication'),{})
     check(any(o.get('price')=='0' for o in app.get('offers',[])),f'{path}: free download offer missing')
-    check(app.get('softwareVersion')=='1.3.5',f'{path}: public version missing')
-    if path.startswith('/guides/') and path!='/guides/':
+    check(app.get('softwareVersion')=='1.4',f'{path}: public version missing')
+    if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS:
         article=next((n for n in nodes if n.get('@type')=='BlogPosting'),{})
         check(article.get('url')==url,f'{path}: missing article URL')
         check(article.get('datePublished') and article.get('dateModified'),f'{path}: missing dates')
         check(p.meta.get('og:type')=='article',f'{path}: wrong social type')
         check(any(n.get('@type')=='BreadcrumbList' for n in nodes),f'{path}: missing breadcrumbs')
         text=' '.join(p.text)
-        check('1.3.5' in text and 'By ' in text,f'{path}: missing visible attribution/version')
+        version, byline = ('1.4', 'Par ') if path.startswith('/fr/') else ('1.3.5', 'By ')
+        if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/',
+                    '/guides/send-interval-workout-garmin-connect/',
+                    '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/',
+                    '/guides/apple-watch-treadmill-distance/'):
+            version = '1.4'
+        if path == "/guides/track-running-shoe-mileage/":
+            version = "1.4.1"
+        check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
         href=urlparse(a.get('href',''))
         if href.scheme and (href.scheme not in ('http','https') or href.netloc!='runtomax.com'):continue
         target=unquote(href.path) or path
         if not target.startswith('/'): continue
+        if target in ('/privacy', '/terms', '/support'):
+            check(False, f'{path}: link directly to {target}/')
         dest=root/target.lstrip('/')
         check(dest.is_file() or (dest/'index.html').is_file(),f'{path}: broken local link {target}')
 for path,p in pages.items():
@@ -81,8 +94,21 @@ for path,p in pages.items():
             check(any(urlparse(b.get('href','')).path==path for b in pages[other].links if b.get('hreflang')),f'{path}: non-reciprocal hreflang')
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
+guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS}
+hub = pages['/guides/']
+cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] not in GUIDE_HUBS]
+check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
+collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
+items = collection.get('mainEntity', {}).get('itemListElement', [])
+check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')
+llms_guides = set(re.findall(r'\]\(https://runtomax\.com(/(?:fr/)?guides/[^/)]+/)\)', llms))
+check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree')
+for path in guide_paths | GUIDE_HUBS:
+    for agent in ('robots', 'googlebot'):
+        check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
-check('Watch → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
+# 1.4 is the public release: Workouts is a row on the You tab.
+check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:
     print('\n'.join(errors));sys.exit(1)
 print(f'PASS: {len(pages)} pages; canonical/social metadata, internal links, hreflang, {image_count} image dimensions, {schema_count} JSON-LD blocks, guide metadata and release facts.')

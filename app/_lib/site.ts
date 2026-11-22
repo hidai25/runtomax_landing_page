@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://runtomax.com";
 export const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
+export const FR_APP_STORE_URL = "https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260";
+export const FR_GARMIN_GUIDE_STORE_URL = FR_APP_STORE_URL + "?pt=126426469&ct=fr-guide-garmin&mt=8";
 export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 
 /** EN path -> FR path. Every page that exists in both languages is listed here;
@@ -9,6 +11,7 @@ export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 export const LOCALE_PAIRS: Record<string, string> = {
   "/": "/fr/",
   "/features/apple-watch/": "/fr/fonctionnalites/apple-watch/",
+  "/features/garmin/": "/fr/fonctionnalites/garmin/",
   "/features/coaching-from-apple-health/": "/fr/fonctionnalites/coaching-apple-sante/",
   "/features/race-plans/": "/fr/fonctionnalites/plans-de-course/",
   "/faq/": "/fr/faq/",
@@ -70,11 +73,11 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         contentRating: "18+",
         audience: { "@type": "PeopleAudience", suggestedMinAge: 18 },
         url: SITE_URL,
-        softwareVersion: "1.3.5",
+        softwareVersion: "1.4",
         sameAs: [APP_STORE_URL],
         downloadUrl: APP_STORE_URL,
         installUrl: APP_STORE_URL,
-        screenshot: [`${SITE_URL}/watch-grid.png`, `${SITE_URL}/iphone-today.png`],
+        screenshot: [`${SITE_URL}/watch-ultra4-metrics-${lang}.webp`, `${SITE_URL}/iphone17-home-${lang}.webp`],
         featureList: [
           "Apple Watch run recording with custom screens",
           "Structured intervals with haptic cues, no phone needed",
@@ -86,7 +89,11 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
           "Heat-adjusted pace targets",
           "FIT and GPX export",
         ],
-        offers: [
+        offers: lang === "fr" ? [
+          { "@type": "Offer", name: "Téléchargement gratuit", price: "0", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+          { "@type": "Offer", name: "Pro mensuel", price: "6.99", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+          { "@type": "Offer", name: "Pro annuel", price: "29.99", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+        ] : [
           { "@type": "Offer", name: "Free download and basic recording", price: "0", priceCurrency: "USD", url: APP_STORE_URL },
           {
             "@type": "Offer",

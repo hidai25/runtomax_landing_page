@@ -39,3 +39,13 @@ Device blocker: iPhone Mirroring reported iPhone Not Found. The walkthrough abov
 - `git diff --check`: passed. Screenshots are retained locally at `~/Developer/runtomax/output/guide-trial/2026-11-12/` and are website previews, not app screenshots.
 
 **Remaining blockers:** physical shipping-device walkthrough and article-specific owner approval. No production publication, merge or deployment performed. Search Console remains unavailable; no demand figures claimed.
+
+## November 22 review for the November 23 publishing slot
+
+A [runner moving from Garmin to Apple Watch](https://www.reddit.com/r/AppleWatch/comments/1wx6f02/shoe_mileage_tracking/) missed being able to track each pair’s miles. The guide explains how to carry a total forward and how to correct a run assigned to the wrong pair. A manual log works too. [Strava’s gear support](https://support.strava.com/en-us/articles/15402143-how-do-i-add-gear-to-my-activities-on-strava) documents another option for runners who already use Strava. No authenticated Search Console data was available for this question.
+
+The US store lists version 1.4.1. The November 21 release archive contains iPhone and Watch apps at 1.4.1 (65). In build-65 source at 78bb6a0b the iPhone path is You → Gear and routes → Shoes. The library supports a starting distance, a Watch picker and a default pair. Saved workouts let the runner correct the shoe. These steps supersede the November 12 instructions.
+
+On an isolated iPhone simulator, the shoe library displayed synthetic active and retired pairs, their distances, Add a pair, and Choose shoes on Apple Watch. Eleven tests in ShoeBaseKmTests and WatchShoeSelectionTests passed, including a temporary example that starts a pair at 240 km, assigns a 10 km run and then transfers it to a second pair. The original pair returned to 240 km and the second pair showed 10 km. Watch selection and correction were checked in release source and simulator tests. No physical Watch run was recorded.
+
+The production export and SEO checks passed for 34 published pages. At 375 px and 1280 px, the draft displayed without overflow and its guide-hub link worked. Canonical and social metadata, article and breadcrumb markup, draft noindex and exclusion from the hub and sitemap were checked. The original complaint, Strava support and App Store links resolved. Publication date is unset. The November 23 candidate awaits approval for this article.

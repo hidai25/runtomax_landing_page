@@ -18,7 +18,7 @@ export default function AppleWatchFeaturePage() {
       eyebrow="Feature · Apple Watch"
       title="Run tracking on Apple Watch"
       alternate="/fr/fonctionnalites/apple-watch/"
-      updated="2026-11-02"
+      updated="2026-11-19"
       intro={
         <p>
           RunToMax records on the Watch, not on the phone. The screens are yours to design, structured sessions run on the wrist
@@ -40,7 +40,11 @@ export default function AppleWatchFeaturePage() {
         if you run with a pod, and more. Layout presets cover easy runs, intervals and races, and you can save your own. A dedicated
         pace-grid screen shows the session target and your current pace side by side so a glance answers the only question that matters mid-rep.
       </p>
-      <Shot src="demo-watch.png" alt="RunToMax running screen showing example distance and time" caption="A RunToMax Watch screen with example data." watch />
+
+      <div className="grid items-start gap-x-8 sm:grid-cols-2">
+        <Shot src="watch-ultra4-metrics-en.webp" alt="Five running fields on Apple Watch Ultra 4, including average pace, cadence and heart rate" caption="Elapsed time, average pace, distance, cadence and heart rate. Example run." watch />
+        <Shot src="watch-ultra4-buttons-en.webp" alt="RunToMax control editor showing Pause, End, Lap and Lock on Apple Watch Ultra 4" caption="The four on-screen controls and the hardware button assignments." watch />
+      </div>
 
       <h2>Structured sessions on the wrist</h2>
       <p>
@@ -57,11 +61,13 @@ export default function AppleWatchFeaturePage() {
         single source on the Watch, so the number you see mid-run is the number the summary shows afterwards.
       </p>
 
+      <Shot src="watch-ultra4-race-en.webp" alt="Race split on Apple Watch Ultra 4 showing lap pace and predicted finish" caption="At lap 13, the screen shows lap pace and a projected finish. Example race." watch />
+
       <h2>What the Watch records</h2>
       <ul>
         <li>Distance and route from the Watch GPS, using Apple’s workout distance engine. How this compares with a Garmin is documented on the <a href="/accuracy/">accuracy page</a>.</li>
         <li>Heart rate from the Watch’s optical sensor, cadence from the Watch’s motion sensors, elevation from the barometer.</li>
-        <li>Optional running power and pod distance from a Stryd pod, when paired.</li>
+        <li>Optional running power and pod distance from a paired Stryd pod. See <a href="/guides/stryd-power-apple-watch/">how to set a running power target with Stryd</a>.</li>
         <li>Every run is written to Apple Health as a normal workout. Nothing is locked inside RunToMax.</li>
       </ul>
 

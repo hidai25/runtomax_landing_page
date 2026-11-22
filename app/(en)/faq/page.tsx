@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata("/faq/", {
 const items: FaqItem[] = [
   {
     q: "Do I need an Apple Watch?",
-    a: "Yes, to record runs. RunToMax records on the Apple Watch (watchOS 10 or later: Series 4 and newer, SE, Ultra) and analyzes on the iPhone (iOS 17 or later). Runs recorded by other devices can be read from Apple Health, but they carry basic data only.",
+    a: "You need an Apple Watch with watchOS 10 or later to record in the RunToMax Watch app. With a compatible Garmin, you can record on your Garmin and import the run on iPhone using Garmin Connect in RunToMax 1.4.",
   },
   {
     q: "Can I run without my phone?",
@@ -41,8 +41,13 @@ const items: FaqItem[] = [
     a: "Ongoing coaching: today’s call and readiness every day, race-date plans that adapt, structured sessions and the session library, route planning, deeper run analysis and Trends, customizable Watch screens, Stryd support and optional cloud coaching notes. In the US it is $29.99 per year or $5.99 per month, billed by Apple; eligible runners may receive a 14-day annual or 7-day monthly trial. Local prices and eligibility vary, and the subscription renews automatically unless cancelled. If you stop subscribing, recording stays free and your saved runs, exports and earned reports remain. Cancel any time in your Apple ID subscriptions.",
   },
   {
-    q: "I run with a Garmin (or Coros, Polar, Suunto). Can I use RunToMax?",
-    a: "Partly. If your watch syncs to Apple Health, RunToMax can read those runs, but they carry only distance, time and heart rate — no route, laps or splits — so the analysis is limited. Recording and the full analysis need the Apple Watch. Direct Garmin Connect sync is not available in App Store version 1.3.5; later test builds may differ.",
+    id: "garmin-connect",
+    q: "Can I use RunToMax with my Garmin watch?",
+    a: "Yes. In RunToMax 1.4, sign in to your RunToMax account on iPhone and connect Garmin Connect. Choose a planned running workout to send to a compatible Garmin watch. To bring completed runs back into RunToMax, turn on Import Garmin runs. New runs arrive after your watch syncs with Garmin Connect and can include the route, laps and heart rate when recorded. If you have version 1.3.5, RunToMax can read distance, duration and available heart rate for runs Garmin shares with Apple Health.",
+  },
+  {
+    q: "What about COROS, Polar or Suunto?",
+    a: "If your watch shares runs with Apple Health, RunToMax can read the distance, duration and available heart rate.",
   },
   {
     q: "Does it sync with Strava?",
@@ -73,8 +78,8 @@ export default function FaqPage() {
       eyebrow="Before you download"
       title="Questions runners ask first"
       alternate="/fr/faq/"
-      updated="2026-11-02"
-      intro={<p>Short answers for App Store version 1.3.5. If yours is missing, email the developer from the support page.</p>}
+      updated="2026-11-19"
+      intro={<p>These answers cover version 1.3.5 and the Garmin Connect integration in 1.4. If yours is missing, email the developer from the support page.</p>}
     >
       <Faq items={items} />
       <h2>Still unsure?</h2>
