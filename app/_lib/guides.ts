@@ -1,6 +1,48 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  frMissingMap: {
+    path: "/fr/guides/apple-watch-carte-parcours-absente/",
+    title: "Apple Watch : la sortie est enregistrée, mais où est la carte ?",
+    description: "Ce qu’il faut vérifier quand l’Apple Watch enregistre la distance mais pas le tracé, dans Forme ou dans RunToMax, y compris après une sortie sans iPhone.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
+  frCadence: {
+    path: "/fr/guides/cadence-course-apple-watch/",
+    title: "Comment afficher sa cadence de course sur l’Apple Watch",
+    description: "Trouver la cadence dans l’app Exercice ou l’ajouter à l’écran RunToMax. Ce que mesurent les pas par minute, et en quoi la cadence diffère de l’allure.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
+  frPace: {
+    path: "/fr/guides/allure-apple-watch/",
+    title: "Allure qui saute sur l’Apple Watch ? Choisissez le bon champ",
+    description: "Allure, allure tour, allure lissée, allure moyenne : ce que dit chacune, et comment choisir les champs de course de RunToMax sur l’Apple Watch.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
+  frActionButton: {
+    path: "/fr/guides/bouton-action-apple-watch-ultra/",
+    title: "Écran trempé de sueur ? Le bouton Action de l’Apple Watch Ultra",
+    description: "Régler le bouton Action de l’Apple Watch Ultra dans RunToMax pour mettre en pause, reprendre, marquer des tours et démarrer une sortie sans toucher l’écran.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
+  frWaterLock: {
+    path: "/fr/guides/mode-eau-apple-watch-course/",
+    title: "Courir sous la pluie : verrouiller l’écran de l’Apple Watch",
+    description: "Éviter que la pluie ou une manche mouillée n’actionne l’écran : activer le mode Eau pendant une sortie, puis déverrouiller pour faire une pause ou terminer dans RunToMax.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
+  frStryd: {
+    path: "/fr/guides/puissance-stryd-apple-watch/",
+    title: "Courir en watts avec Stryd et RunToMax sur Apple Watch",
+    description: "Connecter votre capteur Stryd à RunToMax, régler une cible en watts ou en pourcentage du seuil et suivre le guidage sur l’Apple Watch. Nécessite RunToMax Pro.",
+    release: "1.4", devices: "iPhone et Apple Watch",
+    published: "2026-11-22", updated: "2026-11-22",
+  },
   garminIntervalsEn: {
     path: "/guides/send-interval-workout-garmin-connect/",
     title: "How to send an interval workout to Garmin Connect from your iPhone",
@@ -45,7 +87,7 @@ export const guides = {
   },
   garminFractionne: {
     path: "/fr/guides/fractionne-garmin-connect-iphone/",
-    title: "Comment envoyer une séance de fractionné vers Garmin Connect depuis son iPhone ?",
+    title: "Comment envoyer une séance de fractionné vers Garmin Connect depuis son iPhone ?",
     description: "Retrouvez votre séance RunToMax dans le calendrier Garmin Connect et vérifiez les répétitions sur votre montre avant de courir. L’envoi nécessite Pro.",
     devices: "iPhone et Garmin Connect",
     published: "2026-11-19", updated: "2026-11-19",
@@ -106,6 +148,12 @@ export const GUIDE_PAIRS: Record<string, string> = {
   "/guides/run-apple-watch-without-iphone/": "/fr/guides/courir-apple-watch-sans-iphone/",
   "/guides/apple-watch-treadmill-distance/": "/fr/guides/distance-tapis-apple-watch/",
   "/guides/interval-workouts-apple-watch/": "/fr/guides/fractionne-apple-watch/",
+  "/guides/apple-watch-run-map-missing/": "/fr/guides/apple-watch-carte-parcours-absente/",
+  "/guides/apple-watch-running-cadence/": "/fr/guides/cadence-course-apple-watch/",
+  "/guides/apple-watch-running-pace/": "/fr/guides/allure-apple-watch/",
+  "/guides/apple-watch-ultra-action-button/": "/fr/guides/bouton-action-apple-watch-ultra/",
+  "/guides/apple-watch-water-lock-running/": "/fr/guides/mode-eau-apple-watch-course/",
+  "/guides/stryd-power-apple-watch/": "/fr/guides/puissance-stryd-apple-watch/",
 };
 
 /** `alternates` for a guide: its own canonical, plus the hreflang pair when
