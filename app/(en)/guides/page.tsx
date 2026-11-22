@@ -121,7 +121,7 @@ const guides = [
     href: "/guides/apple-watch-treadmill-distance/",
     category: "Apple Watch · Treadmill",
     title: "Apple Watch and treadmill distance don’t match?",
-    description: "Understand the difference and correct a treadmill run in RunToMax.",
+    description: "Why the watch and the belt disagree on distance and pace, which to trust, and how to calibrate.",
     date: "2026-11-02",
     dateLabel: "November 2, 2026",
   },

@@ -20,7 +20,7 @@ export const guides = {
     title: "Apple Watch et tapis de course : les distances ne correspondent pas ?",
     description: "Quelle distance retenir entre le tapis et la montre, comment corriger une sortie enregistrée avec RunToMax et reporter la distance du tapis dans Apple Santé.",
     release: "1.4", devices: "iPhone et Apple Watch",
-    published: "2026-11-21", updated: "2026-11-21",
+    published: "2026-11-21", updated: "2026-11-22",
   },
   frIntervals: {
     path: "/fr/guides/fractionne-apple-watch/",
@@ -91,8 +91,9 @@ export const guides = {
   treadmill: {
     path: "/guides/apple-watch-treadmill-distance/",
     title: "Apple Watch and treadmill distance don’t match?",
-    description: "Decide which treadmill distance to log, correct a run recorded with RunToMax, and sync the belt distance to Apple Health.",
-    published: "2026-11-02", updated: "2026-11-19",
+    description: "Apple Watch and treadmill showing different distance or pace? Why they don't match, which to trust, and how to calibrate the watch for indoor runs.",
+    release: "1.4",
+    published: "2026-11-02", updated: "2026-11-22",
   },
 } as const;
 export type Guide = (typeof guides)[keyof typeof guides];

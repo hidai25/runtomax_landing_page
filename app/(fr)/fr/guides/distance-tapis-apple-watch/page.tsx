@@ -19,6 +19,9 @@ export default function DistanceTapisGuide() {
       <h2>Le tapis indique 5,0 km et mon Apple Watch 4,7 km. Laquelle retenir ?</h2>
       <p>Si vous voulez que votre carnet d’entraînement corresponde au tapis, retenez 5,0 km. Vérifiez d’abord que le tapis et la montre ont mesuré la même portion de la sortie. Si le tapis a compté un échauffement avant le lancement de la montre, les deux totaux ne couvrent pas la même distance.</p>
       <p>Même avec un départ et une arrivée identiques, les chiffres peuvent différer. Le tapis indique la distance parcourue par sa bande. En intérieur, la montre estime la vôtre à partir de vos mouvements et de la longueur de foulée qu’elle a apprise. L’écart seul ne dit pas laquelle des deux mesures est la plus proche. Pour les sorties que vous comparez d’une semaine à l’autre sur la même machine, choisissez une source et gardez-la.</p>
+      <h2>Pourquoi l’allure de mon Apple Watch est-elle fausse sur le tapis ?</h2>
+      <p>Parce que l’allure découle de la distance. La montre divise le temps par la distance qu’elle a estimée : une distance trop courte de 6 % donne une allure environ 6 % plus lente que celle du tapis. Corrigez la distance et l’allure suit : corriger une sortie RunToMax avec le total du tapis corrige aussi son allure et ses fractions.</p>
+      <p>Sur tapis, l’allure en direct varie aussi davantage qu’en extérieur, car chaque estimation dépend du balancement de votre bras. Tenir les barres, porter un téléphone ou une gourde dans la main de la montre, ou changer de foulée sur une pente peuvent la décaler. La moyenne de la sortie est plus stable que n’importe quel instant.</p>
       <h2>Comment enregistrer la distance du tapis dans Apple Santé ?</h2>
       <p>Si vous avez enregistré la sortie avec RunToMax sur Apple Watch, vous pouvez reporter la mesure du tapis sur cet entraînement dans Apple Santé. Notez le total du tapis avant que son écran ne se remette à zéro.</p>
       <ol>

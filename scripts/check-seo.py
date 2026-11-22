@@ -71,7 +71,8 @@ for url in urls:
         version, byline = ('1.4', 'Par ') if path.startswith('/fr/') else ('1.3.5', 'By ')
         if path in ('/guides/apple-watch-running-cadence/', '/guides/apple-watch-run-map-missing/',
                     '/guides/send-interval-workout-garmin-connect/',
-                    '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/'):
+                    '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/',
+                    '/guides/apple-watch-treadmill-distance/'):
             version = '1.4'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
