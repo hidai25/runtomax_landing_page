@@ -104,7 +104,8 @@ check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree'
 for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
-check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
+# 1.4 is the App Store version; the file must say so and no longer call 1.3.5 current.
+check('No free tier' not in llms and 'RunToMax 1.4 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
 # 1.4 is the public release: Workouts is a row on the You tab.
 check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:
