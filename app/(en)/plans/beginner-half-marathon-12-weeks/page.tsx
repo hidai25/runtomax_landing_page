@@ -3,7 +3,8 @@ import PageShell from "@/app/_components/PageShell";
 import { pageMetadata } from "@/app/_lib/site";
 
 // Every week below is what RunToMax's own plan builder produced on
-// 2026-11-22 for one sample runner (beginner, about 15 km a week, longest
+// 2026-11-22, with app PR #599 (race on the last day, half long run to
+// 16 km), for one sample runner (beginner, about 15 km a week, longest
 // recent run 8 km, four days: Tue, Thu, Sat, Sun, half marathon in 12 weeks).
 // Rebuild it from the app's composer before changing any number.
 const path = "/plans/beginner-half-marathon-12-weeks/";
@@ -16,11 +17,12 @@ export const metadata: Metadata = pageMetadata(path, {
   alternates: { canonical: path },
 });
 
-const weeks: [number, string, number, number][] = [
-  [1, "Base", 21, 7], [2, "Base", 21, 8], [3, "Base", 21, 8],
-  [4, "Build", 19, 6], [5, "Build", 22, 9], [6, "Build", 22, 10], [7, "Build", 26, 11],
-  [8, "Sharpen", 21, 8], [9, "Sharpen", 26, 12], [10, "Sharpen", 28, 13],
-  [11, "Taper", 21, 9], [12, "Taper", 18, 6],
+// [week, phase, km before the weekend, weekend run]
+const weeks: [number, string, number, string][] = [
+  [1, "Base", 14, "8 km"], [2, "Base", 13, "9 km"], [3, "Base", 13, "10 km"],
+  [4, "Build", 13, "7 km"], [5, "Build", 13, "11 km"], [6, "Build", 12, "12 km"], [7, "Build", 15, "13 km"],
+  [8, "Sharpen", 13, "9 km"], [9, "Sharpen", 14, "15 km"], [10, "Sharpen", 14, "16 km"],
+  [11, "Taper", 12, "11 km"], [12, "Taper", 12, "Race: 21.1 km"],
 ];
 
 export default function BeginnerHalfPlan() {
@@ -50,21 +52,21 @@ export default function BeginnerHalfPlan() {
       <div className="not-prose overflow-x-auto">
         <table className="w-full text-left text-sm">
           <thead className="text-zinc-400">
-            <tr><th className="py-2 pr-4 font-semibold">Week</th><th className="py-2 pr-4 font-semibold">Phase</th><th className="py-2 pr-4 font-semibold">Week total</th><th className="py-2 font-semibold">Long run</th></tr>
+            <tr><th className="py-2 pr-4 font-semibold">Week</th><th className="py-2 pr-4 font-semibold">Phase</th><th className="py-2 pr-4 font-semibold">Tue to Sat</th><th className="py-2 font-semibold">Sunday</th></tr>
           </thead>
           <tbody className="text-zinc-200">
-            {weeks.map(([week, phase, total, long]) => (
+            {weeks.map(([week, phase, midweek, sunday]) => (
               <tr key={week} className="border-t border-white/10">
                 <td className="py-2 pr-4">{week}</td><td className="py-2 pr-4">{phase}</td>
-                <td className="py-2 pr-4">{total} km</td><td className="py-2">{long} km</td>
+                <td className="py-2 pr-4">about {midweek} km</td><td className="py-2">{sunday}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
       <p>
-        Volume grows slowly, from 21 km to 28 km, with a lighter week 4 and week 8 so the body can absorb the
-        work. The last two weeks come down, so you start the race rested.
+        The long run grows by about a kilometre a week, from 8 km to 16 km, with a lighter week 4 and week 8 so
+        the body can absorb the work. The two weeks before the race come down, so you start it rested.
       </p>
 
       <h2>Week 1 in full</h2>
@@ -72,15 +74,23 @@ export default function BeginnerHalfPlan() {
         <li><strong>Tuesday:</strong> 25 minutes easy, then 10 minutes at a steady, comfortable-hard effort and 5 more minutes at that effort.</li>
         <li><strong>Thursday:</strong> easy 4 km, finishing with 4 relaxed strides of about 100 m.</li>
         <li><strong>Saturday:</strong> easy 3 km.</li>
-        <li><strong>Sunday:</strong> long run, 7 km, at a pace you could talk at.</li>
+        <li><strong>Sunday:</strong> long run, 8 km, at a pace you could talk at.</li>
       </ul>
 
       <h2>Week 10 in full, the biggest week</h2>
       <ul>
         <li><strong>Tuesday:</strong> 10 minutes warm-up, 10 × 1 minute at about your 5K effort with 1 minute jogging between, 10 minutes cool-down.</li>
-        <li><strong>Thursday:</strong> easy 5 km with 6 strides.</li>
+        <li><strong>Thursday:</strong> easy 4 km with 6 strides.</li>
         <li><strong>Saturday:</strong> easy 3 km.</li>
-        <li><strong>Sunday:</strong> long run, 13 km, easy.</li>
+        <li><strong>Sunday:</strong> long run, 16 km, easy. The longest run of the plan.</li>
+      </ul>
+
+      <h2>Race week</h2>
+      <ul>
+        <li><strong>Tuesday:</strong> 20 minutes easy, then 4 short, relaxed accelerations of about 15 seconds.</li>
+        <li><strong>Thursday:</strong> easy 4 km with 4 strides.</li>
+        <li><strong>Saturday:</strong> easy 3 km to loosen up.</li>
+        <li><strong>Sunday:</strong> race day, 21.1 km. Start slower than feels right for the first few kilometres.</li>
       </ul>
 
       <h2>How to run it</h2>
