@@ -16,7 +16,7 @@ const bebas = Bebas_Neue({
 const SITE_URL = "https://runtomax.com";
 const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 
-const description = "Record runs on Apple Watch and train with a plan on iPhone. RunToMax 1.4 adds Garmin Connect workout sending and new-run imports.";
+const description = "Your running plan on the watch you already have: Apple Watch, iPhone or Garmin. Free recording and Garmin run import; the first week of every plan is free.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
