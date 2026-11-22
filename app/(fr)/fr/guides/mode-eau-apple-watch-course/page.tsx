@@ -24,9 +24,9 @@ export default function ModeEauGuide() {
       </ol>
       <p>Cela marche aussi bien avec l’app Exercice d’Apple qu’avec RunToMax. Apple montre l’icône et le geste de déverrouillage dans <a href="https://support.apple.com/fr-fr/108352">son aide sur le mode Eau</a>.</p>
       <h2>Verrouiller depuis les commandes de RunToMax</h2>
-      <p>Pendant l’enregistrement, balayez vers la gauche depuis vos mesures et touchez la goutte d’eau (<strong>LOCK</strong>), en bas à droite des commandes par défaut. Si vous avez réorganisé ces boutons ou si vous préférez garder vos temps de passage à l’écran, passez plutôt par le centre de contrôle depuis l’écran de votre choix.</p>
+      <p>Pendant l’enregistrement, balayez vers la gauche depuis vos mesures et touchez le bouton à la goutte d’eau, en bas à droite des commandes par défaut. Si vous avez réorganisé ces boutons ou si vous préférez garder vos temps de passage à l’écran, passez plutôt par le centre de contrôle depuis l’écran de votre choix.</p>
       <h2>Déverrouiller pour faire une pause ou terminer</h2>
-      <p>Maintenez la <strong>Digital Crown</strong> enfoncée jusqu’à ce que la montre affiche <strong>Déverrouillé</strong>. Vous entendrez des sons pendant qu’elle évacue l’eau du haut-parleur. Le déverrouillage ne termine pas la séance. Dans RunToMax, revenez aux commandes et touchez <strong>PAUSE</strong> pour souffler. À l’arrivée, touchez <strong>END</strong>, puis <strong>ENREGISTRER</strong>.</p>
+      <p>Maintenez la <strong>Digital Crown</strong> enfoncée jusqu’à ce que la montre affiche <strong>Déverrouillé</strong>. Vous entendrez des sons pendant qu’elle évacue l’eau du haut-parleur. Le déverrouillage ne termine pas la séance. Dans RunToMax, revenez aux commandes et touchez <strong>Pause</strong> pour souffler. À l’arrivée, touchez le bouton de fin (le carré), puis <strong>Enregistrer</strong>.</p>
       <p>Vous courez avec une Ultra et préférez un bouton physique pour les tours ? Voir <a href="/fr/guides/bouton-action-apple-watch-ultra/">comment régler le bouton Action pour la course</a>.</p>
       <p><a href="/fr/fonctionnalites/apple-watch/">RunToMax sur Apple Watch</a> · <a href="/fr/guides/">Tous les guides</a></p>
       <GuideDetails guide={guide} />

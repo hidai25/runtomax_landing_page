@@ -25,7 +25,7 @@ export default function FractionneAppleWatchGuide() {
       <h2>Composer son propre fractionné</h2>
       <p>Créer et modifier des séances nécessite Pro, ou un essai si vous y avez droit. Les conditions en vigueur sont indiquées dans l’app.</p>
       <ol>
-        <li>Dans <strong>Séances</strong>, touchez <strong>+</strong>, puis <strong>Créer un nouveau</strong>.</li>
+        <li>Dans <strong>Séances</strong>, touchez <strong>+</strong>, puis créez une nouvelle séance.</li>
         <li>Nommez la séance et choisissez extérieur ou tapis.</li>
         <li>Ajoutez un échauffement si besoin. Ouvrez <strong>Bloc 1</strong> pour régler le nombre de répétitions, la durée ou la distance de chaque effort, et la récupération.</li>
         <li>Ajoutez un autre bloc au besoin, réglez le retour au calme, puis touchez <strong>Enregistrer</strong>.</li>
