@@ -138,7 +138,7 @@ export default function RunToMaxLanding() {
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
           <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens preview the updated design with example data; the layout in App Store version 1.3.5 may differ.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens show example data.</p>
         </div>
 
         <div className="relative mt-14 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">

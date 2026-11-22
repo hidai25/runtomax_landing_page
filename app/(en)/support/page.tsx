@@ -78,8 +78,7 @@ export default function SupportPage() {
         features require a subscription. An Apple free trial may be available
         if you are eligible. Apple shows the offer, price and renewal terms
         before you confirm; subscriptions renew automatically unless cancelled.
-        Version 1.3.5 also offers three included coached runs to eligible runners,
-        separately from the Apple trial and without starting a subscription. If your Watch asks you to update RunToMax,
+        If your Watch asks you to update RunToMax,
         install the latest Watch app.
       </p>
 
@@ -106,8 +105,8 @@ export default function SupportPage() {
       <h2>Your data</h2>
       <p>
         No account is required for basic use. Your workouts, routes and heart rate
-        are stored in Apple Health and local app storage. In version 1.3.5,
-        optional Sign in with Apple account sync stores an encrypted selected
+        are stored in Apple Health and local app storage. Optional
+        Sign in with Apple account sync stores an encrypted selected
         training archive with Cloudflare, including workout heart rate but
         excluding raw GPS routes. You can turn sync off or delete the sync
         account in Settings → Account &amp; sync. Uninstalling the app alone

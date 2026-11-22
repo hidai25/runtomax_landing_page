@@ -21,7 +21,7 @@ export default function AccuracyPageFr() {
       intro={
         <p>
           Voici des observations historiques sur un petit échantillon de sorties appariées, rapportées le 22 septembre 2026 : une Apple Watch avec RunToMax
-          à un poignet et une Garmin Forerunner à l’autre. Ce n’est ni une nouvelle validation de la version 1.3.5, ni une garantie pour chaque coureur.
+          à un poignet et une Garmin Forerunner à l’autre. Ce n’est ni une nouvelle validation de la version actuelle, ni une garantie pour chaque coureur.
         </p>
       }
     >

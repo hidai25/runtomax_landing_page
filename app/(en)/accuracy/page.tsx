@@ -21,7 +21,7 @@ export default function AccuracyPage() {
       intro={
         <p>
           These are historical observations from a small paired-run sample reported on September 22, 2026: an Apple Watch running RunToMax
-          on one wrist and a Garmin Forerunner on the other. They are not a new validation of version 1.3.5 or a guarantee for every runner.
+          on one wrist and a Garmin Forerunner on the other. They are not a new validation of the current version or a guarantee for every runner.
         </p>
       }
     >
