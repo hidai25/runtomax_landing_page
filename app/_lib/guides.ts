@@ -78,13 +78,15 @@ export const guides = {
     path: "/guides/run-apple-watch-without-iphone/",
     title: "Can you run with Apple Watch without your iPhone?",
     description: "You do not need cellular to record a run. Here is what to prepare in RunToMax, what works on the Watch, and what still needs a connection.",
-    published: "2026-11-03", updated: "2026-11-03",
+    release: "1.4",
+    published: "2026-11-03", updated: "2026-11-21",
   },
   intervals: {
     path: "/guides/interval-workouts-apple-watch/",
     title: "Create an interval workout in RunToMax",
     description: "Build running intervals in RunToMax on your iPhone and send your session to your Apple Watch.",
-    published: "2026-10-31", updated: "2026-11-02",
+    release: "1.4",
+    published: "2026-10-31", updated: "2026-11-21",
   },
   treadmill: {
     path: "/guides/apple-watch-treadmill-distance/",
