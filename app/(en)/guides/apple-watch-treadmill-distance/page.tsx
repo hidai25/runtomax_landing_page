@@ -7,7 +7,10 @@ import Link from "next/link";
 const guide = guides.treadmill;
 
 export const metadata: Metadata = pageMetadata("/guides/apple-watch-treadmill-distance/", {
-  title: "Apple Watch treadmill distance wrong? Calibrate a run in RunToMax",
+  // The words runners search (Search Console, Aug to Nov 2026): "treadmill
+  // pace wrong", "don't match", "why is my apple watch distance different",
+  // "how to calibrate apple watch for treadmill".
+  title: "Apple Watch treadmill distance or pace wrong? Why, and how to calibrate",
   description: guide.description,
   authors: [{ name: "RunToMax", url: "https://runtomax.com/" }],
   openGraph: { type: "article", publishedTime: guide.published, modifiedTime: guide.updated },
@@ -24,10 +27,22 @@ export default function TreadmillDistanceGuide() {
       <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#1FE26C]">RunToMax guide · Apple Watch</p>
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">Apple Watch and treadmill distance don't match?</h1>
       <GuideDetails guide={guide} />
+      <div className="mt-8 rounded-2xl border border-[#1FE26C]/25 bg-[#1FE26C]/[0.07] p-6 text-base leading-relaxed">
+        <p className="font-semibold">The short answer</p>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-200">
+          <li><strong>Why they differ:</strong> the treadmill measures its belt. Indoors, the watch has no GPS and estimates your distance from your arm movement and the stride length it has learned.</li>
+          <li><strong>Why the pace is off too:</strong> pace is time divided by distance. If the watch counts less distance than the belt, its pace reads slower by the same share.</li>
+          <li><strong>Which to trust:</strong> neither is proven right by the gap alone. For a log that matches the machine, use the belt. Whichever you pick, keep it for every run.</li>
+          <li><strong>How to fix it:</strong> correct the run with the belt distance (below), and calibrate the watch outdoors so future indoor runs start closer.</li>
+        </ul>
+      </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
         <h2>My treadmill says 5.0 km and my Apple Watch says 4.7 km. Which distance should I log?</h2>
         <p>If you want your training log to match the treadmill, use 5.0 km. First check that the belt and watch measured the same part of the run. If the belt counted a warm-up before you started the watch, the two totals cover different distances.</p>
         <p>Even with the same start and finish, the numbers can differ. The treadmill reports how far its belt travelled. Indoors, the watch estimates how far you ran from your movement and learned stride length. The difference alone can’t tell you which reading is closer. For runs you compare week to week on the same machine, pick one source and use it consistently.</p>
+        <h2>Why is my Apple Watch pace wrong on the treadmill?</h2>
+        <p>Because the pace comes from the distance. The watch divides the time by the distance it estimated, so a distance that is 6% short gives a pace about 6% slower than the belt shows. Fix the distance and the pace follows: correcting a RunToMax run with the belt total also corrects its pace and splits.</p>
+        <p>Live pace on a treadmill also moves more than outdoors, because each estimate leans on your arm swing. Holding the rails, carrying a phone or a bottle in the watch hand, or changing your stride on an incline can all shift it. The run's average is steadier than any single moment.</p>
         <h2>How do I save the treadmill distance to Apple Health?</h2>
         <p>If you recorded the run with RunToMax on Apple Watch, you can use the belt reading for that workout in Apple Health. Note the treadmill total before the display resets.</p>
         <ol>
