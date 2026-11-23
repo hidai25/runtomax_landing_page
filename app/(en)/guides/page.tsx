@@ -15,6 +15,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 const waterLock = guideDefinitions.waterLock;
 
 const guides = [
+  ...(guideDefinitions.vo2Accuracy.published ? [{
+    href: guideDefinitions.vo2Accuracy.path,
+    category: "Apple Watch · Cardio fitness",
+    title: guideDefinitions.vo2Accuracy.title,
+    description: guideDefinitions.vo2Accuracy.description,
+    date: guideDefinitions.vo2Accuracy.published,
+    dateLabel: new Date(`${guideDefinitions.vo2Accuracy.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: guideDefinitions.garminIntervalsEn.path,
     category: "Garmin Connect · Intervals",

@@ -1,6 +1,20 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  vo2Accuracy: {
+    path: "/guides/apple-watch-vo2-max-accuracy/",
+    title: "How accurate is Apple Watch VO₂ max?",
+    description: "Why your Apple Watch VO₂ max can drop while your running improves, how it compares with lab testing, and which run data to check before changing your training.",
+    release: "1.4.1", devices: "iPhone and Apple Watch",
+    published: "2026-11-23", updated: "2026-11-23",
+  },
+  frVo2Accuracy: {
+    path: "/fr/guides/fiabilite-vo2-max-apple-watch/",
+    title: "La VO₂ max de l’Apple Watch est-elle fiable ?",
+    description: "Votre VO₂ max baisse alors que vous courez plus vite ? Découvrez la précision de l’Apple Watch et les données à comparer avant de modifier votre entraînement.",
+    release: "1.4.1", devices: "iPhone et Apple Watch",
+    published: "2026-11-23", updated: "2026-11-23",
+  },
   garminIntervalsEn: {
     path: "/guides/send-interval-workout-garmin-connect/",
     title: "How to send an interval workout to Garmin Connect from your iPhone",
@@ -102,6 +116,7 @@ export const publishedGuides = Object.values(guides).filter(guide => guide.publi
 /** A guide and its translation: English path -> French path. The pages'
  *  hreflang alternates and the sitemap are derived from it. */
 export const GUIDE_PAIRS: Record<string, string> = {
+  [guides.vo2Accuracy.path]: guides.frVo2Accuracy.path,
   "/guides/send-interval-workout-garmin-connect/": "/fr/guides/fractionne-garmin-connect-iphone/",
   "/guides/run-apple-watch-without-iphone/": "/fr/guides/courir-apple-watch-sans-iphone/",
   "/guides/apple-watch-treadmill-distance/": "/fr/guides/distance-tapis-apple-watch/",

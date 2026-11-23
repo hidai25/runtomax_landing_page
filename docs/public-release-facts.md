@@ -136,3 +136,9 @@ Publication check on November 20: both paired physical devices reported 1.4 (63)
 ## November 20 verification for the missing-map guide
 
 Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. The phone’s HealthKitManager requests workout and route data separately. RunDetailLoadOutcome treats an available outdoor workout with no route as retryable and an indoor workout with an available source as complete. RunNoMap distinguishes an unqueried or restored summary from a confirmed empty route. The Watch WorkoutManager requests location access and uses HKWorkoutRouteBuilder. Both tagged app test suites passed on an isolated iPhone simulator with synthetic records. The article makes no claim about restoring an unrecorded route. See the [complaint, sources and release checks](guide-research/2026-11-08-missing-run-map.md).
+
+## VO₂ max accuracy guide · November 23, 2026
+
+- RunToMax 1.4.1, build 65 (app source `78bb6a0b`). Trends’ Pro VO₂ max detail prioritizes a manually recorded test, then an available RunToMax estimate. The info button explains the active source. See `TrendsView.vo2Card`, `MetricExplanation.vo2Max` and `VO2MaxEstimator.estimate`.
+- The screenshot uses the released `MetricExplainerSheet` and its explanation factory in the iPhone simulator. Synthetic inputs feed the real estimator: maximum HR 184 bpm, resting HR 50 bpm and a 5 km effort of 24 minutes. This illustrates the heart-rate/performance fallback. The app also supports a submaximal pace/heart-rate method.
+- The accuracy statistic applies to Apple Watch Series 10 in Lambe et al., [Mayo Clinic Proceedings: Digital Health, 2026](https://doi.org/10.1016/j.mcpdig.2026.100357). Forty participants completed exercise testing and 35 contributed to the final comparison. Mean absolute error was 6.79 mL/kg/min. The article reports a factual finding in original prose and links to the source. The study did not evaluate RunToMax.
