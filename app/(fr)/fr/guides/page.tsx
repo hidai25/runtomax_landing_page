@@ -12,6 +12,7 @@ export const metadata = pageMetadata("/fr/guides/", {
 });
 
 const listed = [
+  [guides.frVo2Accuracy, "Apple Watch · VO₂ max"],
   [guides.garminFractionne, "Garmin Connect"],
   [guides.frIntervals, "Apple Watch · Fractionné"],
   [guides.frWithoutPhone, "Apple Watch · Sans téléphone"],
@@ -30,7 +31,7 @@ const collection = {
 
 export default function FrenchGuides() {
   return (
-    <PageShell lang="fr" eyebrow="Guides" title="Guides pratiques" alternate="/guides/" updated="2026-11-21"
+    <PageShell lang="fr" eyebrow="Guides" title="Guides pratiques" alternate="/guides/" updated={guides.frVo2Accuracy.updated}
       intro={<p>Des réponses courtes aux questions qui reviennent avant et après une sortie : préparer un fractionné, courir sans téléphone, réconcilier la montre et le tapis. Chaque guide indique ce qui est gratuit et ce qui demande Pro.</p>}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection).replace(/</g, "\\u003c") }} />
       <ul>

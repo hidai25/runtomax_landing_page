@@ -18,8 +18,8 @@ export const metadata = pageMetadata(guide.path, {
 
 export default function VO2AccuracyGuide() {
   return (
-    <PageShell lang="en" eyebrow="Running guides · Cardio fitness" title={guide.title} updated={guide.updated} storeUrl={store}
-      intro={<p>First, check where you saw the number. <strong>Cardio Fitness in Apple Health</strong> is where you can find Apple’s watch estimate. <strong>Estimated from your running data</strong> in RunToMax Pro identifies RunToMax’s own calculation. A study of the Apple Watch Series 10 found that Apple’s estimate differed from a lab test by about 6.8 mL/kg/min on average. That result applies to Apple’s estimate alone.</p>}>
+    <PageShell lang="en" eyebrow="Running guides · Cardio fitness" title={guide.title} updated={guide.updated} alternate={guides.frVo2Accuracy.path} storeUrl={store}
+      intro={<p>If your Apple Watch VO₂ max dropped a point after a run that felt easier, that reading alone is a weak reason to change your training. In <a href="https://pubmed.ncbi.nlm.nih.gov/42094313/">a Series 10 study by Rory Lambe and colleagues</a>, Apple’s estimates differed from lab measurements by about 6.8 mL/kg/min on average. That’s a group average, so it can’t tell you how far off your own score is.</p>}>
       <h2>How close was Apple’s estimate to a lab test?</h2>
       <p>VO₂ max is the most oxygen your body can use per minute during intense exercise, expressed relative to body weight. A lab can measure it from the air you breathe. Apple Watch estimates it from your heart rate and movement during an Outdoor Run, Outdoor Walk or Hiking workout. Age, weight and other details in your Health profile also feed into the estimate. <a href="https://support.apple.com/en-us/108790">How Apple estimates cardio fitness</a>.</p>
       <p>Rory Lambe and colleagues enrolled 40 healthy adults. The 35 in the final comparison were young and mostly highly fit. The average absolute difference was 6.79 mL/kg/min. That counts misses in either direction. It cannot tell you how far off your own reading is. <a href="https://pubmed.ncbi.nlm.nih.gov/42094313/">Read the 2026 Series 10 study</a>.</p>

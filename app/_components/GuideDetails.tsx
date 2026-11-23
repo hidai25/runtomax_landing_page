@@ -10,7 +10,7 @@ export default function GuideDetails({ guide }: { guide: Guide }) {
         {guide.published ? <> · {fr ? "Publié le" : "Published"} <time dateTime={guide.published}>{dateLabel(guide.published, fr ? "fr-FR" : "en-US")}</time>
           {guide.updated !== guide.published && <> · {fr ? "Mis à jour le" : "Updated"} <time dateTime={guide.updated}>{dateLabel(guide.updated, fr ? "fr-FR" : "en-US")}</time></>}</>
           : <> · Draft — awaiting publication</>}</p>
-      <p>{fr ? `RunToMax 1.4 · ${"devices" in guide ? guide.devices : "iPhone et Apple Watch"}`
+      <p>{fr ? `RunToMax ${"release" in guide ? guide.release : "1.4"} · ${"devices" in guide ? guide.devices : "iPhone et Apple Watch"}`
         : `For RunToMax ${"release" in guide ? guide.release : "1.3.5"} · ${"devices" in guide ? guide.devices : "iPhone and Apple Watch"}`}</p>
     </div>
   </>;
