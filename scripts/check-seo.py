@@ -60,7 +60,7 @@ for url in urls:
     for schema in p.schemas: nodes.extend(schema.get('@graph',[schema])); schema_count+=1
     app=next((n for n in nodes if n.get('@type')=='SoftwareApplication'),{})
     check(any(o.get('price')=='0' for o in app.get('offers',[])),f'{path}: free download offer missing')
-    check(app.get('softwareVersion')=='1.4',f'{path}: public version missing')
+    check(app.get('softwareVersion')=='1.4.1',f'{path}: public version missing')
     if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS:
         article=next((n for n in nodes if n.get('@type')=='BlogPosting'),{})
         check(article.get('url')==url,f'{path}: missing article URL')
@@ -105,7 +105,7 @@ for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 # 1.4 is the App Store version; the file must say so and no longer call 1.3.5 current.
-check('No free tier' not in llms and 'RunToMax 1.4 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
+check('No free tier' not in llms and 'RunToMax 1.4.1 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
 # 1.4 is the public release: Workouts is a row on the You tab.
 check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:
