@@ -153,3 +153,9 @@ Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. Th
 ## Shoe mileage in 1.4.1 (65), November 22
 
 The [US App Store listing](https://apps.apple.com/us/app/runtomax-running-coach-plan/id6767669260) reported 1.4.1. Both apps in the November 21 release archive reported 1.4.1 (65). The build-65 phone source places the shoe library under You → Gear and routes, with Pro access. ShoesLibraryView, WorkoutDetailView and ShoeStore support entering prior mileage and changing the pair assigned to a saved run. The Watch picker is optional. An isolated simulator displayed the library with synthetic pairs, and 11 tests covered starting mileage, reassignment and Watch selection. See the [research and verification notes](guide-research/2026-11-12-shoe-mileage.md) for the exact example and physical-device test boundary.
+
+## VO₂ max accuracy guide · November 23, 2026
+
+- RunToMax 1.4.1, build 65 (app source `78bb6a0b`). Trends’ Pro VO₂ max detail prioritizes a manually recorded test, then an available RunToMax estimate. The info button explains the active source. See `TrendsView.vo2Card`, `MetricExplanation.vo2Max` and `VO2MaxEstimator.estimate`.
+- The screenshot uses the released `MetricExplainerSheet` and its explanation factory in the iPhone simulator. Synthetic inputs feed the real estimator: maximum HR 184 bpm, resting HR 50 bpm and a 5 km effort of 24 minutes. This illustrates the heart-rate/performance fallback. The app also supports a submaximal pace/heart-rate method.
+- The accuracy statistic applies to Apple Watch Series 10 in Lambe et al., [Mayo Clinic Proceedings: Digital Health, 2026](https://doi.org/10.1016/j.mcpdig.2026.100357). Forty participants completed exercise testing and 35 contributed to the final comparison. Mean absolute error was 6.79 mL/kg/min. The article reports a factual finding in original prose and links to the source. The study did not evaluate RunToMax.

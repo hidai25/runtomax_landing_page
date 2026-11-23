@@ -34,7 +34,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Can I try RunToMax Pro?",
-    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro. Version 1.3.5 also offers three included coached runs to eligible runners; check eligibility and terms in the app. This separate offer does not start a subscription.",
+    a: "Eligible runners can start a free trial of Pro through Apple. Apple shows your eligibility, trial length, price and renewal terms before you confirm. The subscription renews automatically unless cancelled; manage or cancel it in your Apple Account subscriptions. Recording remains free without Pro.",
   },
   {
     q: "What does RunToMax Pro include?",
@@ -43,7 +43,7 @@ const items: FaqItem[] = [
   {
     id: "garmin-connect",
     q: "Can I use RunToMax with my Garmin watch?",
-    a: "Yes. In RunToMax 1.4, sign in to your RunToMax account on iPhone and connect Garmin Connect. Choose a planned running workout to send to a compatible Garmin watch. To bring completed runs back into RunToMax, turn on Import Garmin runs. New runs arrive after your watch syncs with Garmin Connect and can include the route, laps and heart rate when recorded. If you have version 1.3.5, RunToMax can read distance, duration and available heart rate for runs Garmin shares with Apple Health.",
+    a: "Yes. In RunToMax 1.4, sign in to your RunToMax account on iPhone and connect Garmin Connect. Choose a planned running workout to send to a compatible Garmin watch. To bring completed runs back into RunToMax, turn on Import Garmin runs. New runs arrive after your watch syncs with Garmin Connect and can include the route, laps and heart rate when recorded. Without Garmin Connect linked, RunToMax can still read distance, duration and available heart rate for runs Garmin shares with Apple Health.",
   },
   {
     q: "What about COROS, Polar or Suunto?",
@@ -51,7 +51,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Does it sync with Strava?",
-    a: "Not in App Store version 1.3.5. Strava sync is available only to testers in supported TestFlight builds. Every run is written to Apple Health, and runs can be exported as FIT files in the meantime.",
+    a: "Not in the App Store version yet. Strava sync is available only to testers in supported TestFlight builds. Every run is written to Apple Health, and runs can be exported as FIT files in the meantime.",
   },
   {
     q: "Which languages does it support?",
@@ -63,7 +63,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Where is my data stored?",
-    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. In version 1.3.5, account sync with Sign in with Apple is optional. If you enable it, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
+    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. Account sync with Sign in with Apple is optional. If you enable it, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
   },
   {
     q: "How accurate is the distance?",
@@ -79,7 +79,7 @@ export default function FaqPage() {
       title="Questions runners ask first"
       alternate="/fr/faq/"
       updated="2026-11-19"
-      intro={<p>These answers cover version 1.3.5 and the Garmin Connect integration in 1.4. If yours is missing, email the developer from the support page.</p>}
+      intro={<p>These answers cover RunToMax on iPhone, Apple Watch and compatible Garmin watches. If yours is missing, email the developer from the support page.</p>}
     >
       <Faq items={items} />
       <h2>Still unsure?</h2>

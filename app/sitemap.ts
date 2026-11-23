@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   // Training plans: English only for now.
   const plans: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/plans/beginner-half-marathon-12-weeks/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/plans/beginner-half-marathon-12-weeks/`, lastModified: new Date("2026-11-23"), changeFrequency: "monthly", priority: 0.7 },
   ];
   // Drafts gain a sitemap entry automatically once their release date is set.
   const articles: MetadataRoute.Sitemap = publishedGuides.map(guide => {

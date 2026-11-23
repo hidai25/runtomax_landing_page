@@ -1,25 +1,29 @@
 # RunToMax
 
-> RunToMax is a running app for iPhone and Apple Watch. It records runs on the Apple Watch and coaches from the runs already in Apple Health: a plain-language verdict after every run, a threshold pace estimated from the last 90 days, and race-date training plans that propose changes the runner approves. For runners aged 18 and older. English and French.
+> RunToMax is a running app and coach for iPhone, Apple Watch and Garmin watches. Runners record on an Apple Watch, on the iPhone alone (iOS 26 or later), or on a compatible Garmin; RunToMax builds a training plan from the runs they already have and adapts it with their approval. Free recording; the first week of every plan is free without a subscription. For runners aged 18 and older. English and French.
 
-## App Store 1.3.5 and Garmin Connect in version 1.4
+## Current version: RunToMax 1.4.1 (App Store)
 
-- Requirements: iPhone with iOS 17 or later; Apple Watch with watchOS 10 or later (Series 4 and newer, SE, Ultra). Recording requires the Apple Watch; no phone needed on the run.
-- Garmin Connect (RunToMax 1.4): on iPhone, connect a Garmin account to send selected planned running workouts to a compatible Garmin watch. Separately enable run import to receive new Garmin runs after the watch syncs with Garmin Connect. Route, laps and heart rate depend on what was recorded. [Garmin compatibility](https://runtomax.com/faq/#garmin-connect).
-- Apple Health (including version 1.3.5): runs shared by Garmin, COROS, Polar or Suunto can provide distance, duration and available heart rate.
-- Strava: sync is limited to supported TestFlight builds; not in App Store version 1.3.5. Runs are written to Apple Health and can be exported as FIT files.
-- Price (US): RunToMax Pro, $29.99/year with a 14-day free trial or $5.99/month with a 7-day trial, billed by Apple. Basic Outdoor and Treadmill recording, history and export are free. Version 1.3.5 also offers three included coached runs to eligible runners, separately from the Apple trial and without starting a subscription. Apple confirms trial eligibility and local prices; Pro auto-renews unless cancelled.
-- Cloud coaching is opt-in and produces only the longer written coach notes; everything else (profile, paces, run classification, verdict, plans, scores, readiness, heat adjustment) runs on the iPhone.
-- Data: no account required, no ads, no data sale. Optional Sign in with Apple training-history sync is available in version 1.3.5 and off until the runner opts in; when enabled, it stores an encrypted selected training archive with Cloudflare (workout heart rate included, raw GPS routes excluded). See the privacy policy for the English and French sync disclosure.
+- Requirements: iPhone with iOS 17 or later. Apple Watch recording needs watchOS 10 or later (Series 4 and newer, SE, Ultra); no phone is needed on the run. Recording with the iPhone alone needs iOS 26 or later. No Apple Watch is needed with a Garmin.
+- Garmin Connect: on iPhone, connect a Garmin Connect account. Importing new runs is free: after the watch syncs with Garmin Connect, the run arrives with what the watch recorded (distance, duration, route, laps, heart rate, cadence, running power). Only new runs are imported, not existing history. Sending planned workouts to the Garmin Connect calendar requires RunToMax Pro. An optional, separate switch imports three nightly recovery values (sleep, resting heart rate, overnight HRV). [Garmin page](https://runtomax.com/features/garmin/).
+- Apple Health: on first launch, with permission, RunToMax reads the runs already in Apple Health (including runs other watches share there) to set a starting profile and a threshold pace estimated from the last 90 days.
+- Training plans: 5K to marathon, built from the runner's history, days and available time, and timed to the race date. Changes are proposed and the runner approves them. Sessions go to Apple Watch or Garmin. A workout from a coach or another app can be pasted and sent to the watch.
+- Price (US): RunToMax Pro is $29.99 a year or $5.99 a month, billed by Apple, with a free trial for eligible runners; it renews automatically unless cancelled. Apple shows the local price and trial terms before purchase. Free without a subscription: Apple Watch and iPhone recording, Garmin run import, history, Apple Health and export, and the first week of every plan.
+- Pro includes: the rest of a plan after week 1, recovery-aware coaching, analysis, structured workouts, custom watch screens, sending workouts to Garmin, and optional cloud coaching.
+- Cloud coaching is opt-in and only writes the longer coach notes; plans, paces, verdicts, scores and readiness are computed on the iPhone. Garmin data is never sent to a cloud AI.
+- Strava: sync is limited to TestFlight builds and is not in the App Store version.
+- Data: no account required to record, no ads, no data sale. Optional Sign in with Apple training-history sync is off until the runner turns it on. See the privacy policy.
 - Developer: Hidai Bar-Mor, independent developer.
 
 ## Pages
 
 - [Home](https://runtomax.com/) — English overview. French: https://runtomax.com/fr/
+- [RunToMax with a Garmin watch](https://runtomax.com/features/garmin/) — free run import, sending workouts with Pro, recovery values, privacy. FR: https://runtomax.com/fr/fonctionnalites/garmin/
 - [Apple Watch run tracking](https://runtomax.com/features/apple-watch/) — custom screens, structured intervals with haptics, phone-free recording, requirements. FR: https://runtomax.com/fr/fonctionnalites/apple-watch/
-- [Coaching from Apple Health](https://runtomax.com/features/coaching-from-apple-health/) — starting profile from existing runs, threshold pace, post-run verdict, readiness, what runs on device. FR: https://runtomax.com/fr/fonctionnalites/coaching-apple-sante/
-- [Race plans](https://runtomax.com/features/race-plans/) — race-date plans, four levels, adaptation with approval, no-plan mode, paste a workout. FR: https://runtomax.com/fr/fonctionnalites/plans-de-course/
-- [FAQ](https://runtomax.com/faq/) — Apple Watch requirement, phone-free, no plan, cloud coaching off, subscription, Garmin, Strava, languages, age, data, accuracy. FR: https://runtomax.com/fr/faq/
+- [Coaching from Apple Health](https://runtomax.com/features/coaching-from-apple-health/) — starting profile from existing runs, threshold pace, post-run verdict, readiness. FR: https://runtomax.com/fr/fonctionnalites/coaching-apple-sante/
+- [Race plans](https://runtomax.com/features/race-plans/) — race-date plans, adaptation with approval, paste a workout. FR: https://runtomax.com/fr/fonctionnalites/plans-de-course/
+- [Beginner half marathon training plan, 12 weeks](https://runtomax.com/plans/beginner-half-marathon-12-weeks/) — sample four-day schedule generated with a development version. Distances and race week can differ in the App Store version.
+- [FAQ](https://runtomax.com/faq/) — Apple Watch, iPhone and Garmin, phone-free running, what is free, Pro, Strava, languages, age, data, accuracy. FR: https://runtomax.com/fr/faq/
 - [Accuracy](https://runtomax.com/accuracy/) — how distance, splits, cadence and elevation are tested against a Garmin on the other wrist; results and limitations. FR: https://runtomax.com/fr/precision/
 - [Support](https://runtomax.com/support/), [Privacy Policy](https://runtomax.com/privacy/), [Terms of Service](https://runtomax.com/terms/)
 

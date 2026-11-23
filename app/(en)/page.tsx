@@ -106,13 +106,13 @@ export default function RunToMaxLanding() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[760px] -translate-x-1/2 rounded-full bg-[#1FE26C]/[0.08] blur-[140px]" />
         <motion.div initial="hidden" animate="visible" variants={fadeUp} className="relative z-10 order-2 text-center lg:order-1 lg:text-left">
           <p className="mb-6 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#1FE26C]">
-            Now on the App Store · iPhone + Apple Watch
+            Now on the App Store · Apple Watch, iPhone, Garmin
           </p>
           <h1 className="max-w-5xl font-bebas text-[3.75rem] uppercase leading-[0.88] tracking-[-0.025em] sm:text-7xl lg:text-[5.8rem]">
             Run stronger. Stay consistent. Know when to push—<span className="text-[#1FE26C]">and when to recover.</span>
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 lg:mx-0 lg:text-xl">
-            Record runs on Apple Watch and plan your next session on iPhone. Run with a Garmin? In RunToMax 1.4, <Link className="text-white underline underline-offset-4" href="/features/garmin/">connect Garmin</Link> to send planned workouts to your watch and import new runs.
+            Your running plan, on the watch you already have. Follow your sessions on Apple Watch or record runs with your iPhone (iOS 26 or later). On a compatible Garmin, <Link className="text-white underline underline-offset-4" href="/features/garmin/">import your new runs for free</Link> and send your sessions to Garmin Connect with Pro. The first week of every plan is free, with no subscription.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
             <AppStoreBadge heightClass="h-14" />
@@ -122,10 +122,10 @@ export default function RunToMaxLanding() {
           </div>
           <div className="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-zinc-500 lg:justify-start">
             <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#1FE26C]" /> Free recording · Pro trial for eligible runners</span>
-            <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> Runs on your wrist, phone-free</span>
-            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> Apple Watch recording works without an account</span>
+            <span className="flex items-center gap-2"><Watch className="h-4 w-4 text-[#1FE26C]" /> Apple Watch, iPhone or Garmin</span>
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#1FE26C]" /> Recording works without an account</span>
           </div>
-          <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 or later · Apple Watch recording requires watchOS 10 or later · Designed for runners aged 18 and older.</p>
+          <p className="mt-5 text-xs text-zinc-600">Requires iOS 17 or later · Apple Watch recording requires watchOS 10 or later · iPhone recording requires iOS 26 or later · Garmin needs a Garmin Connect account · Designed for runners aged 18 and older.</p>
         </motion.div>
 
         <div className="relative z-10 order-1 lg:order-2">
@@ -138,7 +138,7 @@ export default function RunToMaxLanding() {
         <div className="relative mx-auto max-w-3xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#1FE26C]">The proof lives in the product</p>
           <h2 className="mt-4 font-bebas text-5xl uppercase leading-none sm:text-7xl">Your training, in focus.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens preview the updated design with example data; the layout in App Store version 1.3.5 may differ.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">Your trends, your plan and your runs—each one ready to explore. Screens show example data.</p>
         </div>
 
         <div className="relative mt-14 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">

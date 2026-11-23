@@ -60,7 +60,7 @@ for url in urls:
     for schema in p.schemas: nodes.extend(schema.get('@graph',[schema])); schema_count+=1
     app=next((n for n in nodes if n.get('@type')=='SoftwareApplication'),{})
     check(any(o.get('price')=='0' for o in app.get('offers',[])),f'{path}: free download offer missing')
-    check(app.get('softwareVersion')=='1.4',f'{path}: public version missing')
+    check(app.get('softwareVersion')=='1.4.1',f'{path}: public version missing')
     if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS:
         article=next((n for n in nodes if n.get('@type')=='BlogPosting'),{})
         check(article.get('url')==url,f'{path}: missing article URL')
@@ -74,8 +74,8 @@ for url in urls:
                     '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/',
                     '/guides/apple-watch-treadmill-distance/'):
             version = '1.4'
-        if path == "/guides/track-running-shoe-mileage/":
-            version = "1.4.1"
+        if path in ('/guides/track-running-shoe-mileage/', '/guides/apple-watch-vo2-max-accuracy/', '/fr/guides/fiabilite-vo2-max-apple-watch/'):
+            version = '1.4.1'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
         href=urlparse(a.get('href',''))
@@ -95,9 +95,14 @@ for path,p in pages.items():
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
 guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS}
+# Each hub lists only its own language; together they list every guide.
 hub = pages['/guides/']
-cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] not in GUIDE_HUBS]
-check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
+cards = [a['href'] for a in hub.links if a.get('href', '').startswith('/guides/') and a['href'] not in GUIDE_HUBS]
+check(not any(a.get('href', '').startswith('/fr/guides/') and a['href'] not in GUIDE_HUBS for a in hub.links), 'English guide hub lists French guides')
+fr_hub = pages['/fr/guides/']
+fr_cards = [a['href'] for a in fr_hub.links if a.get('href', '').startswith('/fr/guides/') and a['href'] not in GUIDE_HUBS]
+check(not any(a.get('href', '').startswith('/guides/') and a['href'] not in GUIDE_HUBS for a in fr_hub.links), 'French guide hub lists English guides')
+check(set(cards) | set(fr_cards) == guide_paths, 'Guide hubs and sitemap disagree')
 collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
 items = collection.get('mainEntity', {}).get('itemListElement', [])
 check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')
@@ -106,7 +111,8 @@ check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree'
 for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
-check('No free tier' not in llms and '1.3.5' in llms,'Stale llms facts')
+# 1.4 is the App Store version; the file must say so and no longer call 1.3.5 current.
+check('No free tier' not in llms and 'RunToMax 1.4.1 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
 # 1.4 is the public release: Workouts is a row on the You tab.
 check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:
