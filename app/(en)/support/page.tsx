@@ -107,8 +107,9 @@ export default function SupportPage() {
         No account is required for basic use. Your workouts, routes and heart rate
         are stored in Apple Health and local app storage. Optional
         Sign in with Apple account sync stores an encrypted selected
-        training archive with Cloudflare, including workout heart rate but
-        excluding raw GPS routes. You can turn sync off or delete the sync
+        training archive with Cloudflare, including workout heart rate and
+        the routes of runs imported from Garmin Connect, but excluding other
+        raw GPS routes. You can turn sync off or delete the sync
         account in Settings → Account &amp; sync. Uninstalling the app alone
         does not delete that archive.
         Optional cloud coaching sends a minimized, consented summary through a
