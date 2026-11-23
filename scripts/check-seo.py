@@ -93,9 +93,14 @@ for path,p in pages.items():
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
 guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS}
+# Each hub lists only its own language; together they list every guide.
 hub = pages['/guides/']
-cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] not in GUIDE_HUBS]
-check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
+cards = [a['href'] for a in hub.links if a.get('href', '').startswith('/guides/') and a['href'] not in GUIDE_HUBS]
+check(not any(a.get('href', '').startswith('/fr/guides/') and a['href'] not in GUIDE_HUBS for a in hub.links), 'English guide hub lists French guides')
+fr_hub = pages['/fr/guides/']
+fr_cards = [a['href'] for a in fr_hub.links if a.get('href', '').startswith('/fr/guides/') and a['href'] not in GUIDE_HUBS]
+check(not any(a.get('href', '').startswith('/guides/') and a['href'] not in GUIDE_HUBS for a in fr_hub.links), 'French guide hub lists English guides')
+check(set(cards) | set(fr_cards) == guide_paths, 'Guide hubs and sitemap disagree')
 collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
 items = collection.get('mainEntity', {}).get('itemListElement', [])
 check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')

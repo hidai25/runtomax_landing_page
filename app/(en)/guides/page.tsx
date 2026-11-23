@@ -42,38 +42,6 @@ const guides = [
       : "Draft",
   },
   {
-    href: guideDefinitions.frIntervals.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frIntervals.title,
-    description: guideDefinitions.frIntervals.description,
-    date: guideDefinitions.frIntervals.published,
-    dateLabel: new Date(`${guideDefinitions.frIntervals.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frWithoutPhone.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frWithoutPhone.title,
-    description: guideDefinitions.frWithoutPhone.description,
-    date: guideDefinitions.frWithoutPhone.published,
-    dateLabel: new Date(`${guideDefinitions.frWithoutPhone.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frTreadmill.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frTreadmill.title,
-    description: guideDefinitions.frTreadmill.description,
-    date: guideDefinitions.frTreadmill.published,
-    dateLabel: new Date(`${guideDefinitions.frTreadmill.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.garminFractionne.path,
-    category: "Garmin Connect · Français",
-    title: guideDefinitions.garminFractionne.title,
-    description: guideDefinitions.garminFractionne.description,
-    date: guideDefinitions.garminFractionne.published,
-    dateLabel: "November 19, 2026",
-  },
-  {
     href: waterLock.path,
     category: "Apple Watch · Run controls",
     title: waterLock.title,
@@ -158,7 +126,10 @@ export default function GuidesPage() {
       <header className="border-b border-white/[0.08]">
         <nav className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-6" aria-label="Primary">
           <Link href="/" className="font-bebas text-2xl tracking-wide" aria-label="RunToMax home">RUNTO<span className="text-[#1FE26C]">MAX</span></Link>
-          <a href={APP_STORE_URL} className="text-sm font-semibold text-white transition-colors hover:text-[#1FE26C]">Get the app</a>
+          <div className="flex items-center gap-5 text-sm font-medium">
+            <Link href="/fr/guides/" hrefLang="fr" lang="fr" className="text-zinc-400 transition-colors hover:text-white">Français</Link>
+            <a href={APP_STORE_URL} className="font-semibold text-white transition-colors hover:text-[#1FE26C]">Get the app</a>
+          </div>
         </nav>
       </header>
       <section className="relative overflow-hidden border-b border-white/[0.08] px-6 py-20 sm:py-28">
