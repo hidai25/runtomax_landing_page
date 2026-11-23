@@ -16,6 +16,12 @@ const listed = [
   [guides.frIntervals, "Apple Watch · Fractionné"],
   [guides.frWithoutPhone, "Apple Watch · Sans téléphone"],
   [guides.frTreadmill, "Apple Watch · Tapis de course"],
+  [guides.frMissingMap, "Apple Watch · Carte"],
+  [guides.frCadence, "Apple Watch · Cadence"],
+  [guides.frPace, "Apple Watch · Allure"],
+  [guides.frActionButton, "Apple Watch Ultra · Boutons"],
+  [guides.frWaterLock, "Apple Watch · Mode Eau"],
+  [guides.frStryd, "Stryd · Puissance"],
 ] as const;
 
 const collection = {
@@ -42,7 +48,6 @@ export default function FrenchGuides() {
           </li>
         ))}
       </ul>
-      <p>D’autres guides existent en anglais sur la page <Link href="/guides/" hrefLang="en">Guides</Link>.</p>
     </PageShell>
   );
 }
