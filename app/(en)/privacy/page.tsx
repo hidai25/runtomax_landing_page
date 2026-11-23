@@ -158,8 +158,9 @@ export default function PrivacyPage() {
       <p>
         Sync includes the GPS route of runs imported from Garmin Connect, so
         restoring the archive brings their maps back. Sync excludes all other
-        raw GPS coordinates and routes (Apple Health and Strava routes stay on
-        your devices), the profile first name,
+        raw GPS coordinates and routes (Apple Health routes stay on your
+        devices), runs imported from Strava in full (they stay on your iPhone
+        and are fetched again from Strava after a restore), the profile first name,
         avatar and Contacts data, sensor diagnostic logs, Apple Weather readings,
         separate archives of daily HRV, resting-heart-rate and sleep readings,
         and detailed reasons behind historical coaching decisions. Saved
@@ -803,8 +804,10 @@ export default function PrivacyPage() {
         <p>
           Le tracé GPS des sorties importées depuis Garmin Connect est inclus,
           pour retrouver leurs cartes après une restauration. Sont exclus les
-          autres coordonnées et tracés GPS bruts (les tracés Apple Santé et
-          Strava restent sur vos appareils), le prénom du profil,
+          autres coordonnées et tracés GPS bruts (les tracés Apple Santé
+          restent sur vos appareils), l’intégralité des sorties importées depuis
+          Strava (elles restent sur votre iPhone et sont récupérées auprès de
+          Strava après une restauration), le prénom du profil,
           l’avatar et les données Contacts, les journaux de diagnostic des
           capteurs, les données Apple Weather, les archives distinctes des
           mesures quotidiennes de VFC, de fréquence cardiaque au repos et de
