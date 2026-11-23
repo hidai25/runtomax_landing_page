@@ -63,7 +63,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Où sont stockées mes données ?",
-    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis pour l’enregistrement local. La connexion Garmin demande « Se connecter avec Apple ». La sauvegarde dans le cloud reste facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
+    a: "Les courses, tracés et mesures de fréquence cardiaque sont stockés dans Apple Santé et sur l’appareil ; aucun compte n’est requis pour l’enregistrement local. La connexion Garmin demande « Se connecter avec Apple ». La sauvegarde dans le cloud reste facultative. Si vous l’activez, Cloudflare stocke une archive chiffrée de l’entraînement, avec la fréquence cardiaque des séances et les tracés des sorties importées depuis Garmin Connect, mais sans autres tracés GPS bruts, pour la restauration. Le coaching cloud et l’analyse d’utilisation ont des consentements distincts. La politique de confidentialité détaille les données, les contrôles et la conservation, avec une explication de la synchronisation en français. Pas de publicité, pas de vente de données.",
   },
   {
     q: "Quelle est la précision de la distance ?",

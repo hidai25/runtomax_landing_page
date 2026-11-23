@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 19, 2026"
+      effectiveDate="November 23, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -42,7 +42,8 @@ export default function PrivacyPage() {
           Workouts, GPS routes, heart rate, and health history are stored in
           Apple Health and local app storage. When optional account sync is
           offered and enabled, a selected training archive is also stored by
-          RunToMax using Cloudflare, without raw GPS routes.
+          RunToMax using Cloudflare. It keeps the GPS route of runs imported from
+          Garmin Connect, but no other raw GPS routes.
         </li>
         <li>
           Basic recording is free and needs no purchase. Pro is one Apple
@@ -155,7 +156,10 @@ export default function PrivacyPage() {
         Watch preferences, shoes, and workout or plan labels are also included.
       </p>
       <p>
-        Sync excludes raw GPS coordinates and routes, the profile first name,
+        Sync includes the GPS route of runs imported from Garmin Connect, so
+        restoring the archive brings their maps back. Sync excludes all other
+        raw GPS coordinates and routes (Apple Health and Strava routes stay on
+        your devices), the profile first name,
         avatar and Contacts data, sensor diagnostic logs, Apple Weather readings,
         separate archives of daily HRV, resting-heart-rate and sleep readings,
         and detailed reasons behind historical coaching decisions. Saved
@@ -797,7 +801,10 @@ export default function PrivacyPage() {
           les chaussures et les noms de séances ou de plans sont aussi inclus.
         </p>
         <p>
-          Sont exclus les coordonnées et tracés GPS bruts, le prénom du profil,
+          Le tracé GPS des sorties importées depuis Garmin Connect est inclus,
+          pour retrouver leurs cartes après une restauration. Sont exclus les
+          autres coordonnées et tracés GPS bruts (les tracés Apple Santé et
+          Strava restent sur vos appareils), le prénom du profil,
           l’avatar et les données Contacts, les journaux de diagnostic des
           capteurs, les données Apple Weather, les archives distinctes des
           mesures quotidiennes de VFC, de fréquence cardiaque au repos et de

@@ -63,7 +63,7 @@ const items: FaqItem[] = [
   },
   {
     q: "Where is my data stored?",
-    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. Account sync with Sign in with Apple is optional. If you enable it, Cloudflare stores an encrypted training archive, including workout heart rate but no raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
+    a: "Runs, routes and heart rate are stored in Apple Health and local app storage; no account is required. Account sync with Sign in with Apple is optional. If you enable it, Cloudflare stores an encrypted training archive, including workout heart rate and the GPS route of runs imported from Garmin Connect but no other raw GPS routes, for recovery. Optional cloud coaching and analytics have separate consent. See the privacy policy for the data, controls and retention. No ads, no data sale.",
   },
   {
     q: "How accurate is the distance?",
