@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  vo2Accuracy: {
+    path: "/guides/apple-watch-vo2-max-accuracy/",
+    title: "How accurate is Apple Watch VO₂ max?",
+    description: "Why your Apple Watch VO₂ max can drop while your running improves, how it compares with lab testing, and which run data to check before changing your training.",
+    release: "1.4.1", devices: "iPhone and Apple Watch",
+    published: null as string | null, updated: "2026-11-23",
+  },
   garminIntervalsEn: {
     path: "/guides/send-interval-workout-garmin-connect/",
     title: "How to send an interval workout to Garmin Connect from your iPhone",

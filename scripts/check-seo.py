@@ -74,6 +74,8 @@ for url in urls:
                     '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/',
                     '/guides/apple-watch-treadmill-distance/'):
             version = '1.4'
+        if path == '/guides/apple-watch-vo2-max-accuracy/':
+            version = '1.4.1'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
         href=urlparse(a.get('href',''))
