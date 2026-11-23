@@ -2,7 +2,7 @@
 
 > RunToMax is a running app and coach for iPhone, Apple Watch and Garmin watches. Runners record on an Apple Watch, on the iPhone alone (iOS 26 or later), or on a compatible Garmin; RunToMax builds a training plan from the runs they already have and adapts it with their approval. Free recording; the first week of every plan is free without a subscription. For runners aged 18 and older. English and French.
 
-## Current version: RunToMax 1.4 (App Store)
+## Current version: RunToMax 1.4.1 (App Store)
 
 - Requirements: iPhone with iOS 17 or later. Apple Watch recording needs watchOS 10 or later (Series 4 and newer, SE, Ultra); no phone is needed on the run. Recording with the iPhone alone needs iOS 26 or later. No Apple Watch is needed with a Garmin.
 - Garmin Connect: on iPhone, connect a Garmin Connect account. Importing new runs is free: after the watch syncs with Garmin Connect, the run arrives with what the watch recorded (distance, duration, route, laps, heart rate, cadence, running power). Only new runs are imported, not existing history. Sending planned workouts to the Garmin Connect calendar requires RunToMax Pro. An optional, separate switch imports three nightly recovery values (sleep, resting heart rate, overnight HRV). [Garmin page](https://runtomax.com/features/garmin/).
@@ -22,7 +22,7 @@
 - [Apple Watch run tracking](https://runtomax.com/features/apple-watch/) — custom screens, structured intervals with haptics, phone-free recording, requirements. FR: https://runtomax.com/fr/fonctionnalites/apple-watch/
 - [Coaching from Apple Health](https://runtomax.com/features/coaching-from-apple-health/) — starting profile from existing runs, threshold pace, post-run verdict, readiness. FR: https://runtomax.com/fr/fonctionnalites/coaching-apple-sante/
 - [Race plans](https://runtomax.com/features/race-plans/) — race-date plans, adaptation with approval, paste a workout. FR: https://runtomax.com/fr/fonctionnalites/plans-de-course/
-- [Beginner half marathon training plan, 12 weeks](https://runtomax.com/plans/beginner-half-marathon-12-weeks/) — every week's long run from 8 to 16 km, the race on the last day, built by the app for a sample beginner.
+- [Beginner half marathon training plan, 12 weeks](https://runtomax.com/plans/beginner-half-marathon-12-weeks/) — sample four-day schedule generated with a development version. Distances and race week can differ in the App Store version.
 - [FAQ](https://runtomax.com/faq/) — Apple Watch, iPhone and Garmin, phone-free running, what is free, Pro, Strava, languages, age, data, accuracy. FR: https://runtomax.com/fr/faq/
 - [Accuracy](https://runtomax.com/accuracy/) — how distance, splits, cadence and elevation are tested against a Garmin on the other wrist; results and limitations. FR: https://runtomax.com/fr/precision/
 - [Support](https://runtomax.com/support/), [Privacy Policy](https://runtomax.com/privacy/), [Terms of Service](https://runtomax.com/terms/)
