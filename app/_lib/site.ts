@@ -73,7 +73,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         contentRating: "18+",
         audience: { "@type": "PeopleAudience", suggestedMinAge: 18 },
         url: SITE_URL,
-        softwareVersion: "1.4",
+        softwareVersion: "1.4.1",
         sameAs: [APP_STORE_URL],
         downloadUrl: APP_STORE_URL,
         installUrl: APP_STORE_URL,

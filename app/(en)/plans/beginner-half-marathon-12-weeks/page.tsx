@@ -31,11 +31,11 @@ export default function BeginnerHalfPlan() {
       lang="en"
       eyebrow="Training plan · Half marathon"
       title="Beginner half marathon training plan: 12 weeks"
-      updated="2026-11-22"
+      updated="2026-11-23"
       storeUrl={store}
       intro={
         <p>
-          Twelve weeks, four runs a week, starting from about 15 km a week. One easy run, one easy run with
+          This example covers twelve weeks for a runner who runs about 15 km a week and has four days to train. One easy run, one easy run with
           short strides, one session with a little faster running, and a long run at the weekend. Below is every
           week at a glance, then two weeks in full.
         </p>
@@ -103,9 +103,10 @@ export default function BeginnerHalfPlan() {
 
       <h2>A plan that starts from your own running</h2>
       <p>
-        These weeks are what RunToMax built for one sample runner. In the app, the plan starts from the runs
-        already in Apple Health or Garmin Connect, your days and your time, then changes with you: an easier week
-        when your recovery is low, a moved session when life gets in the way, and you approve every change.
+        The table is a sample schedule you can follow here. It was generated with a development version of
+        RunToMax. The App Store version can give you different long-run distances and a different final week.
+        To build your own plan, choose your running days and the time you have. With your permission,
+        RunToMax can use runs already saved in Apple Health. Connecting Garmin imports new runs as they sync.
         Sessions go to your Apple Watch or your Garmin. The first week of every plan is free, with no subscription.
       </p>
       <p className="text-sm text-zinc-500">

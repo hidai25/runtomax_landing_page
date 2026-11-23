@@ -12,14 +12,16 @@ from xml.etree import ElementTree as ET
 
 class Page(HTMLParser):
     def __init__(self, text):
-        super().__init__(); self.meta={}; self.links=[]; self.images=[]; self.ids=set(); self.h1=0; self.schemas=[]; self.current=None; self.text=[]
+        super().__init__(); self.meta={}; self.links=[]; self.anchors=[]; self.images=[]; self.ids=set(); self.h1=0; self.schemas=[]; self.current=None; self.text=[]
         self.feed(text)
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if a.get('id'): self.ids.add(a['id'])
         if tag=='meta': self.meta[a.get('property',a.get('name',''))]=a.get('content','')
         if tag=='link': self.links.append(a)
-        if tag=='a' and a.get('href'): self.links.append(a)
+        if tag=='a' and a.get('href'):
+            self.links.append(a)
+            self.anchors.append(a)
         if tag=='img': self.images.append(a)
         if tag=='h1': self.h1+=1
         if tag=='script' and a.get('type')=='application/ld+json': self.current=''
@@ -60,7 +62,7 @@ for url in urls:
     for schema in p.schemas: nodes.extend(schema.get('@graph',[schema])); schema_count+=1
     app=next((n for n in nodes if n.get('@type')=='SoftwareApplication'),{})
     check(any(o.get('price')=='0' for o in app.get('offers',[])),f'{path}: free download offer missing')
-    check(app.get('softwareVersion')=='1.4',f'{path}: public version missing')
+    check(app.get('softwareVersion')=='1.4.1',f'{path}: public version missing')
     if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS:
         article=next((n for n in nodes if n.get('@type')=='BlogPosting'),{})
         check(article.get('url')==url,f'{path}: missing article URL')
@@ -93,19 +95,27 @@ for path,p in pages.items():
 check(len(urls)==len(set(urls)), 'Duplicate sitemap URLs')
 llms=(root/'llms.txt').read_text()
 guide_paths = {path for path in pages if path.startswith(('/guides/', '/fr/guides/')) and path not in GUIDE_HUBS}
-hub = pages['/guides/']
-cards = [a['href'] for a in hub.links if a.get('href', '').startswith(('/guides/', '/fr/guides/')) and a['href'] not in GUIDE_HUBS]
-check(set(cards) == guide_paths, 'Guide hub and sitemap disagree')
-collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
-items = collection.get('mainEntity', {}).get('itemListElement', [])
-check([i.get('url') for i in items] == [site + path for path in cards], 'Guide schema differs from visible list')
+# Each hub lists only its own language; together they list every guide.
+for hub_path, other_path in [('/guides/', '/fr/guides/'), ('/fr/guides/', '/guides/')]:
+    hub = pages[hub_path]
+    local_paths = [urlparse(a['href']).path for a in hub.anchors
+                   if urlparse(a['href']).netloc in ('', urlparse(site).netloc)]
+    check(other_path in local_paths, f'{hub_path}: missing visible language switch')
+    cards = [path for path in local_paths if path in guide_paths]
+    expected = {path for path in guide_paths if path.startswith(hub_path)}
+    check(set(cards) == expected, f'{hub_path}: article links differ from this language’s sitemap entries')
+    collection = next((s for s in hub.schemas if s.get('@type') == 'CollectionPage'), {})
+    items = (collection.get('hasPart', []) if hub_path == '/fr/guides/'
+             else collection.get('mainEntity', {}).get('itemListElement', []))
+    check([i.get('url') for i in items] == [site + path for path in cards],
+          f'{hub_path}: guide schema differs from visible articles')
 llms_guides = set(re.findall(r'\]\(https://runtomax\.com(/(?:fr/)?guides/[^/)]+/)\)', llms))
 check(llms_guides == guide_paths, 'Guide links in llms.txt and sitemap disagree')
 for path in guide_paths | GUIDE_HUBS:
     for agent in ('robots', 'googlebot'):
         check('noindex' not in pages[path].meta.get(agent, '').lower(), f'{path}: noindex for {agent}')
 # 1.4 is the App Store version; the file must say so and no longer call 1.3.5 current.
-check('No free tier' not in llms and 'RunToMax 1.4 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
+check('No free tier' not in llms and 'RunToMax 1.4.1 (App Store)' in llms and 'App Store 1.3.5' not in llms,'Stale llms facts')
 # 1.4 is the public release: Workouts is a row on the You tab.
 check('You → Workouts' in (root/'guides/interval-workouts-apple-watch/index.html').read_text(),'Wrong public interval navigation')
 if errors:

@@ -35,7 +35,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           No account is required. Optional Sign in with Apple account sync is
-          available in version 1.3.5 and described below; no email login or
+          described below; no email login or
           password is required.
         </li>
         <li>
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
 
       <h3 id="training-sync">Account sync (optional)</h3>
       <p>
-        Account sync is available in App Store version 1.3.5 and is off until
+        Account sync is off until
         you choose to connect. The following describes this optional feature. You can use RunToMax without a sync account. A French version
         of this disclosure is <a href="#synchronisation">available below</a>.
       </p>
@@ -612,7 +612,7 @@ export default function PrivacyPage() {
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
-          with Sign in with Apple is available from version 1.3.5 and requires your opt-in.
+          with Sign in with Apple requires your opt-in.
         </li>
         <li>No contacts or calendar access.</li>
       </ul>
@@ -765,7 +765,7 @@ export default function PrivacyPage() {
         <h2 id="synchronisation">Synchronisation du compte — français</h2>
         <p>
           Cette information complète la politique ci-dessus pour la
-          synchronisation facultative disponible dans la version App Store 1.3.5.
+          synchronisation facultative.
           Elle reste désactivée tant que vous ne choisissez pas de connecter votre compte.
           Vous pouvez utiliser RunToMax sans compte de synchronisation.
           Le responsable est Hidai Bar-Mor, développeur indépendant de RunToMax.

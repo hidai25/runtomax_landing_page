@@ -42,86 +42,6 @@ const guides = [
       : "Draft",
   },
   {
-    href: guideDefinitions.frIntervals.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frIntervals.title,
-    description: guideDefinitions.frIntervals.description,
-    date: guideDefinitions.frIntervals.published,
-    dateLabel: new Date(`${guideDefinitions.frIntervals.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frWithoutPhone.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frWithoutPhone.title,
-    description: guideDefinitions.frWithoutPhone.description,
-    date: guideDefinitions.frWithoutPhone.published,
-    dateLabel: new Date(`${guideDefinitions.frWithoutPhone.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frTreadmill.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frTreadmill.title,
-    description: guideDefinitions.frTreadmill.description,
-    date: guideDefinitions.frTreadmill.published,
-    dateLabel: new Date(`${guideDefinitions.frTreadmill.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frMissingMap.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frMissingMap.title,
-    description: guideDefinitions.frMissingMap.description,
-    date: guideDefinitions.frMissingMap.published,
-    dateLabel: new Date(`${guideDefinitions.frMissingMap.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frCadence.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frCadence.title,
-    description: guideDefinitions.frCadence.description,
-    date: guideDefinitions.frCadence.published,
-    dateLabel: new Date(`${guideDefinitions.frCadence.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frPace.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frPace.title,
-    description: guideDefinitions.frPace.description,
-    date: guideDefinitions.frPace.published,
-    dateLabel: new Date(`${guideDefinitions.frPace.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frActionButton.path,
-    category: "Apple Watch Ultra · Français",
-    title: guideDefinitions.frActionButton.title,
-    description: guideDefinitions.frActionButton.description,
-    date: guideDefinitions.frActionButton.published,
-    dateLabel: new Date(`${guideDefinitions.frActionButton.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frWaterLock.path,
-    category: "Apple Watch · Français",
-    title: guideDefinitions.frWaterLock.title,
-    description: guideDefinitions.frWaterLock.description,
-    date: guideDefinitions.frWaterLock.published,
-    dateLabel: new Date(`${guideDefinitions.frWaterLock.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.frStryd.path,
-    category: "Stryd · Français",
-    title: guideDefinitions.frStryd.title,
-    description: guideDefinitions.frStryd.description,
-    date: guideDefinitions.frStryd.published,
-    dateLabel: new Date(`${guideDefinitions.frStryd.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
-  },
-  {
-    href: guideDefinitions.garminFractionne.path,
-    category: "Garmin Connect · Français",
-    title: guideDefinitions.garminFractionne.title,
-    description: guideDefinitions.garminFractionne.description,
-    date: guideDefinitions.garminFractionne.published,
-    dateLabel: "November 19, 2026",
-  },
-  {
     href: waterLock.path,
     category: "Apple Watch · Run controls",
     title: waterLock.title,
@@ -206,7 +126,10 @@ export default function GuidesPage() {
       <header className="border-b border-white/[0.08]">
         <nav className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-6" aria-label="Primary">
           <Link href="/" className="font-bebas text-2xl tracking-wide" aria-label="RunToMax home">RUNTO<span className="text-[#1FE26C]">MAX</span></Link>
-          <a href={APP_STORE_URL} className="text-sm font-semibold text-white transition-colors hover:text-[#1FE26C]">Get the app</a>
+          <div className="flex items-center gap-5 text-sm font-medium">
+            <Link href="/fr/guides/" hrefLang="fr" lang="fr" className="text-zinc-400 transition-colors hover:text-white">Français</Link>
+            <a href={APP_STORE_URL} className="font-semibold text-white transition-colors hover:text-[#1FE26C]">Get the app</a>
+          </div>
         </nav>
       </header>
       <section className="relative overflow-hidden border-b border-white/[0.08] px-6 py-20 sm:py-28">

@@ -25,7 +25,7 @@ export default function HomeDevices({ lang }: { lang: "en" | "fr" }) {
         />
       </div>
       <figcaption className="mt-3 text-xs text-zinc-500">
-        {french ? "Aperçu de RunToMax 1.4 · données d’exemple" : "RunToMax 1.4 preview · example data"}
+        {french ? "Données d’exemple" : "Example data"}
       </figcaption>
     </figure>
   );
