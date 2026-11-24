@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  garminTreadmill: {
+    path: "/guides/garmin-treadmill-calibrate-and-save/",
+    title: "Garmin treadmill distance wrong? Why “Calibrate & Save” is missing",
+    description: "Find the distance your Garmin must record, when to enter the belt reading and how to fix a saved treadmill run. See what happens to your lap paces.",
+    release: "1.4.1", devices: "compatible Garmin watches and Garmin Connect",
+    published: "2026-11-24", updated: "2026-11-24",
+  },
   vo2Accuracy: {
     path: "/guides/apple-watch-vo2-max-accuracy/",
     title: "How accurate is Apple Watch VO₂ max?",
