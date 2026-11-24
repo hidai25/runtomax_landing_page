@@ -11,7 +11,7 @@ const CONTENT_DATES: Record<string, string> = {
   "/features/garmin/": "2026-11-21", "/fr/fonctionnalites/garmin/": "2026-11-21",
   "/features/coaching-from-apple-health/": "2026-11-02", "/fr/fonctionnalites/coaching-apple-sante/": "2026-11-02",
   "/features/race-plans/": "2026-09-22", "/fr/fonctionnalites/plans-de-course/": "2026-09-22",
-  "/faq/": "2026-11-19", "/fr/faq/": "2026-11-19",
+  "/faq/": "2026-11-23", "/fr/faq/": "2026-11-19",
   "/accuracy/": "2026-11-02", "/fr/precision/": "2026-11-02",
 };
 
