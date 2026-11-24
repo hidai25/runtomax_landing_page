@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 23, 2026"
+      effectiveDate="November 24, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -884,6 +884,51 @@ export default function PrivacyPage() {
           copies de stockage gérées par l’hébergeur. Pour accéder à vos données,
           les corriger, en obtenir une copie ou demander de l’aide pour les
           supprimer, contactez <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
+        </p>
+      </section>
+
+      <section lang="fr" aria-labelledby="statistiques">
+        <h2 id="statistiques">Statistiques facultatives — français</h2>
+        <p>
+          Les statistiques d’utilisation sont désactivées par défaut. RunToMax
+          n’utilise{" "}
+          <a href="https://posthog.com" target="_blank" rel="noreferrer">
+            PostHog
+          </a>{" "}
+          (US Cloud, hébergé aux États-Unis) qu’après votre accord explicite.
+          Les statistiques peuvent comprendre un identifiant d’installation
+          aléatoire, des informations sur l’app, sa version et l’appareil, des
+          événements d’utilisation des fonctions par catégorie, ainsi que des
+          événements de forme et de coaching par catégorie ou par grande
+          tranche. Par exemple : le type de séance, de grandes tranches de
+          réalisation, vos retours sur le plan d’entraînement, et le fait que
+          vous ayez confirmé ou corrigé une interprétation. Ces événements
+          peuvent être reliés à la même installation dans le temps. RunToMax
+          configure PostHog pour ne pas utiliser l’adresse IP de la requête à
+          des fins de géolocalisation. La capture automatique est désactivée,
+          et l’enregistrement de session est désactivé dans la version publiée.
+        </p>
+        <p>
+          Nous n’envoyons à PostHog ni votre nom, ni votre adresse e-mail, ni
+          vos valeurs exactes d’allure, de distance, de fréquence cardiaque ou
+          de sommeil, ni votre position, ni vos tracés, ni l’identifiant ou
+          l’heure d’une séance, ni le texte des conseils. Vous pouvez désactiver
+          les statistiques à tout moment dans Réglages → Confidentialité →
+          Statistiques facultatives. La désactivation arrête l’envoi de
+          nouveaux événements à PostHog. Pour demander la suppression des
+          statistiques associées à votre identifiant d’installation aléatoire,
+          contactez <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
+        </p>
+        <p>
+          PostHog peut traiter ces données en dehors de votre pays, notamment
+          aux États-Unis. Ses garanties et ses pratiques de transfert sont
+          décrites dans sa{" "}
+          <a href="https://posthog.com/privacy" target="_blank" rel="noreferrer">
+            politique de confidentialité
+          </a>
+          . Les autorisations de statistiques, de coaching par IA et de
+          synchronisation du compte sont distinctes : accepter l’une n’active
+          pas les autres.
         </p>
       </section>
 
