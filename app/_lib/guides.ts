@@ -5,8 +5,8 @@ export const guides = {
     path: "/guides/track-running-shoe-mileage/",
     title: "Track running-shoe mileage from your Apple Watch runs",
     description: "Add your shoes in RunToMax, carry over earlier mileage and assign each run to the right pair. Avoid counting old runs twice when you switch apps.",
-    release: "1.4.1",
-    published: null, updated: "2026-11-22",
+    release: "1.4.2",
+    published: null, updated: "2026-11-24",
   },
   vo2Accuracy: {
     path: "/guides/apple-watch-vo2-max-accuracy/",
