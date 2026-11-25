@@ -15,6 +15,14 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 const waterLock = guideDefinitions.waterLock;
 
 const guides = [
+  ...(guideDefinitions.heartRateZones.published ? [{
+    href: guideDefinitions.heartRateZones.path,
+    category: "Apple Watch · Heart rate",
+    title: guideDefinitions.heartRateZones.title,
+    description: guideDefinitions.heartRateZones.description,
+    date: guideDefinitions.heartRateZones.published,
+    dateLabel: new Date(`${guideDefinitions.heartRateZones.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   ...(guideDefinitions.vo2Accuracy.published ? [{
     href: guideDefinitions.vo2Accuracy.path,
     category: "Apple Watch · Cardio fitness",

@@ -1,0 +1,40 @@
+import Link from "next/link";
+import GuideDetails from "@/app/_components/GuideDetails";
+import PageShell from "@/app/_components/PageShell";
+import { guides } from "@/app/_lib/guides";
+import { pageMetadata } from "@/app/_lib/site";
+
+const guide = guides.heartRateZones;
+const store = "https://apps.apple.com/app/apple-store/id6767669260?pt=126426469&ct=website-guides&mt=8";
+
+export const metadata = pageMetadata(guide.path, {
+  title: guide.title,
+  description: guide.description,
+  alternates: { canonical: guide.path },
+  robots: { index: Boolean(guide.published), follow: true },
+  openGraph: { type: "article", publishedTime: guide.published ?? undefined, modifiedTime: guide.updated },
+});
+
+export default function HeartRateZonesGuide() {
+  return (
+    <PageShell lang="en" eyebrow="Running guides · Heart rate" title={guide.title}
+      updated={guide.updated} storeUrl={store}
+      intro={<p>Already running? In Apple’s Workout app, turn the Digital Crown until the five colored heart rate zones appear. Already home? Open <strong>Fitness → Sessions</strong> on your iPhone, choose the run, then tap <strong>Show More</strong> beside <strong>Heart Rate</strong>.</p>}>
+      <h2>I can see my pulse. Where’s Zone 2?</h2>
+      <p>A reading such as <strong>142 bpm</strong> tells you how fast your heart is beating. To see which zone that falls into for you, scroll through the workout views on your watch. The Heart Rate Zones view highlights your current zone and shows how long you’ve spent in it. Apple personalizes the ranges, so two runners at 142 bpm can see different zone numbers.</p>
+      <h2>What if the zones screen never appears?</h2>
+      <ol>
+        <li>Before your next run, open <strong>Workout</strong> on the watch and find the run type you use, such as <strong>Outdoor Run</strong>.</li>
+        <li>Tap the <strong>Views</strong> button for that workout. Scroll to <strong>Heart Rate Zones</strong> and turn on <strong>Include</strong>. If you also want it on the treadmill, check the views for <strong>Indoor Run</strong> separately.</li>
+        <li>If you still have no calculated zones, check that your date of birth is entered in <strong>Health</strong> on your iPhone. Apple uses it to calculate the ranges.</li>
+      </ol>
+      <p><a href="https://support.apple.com/en-asia/guide/watch/apd73a43493f/watchos">Apple’s instructions for customizing running views</a></p>
+      <h2>How much of my run was actually in Zone 2?</h2>
+      <p>On the iPhone, the expanded Heart Rate chart in Fitness breaks down the estimated time in each zone. Read the duration beside <strong>Zone 2</strong>. An average heart rate can hide the difference between a steady run and a session with quick repeats and slow recoveries.</p>
+      <p><a href="https://support.apple.com/en-mide/guide/watch/apd897dccddf/watchos">Apple’s guide to viewing and editing heart rate zones</a></p>
+      <h2>What if I record with RunToMax?</h2>
+      <p>RunToMax has its own workout screen. When customizing the fields for a run, choose <strong>HR Zone</strong> to see the zone on your wrist. If you also want the number in beats per minute, choose <strong>Heart Rate</strong> for a second field. <Link href="/guides/apple-watch-running-pace/">See how to change a field on your RunToMax watch screen</Link>.</p>
+      <GuideDetails guide={guide} />
+    </PageShell>
+  );
+}
