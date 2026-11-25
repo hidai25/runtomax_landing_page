@@ -6,7 +6,7 @@ export const guides = {
     title: "How to see heart rate zones on Apple Watch during and after a run",
     description: "Find your live heart rate zone in Apple’s Workout app, add the missing view, and see minutes per zone after your run in Fitness on iPhone.",
     release: "1.4.2", devices: "iPhone and Apple Watch",
-    published: null, updated: "2026-11-25",
+    published: "2026-11-25", updated: "2026-11-25",
   },
   vo2Accuracy: {
     path: "/guides/apple-watch-vo2-max-accuracy/",
