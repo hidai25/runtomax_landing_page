@@ -34,12 +34,12 @@ export default function HeartRateZonesGuide() {
       <p>On the iPhone, the expanded Heart Rate chart in Fitness breaks down the estimated time in each zone. Read the duration beside <strong>Zone 2</strong>. An average heart rate can hide the difference between a steady run and a session with quick repeats and slow recoveries.</p>
       <p><a href="https://support.apple.com/en-mide/guide/watch/apd897dccddf/watchos">Apple’s guide to viewing and editing heart rate zones</a></p>
       <h2>What if I record with RunToMax?</h2>
-      <p>RunToMax has its own workout screen. When customizing the fields for a run, choose <strong>HR Zone</strong> to see the zone on your wrist. If you also want the number in beats per minute, choose <strong>Heart Rate</strong> for a second field. <Link href="/guides/apple-watch-running-pace/">See how to change a field on your RunToMax watch screen</Link>.</p>
+      <p>In RunToMax Pro, choose the <strong>Centered 4</strong> watch layout and set the bottom field to <strong>Heart Rate</strong>. Your pulse appears above a five-segment bar. Read the marker from left to right to see which zone you’re in. <Link href="/guides/apple-watch-running-pace/">See how to change a field on your RunToMax watch screen</Link>.</p>
       <figure className="mx-auto my-8 w-full max-w-72">
         <Image src="/guides/runtomax-watch-heart-rate-zone.png"
-          alt="RunToMax watch screen with Z2 in the center and a heart rate of 132 below."
+          alt="RunToMax Centered 4 with time at the top, distance and lap pace in the middle, and 132 bpm above the highlighted second zone at the bottom."
           width={422} height={514} className="h-auto w-full rounded-2xl" />
-        <figcaption className="mt-3 text-sm leading-relaxed">In this example, 132 bpm puts the runner in Zone 2. RunToMax watch layout shown in the simulator with sample data.</figcaption>
+        <figcaption className="mt-3 text-sm leading-relaxed">The white marker above the second segment means Zone 2. This Centered 4 simulator example shows a heart rate of 132 bpm.</figcaption>
       </figure>
       <GuideDetails guide={guide} />
     </PageShell>

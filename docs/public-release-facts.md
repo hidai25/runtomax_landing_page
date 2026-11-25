@@ -147,4 +147,4 @@ Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. Th
 
 The US App Store lookup returned version 1.4.2, released November 23. In the corresponding submission tag `v1.4.2-b66-submission` (e777f6d0), `runtomax/Model/ButtonMapping.swift` and the watch’s `Model/UserPreferences.swift` expose the HR Zone field. The watch’s `Views/MetricValue.swift` renders that field from the live heart rate, separately from the Heart Rate field in bpm. Apple Workout settings and Fitness steps were checked against Apple’s user guide. These checks used release source and documentation. No physical run was performed.
 
-The guide image is a watchOS simulator capture of the unmodified 1.4.2 shared HR Zone layout. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
+The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 layout (`Centered4LayoutShared`) with Heart Rate in the bottom field. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
