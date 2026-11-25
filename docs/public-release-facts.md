@@ -145,4 +145,10 @@ Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. Th
 
 ## Garmin treadmill guide · November 24, 2026
 
-The model examples use Garmin’s US Forerunner 965 and original Enduro manuals. The 965 heart-rate accessory manual documents manual calibration with compatible straps. Garmin Support documents the distinction between editing an activity total, recorded laps and exported files. The article links these sources and makes no claim that later edits propagate to RunToMax. The new-run import reference was checked against the 1.4.1 build 65 source at `78bb6a0b`, in `GarminConnectView`. No physical Garmin run was performed for this guide.
+The model examples use Garmin’s US Forerunner 965 and original Enduro manuals. The 965 heart-rate accessory manual documents manual calibration with compatible straps. Garmin Support documents the distinction between editing an activity total, recorded laps and exported files. The article links these sources and makes no claim that later edits propagate to RunToMax. On November 25 the US App Store listed 1.4.2. Its submission tag `v1.4.2-b66-submission` exposes the new-run import switch in `GarminConnectView` and processes imported distance in `GarminActivityImporter`. See the [runner complaint and keyword check](guide-research/2026-11-25-garmin-treadmill.md). No physical Garmin run was performed for this guide.
+
+## Apple Watch heart rate zones guide, checked November 25, 2026
+
+The US App Store lookup returned version 1.4.2, released November 23. In the corresponding submission tag `v1.4.2-b66-submission` (e777f6d0), `runtomax/Model/ButtonMapping.swift` and the watch’s `Model/UserPreferences.swift` expose the HR Zone field. The watch’s `Views/MetricValue.swift` renders that field from the live heart rate, separately from the Heart Rate field in bpm. Apple Workout settings and Fitness steps were checked against Apple’s user guide. These checks used release source and documentation. No physical run was performed.
+
+The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 layout (`Centered4LayoutShared`) with Heart Rate in the bottom field. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
