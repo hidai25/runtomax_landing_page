@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  garminTreadmill: {
+    path: "/guides/garmin-treadmill-calibrate-and-save/",
+    title: "Garmin treadmill distance wrong? Why “Calibrate & Save” is missing",
+    description: "Find the distance your Garmin must record, when to enter the belt reading and how to fix a saved treadmill run. See what happens to your lap paces.",
+    release: "1.4.3", devices: "compatible Garmin watches and Garmin Connect",
+    published: "2026-11-26", updated: "2026-11-26",
+  },
   heartRateZones: {
     path: "/guides/apple-watch-heart-rate-zones/",
     title: "How to see heart rate zones on Apple Watch during and after a run",

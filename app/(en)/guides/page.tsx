@@ -14,7 +14,16 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const waterLock = guideDefinitions.waterLock;
 
+const garminTreadmill = guideDefinitions.garminTreadmill;
 const guides = [
+  {
+    href: garminTreadmill.path,
+    category: "Garmin · Treadmill",
+    title: garminTreadmill.title,
+    description: garminTreadmill.description,
+    date: garminTreadmill.published,
+    dateLabel: new Date(`${garminTreadmill.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  },
   ...(guideDefinitions.heartRateZones.published ? [{
     href: guideDefinitions.heartRateZones.path,
     category: "Apple Watch · Heart rate",
