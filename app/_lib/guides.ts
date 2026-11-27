@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  audioCues: {
+    path: "/guides/apple-watch-running-voice-cues/",
+    title: "How do I hear my pace every kilometre or mile during Apple Watch intervals?",
+    description: "Get spoken splits across work and recovery in RunToMax, test your headphones before you run and check Voice Feedback in Apple’s Workout app.",
+    release: "1.4.3", devices: "iPhone and Apple Watch",
+    published: "2026-11-27", updated: "2026-11-27",
+  },
   garminTreadmill: {
     path: "/guides/garmin-treadmill-calibrate-and-save/",
     title: "Garmin treadmill distance wrong? Why “Calibrate & Save” is missing",

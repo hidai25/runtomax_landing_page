@@ -152,3 +152,7 @@ The model examples use Garmin’s US Forerunner 965 and original Enduro manuals.
 The US App Store lookup returned version 1.4.2, released November 23. In the corresponding submission tag `v1.4.2-b66-submission` (e777f6d0), `runtomax/Model/ButtonMapping.swift` and the watch’s `Model/UserPreferences.swift` expose the HR Zone field. The watch’s `Views/MetricValue.swift` renders that field from the live heart rate, separately from the Heart Rate field in bpm. Apple Workout settings and Fitness steps were checked against Apple’s user guide. These checks used release source and documentation. No physical run was performed.
 
 The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 layout (`Centered4LayoutShared`) with Heart Rate in the bottom field. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
+
+## Spoken splits during intervals, checked November 27, 2026
+
+Apple’s US listing showed 1.4.3. The archived iPhone and embedded Watch apps both report build 67 and include the two split switch labels. The watch also contains the test cue label. Checked the Watch settings, cue gates, whole-run split tracker and English spoken text in build-67 source at `e78cb326`. Twenty release-source tests passed in a local Swift harness. They cover split boundaries and preference synchronization. Physical headphone playback during a workout is unverified. The [research record](guide-research/2026-11-13-audio-cues.md) identifies the original question and the test scope.

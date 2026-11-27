@@ -16,6 +16,14 @@ const waterLock = guideDefinitions.waterLock;
 
 const garminTreadmill = guideDefinitions.garminTreadmill;
 const guides = [
+  ...(guideDefinitions.audioCues.published ? [{
+    href: guideDefinitions.audioCues.path,
+    category: "Apple Watch · Spoken splits",
+    title: guideDefinitions.audioCues.title,
+    description: guideDefinitions.audioCues.description,
+    date: guideDefinitions.audioCues.published,
+    dateLabel: new Date(`${guideDefinitions.audioCues.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   {
     href: garminTreadmill.path,
     category: "Garmin · Treadmill",
