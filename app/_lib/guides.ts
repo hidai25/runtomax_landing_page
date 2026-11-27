@@ -6,7 +6,7 @@ export const guides = {
     title: "How do I hear my pace every kilometre or mile during Apple Watch intervals?",
     description: "Get spoken splits across work and recovery in RunToMax, test your headphones before you run and check Voice Feedback in Apple’s Workout app.",
     release: "1.4.3", devices: "iPhone and Apple Watch",
-    published: null, updated: "2026-11-27",
+    published: "2026-11-27", updated: "2026-11-27",
   },
   garminTreadmill: {
     path: "/guides/garmin-treadmill-calibrate-and-save/",
