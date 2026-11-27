@@ -15,6 +15,7 @@ type PageShellProps = {
   /** Date of the last substantive editorial update. */
   updated: string;
   storeUrl?: string;
+  measureGuideDownloads?: boolean;
   children: ReactNode;
 };
 
@@ -67,7 +68,7 @@ const STRINGS = {
   },
 } as const;
 
-export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, storeUrl = lang === "fr" ? FR_APP_STORE_URL : APP_STORE_URL, children }: PageShellProps) {
+export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, measureGuideDownloads, storeUrl = lang === "fr" ? FR_APP_STORE_URL : APP_STORE_URL, children }: PageShellProps) {
   const t = STRINGS[lang];
   const updatedLabel = new Date(updated).toLocaleDateString(lang === "en" ? "en-US" : "fr-FR", {
     year: "numeric",
@@ -75,7 +76,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
     day: "numeric",
   });
   return (
-    <main className="font-sans bg-black text-white min-h-screen">
+    <main data-measure-guide-downloads={measureGuideDownloads || undefined} className="font-sans bg-black text-white min-h-screen">
       <nav className="fixed top-0 inset-x-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
           <Link href={t.home} className="font-bebas text-2xl tracking-wide select-none">

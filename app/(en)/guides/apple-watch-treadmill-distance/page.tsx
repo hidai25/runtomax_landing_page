@@ -20,7 +20,7 @@ export const metadata: Metadata = pageMetadata("/guides/apple-watch-treadmill-di
 const download = "https://apps.apple.com/app/apple-store/id6767669260?pt=126426469&ct=en-guide-treadmill&mt=8";
 
 export default function TreadmillDistanceGuide() {
-  return <main className="min-h-screen bg-black text-white">
+  return <main data-measure-guide-downloads className="min-h-screen bg-black text-white">
     <nav className="border-b border-white/10 px-6 py-5"><div className="mx-auto flex max-w-3xl justify-between"><Link href="/" className="font-bebas text-2xl">RUNTO<span className="text-[#1FE26C]">MAX</span></Link><a id="app-store-nav" href={download} className="text-sm">Get the app</a></div></nav>
     <article className="mx-auto max-w-3xl px-6 py-16">
       <Link href="/guides/" className="mb-8 inline-block text-sm font-medium text-zinc-400 hover:text-white">← All guides</Link>

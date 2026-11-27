@@ -13,7 +13,7 @@ export const metadata = pageMetadata(guide.path, {
 
 export default function DistanceTapisGuide() {
   return (
-    <PageShell lang="fr" eyebrow="Guide · Apple Watch" title={guide.title} updated={guide.updated}
+    <PageShell measureGuideDownloads lang="fr" eyebrow="Guide · Apple Watch" title={guide.title} updated={guide.updated}
       alternate="/guides/apple-watch-treadmill-distance/" storeUrl={store}
       intro={<p>Le tapis affiche 5,0 km, la montre 4,7 km. Voici quelle distance retenir, comment corriger une sortie enregistrée avec RunToMax et comment reporter la distance du tapis dans Apple Santé.</p>}>
       <h2>Le tapis indique 5,0 km et mon Apple Watch 4,7 km. Laquelle retenir ?</h2>
