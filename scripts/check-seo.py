@@ -74,10 +74,12 @@ for url in urls:
                     '/guides/interval-workouts-apple-watch/', '/guides/run-apple-watch-without-iphone/',
                     '/guides/apple-watch-treadmill-distance/'):
             version = '1.4'
-        if path == '/guides/track-running-shoe-mileage/':
-            version = '1.4.2'
-        if path in ('/guides/apple-watch-vo2-max-accuracy/', '/fr/guides/fiabilite-vo2-max-apple-watch/'):
+        if path in ('/guides/garmin-treadmill-calibrate-and-save/', '/guides/apple-watch-vo2-max-accuracy/', '/fr/guides/fiabilite-vo2-max-apple-watch/'):
             version = '1.4.1'
+        if path == '/guides/apple-watch-heart-rate-zones/':
+            version = '1.4.2'
+        if path == '/guides/track-running-shoe-mileage/':
+            version = '1.4.3'
         check(version in text and byline in text,f'{path}: missing visible attribution/version')
     for a in p.links:
         href=urlparse(a.get('href',''))

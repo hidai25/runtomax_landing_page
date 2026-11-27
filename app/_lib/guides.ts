@@ -3,10 +3,24 @@ import { OG_IMAGE, SITE_URL } from "./site";
 export const guides = {
   shoeMileage: {
     path: "/guides/track-running-shoe-mileage/",
-    title: "Track running-shoe mileage from your Apple Watch runs",
-    description: "Add your shoes in RunToMax, carry over earlier mileage and assign each run to the right pair. Avoid counting old runs twice when you switch apps.",
-    release: "1.4.2",
-    published: null, updated: "2026-11-24",
+    title: "How to track running shoe mileage with an Apple Watch",
+    description: "Switching from Garmin or rotating two pairs? Carry over each shoe’s starting mileage, choose a pair on Apple Watch and fix a run logged against the wrong shoes.",
+    release: "1.4.3", devices: "iPhone and Apple Watch",
+    published: "2026-11-27", updated: "2026-11-27",
+  },
+  garminTreadmill: {
+    path: "/guides/garmin-treadmill-calibrate-and-save/",
+    title: "Garmin treadmill distance wrong? Why “Calibrate & Save” is missing",
+    description: "Find the distance your Garmin must record, when to enter the belt reading and how to fix a saved treadmill run. See what happens to your lap paces.",
+    release: "1.4.3", devices: "compatible Garmin watches and Garmin Connect",
+    published: "2026-11-26", updated: "2026-11-26",
+  },
+  heartRateZones: {
+    path: "/guides/apple-watch-heart-rate-zones/",
+    title: "How to see heart rate zones on Apple Watch during and after a run",
+    description: "Find your live heart rate zone in Apple’s Workout app, add the missing view, and see minutes per zone after your run in Fitness on iPhone.",
+    release: "1.4.2", devices: "iPhone and Apple Watch",
+    published: "2026-11-25", updated: "2026-11-25",
   },
   vo2Accuracy: {
     path: "/guides/apple-watch-vo2-max-accuracy/",

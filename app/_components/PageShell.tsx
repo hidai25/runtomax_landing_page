@@ -15,6 +15,7 @@ type PageShellProps = {
   /** Date of the last substantive editorial update. */
   updated: string;
   storeUrl?: string;
+  measureGuideDownloads?: boolean;
   children: ReactNode;
 };
 
@@ -67,7 +68,7 @@ const STRINGS = {
   },
 } as const;
 
-export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, storeUrl = lang === "fr" ? FR_APP_STORE_URL : APP_STORE_URL, children }: PageShellProps) {
+export default function PageShell({ lang, eyebrow, title, intro, alternate, updated, measureGuideDownloads, storeUrl = lang === "fr" ? FR_APP_STORE_URL : APP_STORE_URL, children }: PageShellProps) {
   const t = STRINGS[lang];
   const updatedLabel = new Date(updated).toLocaleDateString(lang === "en" ? "en-US" : "fr-FR", {
     year: "numeric",
@@ -75,7 +76,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
     day: "numeric",
   });
   return (
-    <main className="font-sans bg-black text-white min-h-screen">
+    <main data-measure-guide-downloads={measureGuideDownloads || undefined} className="font-sans bg-black text-white min-h-screen">
       <nav className="fixed top-0 inset-x-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
           <Link href={t.home} className="font-bebas text-2xl tracking-wide select-none">
@@ -88,7 +89,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
                 {t.switch}
               </Link>
             ) : null}
-            <a href={storeUrl} className="hover:text-[#1FE26C] transition-colors duration-200">
+            <a id="app-store-nav" href={storeUrl} className="hover:text-[#1FE26C] transition-colors duration-200">
               {t.get}
             </a>
           </div>
@@ -110,6 +111,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
       <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto rounded-2xl border border-white/[0.08] bg-gradient-to-br from-zinc-900 to-[#0d1510] p-8 text-center">
           <a
+            id="app-store-bottom"
             href={storeUrl}
             className="inline-block rounded-full bg-[#1FE26C] px-7 py-3 text-sm font-bold text-black hover:bg-[#4BEA8A] transition-colors"
           >

@@ -14,7 +14,32 @@ export const metadata: Metadata = pageMetadata("/guides/", {
 
 const waterLock = guideDefinitions.waterLock;
 
+const garminTreadmill = guideDefinitions.garminTreadmill;
 const guides = [
+  {
+    href: guideDefinitions.shoeMileage.path,
+    category: "Apple Watch · Running gear",
+    title: guideDefinitions.shoeMileage.title,
+    description: guideDefinitions.shoeMileage.description,
+    date: guideDefinitions.shoeMileage.published,
+    dateLabel: new Date(`${guideDefinitions.shoeMileage.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  },
+  {
+    href: garminTreadmill.path,
+    category: "Garmin · Treadmill",
+    title: garminTreadmill.title,
+    description: garminTreadmill.description,
+    date: garminTreadmill.published,
+    dateLabel: new Date(`${garminTreadmill.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  },
+  ...(guideDefinitions.heartRateZones.published ? [{
+    href: guideDefinitions.heartRateZones.path,
+    category: "Apple Watch · Heart rate",
+    title: guideDefinitions.heartRateZones.title,
+    description: guideDefinitions.heartRateZones.description,
+    date: guideDefinitions.heartRateZones.published,
+    dateLabel: new Date(`${guideDefinitions.heartRateZones.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
+  }] : []),
   ...(guideDefinitions.vo2Accuracy.published ? [{
     href: guideDefinitions.vo2Accuracy.path,
     category: "Apple Watch · Cardio fitness",
@@ -23,16 +48,6 @@ const guides = [
     date: guideDefinitions.vo2Accuracy.published,
     dateLabel: new Date(`${guideDefinitions.vo2Accuracy.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }),
   }] : []),
-  {
-    href: guideDefinitions.shoeMileage.path,
-    category: "Running gear · Shoe mileage",
-    title: guideDefinitions.shoeMileage.title,
-    description: "Keep a total for each pair, including earlier mileage, and correct assignments when you rotate shoes.",
-    date: guideDefinitions.shoeMileage.published,
-    dateLabel: guideDefinitions.shoeMileage.published
-      ? new Date(`${guideDefinitions.shoeMileage.published}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
-      : "Draft",
-  },
   {
     href: guideDefinitions.garminIntervalsEn.path,
     category: "Garmin Connect · Intervals",

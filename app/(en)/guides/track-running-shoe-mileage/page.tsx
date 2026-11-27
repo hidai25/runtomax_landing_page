@@ -28,7 +28,8 @@ export default function ShoeMileageGuide() {
         <p className="text-lg leading-relaxed"><strong>Give each pair a starting distance, then assign new runs to the pair you wore.</strong> If you switch watches halfway through a pair’s life, you can carry its mileage forward without re-entering every old workout.</p>
       </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
-        <p>A <a href="https://www.reddit.com/r/AppleWatch/comments/1wx6f02/shoe_mileage_tracking/">runner switching from Garmin to Apple Watch</a> missed tracking mileage for each pair. If you already keep your runs in Strava, its gear log lets you add shoes, set a default and change the pair on an activity. A simple log with one total per pair also works. <a href="https://support.strava.com/en-us/articles/15402143-how-do-i-add-gear-to-my-activities-on-strava">Strava’s gear instructions</a></p>
+        <p>A <a href="https://www.reddit.com/r/AppleWatch/comments/1wx6f02/shoe_mileage_tracking/">runner switching from Garmin to Apple Watch</a> missed tracking mileage for each pair. If you already keep your runs in Strava, its gear log lets you change the shoes on an individual activity. <a href="https://support.strava.com/en-us/articles/15402143-how-do-i-add-gear-to-my-activities-on-strava">Strava’s gear instructions</a></p>
+        <p>If you use a note or spreadsheet, start a row for each pair with its current total. After a run, add the distance to the row for the shoes you wore. If you use Strava, open <strong>You → Profile → Gear</strong> to add your shoes. You can set one pair as the default for road runs and another for trail runs.</p>
         <h2>Carry your existing mileage into RunToMax</h2>
         <ol className="list-decimal space-y-3 pl-5">
           <li>In RunToMax Pro on iPhone, open <strong>You</strong>. Under <strong>Gear and routes</strong>, tap <strong>Shoes</strong>. If you already have a pair, the row can show its name instead.</li>
@@ -36,7 +37,7 @@ export default function ShoeMileageGuide() {
           <li>In <strong>Already run</strong>, enter the distance from your old log in the unit shown. Leave it at zero for a new pair, then tap <strong>Save</strong>.</li>
         </ol>
         <h2>Choose which pair gets the next run</h2>
-        <p>In the shoe library, turn on <strong>Choose shoes on Apple Watch</strong> to pick a pair before recording with RunToMax. If you pick a <strong>Default pair</strong>, it’s used when you skip the picker.</p>
+        <p>In the shoe library, turn on <strong>Choose shoes on Apple Watch</strong> to pick a pair before recording with RunToMax. Before you start, tap the shoe name or <strong>Choose shoes</strong> on the watch. If you set a <strong>Default pair</strong> on iPhone, it starts selected. If you don’t see the picker, check that the switch is on and that you have an active pair in the library.</p>
         <p>To correct a saved workout on iPhone, open it in <strong>Runs</strong>, expand <strong>Shoes, flyover, export</strong> and tap the shoe name or <strong>No shoe logged</strong>. Choose the pair you actually wore. Return to the shoe library to check its total.</p>
         <h2>Why is the total higher than expected?</h2>
         <p>Suppose your old Garmin log shows <strong>240 km</strong> on one pair. Enter 240 km as its starting distance. After you assign a new 10 km run, the pair shows <strong>250 km</strong>. If you also assign an older 10 km run already included in the 240, the total rises to 260 km.</p>

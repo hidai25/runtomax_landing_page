@@ -53,3 +53,15 @@ The production export and SEO checks passed for 34 published pages. At 375 px an
 ## November 24 release recheck
 
 The November 23 VO₂ max publication filled the previous slot. The original runner’s complaint still applies. Apple’s US listing now reports 1.4.2, and the archived iPhone and Watch apps both report 1.4.2 (66). Compared the submission tag `v1.4.2-b66-submission` (`e777f6d0`) with build-65 source `78bb6a0b`. The shoe store, library, You tab, run-detail view, Watch picker and shoe test files are identical. Verified the instructions against that tag. The 11 simulator tests and visual walkthrough recorded above ran on build-65 source. No additional device test is claimed for build 66. The draft awaits the owner’s approval.
+
+## November 27 candidate for publication
+
+The November 26 article covered Garmin treadmill calibration. The November 27 deployment updated links in two existing articles. The live index and open PRs contained no published shoe guide, so this candidate reuses PR #45.
+
+Reopened the [original runner complaint](https://www.reddit.com/r/AppleWatch/comments/1wx6f02/shoe_mileage_tracking/) and [Strava’s gear instructions](https://support.strava.com/en-us/articles/15402143-how-do-i-add-gear-to-my-activities-on-strava). The runner wanted to keep shoe mileage after moving from Garmin to Apple Watch. In the [US English autocomplete response](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=apple%20watch%20shoe%20mileage), Google suggested “can apple watch track shoe mileage”. This informed the title. Both attempts to open the authenticated Search Console performance report timed out. No shoe-specific impressions or search volume were verified.
+
+Apple’s US lookup returned 1.4.3. Checked both archived bundles at build 67 and inspected the build-67 watch configuration, picker, iPhone shoe library and workout details. The isolated macOS harness ran 35 tests across five suites using release source, including picker visibility, default selection and protection of an iPhone correction. The earlier simulator test and synthetic mileage example are described above. No fresh paired-device run was recorded. This check supersedes the previous release notes for the candidate.
+
+The branch uses November 27 as the intended publication date. Confirm the actual Jerusalem date before merging if approval arrives later.
+
+The production webpack export passed TypeScript and generated the static article. All 39 public pages passed the SEO check, including the hub, sitemap, llms.txt, social metadata and article markup. Chrome opened the article from the English hub at 320, 390 and 1440 pixels without horizontal overflow. The App Store campaign link returned HTTP 200.

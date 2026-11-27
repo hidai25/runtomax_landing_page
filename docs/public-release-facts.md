@@ -163,3 +163,17 @@ The [US App Store listing](https://apps.apple.com/us/app/runtomax-running-coach-
 ## Shoe-mileage guide verification for 1.4.2, November 24
 
 The US App Store lists RunToMax 1.4.2. The November 23 release archive contains iPhone and Watch apps at build 66. The submission tag `v1.4.2-b66-submission` has the same shoe library, Watch picker, saved-run shoe assignment and mileage calculation as the build 65 sources used for the simulator checks. The guide’s navigation, labels and example still apply.
+
+## Garmin treadmill guide · November 24, 2026
+
+The model examples use Garmin’s US Forerunner 965 and original Enduro manuals. The 965 heart-rate accessory manual documents manual calibration with compatible straps. Garmin Support documents the distinction between editing an activity total, recorded laps and exported files. The article links these sources and makes no claim that later edits propagate to RunToMax. On November 26 the [US App Store listing](https://apps.apple.com/us/app/id6767669260) showed version 1.4.3 and described importing new Garmin runs after sync. The November 25 Xcode archive identifies both the iPhone and embedded Watch apps as 1.4.3 build 67. The phone’s compiled French catalog contains the Garmin run-import prompt and enable action. See the [runner complaint and keyword check](guide-research/2026-11-25-garmin-treadmill.md). No physical Garmin run was performed for this guide.
+
+## Apple Watch heart rate zones guide, checked November 25, 2026
+
+The US App Store lookup returned version 1.4.2, released November 23. In the corresponding submission tag `v1.4.2-b66-submission` (e777f6d0), `runtomax/Model/ButtonMapping.swift` and the watch’s `Model/UserPreferences.swift` expose the HR Zone field. The watch’s `Views/MetricValue.swift` renders that field from the live heart rate, separately from the Heart Rate field in bpm. Apple Workout settings and Fitness steps were checked against Apple’s user guide. These checks used release source and documentation. No physical run was performed.
+
+The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 layout (`Centered4LayoutShared`) with Heart Rate in the bottom field. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
+
+## Running shoe mileage guide, November 27, 2026
+
+The [US App Store listing](https://apps.apple.com/us/app/id6767669260) reports 1.4.3. Both bundles in the November 25 archive report 1.4.3 (67). In the build-67 source at `e78cb326`, the iPhone shoe library supports starting mileage in the runner’s chosen units. The watch picker needs an enabled configuration and an active pair. The saved workout’s shoe row opens the assignment sheet. The shoe store, watch picker and selection tests match those used for the earlier simulator check. See the [research and test record](guide-research/2026-11-12-shoe-mileage.md).
