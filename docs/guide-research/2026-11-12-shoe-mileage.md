@@ -65,3 +65,7 @@ Apple’s US lookup returned 1.4.3. Checked both archived bundles at build 67 an
 The branch uses November 27 as the intended publication date. Confirm the actual Jerusalem date before merging if approval arrives later.
 
 The production webpack export passed TypeScript and generated the static article. All 39 public pages passed the SEO check, including the hub, sitemap, llms.txt, social metadata and article markup. Chrome opened the article from the English hub at 320, 390 and 1440 pixels without horizontal overflow. The App Store campaign link returned HTTP 200.
+
+## November 28 candidate, checked November 27
+
+The [original runner](https://www.reddit.com/r/AppleWatch/comments/1wx6f02/shoe_mileage_tracking/) switched back from Garmin and missed tracking distance per pair. The guide explains how to carry forward an existing total and assign subsequent runs. On November 27, 2026, [Google autocomplete, US English](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=US&q=apple%20watch%20shoe%20mileage) returned “apple watch shoe mileage tracker”, “apple watch track shoe mileage” and “can apple watch track shoe mileage” for the exact input “apple watch shoe mileage”. Suggestions establish wording only. No query volume or RunToMax impressions were established.

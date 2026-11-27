@@ -6,6 +6,13 @@ export const guides = {
     title: "How to track running shoe mileage with an Apple Watch",
     description: "Switching from Garmin or rotating two pairs? Carry over each shoe’s starting mileage, choose a pair on Apple Watch and fix a run logged against the wrong shoes.",
     release: "1.4.3", devices: "iPhone and Apple Watch",
+    published: "2026-11-28", updated: "2026-11-28",
+  },
+  audioCues: {
+    path: "/guides/apple-watch-running-voice-cues/",
+    title: "How do I hear my pace every kilometre or mile during Apple Watch intervals?",
+    description: "Get spoken splits across work and recovery in RunToMax, test your headphones before you run and check Voice Feedback in Apple’s Workout app.",
+    release: "1.4.3", devices: "iPhone and Apple Watch",
     published: "2026-11-27", updated: "2026-11-27",
   },
   garminTreadmill: {

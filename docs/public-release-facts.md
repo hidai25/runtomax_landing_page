@@ -177,3 +177,7 @@ The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 la
 ## Running shoe mileage guide, November 27, 2026
 
 The [US App Store listing](https://apps.apple.com/us/app/id6767669260) reports 1.4.3. Both bundles in the November 25 archive report 1.4.3 (67). In the build-67 source at `e78cb326`, the iPhone shoe library supports starting mileage in the runner’s chosen units. The watch picker needs an enabled configuration and an active pair. The saved workout’s shoe row opens the assignment sheet. The shoe store, watch picker and selection tests match those used for the earlier simulator check. See the [research and test record](guide-research/2026-11-12-shoe-mileage.md).
+
+## Spoken splits during intervals, checked November 27, 2026
+
+Apple’s US listing showed 1.4.3. The archived iPhone and embedded Watch apps both report build 67 and include the two split switch labels. The watch also contains the test cue label. Checked the Watch settings, cue gates, whole-run split tracker and English spoken text in build-67 source at `e78cb326`. Twenty release-source tests passed in a local Swift harness. They cover split boundaries and preference synchronization. Physical headphone playback during a workout is unverified. The [research record](guide-research/2026-11-13-audio-cues.md) identifies the original question and the test scope.
