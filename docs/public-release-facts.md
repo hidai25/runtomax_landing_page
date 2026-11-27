@@ -84,6 +84,19 @@ The owner explicitly instructed publication on November 10 after the pending con
 - Keep Stryd references descriptive, with a trademark/non-affiliation statement. No Stryd artwork or brand assets added. Public research does not establish a comprehensive third-party trademark licence or approval.
 - Evidence and required shipping-device checks: [Stryd guide research](guide-research/2026-11-10-stryd-power.md).
 
+## November 12 draft: running-shoe mileage
+
+Public US App Store listing checked November 12: **1.3.5**. Source tag `v1.3.5-b57-submission`, commit `6b27f42cf2a2febf33b9672906dce46a6794ba04`; development main is not shipping evidence.
+
+- `runtomax/Views/RootView.swift:221–223,239–244`: phone **Watch** hub and **Runs** tab. These differ from the unreleased redesigned You tab.
+- `runtomax/Views/LibraryRootView.swift:209,277–283,369`: Shoes is in the Gear group and opens ShoesLibraryView. `sectionIsLocked` checks paid app access for this destination. The article explicitly scopes its Shoes-library flow to Pro; it does not claim all shoe entry paths are paywalled.
+- `runtomax/Views/ShoesLibraryView.swift`: plus / Add a shoe, Name, Brand, Already run, Retire at, Save; tapping an existing card opens the editor. Units are converted through RunDisplayUnits; target defaults are not scientific lifetime estimates.
+- `runtomax/Views/WorkoutDetailView.swift:7089,7167–7210`: shoe row opens ShoePickerSheet; unassigned label is No shoe logged. `ShoePickerSheet.swift` lets the runner assign another pair or choose Unassigned. No automatically detected shoe is represented by this flow.
+- `runtomax/Model/ShoeStore.swift`: totalKm equals baseKm plus distances of runs assigned by UUID. Reassignment changes the mapping, not the original run distance; historical distance in both baseKm and assigned runs is counted twice. wearLevel compares this total with targetKm; it is not a physical condition sensor.
+- No Strava/Garmin shoe-import or synchronization claim. No health, injury-prevention or performance claim. The example (240 + 10 = 250 km) is explicitly hypothetical.
+
+**Publication blocked:** iPhone Mirroring reported iPhone Not Found; no physical shipping iPhone/Watch verification was performed. Source verification does not satisfy that walkthrough. The article remains unpublished/noindex, excluded from the guide index and sitemap until a real release date is set. Owner approval is required for this specific guide. Research and remaining checks: [shoe mileage research](guide-research/2026-11-12-shoe-mileage.md).
+
 
 ## November 14 draft: running cadence on Apple Watch
 
@@ -137,11 +150,19 @@ Publication check on November 20: both paired physical devices reported 1.4 (63)
 
 Verified against RunToMax 1.4 build 63, submission tag `v1.4-b63-submission`. The phone’s HealthKitManager requests workout and route data separately. RunDetailLoadOutcome treats an available outdoor workout with no route as retryable and an indoor workout with an available source as complete. RunNoMap distinguishes an unqueried or restored summary from a confirmed empty route. The Watch WorkoutManager requests location access and uses HKWorkoutRouteBuilder. Both tagged app test suites passed on an isolated iPhone simulator with synthetic records. The article makes no claim about restoring an unrecorded route. See the [complaint, sources and release checks](guide-research/2026-11-08-missing-run-map.md).
 
+## Shoe mileage in 1.4.1 (65), November 22
+
+The [US App Store listing](https://apps.apple.com/us/app/runtomax-running-coach-plan/id6767669260) reported 1.4.1. Both apps in the November 21 release archive reported 1.4.1 (65). The build-65 phone source places the shoe library under You → Gear and routes, with Pro access. ShoesLibraryView, WorkoutDetailView and ShoeStore support entering prior mileage and changing the pair assigned to a saved run. The Watch picker is optional. An isolated simulator displayed the library with synthetic pairs, and 11 tests covered starting mileage, reassignment and Watch selection. See the [research and verification notes](guide-research/2026-11-12-shoe-mileage.md) for the exact example and physical-device test boundary.
+
 ## VO₂ max accuracy guide · November 23, 2026
 
 - RunToMax 1.4.1, build 65 (app source `78bb6a0b`). Trends’ Pro VO₂ max detail prioritizes a manually recorded test, then an available RunToMax estimate. The info button explains the active source. See `TrendsView.vo2Card`, `MetricExplanation.vo2Max` and `VO2MaxEstimator.estimate`.
 - The screenshot uses the released `MetricExplainerSheet` and its explanation factory in the iPhone simulator. Synthetic inputs feed the real estimator: maximum HR 184 bpm, resting HR 50 bpm and a 5 km effort of 24 minutes. This illustrates the heart-rate/performance fallback. The app also supports a submaximal pace/heart-rate method.
 - The accuracy statistic applies to Apple Watch Series 10 in Lambe et al., [Mayo Clinic Proceedings: Digital Health, 2026](https://doi.org/10.1016/j.mcpdig.2026.100357). Forty participants completed exercise testing and 35 contributed to the final comparison. Mean absolute error was 6.79 mL/kg/min. The article reports a factual finding in original prose and links to the source. The study did not evaluate RunToMax.
+
+## Shoe-mileage guide verification for 1.4.2, November 24
+
+The US App Store lists RunToMax 1.4.2. The November 23 release archive contains iPhone and Watch apps at build 66. The submission tag `v1.4.2-b66-submission` has the same shoe library, Watch picker, saved-run shoe assignment and mileage calculation as the build 65 sources used for the simulator checks. The guide’s navigation, labels and example still apply.
 
 ## Garmin treadmill guide · November 24, 2026
 
@@ -152,6 +173,10 @@ The model examples use Garmin’s US Forerunner 965 and original Enduro manuals.
 The US App Store lookup returned version 1.4.2, released November 23. In the corresponding submission tag `v1.4.2-b66-submission` (e777f6d0), `runtomax/Model/ButtonMapping.swift` and the watch’s `Model/UserPreferences.swift` expose the HR Zone field. The watch’s `Views/MetricValue.swift` renders that field from the live heart rate, separately from the Heart Rate field in bpm. Apple Workout settings and Fitness steps were checked against Apple’s user guide. These checks used release source and documentation. No physical run was performed.
 
 The guide image is a watchOS simulator capture of the 1.4.2 shared Centered 4 layout (`Centered4LayoutShared`) with Heart Rate in the bottom field. A temporary preview supplied example data (132 bpm, Z2 for a runner with a maximum of 200 bpm). It illustrates the RunToMax section.
+
+## Running shoe mileage guide, November 27, 2026
+
+The [US App Store listing](https://apps.apple.com/us/app/id6767669260) reports 1.4.3. Both bundles in the November 25 archive report 1.4.3 (67). In the build-67 source at `e78cb326`, the iPhone shoe library supports starting mileage in the runner’s chosen units. The watch picker needs an enabled configuration and an active pair. The saved workout’s shoe row opens the assignment sheet. The shoe store, watch picker and selection tests match those used for the earlier simulator check. See the [research and test record](guide-research/2026-11-12-shoe-mileage.md).
 
 ## Spoken splits during intervals, checked November 27, 2026
 

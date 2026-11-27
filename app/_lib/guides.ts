@@ -1,6 +1,13 @@
 import { OG_IMAGE, SITE_URL } from "./site";
 
 export const guides = {
+  shoeMileage: {
+    path: "/guides/track-running-shoe-mileage/",
+    title: "How to track running shoe mileage with an Apple Watch",
+    description: "Switching from Garmin or rotating two pairs? Carry over each shoe’s starting mileage, choose a pair on Apple Watch and fix a run logged against the wrong shoes.",
+    release: "1.4.3", devices: "iPhone and Apple Watch",
+    published: "2026-11-28", updated: "2026-11-28",
+  },
   audioCues: {
     path: "/guides/apple-watch-running-voice-cues/",
     title: "How do I hear my pace every kilometre or mile during Apple Watch intervals?",
