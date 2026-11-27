@@ -88,7 +88,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
                 {t.switch}
               </Link>
             ) : null}
-            <a href={storeUrl} className="hover:text-[#1FE26C] transition-colors duration-200">
+            <a id="app-store-nav" href={storeUrl} className="hover:text-[#1FE26C] transition-colors duration-200">
               {t.get}
             </a>
           </div>
@@ -110,6 +110,7 @@ export default function PageShell({ lang, eyebrow, title, intro, alternate, upda
       <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto rounded-2xl border border-white/[0.08] bg-gradient-to-br from-zinc-900 to-[#0d1510] p-8 text-center">
           <a
+            id="app-store-bottom"
             href={storeUrl}
             className="inline-block rounded-full bg-[#1FE26C] px-7 py-3 text-sm font-bold text-black hover:bg-[#4BEA8A] transition-colors"
           >
