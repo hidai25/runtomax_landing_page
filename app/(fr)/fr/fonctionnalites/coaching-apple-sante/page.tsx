@@ -70,9 +70,9 @@ export default function CoachingFeaturePageFr() {
 
       <h2>Où vivent vos données</h2>
       <p>
-        Vos courses, tracés et fréquences cardiaques sont stockés dans Apple Santé et sur l’appareil. Aucun compte n’est requis. Dans la version 1.3.5,
-        vous pouvez activer séparément la synchronisation avec Se connecter avec Apple : Cloudflare conserve alors une archive chiffrée
-        de votre entraînement, avec la fréquence cardiaque des séances mais sans tracés GPS bruts. Désactiver le coaching cloud
+        Vos courses, tracés et fréquences cardiaques sont stockés dans Apple Santé et sur l’appareil. Aucun compte n’est requis.
+        Vous pouvez activer séparément la synchronisation avec Se connecter avec Apple : Cloudflare conserve alors une archive chiffrée
+        de votre entraînement, avec la fréquence cardiaque des séances et les tracés des sorties importées depuis Garmin Connect, mais sans autres tracés GPS bruts. Désactiver le coaching cloud
         ne désactive pas la synchronisation du compte. Les courses peuvent être exportées en fichiers FIT. Les détails sont dans la{" "}
         <a href="/privacy/">politique de confidentialité</a> (en anglais).
       </p>

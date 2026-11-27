@@ -25,29 +25,23 @@ export default function AudioCuesGuide() {
       <h1 className="font-bebas text-5xl uppercase leading-none md:text-7xl">{guide.title}</h1>
       <GuideDetails guide={guide} />
       <div className="mt-8 rounded-2xl border border-[#1FE26C]/25 bg-[#1FE26C]/[0.07] p-6">
-        <p className="text-lg leading-relaxed"><strong>Want to hear when the next rep starts, without a distance update interrupting it?</strong> RunToMax has separate switches for interval transitions and kilometre or mile announcements. Set them before your next run.</p>
+        <p className="text-lg leading-relaxed"><strong>To hear each kilometre or mile in a RunToMax interval workout, open Settings → Voice in RunToMax on your watch.</strong> Turn on <strong>Spoken Cues</strong>, <strong>Auto-lap splits</strong> and <strong>Km/mile cues in sessions</strong>. You’ll hear how long the last kilometre or mile took, even when it includes both running and recovery.</p>
       </div>
       <div className="legal-prose mt-10 text-base leading-relaxed text-zinc-300">
-        <h2>Choose what you want to hear</h2>
-        <p>In RunToMax 1.3.5 on iPhone, open <strong>Settings → Audio coach</strong>. On Apple Watch, open <strong>RunToMax → Settings → Voice</strong>. These are RunToMax’s settings, separate from Apple’s Workout app.</p>
-        <p>For distance updates on ordinary runs but fewer interruptions during intervals:</p>
+        <h2>If you started the run in Apple’s Workout app</h2>
+        <p>On your watch, open <strong>Settings → Workout → Voice Feedback</strong>. If you already hear announcements on ordinary runs, open <strong>Workout</strong>, find the run you plan to do and review its <strong>Alerts</strong>. Apple documents voice feedback for key alerts. Its instructions don’t promise a spoken pace at every kilometre of every custom workout. A runner who heard pace on walks reported losing it during run/walk intervals. <a href="https://support.apple.com/guide/watch/adjust-apple-watch-during-a-workout-apd72879df4d/watchos">Apple’s Voice Feedback instructions</a> · <a href="https://support.apple.com/guide/watch/apd66fcd5c5c/watchos">Apple’s workout alerts</a> · <a href="https://discussions.apple.com/thread/256150386">The runner’s question</a></p>
+        <h2>If you start the interval workout in RunToMax</h2>
         <ol className="list-decimal space-y-3 pl-5">
-          <li>Keep <strong>Spoken cues</strong> on.</li>
-          <li>Keep <strong>Auto-lap splits</strong> on, then turn <strong>Km/mile cues in sessions</strong> off.</li>
-          <li>Keep <strong>Interval transitions</strong> on for the next workout step.</li>
+          <li>In <strong>Settings → Voice</strong> on the watch, turn on <strong>Spoken Cues</strong> to reveal the announcement settings.</li>
+          <li>Turn on <strong>Auto-lap splits</strong>. A second switch appears just below it. Turn on <strong>Km/mile cues in sessions</strong> to hear splits during structured runs.</li>
+          <li>Keep <strong>Interval transitions</strong> on if you also want to hear when to switch from running to recovery. You can change that switch independently.</li>
         </ol>
-        <p>To silence distance announcements on ordinary runs too, turn <strong>Auto-lap splits</strong> off. This is a speech setting; it does not switch off distance recording.</p>
-        <p><strong>Coach cues</strong> is another layer: rep previews, countdowns and feedback. It requires <strong>RunToMax Pro</strong>. Turn it off as well if you want fewer comments. Basic audio settings are free to open; changing them does not unlock Pro workouts.</p>
-        <h2>Want a completely quiet run?</h2>
-        <p>Turn <strong>Spoken cues</strong> off. Disabling only splits still allows other enabled speech, such as manual laps or pace corrections. RunToMax’s Quiet Mode also suppresses spoken cues, so check it if you want speech back.</p>
-        <h2>Check the sound before heading out</h2>
-        <p>On the Watch, open <strong>Settings → Voice → Test cue</strong> and tap <strong>Test cue</strong>. Use the same headphones and music source you plan to run with. For headphones connected to your iPhone, the Watch has a <strong>Speak cues on iPhone</strong> switch; keep it on when you want that route.</p>
-        <p>If the test is silent, check Spoken cues, Quiet Mode and where your headphones are connected. A successful test checks one cue on that setup; it does not prove every workout announcement or music transition will behave the same.</p>
-        <h2>Using Apple’s Workout app instead?</h2>
-        <p>You do not need to switch apps just to adjust speech. Apple documents <a href="https://support.apple.com/en-gb/guide/watch/apd72879df4d/26/watchos/26">Settings → Workout → Voice Feedback</a> on the Watch. That control belongs to Apple’s Workout app, not RunToMax.</p>
-        <p>Runner reports show why checking your own setup matters: <a href="https://www.reddit.com/r/AppleWatch/comments/1pxoeuc/workout_notifications_in_airpods/">one runner wanted distance speech off while keeping wrist taps</a>; <a href="https://www.reddit.com/r/AppleWatch/comments/1nij1kp/watchos26_workout_app_voice_feedback_pausing/">another reported different music behaviour with different headphones</a>. These are individual reports about Apple’s app, not tests of RunToMax or a promised fix.</p>
-        <p>Next: <Link href="/guides/interval-workouts-apple-watch/">build an interval session</Link>, or <Link href="/guides/apple-watch-running-pace/">choose the pace fields you see</Link>.</p>
-        <p className="text-sm text-zinc-400">Checked against RunToMax 1.3.5 release source on November 13, 2026. A shipping iPhone and Watch audio walkthrough is pending; no new device or headphone test is claimed.</p>
+        <h2>Which pace am I hearing?</h2>
+        <p>Suppose you run 400 m, jog 200 m, then run another 400 m. Together those steps make one kilometre. If they take 5 minutes 30 seconds, the first split is 5:30, an average of 5:30/km across all three steps. That’s why the number can sound slower than your fast reps. The cue leaves your programmed intervals intact.</p>
+        <p>With miles selected, the first split comes at one full mile. Warmup and recovery distance count, so a split can arrive halfway through a rep.</p>
+        <h2>If you hear the rep changes but miss the splits</h2>
+        <p>Check <strong>Km/mile cues in sessions</strong> first. If everything is silent, connect the headphones you’ll use for the run. In RunToMax on the watch, open <strong>Settings → Voice → Test cue</strong> and tap <strong>Test cue</strong>. Check RunToMax’s Quiet Mode if the test reports that speech is muted. If your headphones are connected to your iPhone, check <strong>Speak cues on iPhone</strong> in the same Voice settings.</p>
+        <p><Link href="/guides/interval-workouts-apple-watch/">Build an interval workout</Link> or <Link href="/guides/apple-watch-running-pace/">choose which pace to show on your watch</Link>.</p>
       </div>
       <a href={download} className="mt-10 inline-block rounded-full bg-[#1FE26C] px-7 py-3 font-semibold text-black">Get RunToMax</a>
     </article>

@@ -68,9 +68,9 @@ export default function CoachingFeaturePage() {
 
       <h2>Where your data lives</h2>
       <p>
-        Your runs, routes and heart rate are stored in Apple Health and local app storage. No account is required. In version 1.3.5,
-        you can separately enable account sync with Sign in with Apple to store an encrypted training archive with Cloudflare.
-        It includes workout heart rate, but excludes raw GPS routes. Turning off cloud coaching does not turn off account sync.
+        Your runs, routes and heart rate are stored in Apple Health and local app storage. No account is required.
+        You can separately enable account sync with Sign in with Apple to store an encrypted training archive with Cloudflare.
+        It includes workout heart rate and the routes of runs imported from Garmin Connect, but excludes other raw GPS routes. Turning off cloud coaching does not turn off account sync.
         Runs can be exported as FIT files. Details are in the <a href="/privacy/">privacy policy</a>.
       </p>
     </PageShell>

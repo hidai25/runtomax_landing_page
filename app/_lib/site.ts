@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://runtomax.com";
 export const APP_STORE_URL = "https://apps.apple.com/app/runtomax/id6767669260";
+export const FR_APP_STORE_URL = "https://apps.apple.com/fr/app/runtomax-coach-course-%C3%A0-pied/id6767669260";
+export const FR_GARMIN_GUIDE_STORE_URL = FR_APP_STORE_URL + "?pt=126426469&ct=fr-guide-garmin&mt=8";
 export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 
 /** EN path -> FR path. Every page that exists in both languages is listed here;
@@ -9,6 +11,7 @@ export const OG_IMAGE = `${SITE_URL}/og-runtomax.png`;
 export const LOCALE_PAIRS: Record<string, string> = {
   "/": "/fr/",
   "/features/apple-watch/": "/fr/fonctionnalites/apple-watch/",
+  "/features/garmin/": "/fr/fonctionnalites/garmin/",
   "/features/coaching-from-apple-health/": "/fr/fonctionnalites/coaching-apple-sante/",
   "/features/race-plans/": "/fr/fonctionnalites/plans-de-course/",
   "/faq/": "/fr/faq/",
@@ -35,8 +38,8 @@ export function alternatesFor(enPagePath: string, lang: "en" | "fr") {
 export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
   const description =
     lang === "en"
-      ? "RunToMax records runs on Apple Watch and coaches from the runs already in Apple Health: a plain-language verdict after every run, threshold and training paces from your last 90 days, and race-date plans that propose changes you approve. For runners aged 18 and older."
-      : "RunToMax enregistre vos sorties sur Apple Watch et vous coache à partir des courses déjà présentes dans Apple Santé : un verdict clair après chaque sortie, des allures de seuil et d’entraînement calculées sur vos 90 derniers jours, et des plans calés sur la date de votre course. Pour les coureurs de 18 ans et plus.";
+      ? "RunToMax is a running coach for Apple Watch, iPhone and Garmin watches. It builds a plan from the runs you already have, gives a plain-language verdict after every run and proposes changes you approve. Garmin runs import for free; the first week of every plan is free. For runners aged 18 and older."
+      : "RunToMax est un coach de course à pied pour Apple Watch, iPhone et montres Garmin. Il construit un plan à partir de vos sorties, donne un verdict clair après chaque sortie et propose des ajustements que vous validez. L’import des sorties Garmin est gratuit, comme la première semaine de chaque plan. Pour les coureurs de 18 ans et plus.";
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -62,7 +65,7 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         "@id": `${SITE_URL}/#app`,
         name: "RunToMax",
         alternateName: lang === "en" ? "RunToMax: Running Coach & Plan" : "RunToMax : Coach course à pied",
-        operatingSystem: "iOS 17 or later, watchOS 10 or later",
+        operatingSystem: "iOS 17 or later, watchOS 10 or later; works with Garmin Connect",
         applicationCategory: "HealthApplication",
         applicationSubCategory: "Running",
         description,
@@ -70,13 +73,16 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
         contentRating: "18+",
         audience: { "@type": "PeopleAudience", suggestedMinAge: 18 },
         url: SITE_URL,
-        softwareVersion: "1.3.5",
+        softwareVersion: "1.4.1",
         sameAs: [APP_STORE_URL],
         downloadUrl: APP_STORE_URL,
         installUrl: APP_STORE_URL,
-        screenshot: [`${SITE_URL}/watch-grid.png`, `${SITE_URL}/iphone-today.png`],
+        screenshot: [`${SITE_URL}/watch-ultra4-metrics-${lang}.webp`, `${SITE_URL}/iphone17-home-${lang}.webp`],
         featureList: [
           "Apple Watch run recording with custom screens",
+          "iPhone run recording without a watch (iOS 26 or later)",
+          "Free import of new Garmin runs through Garmin Connect",
+          "Send planned workouts to Garmin Connect (Pro)",
           "Structured intervals with haptic cues, no phone needed",
           "Coaching from existing Apple Health running history",
           "Threshold pace estimate from the last 90 days",
@@ -84,9 +90,13 @@ export function siteJsonLd(lang: "en" | "fr", contactEmail: string) {
           "Race-date training plans with approved adaptations",
           "Readiness from HRV, sleep and training load",
           "Heat-adjusted pace targets",
-          "FIT and GPX export",
+          "FIT export",
         ],
-        offers: [
+        offers: lang === "fr" ? [
+          { "@type": "Offer", name: "Téléchargement gratuit", price: "0", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+          { "@type": "Offer", name: "Pro mensuel", price: "6.99", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+          { "@type": "Offer", name: "Pro annuel", price: "29.99", priceCurrency: "EUR", url: FR_APP_STORE_URL },
+        ] : [
           { "@type": "Offer", name: "Free download and basic recording", price: "0", priceCurrency: "USD", url: APP_STORE_URL },
           {
             "@type": "Offer",

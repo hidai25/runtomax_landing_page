@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="November 12, 2026"
+      effectiveDate="November 24, 2026"
       intro={
         <p>
           RunToMax is a running app for iPhone and Apple Watch. It does not
@@ -35,14 +35,15 @@ export default function PrivacyPage() {
         </li>
         <li>
           No account is required. Optional Sign in with Apple account sync is
-          available in version 1.3.5 and described below; no email login or
+          described below; no email login or
           password is required.
         </li>
         <li>
           Workouts, GPS routes, heart rate, and health history are stored in
           Apple Health and local app storage. When optional account sync is
           offered and enabled, a selected training archive is also stored by
-          RunToMax using Cloudflare, without raw GPS routes.
+          RunToMax using Cloudflare. It keeps the GPS route of runs imported from
+          Garmin Connect, but no other raw GPS routes.
         </li>
         <li>
           Basic recording is free and needs no purchase. Pro is one Apple
@@ -61,15 +62,15 @@ export default function PrivacyPage() {
           not send exact workout or health values.
         </li>
         <li>
-          Garmin Connect is not included in App Store version 1.3.5. In supported
-          later test builds, the integration is optional: you can connect your account,
+          From App Store version 1.4, Garmin Connect is available and
+          optional: you can connect your account,
           send your chosen running workouts to Garmin Connect and separately opt
           in to importing new Garmin runs and, separately, last night&rsquo;s
           sleep, resting heart rate and overnight HRV for your readiness. Other
           all-day health data is not imported. See the <a href="#garmin">Garmin disclosure</a> below.
         </li>
         <li>
-          App Store version 1.3.5 has no public Strava integration, RevenueCat,
+          App Store version 1.4 has no public Strava integration, RevenueCat,
           Lifetime purchase, advertising, or IDFA. Website analytics is optional.
         </li>
       </ul>
@@ -129,7 +130,7 @@ export default function PrivacyPage() {
 
       <h3 id="training-sync">Account sync (optional)</h3>
       <p>
-        Account sync is available in App Store version 1.3.5 and is off until
+        Account sync is off until
         you choose to connect. The following describes this optional feature. You can use RunToMax without a sync account. A French version
         of this disclosure is <a href="#synchronisation">available below</a>.
       </p>
@@ -155,7 +156,11 @@ export default function PrivacyPage() {
         Watch preferences, shoes, and workout or plan labels are also included.
       </p>
       <p>
-        Sync excludes raw GPS coordinates and routes, the profile first name,
+        Sync includes the GPS route of runs imported from Garmin Connect, so
+        restoring the archive brings their maps back. Sync excludes all other
+        raw GPS coordinates and routes (Apple Health routes stay on your
+        devices), runs imported from Strava in full (they stay on your iPhone
+        and are fetched again from Strava after a restore), the profile first name,
         avatar and Contacts data, sensor diagnostic logs, Apple Weather readings,
         separate archives of daily HRV, resting-heart-rate and sleep readings,
         and detailed reasons behind historical coaching decisions. Saved
@@ -224,8 +229,8 @@ export default function PrivacyPage() {
         help, contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h3 id="garmin">Garmin Connect (optional, later test builds)</h3>
-      <p>This section applies when Garmin Connect is offered in your build. It is not available in App Store version 1.3.5.</p>
+      <h3 id="garmin">Garmin Connect (optional)</h3>
+      <p>Garmin Connect is available from App Store version 1.4. Earlier versions do not include it.</p>
       <p>
         An optional connection lets you send selected RunToMax running workouts
         and scheduled dates to your Garmin Connect account for use on compatible
@@ -289,7 +294,7 @@ export default function PrivacyPage() {
         them. Turning import off stops new imports and clears retained server
         activity copies. Disconnecting also stops imports. You can separately
         revoke Activities permission in Garmin Connect. No historical backfill
-        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import">Read the import details</a>.
+        is included. <a href="https://garmin.runtomax.com/privacy/garmin-import/">Read the import details</a>.
       </p>
       <p id="garmin-health">
         You can separately enable <strong>Import Garmin health data</strong>,
@@ -604,15 +609,15 @@ export default function PrivacyPage() {
       <p>You can accept or reject analytics using the website banner, or change your choice using Analytics settings. If you reject analytics, the Google Analytics tag is not loaded. Withdrawing consent stops future collection and removes first-party Google Analytics cookies. Your choice is stored in your browser. Google may process information outside your country; see <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Contact <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a> about website privacy.</p>
       <p>Links to the App Store are handled by Apple under Apple&apos;s privacy policy.</p>
 
-      <h2>What App Store version 1.3.5 does not use</h2>
+      <h2>What App Store version 1.4 does not use</h2>
       <ul>
         <li>No advertising, IDFA, or third-party advertising trackers.</li>
-        <li>No public Strava integration in App Store version 1.3.5; supported TestFlight builds may offer it.</li>
+        <li>No public Strava integration in App Store version 1.4; supported TestFlight builds may offer it.</li>
         <li>No RevenueCat subscription processing.</li>
         <li>No Lifetime purchase or separate AI Coaching subscription.</li>
         <li>
           No RunToMax email/password account. Optional training-history sync
-          with Sign in with Apple is available in version 1.3.5 and requires your opt-in.
+          with Sign in with Apple requires your opt-in.
         </li>
         <li>No contacts or calendar access.</li>
       </ul>
@@ -765,7 +770,7 @@ export default function PrivacyPage() {
         <h2 id="synchronisation">Synchronisation du compte — français</h2>
         <p>
           Cette information complète la politique ci-dessus pour la
-          synchronisation facultative disponible dans la version App Store 1.3.5.
+          synchronisation facultative.
           Elle reste désactivée tant que vous ne choisissez pas de connecter votre compte.
           Vous pouvez utiliser RunToMax sans compte de synchronisation.
           Le responsable est Hidai Bar-Mor, développeur indépendant de RunToMax.
@@ -797,7 +802,12 @@ export default function PrivacyPage() {
           les chaussures et les noms de séances ou de plans sont aussi inclus.
         </p>
         <p>
-          Sont exclus les coordonnées et tracés GPS bruts, le prénom du profil,
+          Le tracé GPS des sorties importées depuis Garmin Connect est inclus,
+          pour retrouver leurs cartes après une restauration. Sont exclus les
+          autres coordonnées et tracés GPS bruts (les tracés Apple Santé
+          restent sur vos appareils), l’intégralité des sorties importées depuis
+          Strava (elles restent sur votre iPhone et sont récupérées auprès de
+          Strava après une restauration), le prénom du profil,
           l’avatar et les données Contacts, les journaux de diagnostic des
           capteurs, les données Apple Weather, les archives distinctes des
           mesures quotidiennes de VFC, de fréquence cardiaque au repos et de
@@ -874,6 +884,51 @@ export default function PrivacyPage() {
           copies de stockage gérées par l’hébergeur. Pour accéder à vos données,
           les corriger, en obtenir une copie ou demander de l’aide pour les
           supprimer, contactez <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
+        </p>
+      </section>
+
+      <section lang="fr" aria-labelledby="statistiques">
+        <h2 id="statistiques">Statistiques facultatives — français</h2>
+        <p>
+          Les statistiques d’utilisation sont désactivées par défaut. RunToMax
+          n’utilise{" "}
+          <a href="https://posthog.com" target="_blank" rel="noreferrer">
+            PostHog
+          </a>{" "}
+          (US Cloud, hébergé aux États-Unis) qu’après votre accord explicite.
+          Les statistiques peuvent comprendre un identifiant d’installation
+          aléatoire, des informations sur l’app, sa version et l’appareil, des
+          événements d’utilisation des fonctions par catégorie, ainsi que des
+          événements de forme et de coaching par catégorie ou par grande
+          tranche. Par exemple : le type de séance, de grandes tranches de
+          réalisation, vos retours sur le plan d’entraînement, et le fait que
+          vous ayez confirmé ou corrigé une interprétation. Ces événements
+          peuvent être reliés à la même installation dans le temps. RunToMax
+          configure PostHog pour ne pas utiliser l’adresse IP de la requête à
+          des fins de géolocalisation. La capture automatique est désactivée,
+          et l’enregistrement de session est désactivé dans la version publiée.
+        </p>
+        <p>
+          Nous n’envoyons à PostHog ni votre nom, ni votre adresse e-mail, ni
+          vos valeurs exactes d’allure, de distance, de fréquence cardiaque ou
+          de sommeil, ni votre position, ni vos tracés, ni l’identifiant ou
+          l’heure d’une séance, ni le texte des conseils. Vous pouvez désactiver
+          les statistiques à tout moment dans Réglages → Confidentialité →
+          Statistiques facultatives. La désactivation arrête l’envoi de
+          nouveaux événements à PostHog. Pour demander la suppression des
+          statistiques associées à votre identifiant d’installation aléatoire,
+          contactez <a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>.
+        </p>
+        <p>
+          PostHog peut traiter ces données en dehors de votre pays, notamment
+          aux États-Unis. Ses garanties et ses pratiques de transfert sont
+          décrites dans sa{" "}
+          <a href="https://posthog.com/privacy" target="_blank" rel="noreferrer">
+            politique de confidentialité
+          </a>
+          . Les autorisations de statistiques, de coaching par IA et de
+          synchronisation du compte sont distinctes : accepter l’une n’active
+          pas les autres.
         </p>
       </section>
 

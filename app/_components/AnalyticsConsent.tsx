@@ -69,6 +69,22 @@ export default function AnalyticsConsent({ lang }: { lang: Language }) {
     gtag("event", "page_view", { page_location: window.location.origin + (pathname || "/"), page_referrer: cleanReferrer(), page_title: document.title });
   }, [choice, pathname, ready]);
 
+  useEffect(() => {
+    if (choice !== "accepted") return;
+    function recordGuideDownloadTap(event: MouseEvent) {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest<HTMLAnchorElement>('[data-measure-guide-downloads] a[id^="app-store-"]');
+      if (!link || link.hostname !== "apps.apple.com" || readChoice() !== "accepted") return;
+      window.gtag?.("event", "guide_app_store_click", {
+        link_id: link.id,
+        link_url: link.href,
+        page_location: location.origin + location.pathname,
+      });
+    }
+    document.addEventListener("click", recordGuideDownloadTap, true);
+    return () => document.removeEventListener("click", recordGuideDownloadTap, true);
+  }, [choice]);
+
   function choose(value: Exclude<Choice, null>) {
     if (value === "rejected") {
       (window as unknown as Record<string, unknown>)[`ga-disable-${MEASUREMENT_ID}`] = true;
